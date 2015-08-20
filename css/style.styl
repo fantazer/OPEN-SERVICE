@@ -1,0 +1,78 @@
+ //@import "http://webfonts.ru/import/osans.css"; 
+
+//Mian colors
+dark = #404041;
+red = #EC2B32;
+grey = #E7E7E3;
+font = Open Sans;
+yellow = #F2E82A;
+greyText = #808583;
+green = #58A36B;
+
+ for v in (1..60){
+ 	if(v%2!=1){
+	 	.fz{v}{
+	 		font-size v px
+	 	}
+ 	}
+ }
+ 
+ marpa(a,b,c){
+	 vm = 0
+	 for m in (0..c){
+		 	.{a}{vm}{
+		 		{b}  vm px
+		 	}
+		 	vm+=5
+	 }
+ }
+ 
+ marpa(mt,margin-top,15)
+ marpa(mb,margin-bottom,15)
+ marpa(mr,margin-right,15)
+ marpa(ml,margin-left,15)
+ 
+ marpa(pt,pa-top,15)
+ marpa(pb,pa-bottom,15)
+ marpa(pr,pa-right,15)
+ marpa(pl,pa-left,15)
+  
+a{
+  color:black
+  &:hover{
+    text-decoration none
+    color black
+  }
+}
+h2{
+  font-size 20px
+  font-weight 600
+  margin 20px 0px
+}
+.fw8{
+  font-weight 800!important
+}
+
+.red{
+  color red
+}
+.tar{
+  text-align right
+}
+.up{
+  text-transform uppercase
+}
+up(){
+  text-transform:uppercase;
+}
+.w100{
+  width 100%
+}
+
+  //fonts
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), local('OpenSans'), url("../fonts/opensans-regular.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
