@@ -11,6 +11,14 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-useref": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "imagemin-pngquant": "^4.1.2",
+    "vinyl-ftp": "^0.4.4",
     "wiredep": "^3.0.0-beta"
   }
 }
