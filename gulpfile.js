@@ -8,7 +8,10 @@ var gulp = require("gulp"),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     gutil = require('gulp-util'),
-    ftp = require( 'vinyl-ftp' );
+    ftp = require( 'vinyl-ftp' ),
+    stylus = require('gulp-stylus'),
+    livereload = require('gulp-livereload'),
+    connect = require('gulp-connect');
     
  
 //Prefix my css
@@ -103,6 +106,34 @@ gulp.task( 'ftp', function() {
 
 } );
 
+//Stylus
+gulp.task('stylus', function () {
+  gulp.src('./app/css/*.styl')
+    .pipe(stylus())
+    .pipe(gulp.dest('./app/css/'))
+    .pipe(connect.reload());
+});
+
+//html
+gulp.task('html',function(){
+     gulp.src('app/*.html')
+     .pipe(connect.reload());
+    })
+
+//Livereload
+gulp.task('connect', function() {
+  connect.server({
+    root: 'app',
+    livereload: true
+  });
+});
+
 //default
 gulp.task('use',[ 'prefix' , 'bower']);
 gulp.task('img',[ 'imagePng' , 'imageJpg']);
+gulp.task('default',[ 'connect' , 'see' , 'html' , 'stylus']);
+
+gulp.task('see',function(){
+        gulp.watch('app/css/*.styl',['stylus'])
+        gulp.watch('app/*.html',['html'])
+})
