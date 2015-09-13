@@ -5,14 +5,12 @@ var gulp = require("gulp"),
     gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
     minifyCss = require('gulp-minify-css'),
-    imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
     gutil = require('gulp-util'),
     ftp = require( 'vinyl-ftp' ),
     stylus = require('gulp-stylus'),
     sourcemaps = require('gulp-sourcemaps'),
-    livereload = require('gulp-livereload'),
-    connect = require('gulp-connect');
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload;
     
  
 //Prefix my css
@@ -25,26 +23,26 @@ gulp.task('prefix', function () {
 });
 
 //Compress img
-gulp.task('imagePng',function(){
-            return gulp.src('app/img/*.png')
-                .pipe(imagemin({
-                    progressive: true,
-                    svgoPlugins: [{removeViewBox: false}],
-                    use: [pngquant({quality: '40', speed: 4})]
-                }))
-                .pipe(gulp.dest('dist/img/'));
-});
+//gulp.task('imagePng',function(){
+//            return gulp.src('app/img/*.png')
+//                .pipe(imagemin({
+//                    progressive: true,
+//                    svgoPlugins: [{removeViewBox: false}],
+//                    use: [pngquant({quality: '40', speed: 4})]
+//                }))
+//                .pipe(gulp.dest('dist/img/'));
+//});
 
 //Compress imgJpg
-gulp.task('imageJpg',function(){
-            return gulp.src('app/img/*.jpg')
-            .pipe(imagemin({
-                    progressive: true,
-                    svgoPlugins: [{removeViewBox: false}],
-                    use: [imageminMozjpeg({quality: '60', speed: 11})]
-                }))
-            .pipe(gulp.dest('dist/img/'));
-});
+//gulp.task('imageJpg',function(){
+//            return gulp.src('app/img/*.jpg')
+//            .pipe(imagemin({
+//                    progressive: true,
+//                    svgoPlugins: [{removeViewBox: false}],
+//                    use: [imageminMozjpeg({quality: '60', speed: 11})]
+//                }))
+//            .pipe(gulp.dest('dist/img/'));
+//});
 
 
 //wiredep
@@ -74,7 +72,7 @@ gulp.task('bower', function () {
 });
 
 //useref
-gulp.task('html', function () {
+gulp.task('make', function () {
     var assets = useref.assets();
      gulp.src('app/js/*.js')
     .pipe(gulp.dest('dist/js/'));
@@ -90,7 +88,7 @@ gulp.task('html', function () {
 
 gulp.task( 'ftp', function() {
     var conn = ftp.create( {
-        host:     'mosbuscon.ru',
+        host:     'ineed.site',
         user:     'u6929655',
         password: 'YDW2wJI4',
         parallel: 21,
@@ -102,18 +100,11 @@ gulp.task( 'ftp', function() {
         'dist/*.html'
     ];
    return gulp.src(globs)
-        .pipe( conn.newer( 'httpdocs/mosbuscon.ru/' ) )
-        .pipe( conn.dest( 'httpdocs/mosbuscon.ru/' ) );
+        .pipe( conn.newer( 'httpdocs/ineed.site/' ) )
+        .pipe( conn.dest( 'httpdocs/ineed.site/' ) );
 
 } );
 
-//Livereload
-gulp.task('connect', function() {
-  connect.server({
-    root: 'app',
-    livereload: true
-  });
-});
 
 //Stylus
 gulp.task('stylus', function () {
@@ -131,23 +122,23 @@ gulp.task('sourcemaps', function () {
     .pipe(gulp.dest('./app/css/'))
 });
 
-//html
-gulp.task('html',function(){
-     gulp.src('app/**/*.**')
-     .pipe(connect.reload());
-    })
-
-
-
 gulp.task('see',function(){
         gulp.watch('app/css/*.styl',['stylus'])
         gulp.watch('app/css/*.styl',['sourcemaps'])
-        gulp.watch('app/**/*.**',['html'])
 })
 
+
+gulp.task('serve', function () {
+    browserSync.init({
+        server: {
+            baseDir: "./app/"
+        }
+    });
+    gulp.watch("./app/**/**.*").on("change", browserSync.reload);
+});
 
 //default
 gulp.task('use',[ 'prefix' , 'bower']);
 gulp.task('img',[ 'imagePng' , 'imageJpg']);
-gulp.task('default',[ 'connect' , 'see' , 'html' , 'stylus']);
-
+gulp.task('default',[  'see' , 'serve' ]);
+ 
