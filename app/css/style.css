@@ -1,5 +1,44 @@
 body {
-  background: rgba(17,34,51,0.467);
+  font-family: 'Open Sans';
 }
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLnN0eWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxZQUFXLHFCQUFYIiwiZmlsZSI6InN0eWxlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbImJvZHlcclxuXHRiYWNrZ3JvdW5kICMxMjMxIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9 */
+a:hover {
+  text-decoration: none;
+}
+.bold {
+  font-weight: 600;
+}
+.fz14 {
+  font-size: 14px !important;
+}
+.fz10 {
+  font-size: 10px !important;
+}
+.fz30 {
+  font-size: 30px !important;
+}
+.fz36 {
+  font-size: 36px !important;
+}
+.fz20 {
+  font-size: 20px !important;
+}
+.boldfont {
+  font-family: Fira Sans;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p60 {
+  padding: 60px;
+}
+.tal {
+  text-align: left !important;
+}
+.dib {
+  display: inline-block;
+}
+.w100per {
+  width: 100%;
+}
