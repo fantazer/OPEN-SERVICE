@@ -132,15 +132,14 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('./app/'));
 });
 
+//Watcher
 gulp.task('see',function(){
         gulp.watch('app/html/**/*.html',['fileinclude'])
         gulp.watch('app/css/*.styl',['stylus'])
         gulp.watch('app/css/*.styl',['sourcemaps'])
 })
 
-
-
-
+//Watcher server
 gulp.task('serve', function () {
     browserSync.init({
         server: {
@@ -154,4 +153,4 @@ gulp.task('serve', function () {
 gulp.task('use',[ 'prefix' , 'bower']);
 gulp.task('img',[ 'imagePng' , 'imageJpg']);
 gulp.task('default',[  'see' , 'serve' ]);
- 
+
