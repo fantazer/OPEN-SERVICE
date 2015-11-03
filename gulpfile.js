@@ -10,9 +10,9 @@ var gulp = require("gulp"),
     stylus = require('gulp-stylus'),
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
-    reload = browserSync.reload;
-    
- 
+    reload = browserSync.reload,
+    fileinclude = require('gulp-file-include');
+
 //Prefix my css
 gulp.task('prefix', function () {
     return gulp.src('app/css/style.css')
@@ -47,7 +47,7 @@ gulp.task('prefix', function () {
 
 //wiredep
 gulp.task('bower', function () {
-    
+
   gulp.src('./app/index.html')
     .pipe(wiredep({
       'directory' : "app/bower/",
@@ -85,7 +85,7 @@ gulp.task('make', function () {
         .pipe(gulp.dest('dist'));
 });
 
-
+//Ftp
 gulp.task( 'ftp', function() {
     var conn = ftp.create( {
         host:     'ineed.site',
@@ -122,10 +122,23 @@ gulp.task('sourcemaps', function () {
     .pipe(gulp.dest('./app/css/'))
 });
 
+//Include html
+gulp.task('fileinclude', function() {
+  gulp.src('./app/html/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: './app/html/block_html/'
+    }))
+    .pipe(gulp.dest('./app/'));
+});
+
 gulp.task('see',function(){
+        gulp.watch('app/html/**/*.html',['fileinclude'])
         gulp.watch('app/css/*.styl',['stylus'])
         gulp.watch('app/css/*.styl',['sourcemaps'])
 })
+
+
 
 
 gulp.task('serve', function () {

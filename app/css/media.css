@@ -2,7 +2,7 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
   p {
-    
+    font-size: 1px;
   }
 }
 /* Medium Devices, Desktops */
@@ -15,5 +15,3 @@
 /* Small Devices, Tablets */
 /* Medium Devices, Desktops */
 /* Large Devices, Wide Screens */
-/*# sourceMappingURL=app/css/media.css.map */
-/*# sourceMappingURL=media.css.map */
