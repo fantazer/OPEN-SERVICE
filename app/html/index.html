@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <!-- build:css css/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower/normalize.css/normalize.css" />
-  <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="bower/components-font-awesome/css/font-awesome.css" />
-  <!-- endbower -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/media.css">
-  <!-- endbuild -->
-  <link rel="stylesheet" type="text/css" href="http://webfonts.ru/import/fira.css"> 
-  <link rel="stylesheet" type="text/css" href="http://webfonts.ru/import/opensans.css"> 
+@@include('head.html') 
 </head>
 <body>
 
-  <div class="container ">
-    <div class="row">
-      @@include('view.html')
-      @@include('footer.html')
-    </div>
-  </div>
-  <!-- build:js scripts/combined.js -->
-  <!-- bower:js -->
-  <script src="bower/jquery/dist/jquery.js"></script>
-  <script src="bower/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- endbower-->
-  <script src="js/script.js"></script>
-  <!-- endbuild -->
- <?php wp_footer(); ?>
+
+
+@@include('script.html') 
 </body>
 </html>
 

@@ -42,3 +42,52 @@ a:hover {
 .w100per {
   width: 100%;
 }
+.b-top-menu {
+  background: #000;
+}
+.b-top-menu ul {
+  margin: 0;
+  padding: 0;
+}
+.b-top-menu li {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.b-top-menu li a {
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  display: inline-block;
+}
+.b-top-menu li a:hover {
+  text-decoration: none;
+  color: greyText;
+}
+.b-top-menu li ul {
+  opacity: 0;
+  position: absolute;
+  background: #000;
+  transition: all 0.8s;
+  transform: translateY(20px);
+  z-index: 2000;
+  visibility: hidden;
+  width: 200px;
+}
+.b-top-menu li ul li {
+  width: 100%;
+}
+.b-top-menu li:hover ul {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+}
+.b-top-menu .fa {
+  color: #fff;
+  font-size: 30px;
+  float: right;
+  margin: 10px;
+  display: none;
+}

@@ -108,7 +108,7 @@ gulp.task( 'ftp', function() {
 
 //Stylus
 gulp.task('stylus', function () {
-  gulp.src('./app/css/*.styl')
+  gulp.src('./app/css/**/*.styl')
     .pipe(stylus())
     .pipe(gulp.dest('./app/css/'))
 });
@@ -139,6 +139,9 @@ gulp.task('see',function(){
         gulp.watch('app/css/*.styl',['sourcemaps'])
 })
 
+gulp.task('include',function(){
+        gulp.watch('app/html/**/*.html',['fileinclude'])
+})
 //Watcher server
 gulp.task('serve', function () {
     browserSync.init({
