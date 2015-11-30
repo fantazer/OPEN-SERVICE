@@ -11,7 +11,10 @@ var gulp = require("gulp"),
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
-    fileinclude = require('gulp-file-include');
+    fileinclude = require('gulp-file-include'),
+    pngquant = require('imagemin-pngquant'),
+    imageminMozjpeg = require('imagemin-mozjpeg'),
+    imagemin = require('gulp-imagemin');
 
 //Prefix my css
 gulp.task('prefix', function () {
@@ -23,26 +26,26 @@ gulp.task('prefix', function () {
 });
 
 //Compress img
-//gulp.task('imagePng',function(){
-//            return gulp.src('app/img/*.png')
-//                .pipe(imagemin({
-//                    progressive: true,
-//                    svgoPlugins: [{removeViewBox: false}],
-//                    use: [pngquant({quality: '40', speed: 4})]
-//                }))
-//                .pipe(gulp.dest('dist/img/'));
-//});
+gulp.task('imagePng',function(){
+            return gulp.src('app/img/*.png')
+                .pipe(imagemin({
+                    progressive: true,
+                    svgoPlugins: [{removeViewBox: false}],
+                    use: [pngquant({quality: '40', speed: 4})]
+                }))
+                .pipe(gulp.dest('dist/img/'));
+});
 
 //Compress imgJpg
-//gulp.task('imageJpg',function(){
-//            return gulp.src('app/img/*.jpg')
-//            .pipe(imagemin({
-//                    progressive: true,
-//                    svgoPlugins: [{removeViewBox: false}],
-//                    use: [imageminMozjpeg({quality: '60', speed: 11})]
-//                }))
-//            .pipe(gulp.dest('dist/img/'));
-//});
+gulp.task('imageJpg',function(){
+            return gulp.src('app/img/*.jpg')
+            .pipe(imagemin({
+                    progressive: true,
+                    svgoPlugins: [{removeViewBox: false}],
+                    use: [imageminMozjpeg({quality: '60', speed: 11})]
+                }))
+            .pipe(gulp.dest('dist/img/'));
+});
 
 
 //wiredep
@@ -88,9 +91,9 @@ gulp.task('make', function () {
 //Ftp
 gulp.task( 'ftp', function() {
     var conn = ftp.create( {
-        host:     'ineed.site',
-        user:     'u6929655',
-        password: 'YDW2wJI4',
+        host:     '',
+        user:     '',
+        password: '',
         parallel: 21,
         log:      gutil.log
     } );
@@ -131,6 +134,8 @@ gulp.task('fileinclude', function() {
     }))
     .pipe(gulp.dest('./app/'));
 });
+
+
 
 //Watcher
 gulp.task('see',function(){
