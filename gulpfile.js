@@ -6,15 +6,16 @@ var gulp = require("gulp"),
     uglify = require('gulp-uglify'),
     minifyCss = require('gulp-minify-css'),
     gutil = require('gulp-util'),
-    ftp = require( 'vinyl-ftp' ),
     stylus = require('gulp-stylus'),
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
     fileinclude = require('gulp-file-include'),
-    pngquant = require('imagemin-pngquant'),
-    imageminMozjpeg = require('imagemin-mozjpeg'),
-    imagemin = require('gulp-imagemin');
+    axis = require('axis'),
+    jeet = require('jeet'),
+    htmlhint = require("gulp-htmlhint");
+   
+    
 
 //Prefix my css
 gulp.task('prefix', function () {
@@ -23,28 +24,6 @@ gulp.task('prefix', function () {
             browsers: ['last 15 versions']
         }))
         .pipe(gulp.dest('app/css/'));
-});
-
-//Compress img
-gulp.task('imagePng',function(){
-            return gulp.src('app/img/*.png')
-                .pipe(imagemin({
-                    progressive: true,
-                    svgoPlugins: [{removeViewBox: false}],
-                    use: [pngquant({quality: '40', speed: 4})]
-                }))
-                .pipe(gulp.dest('dist/img/'));
-});
-
-//Compress imgJpg
-gulp.task('imageJpg',function(){
-            return gulp.src('app/img/*.jpg')
-            .pipe(imagemin({
-                    progressive: true,
-                    svgoPlugins: [{removeViewBox: false}],
-                    use: [imageminMozjpeg({quality: '60', speed: 11})]
-                }))
-            .pipe(gulp.dest('dist/img/'));
 });
 
 
@@ -111,8 +90,10 @@ gulp.task( 'ftp', function() {
 
 //Stylus
 gulp.task('stylus', function () {
-  gulp.src('./app/css/**/*.styl')
-    .pipe(stylus())
+  gulp.src('./app/css/*.styl')
+    .pipe(stylus({
+        use:[axis(),jeet()]
+        }))
     .pipe(gulp.dest('./app/css/'))
 });
 
@@ -139,9 +120,8 @@ gulp.task('fileinclude', function() {
 
 //Watcher
 gulp.task('see',function(){
-        gulp.watch('app/html/**/*.html',['fileinclude'])
         gulp.watch('app/css/*.styl',['stylus'])
-        gulp.watch('app/css/*.styl',['sourcemaps'])
+        gulp.watch('app/html/**/*.html',['fileinclude'])
 })
 
 gulp.task('include',function(){
@@ -156,6 +136,14 @@ gulp.task('serve', function () {
     });
     gulp.watch("./app/**/**.*").on("change", browserSync.reload);
 });
+
+//Linters
+gulp.task('html-lint', function() {
+    gulp.src("./app/*.html")
+      .pipe(htmlhint())
+      .pipe(htmlhint.reporter("htmlhint-stylish"))
+})
+
 
 //default
 gulp.task('use',[ 'prefix' , 'bower']);
