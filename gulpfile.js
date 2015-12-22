@@ -13,8 +13,8 @@ var gulp = require("gulp"),
     fileinclude = require('gulp-file-include'),
     axis = require('axis'),
     jeet = require('jeet'),
-    htmlhint = require("gulp-htmlhint");
-   
+    htmlhint = require("gulp-htmlhint"),
+    rupture = require('rupture');
     
 
 //Prefix my css
@@ -92,7 +92,7 @@ gulp.task( 'ftp', function() {
 gulp.task('stylus', function () {
   gulp.src('./app/css/*.styl')
     .pipe(stylus({
-        use:[axis(),jeet()]
+        use:[rupture(),axis(),jeet()]
         }))
     .pipe(gulp.dest('./app/css/'))
 });
