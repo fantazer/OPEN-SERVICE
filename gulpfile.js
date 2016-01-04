@@ -14,7 +14,8 @@ var gulp = require("gulp"),
     axis = require('axis'),
     jeet = require('jeet'),
     htmlhint = require("gulp-htmlhint"),
-    rupture = require('rupture');
+    rupture = require('rupture'),
+    jade = require('gulp-jade');    
     
 
 //Prefix my css
@@ -116,12 +117,19 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('./app/'));
 });
 
-
+//Jade
+gulp.task('jade', function() {
+  gulp.src('./app/html/*.jade')
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest('./app/'))
+});
 
 //Watcher
 gulp.task('see',function(){
+        gulp.watch('app/html/*.jade',['jade'])
         gulp.watch('app/css/*.styl',['stylus'])
-        gulp.watch('app/html/**/*.html',['fileinclude'])
 })
 
 gulp.task('include',function(){
@@ -134,7 +142,7 @@ gulp.task('serve', function () {
             baseDir: "./app/"
         }
     });
-    gulp.watch("./app/**/**.*").on("change", browserSync.reload);
+    gulp.watch(["./app/**.*","./app/css/**.*","./app/js/**.*"]).on("change", browserSync.reload);
 });
 
 //Linters
@@ -143,6 +151,7 @@ gulp.task('html-lint', function() {
       .pipe(htmlhint())
       .pipe(htmlhint.reporter("htmlhint-stylish"))
 })
+
 
 
 //default
