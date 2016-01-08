@@ -128,7 +128,7 @@ gulp.task('jade', function() {
 
 //Watcher
 gulp.task('see',function(){
-        gulp.watch('app/html/*.jade',['jade'])
+        gulp.watch('app/html/**/*.jade',['jade'])
         gulp.watch('app/css/*.styl',['stylus'])
 })
 
@@ -142,7 +142,7 @@ gulp.task('serve', function () {
             baseDir: "./app/"
         }
     });
-    gulp.watch(["./app/**.*","./app/css/**.*","./app/js/**.*"]).on("change", browserSync.reload);
+    gulp.watch(["./app/**.*","./app/css/**.*","./app/js/**.*","./app/html/**/**.*"]).on("change", browserSync.reload);
 });
 
 //Linters
