@@ -9,7 +9,14 @@
  })(jQuery);*/ 
 
 $(document).ready(function(){
-
+	
+	/* ###### init bpopup  ######*/
+	/* ###### bower i bpopup  ######*/
+	// $('.button-modal').click(function(){
+	// 	$('.modal-block').bPopup({
+	// 			closeClass:'closer'
+	// 	}); 
+	// })
 	/* ###### init stickUp  ######*/
 	/* ###### bower i sticky  ######*/
 	/*$("#sticker").sticky({topSpacing:0});*/

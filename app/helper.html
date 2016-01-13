@@ -1,0 +1,44 @@
+==============
+Jade
+==============
+
+- for (var x = 0; x < 4; x++)
+				in, quasi a laudantium ea 
+
+include ./block_html/file.txt
+
+- each val in menu 
+	#{val['item']}
+
+Объекты писать в data.json
+
+===============
+Gulp
+===============
+
+По умолчанию сборка для jade  нужно раскомитить этот блок
+//gulp.task('see',function(){
+//        gulp.watch('app/css/*.styl',['stylus'])
+//        gulp.watch('app/html/**/*.html',['fileinclude'])
+//})
+
+Задержка при обновлении для того, чтобы успел отработать Jade
+gulp.task('serve', function () {
+    browserSync.init({
+        notify: false,
+        reloadDelay: 300, << ------ Задержка 
+        server: {
+            baseDir: "./app/",
+        }
+    });
+    gulp.watch(["./app/**/**.*","!./app/bower/"]).on("change", browserSync.reload);
+});
+
+==========
+Шрифты 
+==========
+
+https://icomoon.io/ - источник тут 
+/app/fonts/ - класть сюда
+
++ /app/css/icon/style.styl - сюда стили с правильными путями

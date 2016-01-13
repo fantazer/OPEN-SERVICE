@@ -15,8 +15,8 @@ var gulp = require("gulp"),
     jeet = require('jeet'),
     htmlhint = require("gulp-htmlhint"),
     rupture = require('rupture'),
-    jade = require('gulp-jade');    
-    
+    data = require('gulp-data'),
+    jade = require('gulp-jade');
 
 //Prefix my css
 gulp.task('prefix', function () {
@@ -27,32 +27,6 @@ gulp.task('prefix', function () {
         .pipe(gulp.dest('app/css/'));
 });
 
-
-//wiredep
-gulp.task('bower', function () {
-
-  gulp.src('./app/index.html')
-    .pipe(wiredep({
-      'directory' : "app/bower/",
-        "overrides":{
-            "bootstrap":{
-                "main":[
-                "./dist/css/bootstrap.min.css",
-                "./dist/js/bootstrap.min.js"
-
-                ]
-            },
-            "owlcar":{
-                "main":[
-                "./owl-carousel/owl.carousel.css",
-                "./owl-carousel/owl.carousel.min.js"
-
-                ]
-            }
-        }
-        }))
-        .pipe(gulp.dest('./app'));
-});
 
 //useref
 gulp.task('make', function () {
@@ -120,6 +94,9 @@ gulp.task('fileinclude', function() {
 //Jade
 gulp.task('jade', function() {
   gulp.src('./app/html/*.jade')
+    .pipe(data( function(file) {
+            return require('./app/html/data.json');
+    } ))
     .pipe(jade({
       pretty: true
     }))
@@ -132,17 +109,25 @@ gulp.task('see',function(){
         gulp.watch('app/css/*.styl',['stylus'])
 })
 
+//gulp.task('see',function(){
+//        gulp.watch('app/css/*.styl',['stylus'])
+//        gulp.watch('app/html/**/*.html',['fileinclude'])
+//})
+
 gulp.task('include',function(){
         gulp.watch('app/html/**/*.html',['fileinclude'])
 })
 //Watcher server
 gulp.task('serve', function () {
     browserSync.init({
+        notify: false,
+        reloadDelay: 300,
         server: {
-            baseDir: "./app/"
+            baseDir: "./app/",
+
         }
     });
-    gulp.watch(["./app/**.*","./app/css/**.*","./app/js/**.*","./app/html/**/**.*"]).on("change", browserSync.reload);
+    gulp.watch(["./app/**/**.*","!./app/bower/"]).on("change", browserSync.reload);
 });
 
 //Linters
@@ -158,4 +143,5 @@ gulp.task('html-lint', function() {
 gulp.task('use',[ 'prefix' , 'bower']);
 gulp.task('img',[ 'imagePng' , 'imageJpg']);
 gulp.task('default',[  'see' , 'serve' ]);
+
 
