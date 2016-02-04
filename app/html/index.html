@@ -5,7 +5,12 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Document</title>
-    <link rel="stylesheet" href="css/vendor.css">
+    <!--build:css css/vendor.css-->
+    <link rel="stylesheet" href="bower/normalize.css/normalize.css"/>
+    <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower/components-font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--endbuild-->
     <link rel="stylesheet" href="http://webfonts.ru/import/opensans.css"/>
   </head>
 </html>
@@ -45,14 +50,6 @@
           <div class="short-news-left-items-title">Главная новость</div>
           <div class="short-news-left-items-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias blanditiis esse non nesciunt dicta corporis voluptates neque, veniam cum voluptate excepturi dolorem incidunt nam nihil rerum rem saepe voluptatum a.</div>
         </div>
-        <div class="short-news-left-items">
-          <div class="short-news-left-items-title">Главная новость</div>
-          <div class="short-news-left-items-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias blanditiis esse non nesciunt dicta corporis voluptates neque, veniam cum voluptate excepturi dolorem incidunt nam nihil rerum rem saepe voluptatum a.</div>
-        </div>
-        <div class="short-news-left-items">
-          <div class="short-news-left-items-title">Главная новость</div>
-          <div class="short-news-left-items-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias blanditiis esse non nesciunt dicta corporis voluptates neque, veniam cum voluptate excepturi dolorem incidunt nam nihil rerum rem saepe voluptatum a.</div>
-        </div>
       </div>
       <div class="short-news-right">
         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt facilis, dolore similique maiores? Doloribus, asperiores. Iusto debitis tempora velit repellat sed autem, quaerat commodi, necessitatibus soluta quos libero voluptatibus eum. Beatae quasi iure quam eos consequuntur nobis quo laudantium, placeat neque aliquam doloribus, quod nemo. Illum vel, quia laboriosam temporibus non repellat ipsa esse, totam quisquam sunt explicabo eaque? Voluptates, excepturi sit. Iste tempore deleniti, quia, perspiciatis architecto nihil, commodi vero corporis dolores soluta ad nesciunt amet similique, quos laboriosam aliquid voluptatum ut! Nihil delectus nisi tempora, eaque nostrum! Eveniet a minima, accusamus omnis libero ducimus perspiciatis! Nobis aperiam, mollitia.</p>
@@ -60,5 +57,9 @@
     </div>
   </wraper>
   <!--Include Footer-->
-  <script src="scripts/combined.js"></script>
+  <!--build:js js/combined.js-->
+  <script src="bower/jquery/dist/jquery.js"></script>
+  <script src="bower/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+  <!-- endbuild-->
 </body>

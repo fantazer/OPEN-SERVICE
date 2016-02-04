@@ -1,22 +1,30 @@
-var gulp = require("gulp"),
-    autoprefixer = require('gulp-autoprefixer'),
-    useref = require('gulp-useref'),
-    gulpif = require('gulp-if'),
-    uglify = require('gulp-uglify'),
-    minifyCss = require('gulp-minify-css'),
-    gutil = require('gulp-util'),
-    stylus = require('gulp-stylus'),
-    sourcemaps = require('gulp-sourcemaps'),
-    browserSync = require('browser-sync').create(),
-    reload = browserSync.reload,
-    fileinclude = require('gulp-file-include'),
-    axis = require('axis'),
-    jeet = require('jeet'),
-    htmlhint = require("gulp-htmlhint"),
-    rupture = require('rupture'),
-    data = require('gulp-data'),
-    jade = require('gulp-jade'),
-    notify = require('gulp-notify');
+var projName ='';
+
+var gulp = require("gulp");
+var autoprefixer = require('gulp-autoprefixer');
+var useref = require('gulp-useref');
+var gulpif = require('gulp-if');
+var uglify = require('gulp-uglify');
+var minifyCss = require('gulp-minify-css');
+var gutil = require('gulp-util');
+var stylus = require('gulp-stylus');
+var sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync').create();
+var ftp = require( 'vinyl-ftp' );
+var reload = browserSync.reload;
+var fileinclude = require('gulp-file-include');
+var axis = require('axis');
+var jeet = require('jeet');
+var htmlhint = require("gulp-htmlhint");
+var rupture = require('rupture');
+var data = require('gulp-data');
+var jade = require('gulp-jade');
+var notify = require('gulp-notify');
+var pngquant = require('imagemin-pngquant');
+var imageminMozjpeg = require('imagemin-mozjpeg');
+var imagemin = require('gulp-imagemin');
+var runSequence = require('run-sequence');
+
 
 //Prefix my css
 gulp.task('prefix', function () {
@@ -28,18 +36,38 @@ gulp.task('prefix', function () {
 });
 
 //Show error
-function errorhandler() {
+function errorhandler(a) {
     var args = Array.prototype.slice.call(arguments);
     // Send error to notification center with gulp-notify
     notify.onError({
         title: 'Compile Error',
-        message: 'Ошибка в Jade',
+        message: a,
         // sound: true можно даже со звуком!
     }).apply(this, args);
 
     // Keep gulp from hanging on this task
     this.emit('end');
 };
+
+gulp.task('imagePng',function(){
+             return gulp.src('app/img/*.png')
+                 .pipe(imagemin({
+                     progressive: true,
+                     svgoPlugins: [{removeViewBox: false}],
+                     use: [pngquant({quality: '40', speed: 4})]
+                 }))
+                 .pipe(gulp.dest('dist/img/'));
+ });
+
+gulp.task('imageJpg',function(){
+            return gulp.src('app/img/*.jpg')
+            .pipe(imagemin({
+                    progressive: true,
+                    svgoPlugins: [{removeViewBox: false}],
+                    use: [imageminMozjpeg({quality: '60', speed: 11})]
+                }))
+            .pipe(gulp.dest('dist/img/'));
+});
 
 
 //useref
@@ -59,7 +87,7 @@ gulp.task('make', function () {
 //Ftp
 gulp.task( 'ftp', function() {
     var conn = ftp.create( {
-        host:     '',
+        host:     'one.web-kuznetcov.ru',
         user:     '',
         password: '',
         parallel: 21,
@@ -71,8 +99,8 @@ gulp.task( 'ftp', function() {
         'dist/*.html'
     ];
    return gulp.src(globs)
-        .pipe( conn.newer( 'httpdocs/ineed.site/' ) )
-        .pipe( conn.dest( 'httpdocs/ineed.site/' ) );
+        .pipe( conn.newer( 'httpdocs/one.web-kuznetcov.ru/'+projName ) )
+        .pipe( conn.dest( 'httpdocs/one.web-kuznetcov.ru/'+projName ) );
 
 } );
 
@@ -82,15 +110,17 @@ gulp.task('stylus', function () {
   gulp.src('./app/css/*.styl')
     .pipe(stylus({
         use:[rupture(),axis(),jeet()]
-        }))
+        })).on('error', errorhandler)
     .pipe(gulp.dest('./app/css/'))
 });
 
 //Source map
 gulp.task('sourcemaps', function () {
-  gulp.src('./app/css/*.styl')
+  gulp.src('./app/css/style.styl')
     .pipe(sourcemaps.init())
-    .pipe(stylus())
+    .pipe(stylus({
+        use:[rupture(),axis(),jeet()]
+        }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./app/css/'))
 });
@@ -126,11 +156,13 @@ gulp.task('see',function(){
 gulp.task('include',function(){
         gulp.watch('app/html/**/*.html',['fileinclude'])
 })
+
+
 //Watcher server
 gulp.task('serve', function () {
     browserSync.init({
         notify: false,
-        reloadDelay: 300,
+        //reloadDelay: 300,
         server: {
             baseDir: "./app/",
 
@@ -151,4 +183,12 @@ gulp.task('html-lint', function() {
 //default
 gulp.task('use',[ 'prefix' , 'bower']);
 gulp.task('img',[ 'imagePng' , 'imageJpg']);
-gulp.task('default',[  'see' , 'serve' ]);
+//gulp.task('default',[  'see' , 'serve' ]);
+
+gulp.task('default', function() {
+  runSequence('see');
+});
+
+gulp.task('build', function() {
+  runSequence('sourcemaps','prefix','imagePng','imageJpg','make');
+});
