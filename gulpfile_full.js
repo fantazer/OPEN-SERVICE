@@ -27,6 +27,7 @@ var notify = require('gulp-notify');
 var pngquant = require('imagemin-pngquant');
 var imageminMozjpeg = require('imagemin-mozjpeg');
 var imagemin = require('gulp-imagemin');
+var runSequence = require('run-sequence');
 
 
 //Prefix my css
@@ -118,7 +119,7 @@ gulp.task('stylus', function () {
 
 //Source map
 gulp.task('sourcemaps', function () {
-  return gulp.src('./app/css/style.styl')
+  gulp.src('./app/css/style.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus({
         use:[rupture(),axis(),jeet()]
@@ -139,7 +140,7 @@ gulp.task('fileinclude', function() {
 
 //Jade
 gulp.task('jade', function() {
-  gulp.src('./app/html/**/**.jade')
+  gulp.src('./app/html/*.jade')
     .pipe(data( function(file) {
             return require('./app/html/data.json');
     } ))
@@ -151,32 +152,46 @@ gulp.task('jade', function() {
 
 //Watcher
 gulp.task('see',function(){
-        gulp.watch('app/html/**/*.jade',gulp.series('jade'))
-        gulp.watch('app/css/*.styl',gulp.series('stylus'))
+        gulp.watch('app/html/**/*.jade',['jade'])
+        gulp.watch('app/css/*.styl',['stylus'])
 })
 
 gulp.task('include',function(){
-        gulp.watch('app/html/**/*.html',gulp.series('fileinclude'))
+        gulp.watch('app/html/**/*.html',['fileinclude'])
 })
 
 
+//Watcher server
 gulp.task('serve', function () {
     browserSync.init({
         notify: false,
+        //reloadDelay: 300,
         server: {
             baseDir: "./app/",
+
         }
     });
-    browserSync.watch(["./app/css/**/*.css","./app/*.html","./app/js/**.*"]).on("change", browserSync.reload);
+    gulp.watch(["./app/**/**.*","!./app/bower/"]).on("change", browserSync.reload);
 });
+
+//Linters
+gulp.task('html-lint', function() {
+    gulp.src("./app/*.html")
+      .pipe(htmlhint())
+      .pipe(htmlhint.reporter("htmlhint-stylish"))
+})
+
 
 
 //default
-gulp.task('img',gulp.series( 'imagePng' , 'imageJpg'));
-gulp.task('default', gulp.parallel('serve','see'));
-gulp.task('build',gulp.series('sourcemaps','copy:font','prefix','img','make'));
+gulp.task('use',[ 'prefix' , 'bower']);
+gulp.task('img',[ 'imagePng' , 'imageJpg']);
+//gulp.task('default',[  'see' , 'serve' ]);
 
-//gulp.task('default', function() {
-//  runSequence('see');
-//});
+gulp.task('default', function() {
+  runSequence('see');
+});
 
+gulp.task('build', function() {
+  runSequence('sourcemaps','prefix','imagePng','imageJpg','make');
+});

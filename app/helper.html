@@ -53,3 +53,33 @@ only for IE style pick to end file
   .r-tabs-nav{
           width 100%
   }
+
+
+==========
+HTML
+==========
+
+// style for radio button
+
+<input type="radio" id="r1" name="rr" />
+<label for="r1"><span></span>Radio Button 1</label>
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+// style for radio button - end
