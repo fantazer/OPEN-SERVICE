@@ -10,7 +10,6 @@ var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
-var gutil = require('gulp-util');
 var stylus = require('gulp-stylus');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
@@ -28,7 +27,6 @@ var pngquant = require('imagemin-pngquant');
 var imageminMozjpeg = require('imagemin-mozjpeg');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cached');
-var remember = require('gulp-remember');
 
 
 // ########## make img ###############
@@ -170,7 +168,6 @@ gulp.task( 'ftp', function() {
         user:     ftpConf.user,
         password: ftpConf.pass,
         parallel: 21,
-        log:      gutil.log
     } );
     var globs = [
         'dist/**',
