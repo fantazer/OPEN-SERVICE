@@ -27,25 +27,28 @@ var pngquant = require('imagemin-pngquant');
 var imageminMozjpeg = require('imagemin-mozjpeg');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cached');
+var newer = require('gulp-newer');
 
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
  return gulp.src('app/img/*.png')
+     .pipe(newer('dist/img/'))
      .pipe(imagemin({
          progressive: true,
          svgoPlugins: [{removeViewBox: false}],
-         use: [pngquant({quality: '40', speed: 4})]
+         use: [pngquant({quality: '70', speed: 11})]
      }))
      .pipe(gulp.dest('dist/img/'));
  });
 
 gulp.task('imageJpg',function(){
   return gulp.src('app/img/*.jpg')
+  .pipe(newer('dist/img/'))
   .pipe(imagemin({
           progressive: true,
           svgoPlugins: [{removeViewBox: false}],
-          use: [imageminMozjpeg({quality: '60', speed: 11})]
+          use: [imageminMozjpeg({quality: '70', speed: 11})]
       }))
   .pipe(gulp.dest('dist/img/'));
 });
@@ -63,7 +66,7 @@ gulp.task('prefix', function () {
 
 //Stylus
 gulp.task('stylus', function () {
-  return gulp.src('./app/css/*.styl',{since:gulp.lastRun('stylus')})
+  return gulp.src('./app/css/*.styl')
     .pipe(cache('stylus'))
     .pipe(stylus({
         use:[rupture(),axis(),jeet()]
@@ -111,7 +114,7 @@ gulp.task('jade', function() {
 });
 
 gulp.task('include',function(){
-        gulp.watch('app/html/**/*.html',gulp.series('fileinclude'))
+        gulp.watch('app/html/**/*.html',['fileinclude'])
 })
 // ########## make html end###############
 
@@ -194,15 +197,15 @@ gulp.task('serve', function () {
 
 //Watcher
 gulp.task('see',function(){
-        gulp.watch('app/html/**/*.jade',gulp.series('jade'))
-        gulp.watch('app/css/*.styl',gulp.series('stylus'))
+        gulp.watch('app/html/**/*.jade',['jade'])
+        gulp.watch('app/css/*.styl',['stylus'])
 })
 
 //default
-gulp.task('img',gulp.series( 'imagePng' , 'imageJpg'));
-gulp.task('default', gulp.parallel('serve','see'));
-gulp.task('build',gulp.series('sourcemaps','copy:font','prefix','img','make'));
-gulp.task('fast-build',gulp.series('stylus','prefix','jade','copy:js','ftp'));
+gulp.task('img',['imagePng' , 'imageJpg']);
+gulp.task('default', ['serve','see']);
+gulp.task('build',['sourcemaps','copy:font','prefix','img','make']);
+gulp.task('fast-build',['stylus','prefix','jade','copy:js','ftp']);
 
 
 
