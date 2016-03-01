@@ -3,19 +3,36 @@
 /*(function($){
     $(window).load(function(){
         $("a[rel='m_PageScroll2id']").mPageScroll2id({
-				    offset:200
+				    offset:200,
+				    highlightClass:"left-nav-el-active"
 				});
     });
  })(jQuery);*/ 
 
 $(document).ready(function(){
+
+	/* ###### init EasyDropDown style for selects  ######*/
+	/* ###### bower i easydropdown  ######*/
+	/*<select class="dropdown"> add class (dropdown)
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+    <option value="4">Option 4</option>
+</select>
+*/
+
 	/* ###### init bpopup  ######*/
 	/* ###### bower i bpopup  ######*/
-	// $('.button-modal').click(function(){
-	// 	$('.modal-block').bPopup({
-	// 			closeClass:'closer'
+	// Add class hide
+	// $('.section-main-form button').click(function(){
+	//	$('.section-modal').bPopup({
+	// 			closeClass:'section-modal-but',
+	//			position:['auto','auto'], // position center
+	//			follow: [true,false],
 	// 	}); 
-	// })
+	//})
+
+
 	/* ###### init stickUp  ######*/
 	/* ###### bower i sticky  ######*/
 	/*$("#sticker").sticky({topSpacing:0});*/
