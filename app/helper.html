@@ -12,6 +12,12 @@ include ./block_html/file.txt
 
 Объекты писать в data.json
 
+!!! MIXINS !!!
+mixin Article(name,text)
+    h2 #{name}
+    p #{text}
+
++Article('Первый Миксин','Lorem ipsum dolor sit amet')
 ===============
 Gulp
 ===============

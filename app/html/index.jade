@@ -4,11 +4,16 @@ html(lang="en")
 	include ./block_html/head.jade
 body
 	wraper
-		header
-		.main-news
-			- for (var x = 0; x <2; x++)
-				.main-news-items
-					.main-news-items-title Новая статья!!!
-					.main-news-items-text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores totam reiciendis magnam veritatis maiores, ipsa molestiae quidem, iure accusamus dicta, reprehenderit? Voluptatibus, corporis sunt velit ullam. Sequi magni, repellendus voluptatem!
+		h1 Test mixins
+		mixin Article(name,text)
+			h2 #{name}
+			p #{text}
+
+		+Article('Первый Миксин','Lorem ipsum dolor sit amet')
+		+Article('Второй Миксин','Lorem ipsum dolor sit amet')
+		P проверка
+		- each val in menu 
+			#{val['item']}
+
 	//Include Footer
 	include ./block_html/script.jade
