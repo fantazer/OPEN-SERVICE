@@ -3,19 +3,36 @@
 /*(function($){
     $(window).load(function(){
         $("a[rel='m_PageScroll2id']").mPageScroll2id({
-				    offset:200
+				    offset:200,
+				    highlightClass:"left-nav-el-active"
 				});
     });
  })(jQuery);*/ 
 
 $(document).ready(function(){
+
+	/* ###### init EasyDropDown style for selects  ######*/
+	/* ###### bower i easydropdown  ######*/
+	/*<select class="dropdown"> add class (dropdown)
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+    <option value="4">Option 4</option>
+</select>
+*/
+
 	/* ###### init bpopup  ######*/
 	/* ###### bower i bpopup  ######*/
-	// $('.button-modal').click(function(){
-	// 	$('.modal-block').bPopup({
-	// 			closeClass:'closer'
+	// Add class hide
+	// $('.section-main-form button').click(function(){
+	//	$('.section-modal').bPopup({
+	// 			closeClass:'section-modal-but',
+	//			position:['auto','auto'], // position center
+	//			follow: [true,false],
 	// 	}); 
-	// })
+	//})
+
+
 	/* ###### init stickUp  ######*/
 	/* ###### bower i sticky  ######*/
 	/*$("#sticker").sticky({topSpacing:0});*/
@@ -34,7 +51,20 @@ $(document).ready(function(){
 	//  	nav:true,
 	// 		navText:['<i class="fa fa-arrow-circle-o-left"></i>','<i class="fa fa-arrow-circle-o-right"></i>']
 	//  	}
-	//  ); 	
+	//  ); 
+	//		.owl-next,
+	//		.owl-prev
+	//			position absolute
+	//			top 50%
+	//			margin-top -20px
+	//			
+	//		.owl-carousel
+	//			position relative
+	//		.owl-prev
+	//			left -5%
+	//		.owl-next
+	//			right -5%
+	//
 
 	/* ###### init validate form  ######*/
 	/* ###### bower i jquery-validation ######*/
@@ -89,5 +119,10 @@ $(document).ready(function(){
 	// $(".play").fancybox();
 	// a(href="img/item-house-1.png" rel="group-element(для объединения в группу)") - image in a
 	//	img(src="img/item-house-1.png", alt="")
+	
+	/* ###### init scrollup  ######*/
+	/* ###### bower i scrollup  ######*/
+	/*http://www.jqueryscript.net/animation/Customizable-Back-To-Top-Button-with-jQuery-backTop.html*/
+	// $('.write-review-arrow').backTop();
 	
 })

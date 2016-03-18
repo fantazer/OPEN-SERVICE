@@ -12,6 +12,12 @@ include ./block_html/file.txt
 
 Объекты писать в data.json
 
+!!! MIXINS !!!
+mixin Article(name,text)
+    h2 #{name}
+    p #{text}
+
++Article('Первый Миксин','Lorem ipsum dolor sit amet')
 ===============
 Gulp
 ===============
@@ -61,8 +67,10 @@ HTML
 
 // style for radio button
 
-<input type="radio" id="r1" name="rr" />
-<label for="r1"><span></span>Radio Button 1</label>
+input#r1(type='radio', name='rr')
+    label(for='r1') 
+        span 
+        text Наличными
 
 input[type="checkbox"] {
     display:none;

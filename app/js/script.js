@@ -51,7 +51,20 @@ $(document).ready(function(){
 	//  	nav:true,
 	// 		navText:['<i class="fa fa-arrow-circle-o-left"></i>','<i class="fa fa-arrow-circle-o-right"></i>']
 	//  	}
-	//  ); 	
+	//  ); 
+	//		.owl-next,
+	//		.owl-prev
+	//			position absolute
+	//			top 50%
+	//			margin-top -20px
+	//			
+	//		.owl-carousel
+	//			position relative
+	//		.owl-prev
+	//			left -5%
+	//		.owl-next
+	//			right -5%
+	//
 
 	/* ###### init validate form  ######*/
 	/* ###### bower i jquery-validation ######*/
@@ -106,5 +119,10 @@ $(document).ready(function(){
 	// $(".play").fancybox();
 	// a(href="img/item-house-1.png" rel="group-element(для объединения в группу)") - image in a
 	//	img(src="img/item-house-1.png", alt="")
+	
+	/* ###### init scrollup  ######*/
+	/* ###### bower i scrollup  ######*/
+	/*http://www.jqueryscript.net/animation/Customizable-Back-To-Top-Button-with-jQuery-backTop.html*/
+	// $('.write-review-arrow').backTop();
 	
 })

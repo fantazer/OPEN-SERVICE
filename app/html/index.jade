@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-html(lang="en")
-	//Include header
-	include ./block_html/head.jade
+//Include style
+include ./block_html/style.jade
 body
+	//Include header
+	include ./block_html/header.jade
+	include ./block_html/elements/const.jade
 	wraper
 		h1 Test mixins
 		mixin Article(name,text)
@@ -11,9 +12,13 @@ body
 
 		+Article('Первый Миксин','Lorem ipsum dolor sit amet')
 		+Article('Второй Миксин','Lorem ipsum dolor sit amet')
-		P проверка
+		P проверка!!!
 		- each val in menu 
 			#{val['item']}
 
-	//Include Footer
-	include ./block_html/script.jade
+
+//Include footer
+include ./block_html/script.jade
+
+//Include script
+include ./block_html/script.jade
