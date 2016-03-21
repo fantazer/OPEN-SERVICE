@@ -9,16 +9,20 @@ body
 		mixin Article(name,text)
 			h2 #{name}
 			p #{text}
-
+		
 		+Article('Первый Миксин','Lorem ipsum dolor sit amet')
 		+Article('Второй Миксин','Lorem ipsum dolor sit amet')
-		P проверка!!!
-		- each val in menu 
-			#{val['item']}
+		P проверка!!!!
+		- each val in pages
+			p #{val.name}
 
+		h1 new file in page!!!!!!
+			
 
+	
 //Include footer
 include ./block_html/script.jade
 
 //Include script
 include ./block_html/script.jade
+

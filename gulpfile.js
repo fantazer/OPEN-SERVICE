@@ -26,7 +26,8 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cached');
 var newer = require('gulp-newer');
 var remember = require('gulp-remember');
-
+var sprite = require('gulp-sprite-generator');
+spritesmith = require('gulp.spritesmith');
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -51,6 +52,16 @@ gulp.task('imageJpg',function(){
   .pipe(gulp.dest('dist/img/'));
 });
 
+
+//Sprite
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('app/img/sprites/*.png').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: 'sprite.css'
+  }));
+  spriteData.img.pipe(gulp.dest('app/img')); // путь, куда сохраняем картинку
+  spriteData.css.pipe(gulp.dest('app/css')); // путь, куда сохраняем стили
+});
 // ########## make css ###############
 
 //Prefix my css
@@ -104,14 +115,12 @@ gulp.task('fileinclude', function() {
 gulp.task('jade', function() {
   return gulp.src('./app/html/**/**.jade')
     .pipe(cache('jade'))
-    .pipe(data( function(file) {
-            return require('./app/html/data.json');
-    } ))
-    .pipe(jade({
+     .pipe(jade({
       pretty: true
     }).on('error', errorhandler))
     .pipe(gulp.dest('./app/'))
 });
+
 
 gulp.task('include',function(){
         gulp.watch('app/html/**/*.html',['fileinclude'])
@@ -148,10 +157,6 @@ function errorhandler(a) {
 
 //useref
 gulp.task('make', function () {
-  gulp.src('app/css/style.css')
-  .pipe(gulp.dest('dist/css/'));
-  gulp.src('app/js/script.js')
-  .pipe(gulp.dest('dist/js/'));
   var assets = useref.assets();
   return gulp.src('app/*.html')
       .pipe(cache('make'))
@@ -167,7 +172,7 @@ gulp.task('make', function () {
 //Ftp
 gulp.task( 'ftp', function() {
     var conn = ftp.create( {
-        host:     'two.web-kuznetcov.ru',
+        host:     'one.web-kuznetcov.ru',
         user:     ftpConf.user,
         password: ftpConf.pass,
         parallel: 21,
@@ -177,8 +182,8 @@ gulp.task( 'ftp', function() {
         'dist/*.html'
     ];
    return gulp.src(globs)
-        .pipe( conn.newer( 'httpdocs/two.web-kuznetcov.ru/'+ftpConf.name) )
-        .pipe( conn.dest( 'httpdocs/two.web-kuznetcov.ru/'+ftpConf.name) );
+        .pipe( conn.newer( 'httpdocs/one.web-kuznetcov.ru/'+ftpConf.name) )
+        .pipe( conn.dest( 'httpdocs/one.web-kuznetcov.ru/'+ftpConf.name) );
 
 } );
 
@@ -190,21 +195,21 @@ gulp.task('serve', function () {
             baseDir: "./app/",
         }
     });
-    browserSync.watch(["./app/css/**/*.css","./app/*.html","./app/js/**.*"]).on("change", browserSync.reload);
+    browserSync.watch(["./app/css/**/*.css","./app/*.html","./app/js/**.*",'app/html/data.json']).on("change", browserSync.reload);
 });
 
 // ########## make service end ###############
 
 //Watcher
 gulp.task('see',function(){
-        gulp.watch('app/html/**/*.jade',['jade'])
+        gulp.watch('app/html/**/**.*',['jade'])
         gulp.watch('app/css/*.styl',['stylus'])
 })
 
 //default
 gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default', ['serve','see']);
-gulp.task('build',['copy:font','prefix','img','make']);
+gulp.task('build',['copy:font','prefix','img','make','ftp']);
 gulp.task('fast-build',['stylus','prefix','jade','copy:js','ftp']);
 
 

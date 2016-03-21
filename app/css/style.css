@@ -1,55 +1,12 @@
-body {
-  font-family: 'Open Sans';
-}
 a:hover {
   text-decoration: none;
 }
+a {
+  text-decoration: none;
+  color: #222;
+}
 .bold {
   font-weight: 600;
-}
-.fz14 {
-  font-size: 14px !important;
-}
-.fz10 {
-  font-size: 10px !important;
-}
-.fz30 {
-  font-size: 30px !important;
-}
-.fz36 {
-  font-size: 36px !important;
-}
-.fz20 {
-  font-size: 20px !important;
-}
-.boldfont {
-  font-family: Fira Sans;
-}
-.flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.p60 {
-  padding: 60px;
-}
-.tal {
-  text-align: left !important;
-}
-.dib {
-  display: inline-block;
-}
-.w100per {
-  width: 100%;
 }
 @font-face {
   font-family: 'icomoon';
@@ -109,6 +66,28 @@ iframe {
   -ms-interpolation-mode: bicubic;
   display: block;
 }
+.allpage {
+  background: #eee;
+}
+.allpage wraper {
+  background: #fff;
+  height: 100vh;
+}
+.allpage wraper a {
+  padding: 20px;
+  display: block;
+  -webkit-box-shadow: 1px 1px 20px #eee;
+          box-shadow: 1px 1px 20px #eee;
+  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+}
+.allpage wraper a:hover {
+  background: #6d2d74;
+  color: #fff;
+}
 wraper {
   *zoom: 1;
   width: auto;
@@ -131,6 +110,4 @@ wraper:after {
 }
 body {
   font-family: 'Open Sans';
-  padding: 40px;
-  transtion: all 0.4s;
 }

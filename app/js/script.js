@@ -1,3 +1,4 @@
+
 /* ###### init skrol to point  ######*/
 /* ###### bower i page-scroll-to-id  ######*/
 /*(function($){
@@ -43,6 +44,18 @@ $(document).ready(function(){
 	/* ###### bower i OwlCarousel2 ######*/
 	// $("#owl-example").owlCarousel({
 	//  	items : 1,
+	//		responsive : {
+	//		 		0:{
+	//				 	items : 1
+	//			 	},
+	//			 	768:{
+	//				 	items : 2
+	//			 	},
+	//			 	960:{
+	//				 	items : 2
+	//			 	},
+	//			 	
+	//		  },
 	//  	margin:50,
 	//  	autoHeight : true,
 	//  	pagination : false,
