@@ -1,5 +1,5 @@
-var fs = require('fs');
-var ftpConf = JSON.parse(fs.readFileSync('./ftp.json'));
+//var fs = require('fs');
+//var ftpConf = JSON.parse(fs.readFileSync('./ftp.json'));
 
 var gulp = require("gulp");
 var autoprefixer = require('gulp-autoprefixer');
@@ -26,8 +26,7 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cached');
 var newer = require('gulp-newer');
 var remember = require('gulp-remember');
-var sprite = require('gulp-sprite-generator');
-spritesmith = require('gulp.spritesmith');
+var spritesmith = require('gulp.spritesmith');
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -157,7 +156,15 @@ function errorhandler(a) {
 
 //useref
 gulp.task('make', function () {
+   
   var assets = useref.assets();
+  gulp.src('app/js/*.js')
+  .pipe(uglify())
+  .pipe(gulp.dest('dist/js/'));
+
+   gulp.src('app/css/style.css')
+  .pipe(minifyCss())
+  .pipe(gulp.dest('dist/css/'));
   return gulp.src('app/*.html')
       .pipe(cache('make'))
       .pipe(assets)
@@ -209,7 +216,8 @@ gulp.task('see',function(){
 //default
 gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default', ['serve','see']);
-gulp.task('build',['copy:font','prefix','img','make','ftp']);
+//gulp.task('build',['copy:font','prefix','img','make','ftp']);
+gulp.task('build',['copy:font','prefix','img','make']);
 gulp.task('fast-build',['stylus','prefix','jade','copy:js','ftp']);
 
 

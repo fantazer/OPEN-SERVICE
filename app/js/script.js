@@ -10,6 +10,15 @@
     });
  })(jQuery);*/ 
 
+/* ###### init slide mobile menu  ######*/
+/* ###### bower i jQuery.mmenu  ######*/
+/* ###### more  https://gist.github.com/fantazer/a35dfd0f7b8dea3b1cf6  ######*/
+/*
+	$("#my-menu").mmenu({
+		extensions: ["effect-menu-slide", "effect-listitems-slide"] - for animation
+	});
+*/
+
 $(document).ready(function(){
 
 	/* ###### init EasyDropDown style for selects  ######*/

@@ -6,8 +6,8 @@
 
 border-box-html()
 fluid-media() //care flex box image
-rupture.scale = 0 400px 600px 780px 960px 1300px
-rupture.scale-names = 'xs' 'sm' 'm' 'l' 'xl' 'hd'
+rupture.scale = 0 320px 640px 768px 1024px 1280px
+rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 
 jeet.gutter = 1
 
 .allpage
@@ -31,3 +31,6 @@ wraper
 
 body
 	font-family 'Open Sans'
+	background red
+	+below('xl')
+		font-size 12px

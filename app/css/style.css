@@ -48,14 +48,12 @@ a {
   content: "\e016";
 }
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 img,
 video,
@@ -76,13 +74,10 @@ iframe {
 .allpage wraper a {
   padding: 20px;
   display: block;
-  -webkit-box-shadow: 1px 1px 20px #eee;
-          box-shadow: 1px 1px 20px #eee;
+  box-shadow: 1px 1px 20px #eee;
   margin-bottom: 10px;
-  -webkit-border-radius: 5px;
-          border-radius: 5px;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s;
+  border-radius: 5px;
+  transition: all 0.4s;
 }
 .allpage wraper a:hover {
   background: #6d2d74;
@@ -110,4 +105,10 @@ wraper:after {
 }
 body {
   font-family: 'Open Sans';
+  background: #d13f19;
+}
+@media only screen and (max-width: 1280px) {
+  body {
+    font-size: 12px;
+  }
 }
