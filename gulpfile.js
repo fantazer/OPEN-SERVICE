@@ -27,6 +27,7 @@ var cache = require('gulp-cached');
 var newer = require('gulp-newer');
 var remember = require('gulp-remember');
 var spritesmith = require('gulp.spritesmith');
+var runSequence = require('run-sequence');
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -217,7 +218,10 @@ gulp.task('see',function(){
 gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default', ['serve','see']);
 //gulp.task('build',['copy:font','prefix','img','make','ftp']);
-gulp.task('build',['copy:font','prefix','img','make']);
+gulp.task('build',function(){
+  runSequence('copy:font','prefix','img','make','ftp')
+  });
+//gulp.task('build',['copy:font','prefix','img','make']);
 gulp.task('fast-build',['stylus','prefix','jade','copy:js','ftp']);
 
 
