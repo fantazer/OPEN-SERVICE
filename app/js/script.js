@@ -28,8 +28,50 @@ $(document).ready(function(){
     <option value="2">Option 2</option>
     <option value="3">Option 3</option>
     <option value="4">Option 4</option>
-</select>
-*/
+	</select>
+	*/
+	
+
+	/* ###### init nice select style for selects  ######*/
+	/* ###### bower i jquery-nice-select  ######*/
+	/* ###### https://gist.github.com/fantazer/8eac81e51c93ee8ecbf21f400bff470d  ######*/
+	/* $('select').niceSelect();*/
+	/*<select >
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+    <option value="4">Option 4</option>
+	</select>
+	*/
+
+		/* ###### init datepicker  ######*/
+		/* ###### bower i bootstrap-datepicker  ######*/
+		/* ###### https://gist.github.com/fantazer/de1d6079f71350c32afbb5eb442f38db  ######*/
+		/*$('.input-date').datepicker({
+			language: 'ru'
+		});*/
+
+
+	/* ###### init RangeSLider  ######*/
+	/* ###### bower i --save-dev nouislider  ######*/
+	/* ###### https://gist.github.com/fantazer/2bdc4e6a63708e143718ffa7c32eae17  ######*/
+
+	/*var slider = document.getElementById('rangeSlider'); //Элемент
+
+	noUiSlider.create(slider, {
+		start: [0, 100],
+		connect: true,
+		step: 10,
+		range: {
+			'min': 0,
+			'max': 100,
+		},
+		pips: { // Show a scale with the slider
+			mode: 'steps',
+			density: 4
+		}
+	});*/
+
 
 	/* ###### init bpopup  ######*/
 	/* ###### bower i bpopup  ######*/
