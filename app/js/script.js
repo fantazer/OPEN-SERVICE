@@ -49,7 +49,13 @@ $(document).ready(function(){
 		/* ###### https://gist.github.com/fantazer/de1d6079f71350c32afbb5eb442f38db  ######*/
 		/*$('.input-date').datepicker({
 			language: 'ru'
-		});*/
+		});
+		//for close on select date
+		$('.input-date').on('changeDate', function(ev){
+		    $(this).datepicker('hide');
+		});
+
+*/
 
 
 	/* ###### init RangeSLider  ######*/
