@@ -113,7 +113,7 @@ gulp.task('fileinclude', function() {
 
 //Jade
 gulp.task('jade', function() {
-  return gulp.src('./app/html/**/**.jade')
+  return gulp.src('./app/html/**/**/*.jade')
     .pipe(cache('jade'))
      .pipe(jade({
       pretty: true
