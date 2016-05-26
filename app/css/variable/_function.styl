@@ -1,7 +1,7 @@
 flex(a){
 	if(a=='mid'){
 		display: flex;
-	  justify-content: center;
+		justify-content: center;
 	  align-items: center;
 	}
 	if(a==between){
@@ -74,3 +74,21 @@ placeholder()
 		color:#565d6b
 	input:-ms-input-placeholder
 		color:#565d6b
+		
+//main cont
+center(val)
+	*zoom: 1
+	width: auto
+	max-width: val
+	float: none
+	display: block
+	margin-right: auto
+	margin-left: auto
+	padding-left: 0
+	padding-right: 0
+	&:before,
+	&:after 
+		content: ''
+		display: table
+	&:after 
+		clear: both

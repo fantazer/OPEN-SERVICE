@@ -1,9 +1,9 @@
 //Include style
-include ./block_html/style.jade
+include block_html/_style.jade
 body.allpage
 	//Include header
-	include ./block_html/header.jade
-	include ./block_html/elements/const.jade
+	include block_html/elements/_header.jade
+	include block_html/elements/_const.jade
 	wraper
 		h1 Список страниц
 		- each page in pages
@@ -12,8 +12,6 @@ body.allpage
 
 
 //Include footer
-include ./block_html/script.jade
+include block_html/_script.jade
 
-//Include script
-include ./block_html/script.jade
 

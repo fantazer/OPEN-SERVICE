@@ -1,12 +1,12 @@
 //Include style
-include ./block_html/style.jade
+include block_html/_style.jade
 body
 	//Include header
-	include ./block_html/header.jade
-	include ./block_html/elements/const.jade
+	include block_html/elements/_header.jade
+	include block_html/elements/_const.jade
 
 	wraper
-		h1 Test mixins
+		h1 Test mixins  
 		mixin Article(name,text)
 			h2 #{name}
 			p #{text}
@@ -18,12 +18,8 @@ body
 			p #{val.name}
 
 		h1 new file in page!!!
-			
-			p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor corporis us lorem
-			
+		.icon-russia
 
-	
 //Include footer
-include ./block_html/script.jade
-
+include ./block_html/_script.jade
 

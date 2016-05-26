@@ -12,10 +12,6 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var ftp = require( 'vinyl-ftp' );
 var reload = browserSync.reload;
-var fileinclude = require('gulp-file-include');
-var axis = require('axis');
-var jeet = require('jeet');
-var htmlhint = require("gulp-htmlhint");
 var rupture = require('rupture');
 var data = require('gulp-data');
 var jade = require('gulp-jade');
@@ -28,6 +24,8 @@ var newer = require('gulp-newer');
 var remember = require('gulp-remember');
 var spritesmith = require('gulp.spritesmith');
 var runSequence = require('run-sequence');
+var progeny = require('gulp-progeny');
+var filter = require('gulp-filter');
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -56,11 +54,23 @@ gulp.task('imageJpg',function(){
 //Sprite
 gulp.task('sprite', function () {
   var spriteData = gulp.src('app/img/sprites/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css'
+    imgName: '../img/sprite.png',
+    cssName: 'sprite.css',
+    cssOpts: {
+        cssSelector: function (item) {
+            // If this is a hover sprite, name it as a hover one (e.g. 'home-hover' -> 'home:hover')
+            if (item.name.indexOf('-hover') !== -1) {
+                return '.icon-' + item.name.replace('-hover', ':hover');
+                // Otherwise, use the name as the selector (e.g. 'home' -> 'home')
+            }
+            else {
+                return '.icon-' + item.name;
+            }
+        }
+     }
   }));
-  spriteData.img.pipe(gulp.dest('app/img')); // путь, куда сохраняем картинку
-  spriteData.css.pipe(gulp.dest('app/css')); // путь, куда сохраняем стили
+  spriteData.img.pipe(gulp.dest('app/img/')); // путь, куда сохраняем картинку
+  spriteData.css.pipe(gulp.dest('app/css/icon/')); // путь, куда сохраняем стили
 });
 // ########## make css ###############
 
@@ -68,7 +78,6 @@ gulp.task('sprite', function () {
 gulp.task('prefix', function () {
     return gulp.src('app/css/style.css')
         .pipe(cache('prefix'))
-        .pipe(remember('prefix'))
         .pipe(autoprefixer({
             browsers: ['last 15 versions']
         }))
@@ -77,12 +86,17 @@ gulp.task('prefix', function () {
 
 //Stylus
 gulp.task('stylus', function () {
-  return gulp.src('./app/css/*.styl')
+  return gulp.src(['app/css/**/*.styl'])
     .pipe(cache('stylus'))
+    .pipe(progeny({
+            regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
+        }))
+    .pipe(filter(['**/*.styl', '!**/_*.styl']))
     .pipe(stylus({
-        use:[rupture(),axis(),jeet()]
+        use:[rupture()],
+        'include css': true
         })).on('error', errorhandler)
-    .pipe(gulp.dest('./app/css/'))
+    .pipe(gulp.dest('app/css/'))
   
 });
 
@@ -91,7 +105,7 @@ gulp.task('sourcemaps', function () {
   return gulp.src('./app/css/style.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus({
-        use:[rupture(),axis(),jeet()]
+        use:[rupture()]
         }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./app/css/'))
@@ -101,30 +115,19 @@ gulp.task('sourcemaps', function () {
 
 // ########## make html ###############
 
-//Include html
-gulp.task('fileinclude', function() {
-  gulp.src('./app/html/*.html')
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: './app/html/block_html/'
-    }))
-    .pipe(gulp.dest('./app/'));
-});
-
-//Jade
 gulp.task('jade', function() {
-  return gulp.src('./app/html/**/**/*.jade')
-    .pipe(cache('jade'))
-     .pipe(jade({
-      pretty: true
+  gulp.src('app/html/*.jade')
+    //.pipe(jadeInheritance({basedir: '/app/'}))
+    .pipe(jade({
+      pretty: '\t',
+     cache:'true'
     }).on('error', errorhandler))
-    .pipe(gulp.dest('./app/'))
+    .pipe(gulp.dest('app/'))
+    .on('end', browserSync.reload);
 });
 
 
-gulp.task('include',function(){
-        gulp.watch('app/html/**/*.html',['fileinclude'])
-})
+
 // ########## make html end###############
 
 
@@ -199,30 +202,34 @@ gulp.task( 'ftp', function() {
 gulp.task('serve', function () {
     browserSync.init({
         notify: false,
+        reloadDelay: 300,
         server: {
-            baseDir: "./app/",
+            baseDir: "app/",
         }
     });
-    browserSync.watch(["./app/css/**/*.css","./app/*.html","./app/js/**.*",'app/html/data.json']).on("change", browserSync.reload);
+    browserSync.watch(["app/css/**/*.styl" ,"app/js/**.*"]).on("change", browserSync.reload);
 });
 
 // ########## make service end ###############
 
 //Watcher
 gulp.task('see',function(){
-        gulp.watch('app/html/**/**.*',['jade'])
-        gulp.watch('app/css/*.styl',['stylus'])
+        gulp.watch('app/html/**/*.jade', ['jade']);
+        gulp.watch(['app/css/**/*.styl'],['stylus'])
 })
 
 //default
 gulp.task('img',['imagePng' , 'imageJpg']);
-gulp.task('default', ['serve','see']);
-//gulp.task('build',['copy:font','prefix','img','make','ftp']);
+gulp.task('default',['see','serve'] );
+
 gulp.task('build',function(){
+    runSequence('copy:font','prefix','img','make')
+});
+gulp.task('build-ftp',function(){
   runSequence('copy:font','prefix','img','make','ftp')
-  });
-//gulp.task('build',['copy:font','prefix','img','make']);
-gulp.task('fast-build',['stylus','prefix','jade','copy:js','ftp']);
+});
+
+//gulp.task('fast-build',['stylus','prefix','jade','copy:js','ftp']);
 
 
 

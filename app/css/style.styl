@@ -1,36 +1,23 @@
-@import "variable/*"
 @import "icon/*"
-@import 'axis'
-@import 'jeet'
 @import 'rupture'
+@import "variable/*"
+@import "include/*"
+@import "icon/sprite.css"
+//@import "part.styl"
 
-border-box-html()
-fluid-media() //care flex box image
-rupture.scale = 0 320px 640px 768px 1024px 1280px
-rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 
-jeet.gutter = 1
+rupture.scale = 0 400px 600px 780px 960px 1300px
+rupture.scale-names = 'xs' 'sm' 'm' 'l' 'xl' 'hd'
 
-.allpage
-	background #eee
-	wraper
-		background white
-		height 100vh
-		a
-			padding 20px
-			display block
-			box-shadow 1px 1px 20px #eee
-			margin-bottom 10px
-			border-radius 5px
-			tr(all)
-			&:hover
-				background #6D2D74
-				color white
-wraper
+.main
 	center(1200px)
-	padding 20px
-
-body
-	font-family 'Open Sans'
+.wraper
+	width 1180px
+	margin 0 auto
+.header-menu
+	height 40px
 	background #e1e1e1
-	+below('xl')
-		font-size 12px
+	flex(around)
+	&-el
+		color black
+.content
+	width 100%

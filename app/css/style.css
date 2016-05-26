@@ -1,13 +1,3 @@
-a:hover {
-  text-decoration: none;
-}
-a {
-  text-decoration: none;
-  color: #222;
-}
-.bold {
-  font-weight: 600;
-}
 @font-face {
   font-family: 'icomoon';
   src: url("/fonts/icomoon.eot?u78ibn");
@@ -47,6 +37,30 @@ a {
 .icon-wallet:before {
   content: "\e016";
 }
+.type {
+  font-size: 14px;
+  line-height: 17px;
+}
+.type-mid {
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+.type-small {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+}
+a:hover {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.bold {
+  font-weight: 600;
+}
 html {
   box-sizing: border-box;
 }
@@ -64,26 +78,38 @@ iframe {
   -ms-interpolation-mode: bicubic;
   display: block;
 }
-.allpage {
-  background: #eee;
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
 }
-.allpage wraper {
-  background: #fff;
-  height: 100vh;
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-russia:hover {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 640px;
+  height: 480px;
 }
-.allpage wraper a {
-  padding: 20px;
-  display: block;
-  box-shadow: 1px 1px 20px #eee;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  transition: all 0.4s;
+.icon-russia {
+  background-image: url(../img/sprite.png);
+  background-position: -640px 0px;
+  width: 640px;
+  height: 480px;
 }
-.allpage wraper a:hover {
-  background: #6d2d74;
-  color: #fff;
-}
-wraper {
+
+.main {
   *zoom: 1;
   width: auto;
   max-width: 1200px;
@@ -93,22 +119,29 @@ wraper {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  padding: 20px;
 }
-wraper:before,
-wraper:after {
+.main:before,
+.main:after {
   content: '';
   display: table;
 }
-wraper:after {
+.main:after {
   clear: both;
 }
-body {
-  font-family: 'Open Sans';
-  background: #e1e1e1;
+.wraper {
+  width: 1180px;
+  margin: 0 auto;
 }
-@media only screen and (max-width: 1280px) {
-  body {
-    font-size: 12px;
-  }
+.header-menu {
+  height: 40px;
+  background: #e1e1e1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-menu-el {
+  color: #000;
+}
+.content {
+  width: 100%;
 }
