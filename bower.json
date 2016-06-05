@@ -15,10 +15,10 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "normalize.css": "~3.0.3",
-    "bootstrap": "~3.3.5",
-    "components-font-awesome": "~4.3.0"
+    "components-font-awesome": "~4.3.0",
+    "flexbox-grid-stylus": "^3.1.0"
   },
   "devDependencies": {
-    "flexbox-grid-stylus": "^3.1.0"
+    "owl.carousel": "OwlCarousel2#^2.1.5"
   }
 }

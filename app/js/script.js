@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 
 	/* ###### init OwlCarousel2  ######*/
-	/*!!! add class owlCarousel !!!*/
+	/*!!! add class .owl-carousel !!!*/
 	/* ###### bower i OwlCarousel2 ######*/
 	// $("#owl-example").owlCarousel({
 	//  	items : 1,
@@ -116,7 +116,7 @@ $(document).ready(function(){
 	//  	margin:50,
 	//  	autoHeight : true,
 	//  	pagination : false,
-	//  	autoPlay : true,
+	//  	autoplay : true,
 	//  	singleItem:true,
 	//  	nav:true,
 	// 		navText:['<i class="fa fa-arrow-circle-o-left"></i>','<i class="fa fa-arrow-circle-o-right"></i>']
