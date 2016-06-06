@@ -207,7 +207,7 @@ gulp.task('serve', function () {
             baseDir: "app/",
         }
     });
-    browserSync.watch(["app/css/**/*.styl" ,"app/js/**.*"]).on("change", browserSync.reload);
+    browserSync.watch(["app/css/**/*.css" ,"app/js/**.*"]).on("change", browserSync.reload);
 });
 
 // ########## make service end ###############
