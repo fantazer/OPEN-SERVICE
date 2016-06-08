@@ -20,7 +20,21 @@
 */
 
 $(document).ready(function(){
+	/* ###### For SlideToggle Elements  ######*/
+	/*var hideToggle = function(targetClick,toggleEl) {
+		$(targetClick).click(function(event){
+				event.stopPropagation();
+				$(toggleEl).slideToggle("fast");
+		});
+		$(toggleEl).on("click", function (event) {
+			event.stopPropagation();
+		});
+		$(document).on("click", function () {
+				$(toggleEl).hide();
+		});
+	}
 
+	hideToggle('.icon-bars','.top-menu_link');*/
 	/* ###### init EasyDropDown style for selects  ######*/
 	/* ###### bower i easydropdown  ######*/
 	/*<select class="dropdown"> add class (dropdown)

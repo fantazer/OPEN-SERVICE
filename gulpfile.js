@@ -26,7 +26,8 @@ var spritesmith = require('gulp.spritesmith');
 var runSequence = require('run-sequence');
 var progeny = require('gulp-progeny');
 var filter = require('gulp-filter');
-
+var fs = require('fs');
+var fileName = process.env.NODE_ENV;
 // ########## make img ###############
 gulp.task('imagePng',function(){
  return gulp.src('app/img/*.png')
@@ -211,6 +212,14 @@ gulp.task('serve', function () {
 });
 
 // ########## make service end ###############
+
+//create File
+gulp.task('create',function(){
+       fs.writeFileSync('app/css/include/_'+ fileName+'.styl','');
+       fs.writeFileSync('app/html/block_html/elements/_'+ fileName+'.jade','');
+})
+
+
 
 //Watcher
 gulp.task('see',function(){
