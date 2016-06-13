@@ -25,6 +25,8 @@ var runSequence = require('run-sequence');
 var progeny = require('gulp-progeny');
 var filter = require('gulp-filter');
 var fs = require('fs');
+var prettify = require('gulp-prettify');
+
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -176,6 +178,13 @@ gulp.task('make', function () {
       .pipe(gulpif('*.css', minifyCss()))
       .pipe(assets.restore())
       .pipe(useref())
+      .pipe(prettify({
+        'unformatted': ['pre', 'code'],
+        'indent_with_tabs': true,
+        'preserve_newlines': true,
+        'brace_style': 'expand',
+        'end_with_newline': true
+      }))
       .pipe(gulp.dest('dist'));
 });
 
