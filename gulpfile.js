@@ -1,5 +1,3 @@
-//var fs = require('fs');
-//var ftpConf = JSON.parse(fs.readFileSync('./ftp.json'));
 
 var gulp = require("gulp");
 var autoprefixer = require('gulp-autoprefixer');
@@ -27,7 +25,7 @@ var runSequence = require('run-sequence');
 var progeny = require('gulp-progeny');
 var filter = require('gulp-filter');
 var fs = require('fs');
-var fileName = process.env.NODE_ENV;
+
 // ########## make img ###############
 gulp.task('imagePng',function(){
  return gulp.src('app/img/*.png')
@@ -183,6 +181,7 @@ gulp.task('make', function () {
 
 //Ftp
 gulp.task( 'ftp', function() {
+    var ftpConf = JSON.parse(fs.readFileSync('./ftp.json'));
     var conn = ftp.create( {
         host:     'one.web-kuznetcov.ru',
         user:     ftpConf.user,
@@ -219,12 +218,28 @@ gulp.task('create',function(){
        fs.writeFileSync('app/html/block_html/elements/_'+ fileName+'.jade','');
 })
 
+//create File
+gulp.task('file',function(){
+  var FileCreate = JSON.parse(fs.readFileSync('./file.json'));
+  for(var FileElement in FileCreate){
+     if (!fs.existsSync('app/css/include/_'+ FileCreate[FileElement]+'.styl' ))
+      {
+        fs.writeFileSync('app/css/include/_'+ FileCreate[FileElement]+'.styl','');
+      }
+      if (!fs.existsSync('app/html/block_html/elements/_'+ FileCreate[FileElement]+'.jade'))
+      {
+        fs.writeFileSync('app/html/block_html/elements/_'+ FileCreate[FileElement]+'.jade','');
+      }
+     
+    }
+})
 
 
 //Watcher
 gulp.task('see',function(){
         gulp.watch('app/html/**/*.jade', ['jade']);
-        gulp.watch(['app/css/**/*.styl'],['stylus'])
+        gulp.watch(['app/css/**/*.styl'],['stylus']);
+        gulp.watch(['./file.json'],['file']);
 })
 
 //default
