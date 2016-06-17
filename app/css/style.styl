@@ -1,12 +1,31 @@
-@import "icon/*"
 @import 'rupture'
-@import "variable/*"
-@import "include/*"
+@import "variable/_constant.styl"
+@import "variable/_function.styl"
+
+/* -------------- style for sprite --------------*/
 @import "icon/sprite.css"
-//@import "part.styl"
+
+/* -------------- style for font-icon --------------*/
+@import "icon/style.css"
+
+/* -------------- style for reset --------------*/
+@import "variable/_default.styl"
+
+/* -------------- style for elements --------------*/
+@import "variable/_element.styl"
 
 rupture.scale = 0 480px 768px 992px 1200px
 rupture.scale-names = 'xs' 'sm' 'md' 'lg'
 
-/* -------------- include/ --------------*/
+/* -------------- style basic --------------*/
+body
+	font-size 12px
+	font-family PT Sans
+
+
+/* -------------- style for header --------------*/
+@import "include/_header.styl"
+
+/* -------------- style for footer --------------*/
+@import "include/_footer.styl"
 

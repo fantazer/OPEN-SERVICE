@@ -212,9 +212,9 @@ gulp.task('serve', function () {
     browserSync.init({
         notify: false,
         reloadDelay: 300,
+        //tunnel: true,
+        //tunnel: "travelpage",
         server: {
-            //tunnel: true,
-            //tunnel: "webpage",
             baseDir: "app/",
         }
     });
