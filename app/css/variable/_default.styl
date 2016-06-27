@@ -33,7 +33,14 @@ textarea
 	line-height 12px
 .hidden
 	display none  !important
-
+.clearfix 
+	zoom 1
+.clearfix:before,
+.clearfix:after 
+	content ""
+	display table
+.clearfix:after 
+	clear both
 //Add Fonts
 //@font-face {font-family: "NAME_FONT";
 //  src: url("../fonts/NAME_FONT.eot"); /* IE9*/

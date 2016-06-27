@@ -113,6 +113,7 @@ $(document).ready(function(){
 	/* ###### init OwlCarousel2  ######*/
 	/*!!! add class .owl-carousel !!!*/
 	/* ###### bower i OwlCarousel2 ######*/
+	/* ###### https://gist.github.com/fantazer/0a352da2cee7ebf083f0 ######*/
 	// $("#owl-example").owlCarousel({
 	//  	items : 1,
 	//		responsive : {
@@ -129,7 +130,7 @@ $(document).ready(function(){
 	//		  },
 	//  	margin:50,
 	//  	autoHeight : true,
-	//  	pagination : false,
+	//  	dots: false,
 	//  	autoplay : true,
 	//  	singleItem:true,
 	//  	nav:true,
@@ -149,6 +150,18 @@ $(document).ready(function(){
 	//		.owl-next
 	//			right -5%
 	//
+	//		.owl-dots
+	//			width 100%
+	//			flex(mid)
+	//			margin-top 10px
+	//		.owl-dot
+	//			round()
+	//			margin 5px
+	//			width 10px
+	//			height 10px
+	//			background red
+	//		.owl-dot.active
+	//			background green
 
 	/* ###### init validate form  ######*/
 	/* ###### bower i jquery-validation ######*/

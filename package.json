@@ -31,7 +31,9 @@
     "run-sequence": "^1.1.5",
     "rupture": "^0.6.1",
     "vinyl-ftp": "^0.4.4",
-    "gulp-prettify": "^0.4.0"
+    "gulp-prettify": "^0.4.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-webshot": "^0.2.1"
   },
   "dependencies": {}
 }

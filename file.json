@@ -1,3 +1,10 @@
 /*{
-  "":"",
+	"block":{
+		"one":"testBl",
+		"two":"testB2"
+	},
+	"page":{
+		"one":"getPage-1",
+		"two":"getPAge-2"
+	}
 }*/

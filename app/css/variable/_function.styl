@@ -2,17 +2,17 @@ flex(a){
 	if(a=='mid'){
 		display: flex;
 		justify-content: center;
-	  align-items: center;
+		align-items: center;
 	}
 	if(a==between){
 		display: flex;
-	  justify-content: space-between;
-	  align-items: center;
+		justify-content: space-between;
+		align-items: center;
 	}
 	if(a==around){
 		display: flex;
-	  justify-content: space-around;
-	  align-items: center;
+		justify-content: space-around;
+		align-items: center;
 	}
 }
 
@@ -30,25 +30,25 @@ tr(a){
 
 font(a){
 	if(a==ubuntu){
-		font-family: 'Ubuntu';
+		font-family 'Ubuntu';
 	}
 	if(a==pt){
-  	font-family: 'PT Sans';
+		font-family 'PT Sans';
 	}
 	if(a==zopa){
-  	font-family: 'ZopaCyr';
+		font-family 'ZopaCyr';
 	}
 }
 
 but-flat(a,b,c,d=10px,e=20px){
-	border: 0;
-  background: a;
-  color: b;
-  padding: d e;
-  width: c;
-  display: block;
-  border-radius: 5px;
-  box-shadow: 0px 3px 0px darken(a, 45%); 
+	border 0
+	background a
+	color b
+	padding d e
+	width c
+	display block
+	border-radius 5px
+	box-shadow 0px 3px 0px darken(a, 45%) 
 }
 
 f()
@@ -100,3 +100,116 @@ center(val)
 		display: table
 	&:after 
 		clear: both
+
+triangle($direction = 'up', $size = 10px, $color = #000)
+	width 0
+	height 0
+	if $direction == 'up'
+		border-left $size solid transparent
+		border-right $size solid transparent
+		border-bottom $size solid $color
+	else if $direction == 'down'
+		border-left $size solid transparent
+		border-right $size solid transparent
+		border-top $size solid $color
+	else if $direction == 'left'
+		border-top $size solid transparent
+		border-bottom $size solid transparent
+		border-right $size solid $color
+	else if $direction == 'right'
+		border-top $size solid transparent
+		border-bottom $size solid transparent
+		border-left $size solid $color
+
+gradient($color1, $color2 = null, $strength = 10%)
+	// shift args if one color mode
+	if (typeof($color2) is 'unit')
+		$strength = $color2
+		$color2 = null
+	$start = $color2 ? $color1 : lighten($color1, $strength)
+	$end = $color2 ? $color2 : darken($color1, $strength)
+	background: $start
+	background: $end linear-gradient(180deg, $start, $end) repeat-x
+
+hover-underline($border-size = 1px, $type = 'solid', $color = null)
+	border-bottom: $border-size unquote($type) transparent
+	&:hover
+		border-bottom: $border-size unquote($type) $color
+
+table($border = true, $striped = true, $condensed = false)
+	max-width: 100%
+	border-collapse: collapse
+	border-spacing: 0
+	width: 100%
+	margin-bottom: 18px
+
+	th, td
+		padding: 8px
+		line-height: 18px
+		text-align: left
+		vertical-align: top
+		border-top: 1px solid #ddd
+
+	th
+		font-weight: bold
+
+	thead th
+		vertical-align: bottom
+
+	thead:first-child tr th
+	thead:first-child tr td
+		border-top: 0
+
+	tbody + tbody
+		border-top: 2px solid #ddd
+
+	if $condensed
+		th, td
+			padding: 4px 5px
+
+	if $border
+		border: 1px solid #ddd
+		border-collapse: separate
+		*border-collapse: collapsed
+		border-radius: 4px
+
+		th + th, td + td, th + td, td + th
+			border-left: 1px solid #ddd
+
+		thead:first-child tr:first-child th
+		tbody:first-child tr:first-child th
+		tbody:first-child tr:first-child td
+			border-top: 0
+
+		thead:first-child tr:first-child th:first-child
+		tbody:first-child tr:first-child td:first-child
+			border-radius: 4px 0 0 0
+
+		thead:first-child tr:first-child th:last-child
+		tbody:first-child tr:first-child td:last-child
+			border-radius: 0 4px 0 0
+
+		thead:last-child tr:last-child th:first-child
+		tbody:last-child tr:last-child td:first-child
+			border-radius: 0 0 0 4px
+
+		thead:last-child tr:last-child th:last-child
+		tbody:last-child tr:last-child td:last-child
+			border-radius: 0 0 4px 0
+
+	if $striped
+		tbody tr:nth-child(odd) td
+		tbody tr:nth-child(odd) th
+			background-color: #f9f9f9
+
+		tbody tr:hover td
+		tbody tr:hover th
+			background-color: #f5f5f5
+
+breadcrumb($character = "/", $spacing = 10px, $divider-color = #CDCDCD)
+	inline-list: $spacing
+
+	li:not(:last-child):after
+		content: $character
+		margin-left: $spacing
+		color: $divider-color

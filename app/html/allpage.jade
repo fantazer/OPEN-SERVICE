@@ -4,11 +4,14 @@ body.allpage
 	//Include header
 	include block_html/elements/_header.jade
 	include block_html/elements/_const.jade
-	wraper
+	.main-cont
 		h1 Список страниц
-		- each page in pages
-			a(href="#{page.href}") #{page.name} <br>
-			
+		.all-page
+				- each page in pages
+					a(href="#{page.href}.html").all-page__el
+						img(src="img/dist/#{page.href}.png", alt="")
+						.all-page__info
+							.all-page__title #{page.name}
 
 
 //Include footer
