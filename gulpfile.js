@@ -106,6 +106,7 @@ gulp.task('prefix', function () {
 gulp.task('stylus', function () {
   return gulp.src(['app/css/**/*.styl'])
     .pipe(cache('stylus'))
+    .pipe(sourcemaps.init())
     .pipe(progeny({
             regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
         }))
@@ -114,8 +115,8 @@ gulp.task('stylus', function () {
         use:[rupture()],
         'include css': true
         })).on('error', errorhandler)
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('app/css/'))
-  
 });
 
 //Source map
@@ -221,13 +222,13 @@ gulp.task( 'ftp', function() {
         host:     'one.web-kuznetcov.ru',
         user:     ftpConf.user,
         password: ftpConf.pass,
-        parallel: 21,
+        parallel: 1,
+        maxConnections:1
     } );
     var globs = [
-        'dist/**',
-        'dist/*.html'
+        'dist/**/**.*'
     ];
-   return gulp.src(globs)
+   return gulp.src(globs, {buffer: false})
         .pipe( conn.newer( 'httpdocs/one.web-kuznetcov.ru/'+ftpConf.name) )
         .pipe( conn.dest( 'httpdocs/one.web-kuznetcov.ru/'+ftpConf.name) );
 

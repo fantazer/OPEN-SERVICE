@@ -20,6 +20,13 @@
 */
 
 $(document).ready(function(){
+	
+	/* ###### For only ies  ######*/
+	//if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
+	//	//code
+	//}
+
+
 	/* ###### For SlideToggle Elements  ######*/
 	/*var hideToggle = function(targetClick,toggleEl) {
 		$(targetClick).click(function(event){
