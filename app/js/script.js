@@ -20,6 +20,16 @@
 */
 
 $(document).ready(function(){
+
+	//message for old ie 9
+	function isIE () {
+	  var myNav = navigator.userAgent.toLowerCase();
+	  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+	}
+	if (isIE () == 9) {
+		$('body').append('<div class="old-browser"><div class="old-browser-text"> Браузер не поддерживается =(</div></div>')
+		$("html,body").css("overflow","hidden");
+	}
 	
 	/* ###### For only ies  ######*/
 	//if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
@@ -226,7 +236,31 @@ $(document).ready(function(){
 	
 	/* ###### init scrollup  ######*/
 	/* ###### bower i scrollup  ######*/
-	/*http://www.jqueryscript.net/animation/Customizable-Back-To-Top-Button-with-jQuery-backTop.html*/
-	// $('.write-review-arrow').backTop();
+	/*$.scrollUp({
+        scrollName: 'arrow-top',      // Element ID
+        scrollDistance: 500,         // Distance from top/bottom before showing element (px)
+        scrollFrom: 'top',           // 'top' or 'bottom'
+        scrollSpeed: 600,            // Speed back to top (ms)
+        easingType: 'linear',        // Scroll to top easing (see http://easings.net/)
+        animation: 'fade',           // Fade, slide, none
+        animationSpeed: 200,         // Animation speed (ms)
+        scrollTrigger: false,        // Set a custom triggering element. Can be an HTML string or jQuery object
+        scrollTarget: false,         // Set a custom target element for scrolling to. Can be element or number
+        scrollText: 'вверх', // Text for element, can contain HTML
+        scrollTitle: false,          // Set a custom <a> title if required.
+        scrollImg: false,            // Set true to use image
+        activeOverlay: false,        // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        zIndex: 2147483647           // Z-Index for the overlay
+    });*/
+		/*#arrow-top
+			bottom 20px
+			right 20px
+			background red
+			color white
+			up()
+			padding 10px 20px
+			br(4px)
+			opacity .7
+			display none*/
 	
 })
