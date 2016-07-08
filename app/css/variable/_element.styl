@@ -1,0 +1,114 @@
+.type-xs
+	+below(768px)
+		font-size 8px
+	font-size 10px
+	
+.type-sm
+	+below(768px)
+		font-size 10px
+	font-size 12px
+
+.type
+	+below(768px)
+		font-size 14px
+	font-size 16px
+
+.type-md
+	+below(768px)
+		font-size 18px
+	font-size 24px
+
+.type-lg
+	+below(768px)
+		font-size 20px
+	font-size 32px
+	
+.btn
+	up()
+	display inline-block
+	margin-bottom 20px
+	br(4px)
+	tr(all)
+	
+.btn--sm
+	font-size 12px
+	padding 10px 20px
+	
+.btn--md
+	font-size 20px
+	padding 10px 30px
+
+.btn--red
+	background red
+	color white
+	&:hover
+		background darken(red,10)
+
+.section
+	+below(768px)
+		padding 30px 0
+		.btn
+			width 100%
+			text-align center
+	padding 90px 0px
+
+@-webkit-keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.shrink
+	position fixed
+	top 0
+	left 0
+	background white
+	width 100%
+	margin 0
+	animation:  slideInDown  1s 1 ease-in-out
+
+input,textarea
+	border 0px
+	padding 10px 15px
+	border 1px solid grey
+	
+button
+	up()
+	br(4px)
+	tr(all)
+	border 0px
+	display inline-block
+	margin-bottom 20px
+	font-size 20px
+	padding 10px 30px
+	background red
+	color white
+	&:hover
+		background darken(red,10)
+	form
+		display block
+
+table
+	table(true,true)
+.small-only
+	+below(768px)
+		display table
+	display none
+.large-only
+	+below(768px)
+		display none

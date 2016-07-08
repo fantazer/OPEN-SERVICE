@@ -27,7 +27,8 @@ var fs = require('fs');
 var prettify = require('gulp-prettify');
 var combineMq = require('gulp-combine-mq');
 var webshot=require('gulp-webshot');
-
+var createFile = require('create-file');
+var jadeGlobbing  = require('gulp-jade-globbing');
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -104,7 +105,7 @@ gulp.task('prefix', function () {
 
 //Stylus
 gulp.task('stylus', function () {
-  return gulp.src(['app/css/**/*.styl'])
+  return gulp.src(['app/css/**/*.styl','app/module/**/*.styl'])
     .pipe(cache('stylus'))
     .pipe(sourcemaps.init())
     .pipe(progeny({
@@ -135,8 +136,9 @@ gulp.task('sourcemaps', function () {
 // ########## make html ###############
 
 gulp.task('jade', function() {
-  gulp.src('app/html/*.jade')
+  gulp.src(['app/html/*.jade','app/module/**/*.jade',])
     //.pipe(jadeInheritance({basedir: '/app/'}))
+    .pipe(jadeGlobbing())
     .pipe(jade({
       pretty: '\t',
      cache:'true'
@@ -263,22 +265,13 @@ gulp.task('file',function(){
         var obj = FileCreate[key];
         if(key=="block"){
           for (var prop in obj) {
-             if (!fs.existsSync('app/css/include/_'+ obj[prop]+'.styl' ))
-               {
-                 fs.writeFileSync('app/css/include/_'+ obj[prop]+'.styl','');
-               }
-             if (!fs.existsSync('app/html/block_html/elements/_'+ obj[prop]+'.jade'))
-              {
-                fs.writeFileSync('app/html/block_html/elements/_'+ obj[prop]+'.jade','');
-              }
+              createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.jade' ,"// block "+obj[prop]+"\nmixin " +obj[prop]+"()" , function (err) { });
+              createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.styl' , "// block "+obj[prop], function (err) { });
           }
         }
         if(key=="page"){
           for (var prop in obj) {
-             if (!fs.existsSync('app/html/'+ obj[prop]+'.jade' ))
-               {
-                 fs.writeFileSync('app/html/'+ obj[prop]+'.jade','');
-               }
+              createFile('app/html/'+ obj[prop]+'.jade'  ,"", function (err) { });
           }
         }
   }
@@ -287,8 +280,8 @@ gulp.task('file',function(){
 
 //Watcher
 gulp.task('see',function(){
-        gulp.watch('app/html/**/*.jade', ['jade']);
-        gulp.watch(['app/css/**/*.styl'],['stylus']);
+        gulp.watch(['app/html/**/*.jade','app/module/**/*.jade',], ['jade']);
+        gulp.watch(['app/css/**/*.styl','app/module/**/*.styl'],['stylus']);
         gulp.watch(['./file.json'],['file']);
 })
 
@@ -303,17 +296,11 @@ gulp.task('build-ftp',function(){
   runSequence('copy:font','prefix','img','make','beauty','ftp')
 });
 
-//gulp.task('fast-build',['stylus','prefix','jade','copy:js','ftp']);
-
 
 
 gulp.task('fast-see',function(){
         gulp.watch(["./app/css/**/**.styl","./app/html/**.jade","./app/js/**.*"] ,gulp.series('fast-build'))
 })
 
-
-//gulp.task('default', function() {
-//  runSequence('see');
-//});
 
 

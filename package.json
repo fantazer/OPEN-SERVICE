@@ -33,7 +33,9 @@
     "vinyl-ftp": "^0.4.4",
     "gulp-prettify": "^0.4.0",
     "gulp-combine-mq": "^0.4.0",
-    "gulp-webshot": "^0.2.1"
+    "gulp-webshot": "^0.2.1",
+    "create-file": "^1.0.1",
+     "gulp-jade-globbing": "^0.1.9"
   },
   "dependencies": {}
 }

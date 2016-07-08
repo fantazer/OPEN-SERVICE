@@ -73,15 +73,15 @@ up()
 bold()
 	font-weight 700
 	
-placeholder()
+placeholder(color)
 	input::-webkit-input-placeholder 
-		color:#565d6b
+		color:color
 	input::-moz-placeholder
-		color:#565d6b
+		color:color
 	input:-moz-placeholder
-		color:#565d6b
+		color:color
 	input:-ms-input-placeholder
-		color:#565d6b
+		color:color
 		
 //main cont
 center(val)
@@ -208,8 +208,36 @@ table($border = true, $striped = true, $condensed = false)
 
 breadcrumb($character = "/", $spacing = 10px, $divider-color = #CDCDCD)
 	inline-list: $spacing
-
 	li:not(:last-child):after
 		content: $character
 		margin-left: $spacing
 		color: $divider-color
+
+size( values... )
+	if length( values ) == 1
+		width values[ 0 ] || auto
+		height values[ 0 ] || auto
+	else
+		width values[ 0 ] if values[ 0 ] != false
+		height values[ 1 ] if values[ 1 ] != false
+
+ul-reset()
+	ul
+		margin 0
+		padding 0
+		{block}
+
+ol-reset()
+	ol
+		margin 0
+		padding 0
+		{block}
+
+cf()
+	&:before, &:after
+		display table
+		content ""
+	&:after
+		clear both
+	.lt-ie8 &
+		zoom 1

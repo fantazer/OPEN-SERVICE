@@ -4,22 +4,13 @@ body
 	//Include header
 	include block_html/elements/_header.jade
 	include block_html/elements/_const.jade
+	include ../module/**/*.jade
 
-	wraper
-		h1 Test mixins  
-		mixin Article(name,text)
-			h2 #{name}
-			p #{text}
-		
-		+Article('Первый Миксин','Lorem ipsum dolor sit amet')
-		+Article('Второй Миксин','Lorem ipsum dolor sit amet')
-		P проверка!!!!
-		- each val in pages
-			p #{val.name}
+	.main-cont
 
-		h1 new file in page!!!
-		.icon-russia
 
-//Include footer
-include ./block_html/_script.jade
+	//Include footer
+	include ./block_html/_script.jade
+
+
 
