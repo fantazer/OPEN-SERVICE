@@ -1,4 +1,5 @@
 @import 'rupture'
+@import 'jeet'
 @import "variable/_constant.styl"
 @import "variable/_function.styl"
 @import "variable/_ie.styl"
@@ -20,6 +21,7 @@
 
 rupture.scale = 0 480px 768px 992px 1200px
 rupture.scale-names = 'xs' 'sm' 'md' 'lg'
+jeet.gutter = 1
 
 /* -------------- style basic --------------*/
 body
@@ -34,7 +36,6 @@ body
 		width 1200px
 
 /* -------------- style from include block --------------*/
-@import "include/*"
-
+@import "../module/**/*"
 
 

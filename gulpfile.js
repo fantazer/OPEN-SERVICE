@@ -10,6 +10,7 @@ var browserSync = require('browser-sync').create();
 var ftp = require( 'vinyl-ftp' );
 var reload = browserSync.reload;
 var rupture = require('rupture');
+var jeet = require('jeet');
 var data = require('gulp-data');
 var jade = require('gulp-jade');
 var notify = require('gulp-notify');
@@ -113,7 +114,7 @@ gulp.task('stylus', function () {
         }))
     .pipe(filter(['**/*.styl', '!**/_*.styl']))
     .pipe(stylus({
-        use:[rupture()],
+        use:[rupture(),jeet()],
         'include css': true
         })).on('error', errorhandler)
     .pipe(sourcemaps.write())

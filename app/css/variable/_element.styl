@@ -31,12 +31,18 @@
 	tr(all)
 	
 .btn--sm
+	font-size 10px
+	padding 5px 10px
+	@extend .btn
+.btn--md
 	font-size 12px
 	padding 10px 20px
+	@extend .btn
 	
-.btn--md
+.btn--lg
 	font-size 20px
 	padding 10px 30px
+	@extend .btn
 
 .btn--red
 	background red
@@ -112,3 +118,6 @@ table
 .large-only
 	+below(768px)
 		display none
+
+.icon
+	display inline 
