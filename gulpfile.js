@@ -108,7 +108,7 @@ gulp.task('prefix', function () {
 gulp.task('stylus', function () {
   return gulp.src(['app/css/**/*.styl','app/module/**/*.styl'])
     .pipe(cache('stylus'))
-    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(progeny({
             regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
         }))
@@ -291,10 +291,10 @@ gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default',['see','serve'] );
 
 gulp.task('build',function(){
-    runSequence('copy:font','prefix','img','make','beauty')
+    runSequence('copy:font','prefix','img','beauty','make')
 });
 gulp.task('build-ftp',function(){
-  runSequence('copy:font','prefix','img','make','beauty','ftp')
+  runSequence('copy:font','prefix','img','beauty','make','ftp')
 });
 
 
