@@ -138,7 +138,10 @@ gulp.task('sourcemaps', function () {
 
 gulp.task('jade', function() {
   gulp.src(['app/html/*.jade','app/module/**/*.jade',])
-    //.pipe(jadeInheritance({basedir: '/app/'}))
+    .pipe(progeny({
+            regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
+        }))
+    .pipe(filter(['**/*.jade', '!**/_*.jade']))
     .pipe(jadeGlobbing())
     .pipe(jade({
       pretty: '\t',
@@ -266,7 +269,7 @@ gulp.task('file',function(){
         var obj = FileCreate[key];
         if(key=="block"){
           for (var prop in obj) {
-              createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.jade' ,"// block "+obj[prop]+"\nmixin " +obj[prop]+"()" , function (err) { });
+              createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.jade' ,"mixin " +obj[prop]+"()"+"\n \t //block "+obj[prop], function (err) { });
               createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.styl' , "// block "+obj[prop], function (err) { });
           }
         }
