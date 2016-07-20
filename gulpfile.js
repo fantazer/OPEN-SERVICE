@@ -118,6 +118,7 @@ gulp.task('stylus', function () {
         'include css': true
         })).on('error', errorhandler)
     .pipe(sourcemaps.write())
+
     .pipe(gulp.dest('app/css/'))
 });
 
@@ -147,6 +148,13 @@ gulp.task('jade', function() {
       pretty: '\t',
      cache:'true'
     }).on('error', errorhandler))
+    .pipe(prettify({
+            'unformatted': ['pre', 'code'],
+            'indent_with_tabs': true,
+            'preserve_newlines': true,
+            'brace_style': 'expand',
+            'end_with_newline': true
+      }))
     .pipe(gulp.dest('app/'))
     .on('end', browserSync.reload);
 });
@@ -190,9 +198,7 @@ gulp.task('make', function () {
   gulp.src('app/js/*.js')
   .pipe(uglify())
   .pipe(gulp.dest('dist/js/'));
-
    gulp.src('app/css/style.css')
-  //.pipe(minifyCss())
   .pipe(combineMq({
           beautify: true
   }))
@@ -269,8 +275,8 @@ gulp.task('file',function(){
         var obj = FileCreate[key];
         if(key=="block"){
           for (var prop in obj) {
-              createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.jade' ,"mixin " +obj[prop]+"()"+"\n \t //block "+obj[prop], function (err) { });
-              createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.styl' , "// block "+obj[prop], function (err) { });
+              createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.jade' ,"mixin " +obj[prop]+"()"+"\n\t//block "+obj[prop]+"\n\t//block "+obj[prop]+' end', function (err) { });
+              createFile('app/module/'+obj[prop]+'/_'+obj[prop]+'.styl' , "//! block "+obj[prop]+"\n//!block "+obj[prop]+' end', function (err) { });
           }
         }
         if(key=="page"){
@@ -294,10 +300,10 @@ gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default',['see','serve'] );
 
 gulp.task('build',function(){
-    runSequence('copy:font','prefix','img','beauty','make')
+    runSequence('copy:font','prefix','img','make')
 });
 gulp.task('build-ftp',function(){
-  runSequence('copy:font','prefix','img','beauty','make','ftp')
+  runSequence('copy:font','prefix','img','make','ftp')
 });
 
 
