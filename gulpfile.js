@@ -30,6 +30,7 @@ var combineMq = require('gulp-combine-mq');
 var webshot=require('gulp-webshot');
 var createFile = require('create-file');
 var jadeGlobbing  = require('gulp-jade-globbing');
+var wiredep = require('wiredep').stream;
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -147,7 +148,8 @@ gulp.task('jade', function() {
     .pipe(jade({
       pretty: '\t',
      cache:'true'
-    }).on('error', errorhandler))
+    })
+    .on('error', errorhandler))
     .pipe(prettify({
             'unformatted': ['pre', 'code'],
             'indent_with_tabs': true,
@@ -159,6 +161,28 @@ gulp.task('jade', function() {
     .on('end', browserSync.reload);
 });
 
+//wiredep
+gulp.task('bower', function () {
+  gulp.src('app/html/block_html/*.jade')
+    .pipe(wiredep({
+      'directory' : "app/bower/",
+        "overrides":{
+            "bootstrap":{
+                "main":[
+                "./dist/css/bootstrap.min.css",
+                "./dist/js/bootstrap.min.js"
+                ]
+            },
+            "owl.carousel":{
+                "main":[
+                "dist/assets/owl.carousel.css",
+                "dist/owl.carousel.min.js"
+                ]
+            }
+        }
+        }))
+        .pipe(gulp.dest('app/html/block_html/'));
+});
 
 
 // ########## make html end###############
@@ -293,6 +317,7 @@ gulp.task('see',function(){
         gulp.watch(['app/html/**/*.jade','app/module/**/*.jade',], ['jade']);
         gulp.watch(['app/css/**/*.styl','app/module/**/*.styl'],['stylus']);
         gulp.watch(['./file.json'],['file']);
+        gulp.watch(['./bower.json'],['bower']);
 })
 
 //default

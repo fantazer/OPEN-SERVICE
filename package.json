@@ -36,7 +36,8 @@
     "run-sequence": "^1.1.5",
     "rupture": "^0.6.1",
     "vinyl-ftp": "^0.4.4",
-    "jeet": "6.1.2"
+    "jeet": "6.1.2",
+    "wiredep": "^4.0.0"
   },
   "dependencies": {}
 }
