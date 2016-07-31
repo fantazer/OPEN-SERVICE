@@ -16,9 +16,10 @@
     "jquery": "~2.1.4",
     "normalize.css": "~3.0.3",
     "components-font-awesome": "~4.3.0",
-    "flexbox-grid-stylus": "^3.1.0"
+    "flexbox-grid-stylus": "^3.1.0",
+     "owl.carousel": "OwlCarousel2#^2.1.5"
   },
   "devDependencies": {
-    "owl.carousel": "OwlCarousel2#^2.1.5"
+   
   }
 }
