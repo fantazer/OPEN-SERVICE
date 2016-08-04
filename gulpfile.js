@@ -325,10 +325,10 @@ gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default',['see','serve'] );
 
 gulp.task('build',function(){
-    runSequence('copy:font','prefix','img','make')
+    runSequence('jade','stylus','copy:font','prefix','img','make')
 });
 gulp.task('build-ftp',function(){
-  runSequence('copy:font','prefix','img','make','ftp')
+  runSequence('jade','stylus','copy:font','prefix','img','make','ftp')
 });
 
 
