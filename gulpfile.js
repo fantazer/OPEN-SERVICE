@@ -255,7 +255,7 @@ gulp.task('beauty',function(){
 gulp.task( 'ftp', function() {
     var ftpConf = JSON.parse(fs.readFileSync('./ftp.json'));
     var conn = ftp.create( {
-        host:     'one.web-kuznetcov.ru',
+        host:     'kuznetcov.org',
         user:     ftpConf.user,
         password: ftpConf.pass,
         parallel: 1,
@@ -265,8 +265,8 @@ gulp.task( 'ftp', function() {
         'dist/**/**.*'
     ];
    return gulp.src(globs, {buffer: false})
-        .pipe( conn.newer( 'httpdocs/one.web-kuznetcov.ru/'+ftpConf.name) )
-        .pipe( conn.dest( 'httpdocs/one.web-kuznetcov.ru/'+ftpConf.name) );
+        .pipe( conn.newer( 'kuznetcov.org/'+ftpConf.name) )
+        .pipe( conn.dest( 'kuznetcov.org/'+ftpConf.name) );
 
 } );
 
