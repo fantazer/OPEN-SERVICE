@@ -31,6 +31,7 @@ var webshot=require('gulp-webshot');
 var createFile = require('create-file');
 var jadeGlobbing  = require('gulp-jade-globbing');
 var wiredep = require('wiredep').stream;
+var clean = require('gulp-clean');
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -365,7 +366,6 @@ gulp.task('see',function(){
         gulp.watch(['app/html/**/*.jade','app/module/**/*.jade',], ['jade']);
         gulp.watch(['app/css/**/*.styl','app/module/**/*.styl'],['stylus']);
         gulp.watch(['./file.json'],['file']);
-        gulp.watch(['./bower.json'],['bower']);
 })
 
 //default
