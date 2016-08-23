@@ -8,10 +8,10 @@
   "devDependencies": {
     "browser-sync": "^2.10.1",
     "create-file": "^1.0.1",
-     "gulp-clean": "^0.3.2",
     "gulp": "*",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-cached": "^1.1.0",
+    "gulp-clean": "^0.3.2",
     "gulp-combine-mq": "^0.4.0",
     "gulp-data": "^1.2.1",
     "gulp-filter": "*",
@@ -34,10 +34,11 @@
     "gulp.spritesmith": "^6.2.1",
     "imagemin-mozjpeg": "^5.1.0",
     "imagemin-pngquant": "^4.2.0",
+    "jeet": "6.1.2",
+    "process-nextick-args": "^1.0.7",
     "run-sequence": "^1.1.5",
     "rupture": "^0.6.1",
     "vinyl-ftp": "^0.4.4",
-    "jeet": "6.1.2",
     "wiredep": "^4.0.0"
   },
   "dependencies": {}
