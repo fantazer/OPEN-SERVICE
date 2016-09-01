@@ -9,9 +9,10 @@ $(document).ready(function(){
 	  var myNav = navigator.userAgent.toLowerCase();
 	  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
 	}
-	if (isIE () == 9) {
-		$('body').append('<div class="old-browser"><div class="old-browser-text"> Браузер не поддерживается =(</div></div>')
-		$("html,body").css("overflow","hidden");
+
+	if (isIE() < 10 &&  isIE()) {
+		$('body').empty();
+		$('body').prepend('<div class="old-browser"><div class="old-browser-text"> Браузер не поддерживается =(</div></div>');
 	}
 
 	

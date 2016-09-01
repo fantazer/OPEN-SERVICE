@@ -1,0 +1,13 @@
+rootUrl: http://yandex.com
+gridUrl: http://ondemand.saucelabs.com/wd/hub
+browsers:
+ fireFox:
+    desiredCapabilities:
+      platform: 'WINDOWS 8'
+      browserName: chrome
+      version: 48.0
+ IE9:
+    desiredCapabilities:
+      platform: 'WINDOWS 7'
+      browserName: internet explorer
+      version: 9.0

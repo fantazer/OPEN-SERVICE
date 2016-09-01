@@ -19,63 +19,40 @@ iframe
 	border 0
 	-ms-interpolation-mode bicubic
 	display block
-input
-	outline: 0 !important
-textarea 
+
+input,textarea
+	border 0px
+	padding 10px 15px
+	border 1px solid grey
 	resize: none
+	outline: 0 !important
 	
-.type
-	font-size 14px
-	line-height 17px
-.type-small
-	font-size 10px
-	font-weight 400
-	line-height 12px
-.hidden
-	display none  !important
-.clearfix 
-	zoom 1
-.clearfix:before,
-.clearfix:after 
-	content ""
-	display table
-.clearfix:after 
-	clear both
+button
+	up()
+	br(4px)
+	tr(all)
+	border 0px
+	display inline-block
+	margin-bottom 20px
+	font-size 20px
+	padding 10px 30px
+	background red
+	color white
+	&:hover
+		background darken(red,10)
+	form
+		display block
+
+table
+	table(true,true)
+
+//responsive table	
+.small-only
+	+below(768px)
+		display table
+	display none
 	
+.large-only
+	+below(768px)
+		display none
 
-@font-face {font-family: "main";
-	src: url("../fonts/main.eot"); /* IE9*/
-	src: url("../fonts/main.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-	url("../fonts/main.woff") format("woff"), /* chrome、firefox */
-	url("../fonts/main.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-	url("../fonts/main.svg#Futura LT W01 Book") format("svg"); /* iOS 4.1- */
-}
-
-//Add Fonts
-//@font-face {font-family: "NAME_FONT";
-//  src: url("../fonts/NAME_FONT.eot"); /* IE9*/
-//  src: url("../fonts/NAME_FONT.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-//  url("../fonts/NAME_FONT.woff2") format("woff2"), /* chrome、firefox */
-//  url("../fonts/NAME_FONT.woff") format("woff"), /* chrome、firefox */
-//  url("../fonts/NAME_FONT.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-//  url("../fonts/NAME_FONT.svg#Futura LT W01 Book") format("svg"); /* iOS 4.1- */
-//}
-
-//Add fotn rub write .rub a - (a,b,c,d - change type font)
-/*@font-face {
-    font-family: 'RUB';
-    src: url('../fonts/rouble-webfont.eot');
-    src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/rouble-webfont.woff2') format('woff2'),
-         url('../fonts/rouble-webfont.woff') format('woff'),
-         url('../fonts/rouble-webfont.ttf') format('truetype'),
-         url('../fonts/rouble-webfont.svg#als_rublregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-.rub{
-	font-family 'RUB'
-	font-style normal 
-}*/

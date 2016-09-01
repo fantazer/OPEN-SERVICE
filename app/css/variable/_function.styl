@@ -213,13 +213,20 @@ breadcrumb($character = "/", $spacing = 10px, $divider-color = #CDCDCD)
 		margin-left: $spacing
 		color: $divider-color
 
-size( values... )
-	if length( values ) == 1
-		width values[ 0 ] || auto
-		height values[ 0 ] || auto
+size(numbers...)
+	regex = '^[^%]*%[^%]*$'
+	parsed = unit(numbers[0])
+	type = match(regex, parsed) ? '%' : 'px'
+
+	if length(numbers) > 1
+		parsedH = unit(numbers[1])
+		typeH = match(regex, parsedH) ? '%' : 'px'
+
+		width: unit(numbers[0], type)
+		height: unit(numbers[1], typeH)
 	else
-		width values[ 0 ] if values[ 0 ] != false
-		height values[ 1 ] if values[ 1 ] != false
+		width: unit(numbers, type)
+		height: unit(numbers, type)
 
 ul-reset()
 	ul
@@ -241,3 +248,7 @@ cf()
 		clear both
 	.lt-ie8 &
 		zoom 1
+
+text-elips()
+	text-overflow ellipsis
+	overflow hidden

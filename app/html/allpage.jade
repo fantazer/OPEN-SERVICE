@@ -1,19 +1,16 @@
-//Include style
 include block_html/_style.jade
-body.allpage
-	//Include header
-	include block_html/_const.jade
-	.main-cont
-		h1 Список страниц
-		.all-page
-				- each page in pages
-					a(href="#{page.href}.html").all-page__el
-						img(src="img/dist/#{page.href}.png", alt="")
-						.all-page__info
-							.all-page__title #{page.name}
+include ../module/**/*.jade
 
+.main-cont
+	h1 Список страниц
+	.all-page
+			- each page in pages
+				a(href="#{page.href}.html").all-page__el
+					img(src="img/dist/#{page.href}.png", alt="")
+					.all-page__info
+						.all-page__title #{page.name}
+						
 
-//Include footer
-include block_html/_script.jade
+include ./block_html/_script.jade
 
 

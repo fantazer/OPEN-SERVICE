@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-html(lang="en")
+!= "<html lang='en'>"
 	head
 		meta(charset="UTF-8")
 		meta(name='viewport' content="width=device-width, initial-scale=1")
@@ -13,3 +13,7 @@ html(lang="en")
 		link(rel="stylesheet", href="bower/owl.carousel/dist/assets/owl.carousel.css")
 		//endbuild
 		link(rel="stylesheet", href="css/style.css") 
+
+	include _const.jade
+	include _mixin.jade
+	!= "<body>"
