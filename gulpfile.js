@@ -240,7 +240,7 @@ gulp.task('template-module', function() {
 // ########## make service###############
 //copy file
 gulp.task('copy:font',function(){
-  return gulp.src('./app/fonts/**.*')
+  return gulp.src('./app/fonts/**/**.*')
         .pipe(newer('./dist/fonts/'))
         .pipe(gulp.dest('./dist/fonts/'))
   })
