@@ -4,7 +4,6 @@
 @import "variable/_function.styl"
 @import "variable/_ie.styl"
 @import "icon/sprite.css"
-@import "icon/style.css"
 @import "variable/_default.styl"
 @import "variable/_element.styl"
 @import "variable/_fonts.styl"
@@ -14,8 +13,10 @@ rupture.scale-names = 'xs' 'sm' 'md' 'lg'
 jeet.gutter = 1
 
 body
-	font-size 12px
-	font-family PT Sans
+	font-size $size-6
+	font-family $v-font
+	color $main-text-color
+	
 .main-cont
 	center(1200px)
 	position relative
@@ -24,6 +25,9 @@ body
 	+above(1200px)
 		width 1200px
 
+.icon-font
+	.icon
+		font-size 120px	
+		color red
+		border 1px solid grey
 @import "../module/**/*"
-
-

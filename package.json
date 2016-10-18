@@ -8,7 +8,7 @@
   "devDependencies": {
     "browser-sync": "^2.10.1",
     "create-file": "^1.0.1",
-     "gemini": "0.8.2",
+    "gemini": "0.8.2",
     "gulp": "*",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-cached": "^1.1.0",
@@ -26,6 +26,7 @@
     "gulp-prettify": "^0.4.0",
     "gulp-progeny": "0.2.2",
     "gulp-remember": "^0.3.0",
+    "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-stylus": "^2.1.2",
     "gulp-uglify": "^1.2.0",
@@ -39,8 +40,8 @@
     "process-nextick-args": "^1.0.7",
     "run-sequence": "^1.1.5",
     "rupture": "^0.6.1",
-    "vinyl-ftp": "^0.4.4",
     "util-deprecate": "^1.0.2",
+    "vinyl-ftp": "^0.4.4",
     "wiredep": "^4.0.0"
   },
   "dependencies": {}

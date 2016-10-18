@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>KSS Style Guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="../app/css/style.css">
+
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">KSS Style Guide</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-1.html">
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Colors</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-2.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Typography</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-3.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Buttons</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-4.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Input</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+  <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
+    <h1 id="tnormal-2-1-2">TNORMAL 2.1.2</h1>
+<p><a href="https://github.com/fantazer/TNORMAL">Скачать начальный шаблон репозитория</a></p>
+<h4 id="-">Описание</h4>
+<p>При сборке ипользуется</p>
+<ul>
+<li>Node.js</li>
+<li>Gulp</li>
+<li>Bower</li>
+<li>Stylus</li>
+<li>Jade</li>
+</ul>
+<h3 id="-">Расположение файлов</h3>
+<ul>
+<li>app - develop folder</li>
+<li>app/module/ - jade module include style + template</li>
+<li>app/font/ - main font + icon font</li>
+<li>app/css/variable/  - css configuration files</li>
+<li>app/css/icon/  - css sprite generation</li>
+<li>app/html/block_html/_cont.jade  - json main pages for all page</li>
+<li>template/ - instruction app</li>
+<li>file.json - file for create modules</li>
+<li>dist - prodaction</li>
+<li>dist/module/ - for backend template</li>
+</ul>
+<p>gemini - crossbrowser testing</p>
+<h4 id="gulp-task">Gulp task</h4>
+<p>Основные таски при работе.</p>
+<ul>
+<li>guide - генерация гайдов</li>
+<li>sprite - генерация спрайтов из папки app/img/sprites/</li>
+<li>screenshot - генерация скриншотов для страницы Allpage</li>
+<li>build - сборка jade - stylus - beauty - prefix - minif. and concat. js+css - minif. img  </li>
+<li>build-ftp deploy on ftp add file ftp.json </li>
+<li>template - генерация модулей для backend</li>
+<li>gulp - browserSync watch .jade .stylus file.json</li>
+</ul>
+
+  </div>
+</article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+</script>
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

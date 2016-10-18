@@ -32,6 +32,13 @@ var createFile = require('create-file');
 var jadeGlobbing  = require('gulp-jade-globbing');
 var wiredep = require('wiredep').stream;
 var clean = require('gulp-clean');
+var shell  = require('gulp-shell');
+
+// Build styleguide.
+gulp.task('guide', shell.task([
+    'kss --source app/css/ --destination template/ --css ../app/css/style.css'
+  ]));
+
 
 // ########## make img ###############
 gulp.task('imagePng',function(){
@@ -365,6 +372,7 @@ gulp.task('file',function(){
 gulp.task('see',function(){
         gulp.watch(['app/html/**/*.jade','app/module/**/*.jade',], ['jade']);
         gulp.watch(['app/css/**/*.styl','app/module/**/*.styl'],['stylus']);
+        //gulp.watch(['app/css/**/*.styl','app/module/**/*.styl'],['guide']);
         gulp.watch(['./file.json'],['file']);
 })
 
@@ -372,11 +380,12 @@ gulp.task('see',function(){
 gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default',['see','serve'] );
 
-gulp.task('build',function(){
-    runSequence('jade','stylus','copy:font','prefix','img','make')
-});
 gulp.task('build-ftp',function(){
-  runSequence('jade','stylus','copy:font','prefix','img','make','ftp')
+  runSequence('jade','stylus','copy:font','prefix','img','make','guide','ftp')
+});
+
+gulp.task('template',function(){
+  runSequence('template-clean','template-style','template-file','template-module')
 });
 
 gulp.task('template',function(){

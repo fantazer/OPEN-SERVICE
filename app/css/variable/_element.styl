@@ -22,76 +22,6 @@
 	color white
 	font-size 20px
 
-// ===== Type =====
-.type--xs
-	+below(768px)
-		font-size 8px
-	font-size 10px
-	
-.type--sm
-	+below(768px)
-		font-size 10px
-	font-size 12px
-
-.type
-	+below(768px)
-		font-size 14px
-	font-size 16px
-
-.type--md
-	+below(768px)
-		font-size 18px
-	font-size 24px
-
-.type--lg
-	+below(768px)
-		font-size 20px
-	font-size 32px
-	
-.type--up
-	up()
-	
-.type--italy
-	font-style italic
-	
-.type--mid
-	text-align center
-	
-.type--bold
-	font-weight 600 
-
-.italy
-	font-style italic
-// ===== Type-end =====
-
-//===== Buttons =====
-.btn
-	up()
-	display inline-block
-	margin-bottom 20px
-	br(4px)
-	tr(all)
-	
-.btn--sm
-	font-size 10px
-	padding 5px 10px
-	
-.btn--md
-	font-size 12px
-	padding 10px 20px
-	
-.btn--lg
-	font-size 20px
-	padding 10px 30px
-
-.btn--red
-	background red
-	color white
-	&:hover
-		background darken(red,10)
-
-//===== Buttons end =====
-
 .section
 	+below(768px)
 		padding 30px 0
@@ -145,7 +75,8 @@
 .icon
 	display inline-block
 	font  normal normal normal "main"
-	&:before
-		line-height 50%
-		f()
-
+	color red
+	border 1px solid grey
+	line-height: 70%;
+	display: inline-block;
+	position: relative;
