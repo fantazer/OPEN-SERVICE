@@ -42,6 +42,7 @@
     "rupture": "^0.6.1",
     "util-deprecate": "^1.0.2",
     "vinyl-ftp": "^0.4.4",
+    "pixelsmith": "^2.1.1",
     "wiredep": "^4.0.0"
   },
   "dependencies": {}
