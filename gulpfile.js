@@ -117,7 +117,6 @@ gulp.task('prefix', function () {
 gulp.task('stylus', function () {
   return gulp.src(['app/css/**/*.styl','app/module/**/*.styl'])
     .pipe(cache('stylus'))
-    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(progeny({
             regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
         }))
@@ -384,8 +383,8 @@ gulp.task('build-ftp',function(){
   runSequence('jade','stylus','copy:font','prefix','img','make','guide','ftp')
 });
 
-gulp.task('template',function(){
-  runSequence('template-clean','template-style','template-file','template-module')
+gulp.task('build',function(){
+    runSequence('jade','stylus','copy:font','prefix','img','make')
 });
 
 gulp.task('template',function(){
