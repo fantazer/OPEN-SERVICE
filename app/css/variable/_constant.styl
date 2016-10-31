@@ -54,6 +54,8 @@ black = #111111
 // Markup: <div style="background: {{modifier_class}};color:white;padding:20px;" class="styleguide-color">{{modifier_class}}</div>
 //
 // Styleguide 1.2
+
+
 navy = #001F3F
 blue = #0074D9
 
@@ -67,75 +69,33 @@ blue = #0074D9
 // Typography-size
 //
 // Main font - $v-font =  PT Sans
-//.type--8 	 - $size-8 = 48px
-//.type--7    - $size-7 = 46px
-//.type--6	 - $size-6 = 36px
-//.type--5    - $size-5 = 30px
-//.type--4    - $size-4 = 26px
-//.type--3    -  $size-3 = 12px
-//.type--2    - $size-2 = 10px  
+//.type 	--main	-  = 16px
 //
 // Markup:
 // <span class="{{modifier_class}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, quidem!</span>
 //
 // Styleguide 2.1
 
-$main-text-color = grey
+$main-text-color = black
 $link-color = black
 $link-color-visited = grey
 $link-color-hover = black
 
-$v-font =  Gotham
-
-$size-9 = 50px
-$size-8 = 48px
-$size-7 = 46px
-$size-6 = 36px
-$size-5 = 30px
-$size-4 = 26px
-$size-3 = 12px
-$size-2 = 10px
-$size-1 = 8px
+$v-font =  PT Sans
 
 
 $weigh-light = 300
 $weigh-normal = 400
 $weigh-bold = 700
 
-.type--8
+typeSize(fontSm,font)
 	+below(768px)
-		font-size $size-7
-	font-size $size-8
-	
-.type--7
-	+below(768px)
-		font-size $size-6
-	font-size $size-7
+		font-size font px
+	font-size fontSm px
 
-.type--6
-	+below(768px)
-		font-size $size-5
-	font-size $size-6
+.type--main
+	typeSize(16,14)
 
-.type--5
-	+below(768px)
-		font-size $size-4
-	font-size $size-5
-
-.type--4
-	+below(768px)
-		font-size $size-3
-	font-size $size-4
-	
-.type--3
-	+below(768px)
-		font-size $size-2
-	font-size $size-3
-	
-.type--2
-	+below(768px)
-		font-size $size-1
-	font-size $size-2
 
 // Typography-type
 //
