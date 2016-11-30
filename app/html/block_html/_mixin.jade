@@ -1,3 +1,7 @@
 // mixin nameMixin()
 // - var args = Array.prototype.slice.call(arguments)
 // - for item in args
+
+mixin icon(name,cls)
+	svg(class=cls)
+		use(xlink:href="#"+name)

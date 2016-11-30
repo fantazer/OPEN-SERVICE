@@ -33,6 +33,8 @@ var jadeGlobbing  = require('gulp-jade-globbing');
 var wiredep = require('wiredep').stream;
 var clean = require('gulp-clean');
 var shell  = require('gulp-shell');
+var svgSprite = require('gulp-svg-sprite');
+var rename = require('gulp-rename');
 
 // Build styleguide.
 gulp.task('guide', shell.task([
@@ -62,6 +64,36 @@ gulp.task('imageJpg',function(){
       }))
   .pipe(gulp.dest('dist/img/'));
 });
+
+
+//sprite SVG
+gulp.task('svg', function () {
+  gulp.src(['app/img/svg/**.*'])
+    .pipe(svgmin({
+      js2svg: {
+        pretty: true
+      }
+    }))
+    //remove color on icon
+    .pipe(cheerio({
+      run: function ($) {
+        $('[fill]').removeAttr('fill');
+        $('[style]').removeAttr('style');
+      },
+      parserOptions: { xmlMode: true }
+    }))
+    .pipe(svgSprite( {
+      mode:{
+        symbol: true
+      }
+     }))
+    .pipe(rename("sprite.html"))
+    .pipe(gulp.dest('app/img/'))
+
+     gulp.src(['app/img/**/**.svg','app/img/**.html'])
+    .pipe(gulp.dest('dist/img/'));
+});
+
 
 //Sprite
 gulp.task('sprite', function () {
@@ -371,7 +403,6 @@ gulp.task('file',function(){
 gulp.task('see',function(){
         gulp.watch(['app/html/**/*.jade','app/module/**/*.jade',], ['jade']);
         gulp.watch(['app/css/**/*.styl','app/module/**/*.styl'],['stylus']);
-        //gulp.watch(['app/css/**/*.styl','app/module/**/*.styl'],['guide']);
         gulp.watch(['./file.json'],['file']);
 })
 
@@ -380,11 +411,11 @@ gulp.task('img',['imagePng' , 'imageJpg']);
 gulp.task('default',['see','serve'] );
 
 gulp.task('build-ftp',function(){
-  runSequence('jade','stylus','copy:font','prefix','img','make','guide','ftp')
+  runSequence('jade','stylus','svg','copy:font','prefix','img','make','guide','ftp')
 });
 
 gulp.task('build',function(){
-    runSequence('jade','stylus','copy:font','prefix','img','make')
+    runSequence('jade','stylus','svg','copy:font','prefix','img','make')
 });
 
 gulp.task('template',function(){
