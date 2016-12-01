@@ -13,7 +13,7 @@ rupture.scale-names = 'xs' 'sm' 'md' 'lg'
 jeet.gutter = 1
 
 body
-	font-size $size-6
+	@extend .type--main
 	font-family $v-font
 	color $main-text-color
 	
@@ -25,9 +25,5 @@ body
 	+above(1200px)
 		width 1200px
 
-.icon-font
-	.icon
-		font-size 120px	
-		color red
-		border 1px solid grey
+
 @import "../module/**/*"

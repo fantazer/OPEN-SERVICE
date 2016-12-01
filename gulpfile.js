@@ -35,6 +35,10 @@ var clean = require('gulp-clean');
 var shell  = require('gulp-shell');
 var svgSprite = require('gulp-svg-sprite');
 var rename = require('gulp-rename');
+var svgmin = require('gulp-svgmin');
+var cheerio = require('gulp-cheerio');
+var replace = require('gulp-replace');
+
 
 // Build styleguide.
 gulp.task('guide', shell.task([
