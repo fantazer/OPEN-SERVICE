@@ -48,7 +48,7 @@
      "gulp-rename": "^1.2.2",
      "gulp-replace": "^0.5.4",
      "gulp-cheerio": "^0.6.2",
-     "gulp-svgmin": "^1.2.3",
+     "gulp-svgmin": "^1.2.3"
   },
   "dependencies": {}
 }
