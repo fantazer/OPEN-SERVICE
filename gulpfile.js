@@ -72,13 +72,13 @@ gulp.task('imageJpg',function(){
 
 //sprite SVG
 gulp.task('svg', function () {
-  gulp.src(['app/img/svg/**.*'])
+  var svgSrc = gulp.src(['app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg']);
+  svgSrc
     .pipe(svgmin({
       js2svg: {
         pretty: true
       }
     }))
-    //remove color on icon
     .pipe(cheerio({
       run: function ($) {
         $('[fill]').removeAttr('fill');
@@ -87,15 +87,24 @@ gulp.task('svg', function () {
       parserOptions: { xmlMode: true }
     }))
     .pipe(svgSprite( {
-      mode:{
-        symbol: true
-      }
+        mode:{
+          symbol: true,
+        }
      }))
     .pipe(rename("sprite.html"))
     .pipe(gulp.dest('app/img/'))
 
      gulp.src(['app/img/**/**.svg','app/img/**.html'])
     .pipe(gulp.dest('dist/img/'));
+
+    svgSrc
+     .pipe(svgSprite( {
+        preview: {
+            sprite: "index.html"
+        }
+     }))
+    .pipe(gulp.dest('app/img/'))
+    
 });
 
 
