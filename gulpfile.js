@@ -34,6 +34,7 @@ var wiredep = require('wiredep').stream;
 var clean = require('gulp-clean');
 var shell  = require('gulp-shell');
 var svgSprite = require('gulp-svg-sprite');
+var svgSpriteTempl = require('gulp-svg-sprites');
 var rename = require('gulp-rename');
 var svgmin = require('gulp-svgmin');
 var cheerio = require('gulp-cheerio');
@@ -72,6 +73,7 @@ gulp.task('imageJpg',function(){
 
 //sprite SVG
 gulp.task('svg', function () {
+     
   var svgSrc = gulp.src(['app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg']);
   svgSrc
     .pipe(svgmin({
@@ -91,20 +93,13 @@ gulp.task('svg', function () {
           symbol: true,
         }
      }))
-    .pipe(rename("sprite.html"))
+    .pipe(rename("pack.html"))
     .pipe(gulp.dest('app/img/'))
 
-     gulp.src(['app/img/**/**.svg','app/img/**.html'])
-    .pipe(gulp.dest('dist/img/'));
+     svgSrc
+     .pipe(svgSpriteTempl())
+     .pipe(gulp.dest('app/img/'))
 
-    svgSrc
-     .pipe(svgSprite( {
-        preview: {
-            sprite: "index.html"
-        }
-     }))
-    .pipe(gulp.dest('app/img/'))
-    
 });
 
 
