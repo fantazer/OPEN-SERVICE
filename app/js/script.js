@@ -54,7 +54,6 @@ $(document).ready(function(){
 			density: 4
 		}
 	});*/
-	
 
 	
 })
@@ -65,7 +64,7 @@ $(document).ready(function(){
 {
 	'use strict';
 
-	var file  = 'img/sprite.html',
+	var file  = 'img/pack.html',
 		revision = 1;
 
 	if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
