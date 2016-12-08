@@ -95,6 +95,7 @@ gulp.task('svg', function () {
      }))
     .pipe(rename("pack.html"))
     .pipe(gulp.dest('app/img/'))
+    .pipe(gulp.dest('dist/img/'))
 
      svgSrc
      .pipe(svgSpriteTempl())
