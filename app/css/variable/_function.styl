@@ -28,29 +28,6 @@ tr(a){
 	transition a .4s
 } 
 
-font(a){
-	if(a==ubuntu){
-		font-family 'Ubuntu';
-	}
-	if(a==pt){
-		font-family 'PT Sans';
-	}
-	if(a==zopa){
-		font-family 'ZopaCyr';
-	}
-}
-
-but-flat(a,b,c,d=10px,e=20px){
-	border 0
-	background a
-	color b
-	padding d e
-	width c
-	display block
-	border-radius 5px
-	box-shadow 0px 3px 0px darken(a, 45%) 
-}
-
 f()
 	display flex
 fl()
@@ -61,15 +38,15 @@ fw()
 cp()
 	&:hover
 		cursor pointer
+		
 round()
 	border-radius 50%
 bsh()
 	box-shadow 0px 3px 8px #e3e3e3
-
-brd()
-	border 1px solid grey
+	
 up()
 	text-transform uppercase
+	
 bold()
 	font-weight 700
 	
@@ -84,7 +61,7 @@ placeholder(color)
 		color:color
 		
 //main cont
-center(val)
+center(val,pad)
 	*zoom: 1
 	width: auto
 	max-width: val
@@ -100,6 +77,11 @@ center(val)
 		display: table
 	&:after 
 		clear: both
+	position relative
+	width 100%
+	padding  0 pad
+	+above(val px)
+		width val px
 		
 // Function
 //
@@ -415,3 +397,14 @@ webfont(family, file, hack-chrome-windows = false, weight = 'normal')
 			url(font-url(file + '.svg#'+ family)) format('svg')
 		font-weight weight
 		font-style normal
+
+//bg-full-size
+bg-full()
+	background-size cover
+	background-repeat no-repeat
+	background-position center center
+	
+focus(color)
+	&:focus
+		border-color color
+		box-shadow 0 0 3px 1px rgba(color, 0.45)

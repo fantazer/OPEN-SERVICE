@@ -1,34 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
 
-<!--Include style--><!DOCTYPE html>
-<html lang="en">
 	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<meta name="format-detection" content="telephone=no"/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
 		<title>Document</title>
 		<!--build:css css/vendor.css-->
-		<link rel="stylesheet" href="bower/normalize.css/normalize.css"/>
+		<link rel="stylesheet" href="bower/normalize.css/normalize.css" />
+		<link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico" />
 		<!--link(rel="stylesheet", href="bower/flexbox-grid-stylus/dist/flexbox-grid.min.css")-->
 		<!--link(rel="stylesheet", href="bower/components-font-awesome/css/font-awesome.css")-->
-		<!--link(rel="stylesheet", href="bower/owl.carousel/dist/assets/owl.carousel.css")-->
+		<link rel="stylesheet" href="bower/owl.carousel/dist/assets/owl.carousel.css" />
 		<!--endbuild-->
-		<link rel="stylesheet" href="css/style.css"/>
-		<link rel="stylesheet" href="http://webfonts.ru/import/opensans.css"/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-edit.css" />
 	</head>
+	<!-- mixin nameMixin()-->
+	<!-- - var args = Array.prototype.slice.call(arguments)-->
+	<!-- - for item in args-->
+
+	<body>
+		<div class="main-cont">
+			<h1>Список страниц</h1>
+			<div class="all-page">
+				<a href="index.html" class="all-page__el">
+					<img src="img/screen/app/index.png" alt="" />
+					<div class="all-page__info">
+						<div class="all-page__title">Главная!1</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!--build:js js/combined.js-->
+		<script src="bower/jquery/dist/jquery.js"></script>
+		<script src="bower/owl.carousel/dist/owl.carousel.min.js"></script>
+		<script src="bower/svg4everybody/dist/svg4everybody.js"></script>
+		<script src="js/jquery.smoothscroll.js"></script>
+		<!-- endbuild-->
+		<script src="js/script.js"></script>
+		<script src="js/script-edit.js"></script>
+	</body>
+
 </html>
-<body class="allpage">
-	<!--Include header-->
-	<h2>как ващи дела!!</h2>
-	<wraper>
-		<h1>Список страниц</h1><a href="index.html">Главная!1 <br></a><a href="contact.html">Контакты <br></a>
-	</wraper>
-</body>
-<!--Include footer-->
-<!--build:js js/combined.js-->
-<script src="bower/jquery/dist/jquery.js"></script>
-<!--script(src="bower/owl.carousel/dist/owl.carousel.min.js")-->
-<!--script(src="bower/bPopup/jquery.bpopup.min.js")-->
-<!--script(src="js/jquery.smoothscroll.js")-->
-<!--script(src="bower/Headhesive.js/dist/headhesive.min.js")-->
-<!-- endbuild-->
-<script src="js/script.js"></script>

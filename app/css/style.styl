@@ -1,29 +1,38 @@
 @import 'rupture'
-@import 'jeet'
 @import "variable/_function.styl"
 @import "variable/_ie.styl"
 @import "icon/sprite.css"
 @import "variable/_default.styl"
-@import "variable/_element.styl"
-@import "variable/_fonts.styl"
 @import "variable/_constant.styl"
+@import "variable/_helper.styl"
+@import "variable/_configurator.styl"
+@import "variable/_grid.styl"
 
 rupture.scale = 0 480px 768px 992px 1200px
 rupture.scale-names = 'xs' 'sm' 'md' 'lg'
-jeet.gutter = 1
+
+// Grid breakpoints
+$breakpoints = {
+  'xs' :  0,
+  'sm' : 480px,
+  'md' : 768px,
+  'lg' : 992px,
+  'xl' : 1200px
+}
+
+// Number of columns
+$columns = 12
+
+init($breakpoints, $columns)
 
 body
 	@extend .type--main
 	font-family $v-font
 	color $main-text-color
+	line-height 1.6
+	letter-spacing 0.01em
 	
 .main-cont
-	center(1200px)
-	position relative
-	width 100%
-	padding  0 10px
-	+above(1200px)
-		width 1200px
-
-
+	center(1200px,10px)
+	
 @import "../module/**/*"

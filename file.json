@@ -1,6 +1,7 @@
 {
 	"block":{
-		"header":"header"
+		"header":"header",
+		"footer":"footer"
 	},
 	"page":{
 		"index":"index"

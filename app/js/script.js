@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	/* ###### For only ies  ######*/
 	//if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
 	//	//code
@@ -17,7 +18,6 @@ $(document).ready(function(){
 
 	//for init SVG 
 	svg4everybody();
-
 	
 	/* ###### For SlideToggle Elements  ######*/
 	/*var hideToggle = function(targetClick,toggleEl) {

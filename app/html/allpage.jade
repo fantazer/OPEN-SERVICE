@@ -6,11 +6,10 @@ include ../module/**/*.jade
 	.all-page
 			- each page in pages
 				a(href="#{page.href}.html").all-page__el
-					img(src="img/dist/#{page.href}.png", alt="")
+					img(src="img/screen/app/#{page.href}.png", alt="")
 					.all-page__info
 						.all-page__title #{page.name}
 						
-
 include ./block_html/_script.jade
 
 
