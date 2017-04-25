@@ -435,8 +435,8 @@ gulp.task('build',function(){
 		'min:js',
 		'img',
 		'svg',
-		'make',
-		'zip'
+		'make'
+		//'zip'
 	)
 });
 
@@ -454,11 +454,11 @@ gulp.task('build:ftp',function(){
 		'img',
 		'svg',
 		'make',
-		'zip',
-		'screenshot',
-		'guide',
-		'ftp',
-		'template'
+		//'zip',
+		//'screenshot',
+		//'guide',
+		'ftp'
+		//'template'
 	)
 });
 
