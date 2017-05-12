@@ -42,7 +42,7 @@ typeSize(fontSm,font)
 
 .type--xs
 	typeSize(12,10)
-	
+
 .type--sm
 	typeSize(14,12)
 
@@ -50,12 +50,36 @@ typeSize(fontSm,font)
 	typeSize(16,14)
 
 .type--lg
-	typeSize(20,16)
+	typeSize(24,16)
 
 .type--xl
-	typeSize(26,18)
+	typeSize(32,18)
 
-	
+h1
+	@extend .type--xl
+h2
+	@extend .type--lg
+h3
+	@extend .type--main
+h4
+	@extend .type--sm
+h5
+	@extend .type--xs
+
+.link--main
+	color #888888
+	hover-underline()
+	&:hover
+		color black
+.link--text
+	color orange
+	text-decoration underline
+	&:hover
+		text-decoration none
+
+.link--orange
+	color orange
+	hover-underline()
 // ============================ Buttons ============================
 
 btnStyle(bg-btn,color-btn)
@@ -72,7 +96,7 @@ btnStyleLight(br-btn,color-btn)
 	&:hover
 		color darken(color-btn,20)
 		border br-btn solid darken(color-btn,20)
-		
+
 .btn
 	up()
 	br(4px)
@@ -84,17 +108,17 @@ btnStyleLight(br-btn,color-btn)
 	background none
 	&:hover
 		cursor pointer
-		
+
 .btn--sm
 	@extend .btn
 	font-size 10px
 	padding 5px 10px
-	
+
 .btn--md
 	@extend .btn
 	font-size 12px
 	padding 10px 20px
-	
+
 .btn--lg
 	@extend .btn
 	font-size 20px
@@ -106,17 +130,58 @@ btnStyleLight(br-btn,color-btn)
 		width 100%
 		text-align center
 
-.btn--green
+.btn--orange
 	@extend .btn
-	btnStyle(green,white)
-	
-.btn--green-light
-	@extend .btn
-	btnStyleLight(1px,green)
-	
-button
-	font-family $v-font
+	color white
+	background orange
+	.nav-icon
+		fill white
+	&:hover
+		box-shadow 0 6px 18px rgba(255, 36, 0, 0.33)
+		background-color #ff2400
+	&:active
+		background-color #ea0000
+	input[type="submit"]
+		border 0
 
+.btn--disable
+	@extend .disabled
+	border 1px solid #909090
+	background-color #ffffff
+	color #000000
+
+.btn--light
+	@extend .btn
+	border 1px solid #909090
+	background-color #ffffff
+
+.btn--grey
+	@extend .btn
+	border 1px solid #dddddd
+	background-color #ffffff
+
+.btn--dotted
+	@extend .btn
+	border 1px dashed #d7d7d7
+	background-color #ffffff
+	text-align center
+
+.btn--white
+	@extend .btn
+	border 1px solid rgba(255, 255, 255, 0.9)
+	color rgba(255, 255, 255, 0.9)
+	.nav-icon
+		fill rgba(255, 255, 255, 0.9)
+
+.btn--icon
+	flex(mid)
+.nav-icon
+	display inline-block
+	size 20px
+	margin 0 10px
+
+button
+	font-family $v-fon
 // ============================ Inputs ============================
 
 input,textarea,select
@@ -129,7 +194,70 @@ input,textarea,select
 	font-family $v-font
 	display block!important
 	margin-bottom 10px
-	focus(green)
-	
-placeholder(black)
+	focus(black)
+	placeholder(black)
+
+.style-label
+	display flex
+	position relative
+	align-items center
+
+
+.style-label--disable
+	@extend .disabled
+
+.check-el
+	input
+		position absolute
+		top 0
+		left -9999px
+	.sytle-input-element
+		width 30px
+		height 30px
+		position relative
+		display inline-block
+		margin-right 10px
+		background white
+		border 1px solid #cfcfcf
+		br(8px)
+		cp()
+		tr(all)
+		&:hover
+			border 1px solid #8d8d8d
+	.icon-check
+		display none
+	.sytle-input
+		&:checked + .sytle-input-element
+			flex(mid)
+			color white
+			.icon-check
+				display block
+				fill #000000
+				size 16px
+
+.style-label--radio
+	input
+		position absolute
+		top 0
+		left -9999px
+	.sytle-input-element
+		width 22px
+		height 22px
+		position relative
+		display inline-block
+		margin-right 10px
+		background white
+		border 1px solid #cfcfcf
+		round()
+		cp()
+	.icon-check
+		display none
+	.sytle-input
+		&:checked + .sytle-input-element
+			flex(mid)
+			color white
+			.icon-radio
+				round()
+				size 14px
+				background #f85e22;
 

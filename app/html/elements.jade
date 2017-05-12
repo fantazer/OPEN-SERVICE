@@ -1,0 +1,85 @@
+include block_html/_style.jade
+include ../module/**/*.jade
+
+.main-cont
+  h1.elements-pusia h1 Проверка текста
+  h2.elements-pusia h2 Проверка текста
+  h3.elements-pusia h3 Проверка текста
+  h4.elements-pusia h4 Проверка текста
+  h5.elements-pusia h5 Проверка текста
+  h6.elements-pusia h6 Проверка текста
+
+  hr.elements-hr
+
+  p.type--main  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
+  p.type--main.type-bold.type--lg  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
+
+  hr.elements-hr
+
+  a(href="#").btn--md.btn--orange Кнопка
+  a(href="#").btn--md.btn--disable Неактивная
+  a(href="#").btn--md.btn--light Второстепенная
+  a(href="#").btn--md.btn--light
+    .btn--icon
+      span C  иконкой
+      +icon("checked","nav-icon")
+  a(href="#").btn--md.btn--orange
+    .btn--icon
+      span C  иконкой
+      +icon("checked","nav-icon")
+  hr.elements-hr
+
+  a(href="#").btn--sm.btn--orange Кнопка small
+  a(href="#").btn--sm.btn--disable Неактивная small
+  a(href="#").btn--sm.btn--light Второстепенная small
+  a(href="#").btn--sm.btn--light
+    .btn--icon
+      span C  иконкой small
+      +icon("checked","nav-icon")
+  hr.elements-hr
+
+  .elements-buttons-block
+    button.btn--sm.btn--orange Кнопка типа button
+    button.btn--sm.btn--light Кнопка типа button
+    button.btn--sm.btn--disable Кнопка типа button
+    input(type="submit" value="Кнопка типа submit").btn--sm.btn--orange
+    input(type="submit" value="Кнопка типа submit").btn--sm.btn--light
+    input(type="submit" value="Кнопка типа submit").btn--sm.btn--disable
+
+  .elements-link-block
+    a(href="#").link--orange Новая ссылка
+    a(href="#").link--main Основная ссылка
+    a(href="#").link--text Ссылка в тексте
+
+  hr.elements-hr
+  .elements-input-block
+    input(type="text" placeholder="Username" )
+    input(type="text" placeholder="Passwords")
+    textarea(name="", cols="30", rows="10")
+  hr.elements-hr
+
+  .elements-checkbox-block
+
+    +checkbox('Наименование услуги','disable')
+    br
+    +checkbox('Наименование услуги')
+    br
+    +radio('Наименование услуги')
+    br
+    +radio('Наименование услуги','disable')
+    br
+
+  select
+    option(value="1" data-display="Выберите ресторан") Нет
+    option(value="2") Новый Ресторан 1
+    option(value="3") Новый Ресторан 2
+    option(value="4") Новый Ресторан 3
+
+  hr.elements-hr
+  .element-page-icons
+    +icon("heart","nav-icon")
+    +icon("house","nav-icon")
+    +icon("menu","nav-icon")
+    +icon("star","nav-icon")
+
+include ./block_html/_script.jade

@@ -3,5 +3,34 @@
 // - for item in args
 
 mixin icon(name,cls)
-	svg(class=cls)
-		use(xlink:href="#"+name)
+  svg(class=cls)
+    use(xlink:href="#" + name)
+
+mixin checkbox(text,disable)
+  .check-el
+    if disable
+      label.style-label.style-label--checkbox.style-label--disable
+        input(type="checkbox").sytle-input
+        .sytle-input-element
+          +icon("checked","icon-check")
+        .sytle-input-text=text
+    else
+      label.style-label.style-label--checkbox
+        input(type="checkbox").sytle-input
+        .sytle-input-element
+          +icon("checked","icon-check")
+        .sytle-input-text=text
+mixin radio(text,group,disable)
+  .check-el
+    if disable
+      label.style-label.style-label--radio.style-label--disable
+        input(type="radio" name="group").sytle-input
+        .sytle-input-element
+          .icon-radio
+        .sytle-input-text=text
+    else
+      label.style-label.style-label--radio
+        input(type="radio" name="group").sytle-input
+        .sytle-input-element
+          .icon-radio
+        .sytle-input-text=text
