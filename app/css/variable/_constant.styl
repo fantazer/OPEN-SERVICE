@@ -1,7 +1,6 @@
 // ============================ Curent color ============================
-
 navy = #001F3F
-blue = #0074D9
+blue = #3a90c8
 aqua = #7FDBFF
 teal = #39CCCC
 olive = #3D9970
@@ -22,14 +21,15 @@ $main-text-color = black
 $link-color = black
 $link-color-visited = grey
 $link-color-hover = black
+$border-color = #dddddd
 
-//  ============================ Typography ============================ 
+//  ============================ Typography ============================
 
 //webfont('RUB', 'rouble-webfont', 'normal')
 //Add fotn rub write .rub a - (a,b,c,d - change type font)
 
 //webfont('PT Sans', 'PT Sans', 'normal')
-$v-font =  PT Sans
+$v-font =  'Roboto', sans-serif
 
 $weigh-light = 300
 $weigh-normal = 400
@@ -49,11 +49,17 @@ typeSize(fontSm,font)
 .type--main
 	typeSize(16,14)
 
+.type--md
+	typeSize(18,15)
+
 .type--lg
-	typeSize(24,16)
+	typeSize(26,18)
 
 .type--xl
-	typeSize(32,18)
+	typeSize(36,20)
+
+.type--bold
+	font-weight bold
 
 h1
 	@extend .type--xl
@@ -66,20 +72,25 @@ h4
 h5
 	@extend .type--xs
 
+a
+	color black
+
+.link--blue
+	color blue
+
 .link--main
-	color #888888
-	hover-underline()
+	color black
+	hover-underline(blue)
 	&:hover
 		color black
+
 .link--text
-	color orange
+	color blue
 	text-decoration underline
 	&:hover
 		text-decoration none
 
-.link--orange
-	color orange
-	hover-underline()
+
 // ============================ Buttons ============================
 
 btnStyle(bg-btn,color-btn)
@@ -103,9 +114,9 @@ btnStyleLight(br-btn,color-btn)
 	tr(all)
 	display inline-block
 	margin-bottom 20px
-	border 1px solid black
-	padding 5px 10px
 	background none
+	border 0px
+	color blue
 	&:hover
 		cursor pointer
 
@@ -113,11 +124,13 @@ btnStyleLight(br-btn,color-btn)
 	@extend .btn
 	font-size 10px
 	padding 5px 10px
+	.nav-icon
+		size 10px
 
 .btn--md
 	@extend .btn
-	font-size 12px
-	padding 10px 20px
+	font-size 15px
+	padding 20px 45px
 
 .btn--lg
 	@extend .btn
@@ -130,30 +143,35 @@ btnStyleLight(br-btn,color-btn)
 		width 100%
 		text-align center
 
-.btn--orange
+.btn--blue
 	@extend .btn
 	color white
-	background orange
+	background blue
 	.nav-icon
 		fill white
 	&:hover
-		box-shadow 0 6px 18px rgba(255, 36, 0, 0.33)
-		background-color #ff2400
+		background-color darken(blue,20)
 	&:active
-		background-color #ea0000
+		background-color darken(blue,20)
 	input[type="submit"]
 		border 0
+	.nav-icon
+		fill white
 
 .btn--disable
 	@extend .disabled
-	border 1px solid #909090
+	border 1px solid $border-color
 	background-color #ffffff
 	color #000000
 
 .btn--light
 	@extend .btn
-	border 1px solid #909090
+	border 1px solid $border-color
 	background-color #ffffff
+	&:hover
+		border 1px solid blue
+	.nav-icon
+		fill blue
 
 .btn--grey
 	@extend .btn
@@ -175,6 +193,7 @@ btnStyleLight(br-btn,color-btn)
 
 .btn--icon
 	flex(mid)
+
 .nav-icon
 	display inline-block
 	size 20px
@@ -186,16 +205,19 @@ button
 
 input,textarea,select
 	border 0px
-	padding 10px 15px
-	border 1px solid grey
+	padding 20px
+	border 1px solid $border-color
 	resize: none
 	outline: 0 !important
 	border-radius 4px
 	font-family $v-font
 	display block!important
 	margin-bottom 10px
-	focus(black)
-	placeholder(black)
+	placeholder(#888888)
+	background: #f7f7f8
+	tr(all)
+	&:focus
+		border 1px solid blue
 
 .style-label
 	display flex
@@ -259,5 +281,5 @@ input,textarea,select
 			.icon-radio
 				round()
 				size 14px
-				background #f85e22;
+				background blue;
 
