@@ -1,5 +1,5 @@
-include block_html/_style.jade
-include ../module/**/*.jade
+include block_html/_style.pug
+include block_html/_include.pug
 
 .main-cont
 	h1.type--center Hi this is first page of template TNORMAL
@@ -8,4 +8,5 @@ include ../module/**/*.jade
 		+icon("heart",".icon")
 		+icon("heart",".icon")
 		+icon("heart",".icon")
-include ./block_html/_script.jade
+
+include ./block_html/_script.pug

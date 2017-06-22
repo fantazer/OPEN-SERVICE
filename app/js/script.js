@@ -1,5 +1,38 @@
 $(document).ready(function(){
 
+	// ===== for template header =====
+	//See mixin header
+	/*
+	var hideToggle = function(targetClick,toggleEl) {
+		$(targetClick).click(function(event){
+				event.stopPropagation();
+				$(toggleEl).slideToggle("fast");
+		});
+		$(toggleEl).on("click", function (event) {
+			event.stopPropagation();
+		});
+		$(document).on("click", function () {
+				$(toggleEl).hide();
+		});
+	}
+	hideToggle('.menu-toggle','.header-nav');
+
+	$(window).resize(function(){
+		if ($(document).width() < 1025) {
+			$('.header-nav__sub').hide();
+			$('.header-nav__el-icon').click(function () {
+				var current = $(this).closest('.header-nav__el').find('.header-nav__sub');
+				$('.header-nav__sub').slideUp();
+					if(current.is(':visible')){
+						current.slideUp();
+					} else {
+						current.slideToggle(400,"linear");
+					}
+			})
+		}
+	});*/
+	//===== for template header-end =====
+
 	/* ###### For only ies  ######*/
 	//if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
 	//	//code
@@ -18,6 +51,15 @@ $(document).ready(function(){
 
 	//for init SVG 
 	svg4everybody();
+	// ==== clear storage =====
+		// localStorage.clear();
+		// sessionStorage.clear();
+		//
+		// $(window).unload(function(){
+		//   localStorage.clear();
+		// });
+	// ==== clear storage end =====
+
 	
 	/* ###### For SlideToggle Elements  ######*/
 	/*var hideToggle = function(targetClick,toggleEl) {

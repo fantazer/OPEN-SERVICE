@@ -1,0 +1,37 @@
+mixin header()
+	//block header
+	.main-section(style="background-image:url('https://static.pexels.com/photos/158607/cairn-fog-mystical-background-158607.jpeg')")
+		.main-section-filter
+		.header
+			.header-layer
+				.main-cont
+					.header-wrap
+						a(href="#").header-logo Logo
+							//img(src="img/logo-main.svg", alt="")
+						.header-nav
+							- var items = ['О нас','Декларация 3-НДФЛ','Налоги','Покупка жилья','Другие вычеты','Полезное'];
+							- each item in items
+							.header-nav__el
+								.header-nav__el-link-wrap
+									a(href="#").header-nav__el-link #{item}
+									.header-nav__el-icon
+										+icon("arrow-down","icon-el")
+								.header-nav__sub
+									.coner-wrap
+										.window-coner-top
+										.header-nav__sub-wrap
+											a(href="#").header-nav__sub-el О компании
+											a(href="#").header-nav__sub-el Контакты
+											a(href="#").header-nav__sub-el Карьера
+											a(href="#").header-nav__sub-el Отзывы клиентов
+											a(href="#").header-nav__sub-el Преимущества
+											a(href="#").header-nav__sub-el Безопасность
+											a(href="#").header-nav__sub-el Новости и советы
+						.header-contact
+							.header-phone
+								a(href="tel:8(495)123-12-12") 8(495)123-12-12
+						.menu-toggle
+							+icon("menu","icon-el")
+		.main-section-cont
+			.main-section-title this is template
+	//block header end

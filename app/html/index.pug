@@ -1,0 +1,15 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+
+.main-cont
+	h1 Список страниц
+	.all-page
+			each page in pages
+
+				a(href=''+page.href+'.html').all-page__el
+					img(src='img/screen/app/'+page.href+'.png', alt="")
+					.all-page__info
+						.all-page__title #{page.name}
+
+include ./block_html/_script.pug
