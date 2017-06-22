@@ -5,16 +5,25 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="format-detection" content="telephone=no" />
+		<!--colors-tabs-->
+		<meta name="theme-color" content="#000" />
+		<meta name="msapplication-navbutton-color" content="#000" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+		<!--icons-->
+		<link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico" />
+		<link type="image/x-icon" rel="icon" href="img/favicon.ico" />
+		<!--SEO-->
 		<title>Document</title>
+		<meta name="description" itemprop="description" content="" />
 		<!--build:css css/vendor.css-->
 		<link rel="stylesheet" href="bower/normalize.css/normalize.css" />
-		<link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico" />
 		<!--link(rel="stylesheet", href="bower/flexbox-grid-stylus/dist/flexbox-grid.min.css")-->
 		<!--link(rel="stylesheet", href="bower/components-font-awesome/css/font-awesome.css")-->
 		<link rel="stylesheet" href="bower/owl.carousel/dist/assets/owl.carousel.css" />
 		<!--endbuild-->
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/style-edit.css" />
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic" rel="stylesheet" />
 	</head>
 	<!-- mixin nameMixin()-->
 	<!-- - var args = Array.prototype.slice.call(arguments)-->
@@ -22,19 +31,20 @@
 
 	<body>
 		<div class="main-cont">
-			<h1 class="type--center">Hi this is first page of template TNORMAL</h1>
-			<p class="type--xl type--up type--center"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor cum beatae natus temporibus, labore quod facere quaerat vero deleniti laboriosam aspernatur accusamus deserunt eius sit quasi id illo repellendus perspiciatis voluptas quibusdam earum
-				officiis eum? Quaerat laboriosam voluptas et fugiat.</p>
-			<div class="row flex-mid">
-				<svg class=".icon">
-					<use xlink:href="#heart"></use>
-				</svg>
-				<svg class=".icon">
-					<use xlink:href="#heart"></use>
-				</svg>
-				<svg class=".icon">
-					<use xlink:href="#heart"></use>
-				</svg>
+			<h1>Список страниц</h1>
+			<div class="all-page">
+				<a class="all-page__el" href="elements.html">
+					<img src="img/screen/app/elements.png" alt="" />
+					<div class="all-page__info">
+						<div class="all-page__title">Элементы</div>
+					</div>
+				</a>
+				<a class="all-page__el" href="index.html">
+					<img src="img/screen/app/index.png" alt="" />
+					<div class="all-page__info">
+						<div class="all-page__title">Главная</div>
+					</div>
+				</a>
 			</div>
 		</div>
 		<!--build:js js/combined.js-->
