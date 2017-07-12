@@ -1,3 +1,16 @@
+item(a,b)
+	if(a==1)
+		width 100%
+		margin-bottom: b
+	else
+		items = a
+		margins = b
+		width "calc(1/%s*100% - (1 - 1/%s)*%s)" % (items items margins)
+		margin-right: b
+		margin-bottom: b
+		&:nth-child({a}n)
+			margin-right: 0
+
 flex(a){
 	if(a=='mid'){
 		display: flex;
