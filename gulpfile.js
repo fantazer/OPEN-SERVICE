@@ -43,6 +43,8 @@ var changed = require('gulp-changed');
 var pug = require('gulp-pug');
 
 
+// ########## make img ###############
+
 
 
 // ########## make img ###############
@@ -94,6 +96,14 @@ gulp.task('svg', function () {
 				.pipe(svgSpriteTempl())
 				.pipe(gulp.dest('app/img/'))
 				.pipe(gulp.dest('dist/img/'))
+
+		var  svgArray =[];
+		fs.writeFile("app/html/block_html/_svg.pug",'');
+		fs.readdirSync('app/img/svg').forEach(file => {
+			svgArray.push("\'"+file+"\'");
+		})
+		fs.writeFile("app/html/block_html/_svg.pug",'- svgArray = ['+ svgArray+'];');
+
 });
 
 
@@ -370,11 +380,14 @@ gulp.task('zip', function() {
 				.pipe(gulp.dest('zip'));
 });
 
+gulp.task('listSvg',function(){
 
+});
 
 
 //Watcher
 gulp.task('see',function(){
+		gulp.watch(['app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg'],['svg']);
 		gulp.watch(['./file.json'],['file','pug','stylus','include-pug']);
 		gulp.watch(['app/html/**/*.pug','app/module/**/*.pug'], ['pug']);
 		gulp.watch(['app/css/**/*.styl','app/module/**/*.styl'],['stylus']);

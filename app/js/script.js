@@ -52,12 +52,11 @@ $(document).ready(function(){
 	//for init SVG 
 	svg4everybody();
 	// ==== clear storage =====
-		// localStorage.clear();
-		// sessionStorage.clear();
-		//
-		// $(window).unload(function(){
-		//   localStorage.clear();
-		// });
+	 localStorage.clear();
+	 sessionStorage.clear();
+	 $(window).unload(function(){
+		 localStorage.clear();
+	 });
 	// ==== clear storage end =====
 
 	
