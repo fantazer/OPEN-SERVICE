@@ -1,3 +1,16 @@
+br-animate(a,b)
+	position: relative
+	display: inline-block
+	&:after
+		content: ""
+		display: block
+		width: 0px
+		height: b
+		background: a
+		transition: width .3s
+	&:hover:after
+		width: 100%
+
 item(a,b)
 	if(a==1)
 		width 100%
