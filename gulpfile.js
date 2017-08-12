@@ -49,7 +49,12 @@ var pug = require('gulp-pug');
 
 // ########## make img ###############
 gulp.task('imageCompress',function(){
-		return gulp.src(['app/img/**/**.*','!app/img/svg/**.*','!app/img/svg'])
+		return gulp.src([
+					'app/img/**/**.*',
+					'!app/img/svg/**.*',
+					'!app/img/svg',
+					'!app/img/screen/'
+				])
 				.pipe(newer('dist/img/'))
 				.pipe(gulpif("*.png",
 						imagemin({
