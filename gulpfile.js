@@ -74,19 +74,23 @@ gulp.task('imageCompress',function(){
 
 //sprite SVG
 gulp.task('svg', function () {
+		 gulp.src(['!app/img/svg/**--color.*','app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg'])
+		 .pipe(cheerio({
+						run: function ($) {
+								$('[fill]').removeAttr('fill'); //remove if need color icon
+								$('[style]').removeAttr('style');
+								$('style').remove();
+						},
+						parserOptions: {xmlMode: true }
+			}))
+		.pipe(gulp.dest('app/img/svg/'));
+
 		var svgSrc = gulp.src(['app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg']);
 		svgSrc
 				.pipe(svgmin({
 						js2svg: {
 								pretty: true
 						}
-				}))
-				.pipe(cheerio({
-						run: function ($) {
-								$('[fill]').removeAttr('fill'); //remove if need color icon
-								$('[style]').removeAttr('style');
-						},
-						parserOptions: {xmlMode: true }
 				}))
 				.pipe(svgSprite( {
 						mode:{
@@ -101,15 +105,8 @@ gulp.task('svg', function () {
 				.pipe(svgSpriteTempl())
 				.pipe(gulp.dest('app/img/'))
 				.pipe(gulp.dest('dist/img/'))
-
-		var  svgArray =[];
-		fs.writeFile("app/html/block_html/_svg.pug",'');
-		fs.readdirSync('app/img/svg').forEach(file => {
-			svgArray.push("\'"+file+"\'");
-		})
-		fs.writeFile("app/html/block_html/_svg.pug",'- svgArray = ['+ svgArray+'];');
-
 });
+
 
 
 //Sprite
