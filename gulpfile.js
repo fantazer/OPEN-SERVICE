@@ -428,11 +428,11 @@ gulp.task('build:ftp',function(){
 				'copy:css',
 				'min:css',
 				'min:js',
+				'screenshot',
 				'img',
 				'svg',
 				'make',
 				//'zip',
-				'screenshot',
 				//'guide',
 				'ftp'
 				//'template'
