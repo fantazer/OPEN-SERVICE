@@ -1,52 +1,45 @@
 $(document).ready(function(){
 
-	// ===== for template header =====
-	//See mixin header
-	/*
-	var hideToggle = function(targetClick,toggleEl) {
-		$(targetClick).click(function(event){
-				event.stopPropagation();
-				$(toggleEl).slideToggle("fast");
-		});
-		$(toggleEl).on("click", function (event) {
-			event.stopPropagation();
-		});
-		$(document).on("click", function () {
-				$(toggleEl).hide();
-		});
-	}
-	hideToggle('.menu-toggle','.header-nav');
-
-	$(window).resize(function(){
-		if ($(document).width() < 1025) {
-			$('.header-nav__sub').hide();
-			$('.header-nav__el-icon').click(function () {
-				var current = $(this).closest('.header-nav__el').find('.header-nav__sub');
-				$('.header-nav__sub').slideUp();
-					if(current.is(':visible')){
-						current.slideUp();
-					} else {
-						current.slideToggle(400,"linear");
-					}
-			})
-		}
-	});*/
-	//===== for template header-end =====
 
 	/* ###### For only ies  ######*/
 	//if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
 	//	//code
 	//}
 
-	//message for old IE
-	function isIE () {
-	  var myNav = navigator.userAgent.toLowerCase();
-	  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+	function detectIE() {
+	var ua = window.navigator.userAgent;
+
+	var msie = ua.indexOf('MSIE ');
+	if (msie > 0) {
+		// IE 10 or older => return version number
+		return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
 	}
 
-	if (isIE() < 10 &&  isIE()) {
+	var trident = ua.indexOf('Trident/');
+	if (trident > 0) {
+		// IE 11 => return version number
+		var rv = ua.indexOf('rv:');
+		return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+	}
+
+	var edge = ua.indexOf('Edge/');
+	if (edge > 0) {
+		// Edge (IE 12+) => return version number
+		return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+	}
+
+	// other browser
+	return false;
+}
+
+	console.log(detectIE());
+	if (detectIE() <= 14 && detectIE()) {
 		$('body').empty();
-		$('body').prepend('<div class="old-browser"><div class="old-browser-text"> Браузер не поддерживается =(</div></div>');
+		$('body').prepend('' +
+		 '<div class="old-browser">' +
+			'<div class="old-browser-text"> Сайт не поддерживае Браузер Internet Explorer</div><br>' +
+			'<div class="old-browser-text"> Установите <br><br> Chrome Firefox Opera </div><br>' +
+		'</div>');
 	}
 
 	//for init SVG 
@@ -75,28 +68,6 @@ $(document).ready(function(){
 	}
 	hideToggle('.icon-bars','.top-menu_link');*/
 
-
-	/* ###### init RangeSLider  ######*/
-	/* ###### bower i --save-dev nouislider  ######*/
-	/* ###### https://gist.github.com/fantazer/2bdc4e6a63708e143718ffa7c32eae17  ######*/
-
-	/*var slider = document.getElementById('rangeSlider'); //Элемент
-
-	noUiSlider.create(slider, {
-		start: [0, 100],
-		connect: true,
-		step: 10,
-		range: {
-			'min': 0,
-			'max': 100,
-		},
-		pips: { // Show a scale with the slider
-			mode: 'steps',
-			density: 4
-		}
-	});*/
-
-	
 })
 
 //cash SVG
