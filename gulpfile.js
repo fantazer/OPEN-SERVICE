@@ -44,10 +44,6 @@ var pug = require('gulp-pug');
 
 
 // ########## make img ###############
-
-
-
-// ########## make img ###############
 gulp.task('imageCompress',function(){
 		return gulp.src([
 					'app/img/**/**.*',
@@ -105,6 +101,13 @@ gulp.task('svg', function () {
 				.pipe(svgSpriteTempl())
 				.pipe(gulp.dest('app/img/'))
 				.pipe(gulp.dest('dist/img/'))
+
+		var  svgArray =[];
+		fs.writeFile("app/html/block_html/_svg.pug",'');
+		fs.readdirSync('app/img/svg').forEach(file => {
+			svgArray.push("\'"+file+"\'");
+		})
+		fs.writeFile("app/html/block_html/_svg.pug",'- svgArray = ['+ svgArray+'];');
 });
 
 
