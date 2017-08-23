@@ -41,9 +41,32 @@ var zip = require('gulp-zip');
 var pugInheritance = require('gulp-pug-inheritance');
 var changed = require('gulp-changed');
 var pug = require('gulp-pug');
+var favicons = require("gulp-favicons");
 
 
 // ########## make img ###############
+
+//favicon
+gulp.task("favicon", function () {
+    return gulp.src("app/img/logo.png")
+    .pipe(favicons({
+    android: true,
+    apple: true,
+    coast: true,
+    favicons: true,
+    firefox: true,
+    opengraph: false,
+    windows: true,
+    background: 'transparent',
+    tileBlackWhite: false,
+    manifest: null,
+    trueColor: false,
+    logging: true
+    }))
+    .pipe(gulp.dest("app/img/fav/"));
+});
+
+//compress image
 gulp.task('imageCompress',function(){
 		return gulp.src([
 					'app/img/**/**.*',
