@@ -17,9 +17,12 @@ silver = #DDDDDD
 gray = #AAAAAA
 black = #111111
 
+$blue = #3a90c8
+
 $main-text-color = black
 $link-color = black
-$link-color-visited = grey
+
+$link-color-visited = gray
 $link-color-hover = black
 $border-color = #dddddd
 
@@ -73,19 +76,34 @@ h5
 	@extend .type--xs
 
 a
-	color black
+	color $link-color
+	&:hover
+		color darken($link-color,20)
+	&:visiter
+		color darken($link-color,30)
 
-.link--blue
-	color blue
+
+
+p
+	@extend .type--main
+
+.link--mark
+	color $blue
+	&:hover
+		color darken($blue,20)
+	&:visiter
+		color darken($blue,30)
 
 .link--main
-	color black
-	hover-underline(blue)
+	color $link-color
+	hover-underline($blue)
 	&:hover
-		color black
+		color darken($link-color,20)
+	&:visiter
+		color darken($link-color,30)
 
 .link--text
-	color blue
+	color $blue
 	text-decoration underline
 	&:hover
 		text-decoration none
@@ -113,7 +131,6 @@ btnStyleLight(br-btn,color-btn)
 	br(4px)
 	tr(all)
 	display inline-block
-	margin-bottom 20px
 	background none
 	border 0px
 	color blue
@@ -144,16 +161,16 @@ btnStyleLight(br-btn,color-btn)
 		width 100%
 		text-align center
 
-.btn--blue
+.btn--mark
 	@extend .btn
 	color white
-	background blue
+	background $blue
 	.nav-icon
 		fill white
 	&:hover
-		background-color darken(blue,20)
+		background-color darken($blue,20)
 	&:active
-		background-color darken(blue,20)
+		background-color darken($blue,20)
 	input[type="submit"]
 		border 0
 	.nav-icon
@@ -170,7 +187,7 @@ btnStyleLight(br-btn,color-btn)
 	border 1px solid $border-color
 	background-color #ffffff
 	&:hover
-		border 1px solid blue
+		border 1px solid $blue
 	.nav-icon
 		fill blue
 
@@ -200,11 +217,45 @@ btnStyleLight(br-btn,color-btn)
 	size 20px
 	margin 0 10px
 
+.btn--hover
+	transform: perspective(100px) translateZ(0)
+	box-shadow: 0 0 1px transparent
+	position: relative
+	overflow: hidden
+	transition-property: color
+	transition-duration: 0.1s
+	&:before
+		content: ""
+		position: absolute
+		z-index: -1
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: gray
+		border-radius: 10%
+		transform: scale(0)
+		transition-property: transform
+		transition-duration: 0.35s
+		transition-timing-function: ease-out
+	&:hover,&:focus,&:active
+		color: white
+
+.btn--hover:hover:before
+	transform: scale(2)
+.btn--hover:focus:before
+	transform: scale(2)
+.btn--hover:active:before
+	transform: scale(2)
+
+
 button
-	font-family $v-fon
+	font-family $v-font
+
+
 // ============================ Inputs ============================
 
-input,textarea,select
+.input,.textarea,.select
 	border 0px
 	padding 20px
 	border 1px solid $border-color
@@ -224,7 +275,6 @@ input,textarea,select
 	display flex
 	position relative
 	align-items center
-
 
 .style-label--disable
 	@extend .disabled
@@ -283,4 +333,3 @@ input,textarea,select
 				round()
 				size 14px
 				background blue;
-
