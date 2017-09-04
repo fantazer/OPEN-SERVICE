@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
+	<!--create by ANATOLY KUZNETSOV-->
 
 	<head>
 		<meta charset="UTF-8" />
@@ -9,9 +10,33 @@
 		<meta name="theme-color" content="#000" />
 		<meta name="msapplication-navbutton-color" content="#000" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="#000" />
-		<!--icons-->
-		<link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico" />
-		<link type="image/x-icon" rel="icon" href="img/favicon.ico" />
+		<!--icons
+	link(rel="apple-touch-icon" sizes="57x57" href="img/fav/apple-touch-icon-57x57.png")
+	link(rel="apple-touch-icon" sizes="60x60" href="img/fav/apple-touch-icon-60x60.png")
+	link(rel="apple-touch-icon" sizes="72x72" href="img/fav/apple-touch-icon-72x72.png")
+	link(rel="apple-touch-icon" sizes="76x76" href="img/fav/apple-touch-icon-76x76.png")
+	link(rel="apple-touch-icon" sizes="114x114" href="img/fav/apple-touch-icon-114x114.png")
+	link(rel="apple-touch-icon" sizes="120x120" href="img/fav/apple-touch-icon-120x120.png")
+	link(rel="apple-touch-icon" sizes="144x144" href="img/fav/apple-touch-icon-144x144.png")
+	link(rel="apple-touch-icon" sizes="152x152" href="img/fav/apple-touch-icon-152x152.png")
+	link(rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon-180x180.png")
+	meta(name="apple-mobile-web-app-capable" content="yes")
+	meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+	meta(name="apple-mobile-web-app-title" content="My App")
+	link(rel="yandex-tableau-widget" href="img/fav/yandex-browser-manifest.json")
+	link(rel="icon" type="image/png" sizes="228x228" href="img/fav/coast-228x228.png")
+	link(rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png")
+	link(rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png")
+	link(rel="shortcut icon" href="img/fav/favicon.ico")
+	link(rel="manifest" href="img/fav/manifest.json")
+	meta(name="mobile-web-app-capable" content="yes")
+	meta(name="theme-color" content="#020307")
+	meta(name="application-name" content="My App")
+	meta(name="msapplication-TileColor" content="#020307")
+	meta(name="msapplication-TileImage" content="img/fav/mstile-144x144.png")
+	meta(name="msapplication-config" content="img/fav/browserconfig.xml")
+	
+	-->
 		<!--SEO-->
 		<title>Document</title>
 		<meta name="description" itemprop="description" content="" />
@@ -60,7 +85,7 @@
 			<p class="type--main type--bold"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique
 				enim qui voluptatibus est earum provident eum.</p>
 			<hr class="elements-hr" />
-			<a class="btn--md btn--blue" href="#">Кнопка</a>
+			<a class="btn--md btn--mark" href="#">Кнопка</a>
 			<a class="btn--md btn--disable" href="#">Неактивная</a>
 			<a class="btn--md btn--light" href="#">Второстепенная</a>
 			<a class="btn--md btn--light" href="#">
@@ -71,7 +96,7 @@
 					</svg>
 				</div>
 			</a>
-			<a class="btn--md btn--blue" href="#">
+			<a class="btn--md btn--mark" href="#">
 				<div class="btn--icon">
 					<span>C иконкой</span>
 					<svg class="nav-icon">
@@ -80,7 +105,7 @@
 				</div>
 			</a>
 			<hr class="elements-hr" />
-			<a class="btn--sm btn--blue" href="#">Кнопка small</a>
+			<a class="btn--sm btn--mark" href="#">Кнопка small</a>
 			<a class="btn--sm btn--disable" href="#">Неактивная small</a>
 			<a class="btn--sm btn--light" href="#">Второстепенная small</a>
 			<a class="btn--sm btn--light" href="#">
@@ -93,23 +118,24 @@
 			</a>
 			<hr class="elements-hr" />
 			<div class="elements-buttons-block">
-				<button class="btn--sm btn--blue">Кнопка типа button</button>
+				<button class="btn--sm btn--mark">Кнопка типа button</button>
 				<button class="btn--sm btn--light">Кнопка типа button</button>
 				<button class="btn--sm btn--disable">Кнопка типа button</button>
-				<input class="btn--sm btn--blue" type="submit" value="Кнопка типа submit" />
+				<input class="btn--sm btn--mark" type="submit" value="Кнопка типа submit" />
 				<input class="btn--sm btn--light" type="submit" value="Кнопка типа submit" />
 				<input class="btn--sm btn--disable" type="submit" value="Кнопка типа submit" />
 			</div>
+			<hr class="elements-hr" />
 			<div class="elements-link-block">
-				<a class="link--blue" href="#">Голубая ссылка</a>
+				<a class="link--mark" href="#">Цветная ссылка</a>
 				<a class="link--main" href="#">Новая ссылка</a>
 				<a class="link--text" href="#">Ссылка в тексте</a>
 			</div>
 			<hr class="elements-hr" />
 			<div class="elements-input-block">
-				<input type="text" placeholder="Username" />
-				<input type="text" placeholder="Passwords" />
-				<textarea name="" cols="30" rows="10" placeholder="Text"></textarea>
+				<input class="input" type="text" placeholder="Username" />
+				<input class="input" type="text" placeholder="Passwords" />
+				<textarea class="textarea" name="" cols="30" rows="10" placeholder="Text"></textarea>
 			</div>
 			<hr class="elements-hr" />
 			<div class="elements-checkbox-block">
@@ -159,7 +185,7 @@
 				<br/>
 			</div>
 			<div class="element-select">
-				<select class="select-beauty">
+				<select class="select-beauty select">
 					<option value="1" data-display="Выберите налог">Нет</option>
 					<option value="2">Новый налог 1</option>
 					<option value="3">Новый налог 2</option>
@@ -317,12 +343,6 @@
 						<use xlink:href="#soc-youtube"></use>
 					</svg>
 					<div class="element-list-svg__name">soc-youtube</div>
-				</div>
-				<div class="element-list-svg__icon">
-					<svg class="icon-el">
-						<use xlink:href="#sprite"></use>
-					</svg>
-					<div class="element-list-svg__name">sprite</div>
 				</div>
 				<div class="element-list-svg__icon">
 					<svg class="icon-el">

@@ -18,7 +18,7 @@
     "gulp-combine-mq": "^0.4.0",
     "gulp-data": "^1.2.1",
     "gulp-filter": "*",
-    "gulp-if": "^1.2.5",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^2.4.0",
     "gulp-minify-css": "^1.2.3",
     "gulp-newer": "*",
@@ -53,5 +53,7 @@
     "favicons": "^4.8.6",
     "gulp-favicons": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-favicons": "^2.2.7"
+  }
 }
