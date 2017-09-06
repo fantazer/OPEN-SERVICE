@@ -1,62 +1,68 @@
+- var elementPage = false;
+
 include block_html/_style.pug
 include block_html/_include.pug
 include block_html/_svg.pug
 
-.main-cont
+.main-cont.main-cont--all
+	.elements-hr
 
-	h1.elements-pusia h1 Проверка текста
-	h2.elements-pusia h2 Проверка текста
-	h3.elements-pusia h3 Проверка текста
-	h4.elements-pusia h4 Проверка текста
-	h5.elements-pusia h5 Проверка текста
-	h6.elements-pusia h6 Проверка текста
+	.all-page-color
+		.all-page-color__el
+			.all-page-color__block(style="background-color:#000000")
+			.all-page-color__el-name #000000
+		.all-page-color__el
+			.all-page-color__block(style="background-color:#0095c6")
+			.all-page-color__el-name #0095c6
+		.all-page-color__el
+			.all-page-color__block(style="background-color:#f20022")
+			.all-page-color__el-name #f20022
+		.all-page-color__el
+			.all-page-color__block(style="background-color:#efefef")
+			.all-page-color__el-name #efefef
+	.elements-hr
 
-	hr.elements-hr
-
-	h2 Текст type--xs
-	p.type--xs  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
-
-	h2 Текст type--sm
-	p.type--sm  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
-
-	h2 Текст type--main
-	p.type--main  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
-
-	h2 Текст type--md
-	p.type--md  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
-
-	h2 Текст type--lg
-	p.type--lg Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
-
-	h2 Текст type--xl
+	h1 Заголовок h1 class = "type--xl"
 	p.type--xl Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
 
-	h2 Жирный текст
-	p.type--main.type--bold  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
+	h2 Заголовок h2 class = "type--lg"
+		p.type--lg Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
 
-	hr.elements-hr
+	h3 Заголовок h3 class = "type--md"
+		p.type--md  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
 
-	a(href="#").btn--md.btn--mark Кнопка
+	h4 Заголовок h4 class = "type--main"
+		p.type--main  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
+
+	h5 Заголовок h5 class = "type--sm"
+		p.type--sm  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
+
+	h6 Заголовок h6 class = "type--xs"
+		p.type--xs  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique enim qui voluptatibus est earum provident eum.
+
+	.elements-hr
+
+	a(href="#").btn--md.btn--mark Стандартная
 	a(href="#").btn--md.btn--disable Неактивная
-	a(href="#").btn--md.btn--light Второстепенная
+	a(href="#").btn--md.btn--light Дополнительная
 	a(href="#").btn--md.btn--light
 		.btn--icon
 			span C  иконкой
-			+icon("checked","nav-icon")
+			+icon("arrow-right","nav-icon")
 	a(href="#").btn--md.btn--mark
 		.btn--icon
 			span C  иконкой
-			+icon("checked","nav-icon")
-	hr.elements-hr
+			+icon("arrow-right","nav-icon")
+	.elements-hr
 
 	a(href="#").btn--sm.btn--mark Кнопка small
 	a(href="#").btn--sm.btn--disable Неактивная small
 	a(href="#").btn--sm.btn--light Второстепенная small
 	a(href="#").btn--sm.btn--light
 		.btn--icon
-			span C  иконкой small
+			span C иконкой small
 			+icon("checked","nav-icon")
-	hr.elements-hr
+	.elements-hr
 
 	.elements-buttons-block
 		button.btn--sm.btn--mark Кнопка типа button
@@ -66,18 +72,18 @@ include block_html/_svg.pug
 		input(type="submit" value="Кнопка типа submit").btn--sm.btn--light
 		input(type="submit" value="Кнопка типа submit").btn--sm.btn--disable
 
-	hr.elements-hr
+	.elements-hr
 	.elements-link-block
 		a(href="#").link--mark Цветная ссылка
 		a(href="#").link--main Новая ссылка
 		a(href="#").link--text Ссылка в тексте
 
-	hr.elements-hr
+	.elements-hr
 	.elements-input-block
 		input(type="text" placeholder="Username" ).input
 		input(type="text" placeholder="Passwords").input
 		textarea(name="", cols="30", rows="10" placeholder="Text").textarea
-	hr.elements-hr
+	.elements-hr
 
 	.elements-checkbox-block
 		+checkbox('Наименование услуги','disable')
@@ -96,7 +102,7 @@ include block_html/_svg.pug
 			option(value="3") Новый налог 2
 			option(value="4") Новый налог 3
 
-	hr.elements-hr
+	.elements-hr
 	.element-list-svg
 		each item in svgArray
 			.element-list-svg__icon
