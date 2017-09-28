@@ -1,5 +1,6 @@
 @import 'rupture'
 @import "variable/_function.styl"
+@import "variable/_fonts.styl"
 @import "variable/_ie.styl"
 @import "icon/sprite.css"
 @import "variable/_helper.styl"
@@ -7,6 +8,7 @@
 @import "variable/_elements.styl"
 @import "variable/_constant.styl"
 //@import "variable/_grid.styl"
+@import "../module/**/*"
 
 rupture.scale = 0 480px 768px 992px 1200px
 rupture.scale-names = 'xs' 'sm' 'md' 'lg'
@@ -31,8 +33,7 @@ body
 	color $main-text-color
 	line-height 1.2
 	letter-spacing 0.01em
-	
+
 .main-cont
 	center(1200px,10px)
-	
-@import "../module/**/*"
+
