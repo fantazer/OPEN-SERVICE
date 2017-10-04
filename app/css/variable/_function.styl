@@ -15,6 +15,7 @@ item(a,b)
 	if(a==1)
 		width 100%
 		margin-bottom: b
+		margin-right 0
 	else
 		items = a
 		margins = b
@@ -23,6 +24,10 @@ item(a,b)
 		margin-bottom: b
 		&:nth-child({a}n)
 			margin-right: 0
+
+item-clear(a,b)
+	&:nth-child({a}n)
+			margin-right: b
 
 flex(a){
 	if(a=='mid'){
