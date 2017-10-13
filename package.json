@@ -8,6 +8,8 @@
   "devDependencies": {
     "browser-sync": "^2.10.1",
     "create-file": "^1.0.1",
+    "emitty": "^1.4.0",
+    "favicons": "^4.8.6",
     "gemini": "0.8.2",
     "gulp": "*",
     "gulp-autoprefixer": "^2.3.1",
@@ -17,6 +19,7 @@
     "gulp-clean": "^0.3.2",
     "gulp-combine-mq": "^0.4.0",
     "gulp-data": "^1.2.1",
+    "gulp-favicons": "*",
     "gulp-filter": "*",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^2.4.0",
@@ -49,9 +52,7 @@
     "rupture": "^0.6.1",
     "util-deprecate": "^1.0.2",
     "vinyl-ftp": "^0.4.4",
-    "wiredep": "^4.0.0",
-    "favicons": "^4.8.6",
-    "gulp-favicons": "*"
+    "wiredep": "^4.0.0"
   },
   "dependencies": {
     "gulp-favicons": "^2.2.7"
