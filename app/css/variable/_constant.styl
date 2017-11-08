@@ -17,22 +17,30 @@ silver = #DDDDDD
 gray = #AAAAAA
 black = #111111
 
-$blue = #3a90c8
+$blue = #2f81e6
+$blue--dark = #1067d3
+$purple = #6c76e3
+$purple-gradient = linear-gradient(-45deg, #607aeb 0%, #f13e75 100%)
+$white = #f1f6fb
+$gray = #ccd5eb
+$red = #ef393f
 
-$main-text-color = black
+$main-text-color = #262a34
 $link-color = black
 
 $link-color-visited = gray
 $link-color-hover = black
-$border-color = #dddddd
+$border-color = #d0d5e0
 
 //  ============================ Typography ============================
 
 //webfont('RUB', 'rouble-webfont', 'normal')
 //Add fotn rub write .rub a - (a,b,c,d - change type font)
 
-//webfont('PT Sans', 'PT Sans', 'normal')
-$v-font =  'Roboto', sans-serif
+webfont('MuseoSansCyrl-300', 'MuseoSansCyrl', 'normal')
+webfont('MuseoSansCyrl-700', 'MuseoSansCyrl', 'bold')
+
+$v-font =  'Open Sans', sans-serif
 
 $weigh-light = 300
 $weigh-normal = 400
@@ -50,39 +58,54 @@ typeSize(fontSm,font)
 	typeSize(14,12)
 
 .type--main
-	typeSize(16,14)
+	typeSize(15,13)
+	font-family 'Open Sans'
+
 
 .type--md
 	typeSize(18,15)
+	font-family "Museo Sans Cyrl"
+	font-weight bold
+
+.type--xlg
+	typeSize(22,18)
+	font-family "Museo Sans Cyrl"
+	font-weight bold
 
 .type--lg
-	typeSize(26,18)
+	typeSize(30,24)
+	font-family "Museo Sans Cyrl"
+	font-weight bold
 
 .type--xl
-	typeSize(36,20)
+	typeSize(40,28)
+	font-family "Museo Sans Cyrl"
+
+.type--xxl
+	typeSize(55,32)
+	font-family "Museo Sans Cyrl"
 
 .type--bold
 	font-weight bold
 
 h1
-	@extend .type--xl
+	@extend .type--xxl
 h2
-	@extend .type--lg
+	@extend .type--xl
 h3
-	@extend .type--main
+	@extend .type--lg
 h4
-	@extend .type--sm
+	@extend .type--xlg
 h5
-	@extend .type--xs
+	@extend .type--md
 
 a
-	color $link-color
+	color $blue
+	tr(all)
 	&:hover
-		color darken($link-color,20)
+		color $red
 	&:visiter
-		color darken($link-color,30)
-
-
+		color $red
 
 p
 	@extend .type--main
@@ -127,14 +150,15 @@ btnStyleLight(br-btn,color-btn)
 		border br-btn solid darken(color-btn,20)
 
 .btn
-	up()
-	br(4px)
+	br(25px)
 	tr(all)
 	display inline-block
 	background none
 	border 0px
-	color blue
 	text-align: center
+	font-family "Museo Sans Cyrl"
+	font-size 15px
+	font-weight 400
 	&:hover
 		cursor pointer
 
@@ -148,7 +172,7 @@ btnStyleLight(br-btn,color-btn)
 .btn--md
 	@extend .btn
 	font-size 15px
-	padding 20px 45px
+	padding 15px 35px
 
 .btn--lg
 	@extend .btn
@@ -169,12 +193,16 @@ btnStyleLight(br-btn,color-btn)
 		fill white
 	&:hover
 		background-color darken($blue,20)
+		color white
 	&:active
 		background-color darken($blue,20)
+		color white
 	input[type="submit"]
 		border 0
 	.nav-icon
 		fill white
+
+
 
 .btn--disable
 	@extend .disabled
@@ -184,12 +212,22 @@ btnStyleLight(br-btn,color-btn)
 
 .btn--light
 	@extend .btn
-	border 1px solid $border-color
+	border 1px solid #c6d0d9
 	background-color #ffffff
+	color black
 	&:hover
 		border 1px solid $blue
+		color $blue
 	.nav-icon
 		fill blue
+
+.btn--light-dark
+	@extend .btn--light
+	background: none
+	color white
+	border 1px solid rgba(255, 255, 255, 0.3)
+	&:hover
+		border 1px solid rgba(255, 255, 255, 1)
 
 .btn--grey
 	@extend .btn
@@ -256,9 +294,10 @@ button
 // ============================ Inputs ============================
 
 .input,.textarea,.select
-	border 0px
-	padding 20px
+	br(5px)
+	padding 20px 25px
 	border 1px solid $border-color
+	background: none
 	resize: none
 	outline: 0 !important
 	border-radius 4px
@@ -266,10 +305,10 @@ button
 	display block!important
 	margin-bottom 10px
 	placeholder(#888888)
-	background: #f7f7f8
 	tr(all)
 	&:focus
-		border 1px solid blue
+		border 1px solid $blue
+		box-shadow 0 11px 8px rgba(47, 129, 230, 0.15)
 
 .style-label
 	display flex
@@ -291,12 +330,12 @@ button
 		display inline-block
 		margin-right 10px
 		background white
-		border 1px solid #cfcfcf
-		br(8px)
+		border 1px solid $border-color
+		br(5px)
 		cp()
 		tr(all)
 		&:hover
-			border 1px solid #8d8d8d
+			border 1px solid $blue
 	.icon-check
 		display none
 	.sytle-input
@@ -305,7 +344,7 @@ button
 			color white
 			.icon-check
 				display block
-				fill #000000
+				fill $blue
 				size 16px
 
 .style-label--radio
@@ -314,13 +353,13 @@ button
 		top 0
 		left -9999px
 	.sytle-input-element
-		width 22px
-		height 22px
+		width 30px
+		height 30px
 		position relative
 		display inline-block
 		margin-right 10px
 		background white
-		border 1px solid #cfcfcf
+		border 1px solid $border-color
 		round()
 		cp()
 	.icon-check
@@ -332,4 +371,4 @@ button
 			.icon-radio
 				round()
 				size 14px
-				background blue;
+				background $blue

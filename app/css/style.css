@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Museo Sans Cyrl';
+  src: url("../fonts/MuseoSansCyrl-700.woff2") format('woff2'), url("../fonts/MuseoSansCyrl-700.woff") format('woff');
+  font-weight: 700;
+  font-style: bold;
+}
+@font-face {
+  font-family: 'Museo Sans Cyrl';
+  src: url("../fonts/MuseoSansCyrl-300.woff2") format('woff2'), url("../fonts/MuseoSansCyrl-300.woff") format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Regular.woff2") format('woff2'), url("../fonts/OpenSans-Regular.woff") format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 .clear {
   clear: both;
 }
@@ -324,95 +342,131 @@ body > svg {
   font-family: 'RUB';
   font-style: normal;
 }
-.type--xs,
-h5 {
+@font-face {
+  font-family: 'MuseoSansCyrl-300';
+  src: url("../fonts/MuseoSansCyrl.woff") format('woff'), font-weight 'normal';
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MuseoSansCyrl-700';
+  src: url("../fonts/MuseoSansCyrl.woff") format('woff'), font-weight 'normal';
+  font-style: normal;
+}
+.type--xs {
   font-size: 12px;
 }
 @media only screen and (max-width: 768px) {
-  .type--xs,
-  h5 {
+  .type--xs {
     font-size: 10px;
   }
 }
-.type--sm,
-h4 {
+.type--sm {
   font-size: 14px;
 }
 @media only screen and (max-width: 768px) {
-  .type--sm,
-  h4 {
+  .type--sm {
     font-size: 12px;
   }
 }
 .type--main,
-h3,
 p,
 body {
-  font-size: 16px;
+  font-size: 15px;
+  font-family: 'Open Sans';
 }
 @media only screen and (max-width: 768px) {
   .type--main,
-  h3,
   p,
   body {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
-.type--md {
+.type--md,
+h5 {
   font-size: 18px;
+  font-family: "Museo Sans Cyrl";
+  font-weight: bold;
 }
 @media only screen and (max-width: 768px) {
-  .type--md {
+  .type--md,
+  h5 {
     font-size: 15px;
   }
 }
-.type--lg,
-h2 {
-  font-size: 26px;
+.type--xlg,
+h4 {
+  font-size: 22px;
+  font-family: "Museo Sans Cyrl";
+  font-weight: bold;
 }
 @media only screen and (max-width: 768px) {
-  .type--lg,
-  h2 {
+  .type--xlg,
+  h4 {
     font-size: 18px;
   }
 }
+.type--lg,
+h3 {
+  font-size: 30px;
+  font-family: "Museo Sans Cyrl";
+  font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+  .type--lg,
+  h3 {
+    font-size: 24px;
+  }
+}
 .type--xl,
-h1 {
-  font-size: 36px;
+h2 {
+  font-size: 40px;
+  font-family: "Museo Sans Cyrl";
 }
 @media only screen and (max-width: 768px) {
   .type--xl,
+  h2 {
+    font-size: 28px;
+  }
+}
+.type--xxl,
+h1 {
+  font-size: 55px;
+  font-family: "Museo Sans Cyrl";
+}
+@media only screen and (max-width: 768px) {
+  .type--xxl,
   h1 {
-    font-size: 20px;
+    font-size: 32px;
   }
 }
 .type--bold {
   font-weight: bold;
 }
 a {
-  color: #111;
+  color: #2f81e6;
+  transition: all 0.4s;
 }
 a:hover {
-  color: #000;
+  color: #ef393f;
 }
 a:visiter {
-  color: #000;
+  color: #ef393f;
 }
 .link--mark {
-  color: #3a90c8;
+  color: #2f81e6;
 }
 .link--mark:hover {
-  color: #22577a;
+  color: #13509c;
 }
 .link--mark:visiter {
-  color: #173b52;
+  color: #0d396f;
 }
 .link--main {
   color: #111;
-  border-bottom: #3a90c8 solid transparent;
+  border-bottom: #2f81e6 solid transparent;
 }
 .link--main:hover {
-  border-bottom: #3a90c8 solid;
+  border-bottom: #2f81e6 solid;
 }
 .link--main:hover {
   color: #000;
@@ -421,7 +475,7 @@ a:visiter {
   color: #000;
 }
 .link--text {
-  color: #3a90c8;
+  color: #2f81e6;
   text-decoration: underline;
 }
 .link--text:hover {
@@ -434,17 +488,19 @@ a:visiter {
 .btn--mobile,
 .btn--mark,
 .btn--light,
+.btn--light-dark,
 .btn--grey,
 .btn--dotted,
 .btn--white {
-  text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 25px;
   transition: all 0.4s;
   display: inline-block;
   background: none;
   border: 0px;
-  color: #3a90c8;
   text-align: center;
+  font-family: "Museo Sans Cyrl";
+  font-size: 15px;
+  font-weight: 400;
 }
 .btn:hover,
 .btn--sm:hover,
@@ -453,6 +509,7 @@ a:visiter {
 .btn--mobile:hover,
 .btn--mark:hover,
 .btn--light:hover,
+.btn--light-dark:hover,
 .btn--grey:hover,
 .btn--dotted:hover,
 .btn--white:hover {
@@ -468,7 +525,7 @@ a:visiter {
 }
 .btn--md {
   font-size: 15px;
-  padding: 20px 45px;
+  padding: 15px 35px;
 }
 .btn--lg {
   font-size: 20px;
@@ -482,16 +539,18 @@ a:visiter {
 }
 .btn--mark {
   color: #fff;
-  background: #3a90c8;
+  background: #2f81e6;
 }
 .btn--mark .nav-icon {
   fill: #fff;
 }
 .btn--mark:hover {
-  background-color: #22577a;
+  background-color: #13509c;
+  color: #fff;
 }
 .btn--mark:active {
-  background-color: #22577a;
+  background-color: #13509c;
+  color: #fff;
 }
 .btn--mark input[type="submit"] {
   border: 0;
@@ -500,19 +559,32 @@ a:visiter {
   fill: #fff;
 }
 .btn--disable {
-  border: 1px solid #ddd;
+  border: 1px solid #d0d5e0;
   background-color: #fff;
   color: #000;
 }
-.btn--light {
-  border: 1px solid #ddd;
+.btn--light,
+.btn--light-dark {
+  border: 1px solid #c6d0d9;
   background-color: #fff;
+  color: #111;
 }
-.btn--light:hover {
-  border: 1px solid #3a90c8;
+.btn--light:hover,
+.btn--light-dark:hover {
+  border: 1px solid #2f81e6;
+  color: #2f81e6;
 }
-.btn--light .nav-icon {
+.btn--light .nav-icon,
+.btn--light-dark .nav-icon {
   fill: #3a90c8;
+}
+.btn--light-dark {
+  background: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn--light-dark:hover {
+  border: 1px solid #fff;
 }
 .btn--grey {
   border: 1px solid #ddd;
@@ -579,21 +651,21 @@ a:visiter {
   transform: scale(2);
 }
 button {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 .input,
 .textarea,
 .select {
-  border: 0px;
-  padding: 20px;
-  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px 25px;
+  border: 1px solid #d0d5e0;
+  background: none;
   resize: none;
   outline: 0 !important;
   border-radius: 4px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   display: block !important;
   margin-bottom: 10px;
-  background: #f7f7f8;
   transition: all 0.4s;
 }
 .input input::-webkit-input-placeholder,
@@ -619,7 +691,8 @@ button {
 .input:focus,
 .textarea:focus,
 .select:focus {
-  border: 1px solid #3a90c8;
+  border: 1px solid #2f81e6;
+  box-shadow: 0 11px 8px rgba(47,129,230,0.15);
 }
 .style-label {
   display: flex;
@@ -638,28 +711,28 @@ button {
   display: inline-block;
   margin-right: 10px;
   background: #fff;
-  border: 1px solid #cfcfcf;
-  border-radius: 8px;
+  border: 1px solid #d0d5e0;
+  border-radius: 5px;
   transition: all 0.4s;
 }
 .check-el .sytle-input-element:hover {
   cursor: pointer;
 }
 .check-el .sytle-input-element:hover {
-  border: 1px solid #8d8d8d;
+  border: 1px solid #2f81e6;
 }
 .check-el .icon-check {
   display: none;
 }
-.check-el .sytle-input:checked + .sytle-input-element {
+.check-el .sytle-input:checked ~ .sytle-input-element {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
 }
-.check-el .sytle-input:checked + .sytle-input-element .icon-check {
+.check-el .sytle-input:checked ~ .sytle-input-element .icon-check {
   display: block;
-  fill: #000;
+  fill: #2f81e6;
   width: 16px;
   height: 16px;
 }
@@ -669,13 +742,13 @@ button {
   left: -9999px;
 }
 .style-label--radio .sytle-input-element {
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   position: relative;
   display: inline-block;
   margin-right: 10px;
   background: #fff;
-  border: 1px solid #cfcfcf;
+  border: 1px solid #d0d5e0;
   border-radius: 50%;
 }
 .style-label--radio .sytle-input-element:hover {
@@ -684,50 +757,17 @@ button {
 .style-label--radio .icon-check {
   display: none;
 }
-.style-label--radio .sytle-input:checked + .sytle-input-element {
+.style-label--radio .sytle-input:checked ~ .sytle-input-element {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
 }
-.style-label--radio .sytle-input:checked + .sytle-input-element .icon-radio {
+.style-label--radio .sytle-input:checked ~ .sytle-input-element .icon-radio {
   border-radius: 50%;
   width: 14px;
   height: 14px;
-  background: #3a90c8;
-}
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #111;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-}
-.main-cont {
-  *zoom: 1;
-  width: auto;
-  max-width: 1200px;
-  float: none;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
-  position: relative;
-  width: 100%;
-  padding: 0 10px;
-}
-.main-cont:before,
-.main-cont:after {
-  content: '';
-  display: table;
-}
-.main-cont:after {
-  clear: both;
-}
-@media only screen and (min-width: 1200px) {
-  .main-cont {
-    width: 1200px;
-  }
+  background: #2f81e6;
 }
 /* block footer*/
 /*block footer end */
@@ -969,4 +1009,37 @@ body {
 }
 .header-nav__sub-el:last-child {
   border-bottom: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #262a34;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+.main-cont {
+  *zoom: 1;
+  width: auto;
+  max-width: 1200px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+}
+.main-cont:before,
+.main-cont:after {
+  content: '';
+  display: table;
+}
+.main-cont:after {
+  clear: both;
+}
+@media only screen and (min-width: 1200px) {
+  .main-cont {
+    width: 1200px;
+  }
 }
