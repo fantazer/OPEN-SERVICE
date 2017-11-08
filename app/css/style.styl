@@ -37,3 +37,101 @@ body
 .main-cont
 	center(1200px,10px)
 
+.main-section-filter
+	position: absolute
+	top: 0
+	left: 0
+	background-color #000000
+	background-image linear-gradient(to left, #751540 0%, #21539f 100%)
+	opacity 0.8
+	width: 100%
+	height: 100%
+	
+
+.main-section
+	width: 100%
+	height: 720px
+	background: rgba(0, 0, 0, 0.61)
+	position: relative
+	flex(mid)
+	background-attachment fixed
+	background-repeat: no-repeat
+	bg-full()
+
+.main-section-cont
+	position: relative
+
+.main-section-title
+	up()
+	color white
+	font-size: 5vw
+
+.header
+	position: absolute
+	top 0
+	left: 0
+	width: 100%
+	z-index 50
+
+.header-logo
+	width: 18%
+
+
+.header-cont
+	flex(between)
+	padding: 25px 0
+
+
+.header-info
+	flex(between)
+	width: 36%
+//.header-info__el 
+
+.header-info__text
+	color rgba(255, 255, 255, 0.4)
+	margin-bottom: 10px
+
+.header-info__numb
+	@extend .type--xlg
+	color white
+
+.header-info__toggle
+	position: relative
+
+.header-info__text--town
+	color $blue
+	.icon
+		size 8px
+		fill $blue
+
+.header-info__sub
+	position: absolute
+	display: none
+
+//.header-info__sub-title
+//.header-info__sub-el
+
+.header-top
+	border-bottom 1px solid rgba(255, 255, 255, 0.15)
+
+.header-get
+	flex(between)
+	width: 38%
+.header-get__el
+	@extend .btn--md
+	@extend .btn--light-dark
+	padding: 15px 20px
+	.nav-icon
+		margin-left: 0
+	.icon
+		size 15px
+		fill $blue
+//.btn--icon
+//.nav-icon 
+//.sub-header 
+//.main-section-slogan 
+//.main-section-title 
+//.main-section-text 
+//.main-section-get 
+//.main-section-get__el 
+//.main-section-get__el-mark 

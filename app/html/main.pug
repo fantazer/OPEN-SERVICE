@@ -1,6 +1,66 @@
 include block_html/_style.pug
 include block_html/_include.pug
 
-+header()
+
+.main-section(style="background-image:url('img/main-baner.jpg')")
+	.main-section-filter
+	.header
+		.header-top
+			.main-cont
+				.header-cont
+					a(href="/").header-logo
+						img(src="img/Logo.svg", alt="")
+					.header-info
+						.header-info__el
+							.header-info__text Техподдержка
+							a(href="#").header-info__numb 8-800-505-72-50
+						.header-info__el
+							.header-info__toggle
+								.header-info__text.header-info__text--town
+									span Санкт-Петербург
+									+icon("arrow-down","icon")
+								.header-info__sub
+									.header-info__sub-title
+										-
+											var items = [
+												'Москва',
+												'Санкт-Петербург',
+												'Татарстан',
+												'Сочи',
+												'Новосибирск'
+												];
+										each item in items
+											.header-info__sub-el #{item}
+							a(href="#").header-info__numb 8-800-555-14-98
+					.header-get
+						.header-get__el
+							.btn--icon
+								+icon("Phone","nav-icon")
+								span Связаться с нами
+						.header-get__el
+							span Бесплатная консультация
+
+		.sub-header
+			.main-cont
+				.sub-header__wrap
+					-
+						var items = [
+							'Автоматизация',
+							'Обслуживание',
+							'Консалтинг',
+							'Оборудование',
+							'База знаний',
+							'Блог',
+							'О компании'
+							];
+					each item in items
+						.sub-header__el #{item}
+
+	.main-section-slogan
+		.main-section-title Автоматизация ресторанов
+		.main-section-text Мы помогаем управлять бизнесом и финансами, быстро строить и анализировать любые отчеты, сокращать расходы и увеличивать продажи системы iiko
+		.main-section-get
+			a(href="#").main-section-get__el Выбрать готовый пакет
+			a(href="#").main-section-get__el-mark  Бесплатная консультация
 
 include ./block_html/_script.pug
