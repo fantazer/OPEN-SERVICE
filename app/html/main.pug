@@ -54,7 +54,7 @@ include block_html/_include.pug
 							'О компании'
 							];
 					each item in items
-						.sub-header__el #{item}
+						a(href="#").sub-header__el #{item}
 
 	.main-section-slogan
 		.main-section-title Автоматизация ресторанов
@@ -62,5 +62,167 @@ include block_html/_include.pug
 		.main-section-get
 			a(href="#").main-section-get__el Выбрать готовый пакет
 			a(href="#").main-section-get__el-mark  Бесплатная консультация
+
+.tools
+	.main-cont
+		.tools-cont
+			.tools-wrap
+				a(href="#").tools__el
+					.tools__el-icon
+						+icon("atom","icon")
+					.tools__el-title
+						span Автоматизация
+						+icon("arrow-simple-right","icon")
+					.tools__el-text Обеспечение правильной работы с системой всех сотрудников ресторана
+
+				a(href="#").tools__el
+					.tools__el-icon
+						+icon("support","icon")
+					.tools__el-title
+						span Обслуживание
+						+icon("arrow-simple-right","icon")
+					.tools__el-text Обеспечение правильной работы с системой всех сотрудников ресторана
+
+				a(href="#").tools__el
+					.tools__el-icon
+						+icon("folder","icon")
+					.tools__el-title
+						span Консалтинг
+						+icon("arrow-simple-right","icon")
+					.tools__el-text Обеспечение правильной работы с системой всех сотрудников ресторана
+
+				a(href="#").tools__el
+					.tools__el-icon
+						+icon("service","icon")
+					.tools__el-title
+						span Оборудование
+						+icon("arrow-simple-right","icon")
+					.tools__el-text Обеспечение правильной работы с системой всех сотрудников ресторана
+
+.config
+
+//solution automatic
+.section.section-solution.section--gray
+	.section-title Решения для автоматизации HoReCa
+	.main-cont
+		.solution
+			.solution__head-wrap
+				.solution__head
+					-
+						var items = [
+							'Сеть заведений',
+							'Ресторана',
+							'Фастфуда',
+							'Бара',
+							'Кафе',
+							'Кофейни',
+							'Столовой',
+							'Пиццерии',
+							'Доставки'
+						];
+					each item in items
+						.solution__head-el.tab-head #{item}
+			.solution-info
+				.solution__cont.tab-cont.tab-cont--active
+					.solution__cont-img
+						img(src="img/phone.jpg", alt="")
+					.solution__cont-info
+						.solution__title Управление рестораном с быстрым обслуживанием #{i}
+						.solution__text В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.
+						.solution__get
+							.solution__get-el Подробнее
+							.solution__get-el-mark Оформить
+				- for (var i=0;i<8;i++)
+					.solution__cont.tab-cont
+						.solution__cont-img
+							img(src="img/phone.jpg", alt="")
+						.solution__cont-info
+							.solution__title Управление рестораном с быстрым обслуживанием #{i}
+							.solution__text В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.
+							.solution__get
+								.solution__get-el Подробнее
+								.solution__get-el-mark Оформить
+
+//facts
+.section.section-facts.section--mark
+	.section-title.section-title--white Факты и достижения
+	.facts
+		.main-cont
+			.facts-wrap
+				-
+					var items = [
+							{
+								val:'1 467',
+								text:'Реализованных проектов'
+							},
+							{
+								val:'250',
+								text:'Сэкономленных рабочих часов'
+							},
+							{
+								val:'№1',
+								text:'Первые \tв рейтинге iiko'
+							},
+							{
+								val:'24/7',
+								text:'Поддержка'
+							},
+							{
+								val:'3 часа',
+								text:'На устранение\tпроблем'
+							},
+							{
+								val:'На 120%',
+								text:'Увеличение прибыли клиента'
+							},
+							{
+								val:'На 80%',
+								text:'Увеличение потока клиентов'
+							},
+							{
+								val:'На 250%',
+								text:'Увеличение среднего чека'
+							}
+						];
+				each item in items
+					.facts__el
+						.facts__el-title #{item.val}
+						.facts__el-text #{item.text}
+
+//clients
+.section.section-clients.section--gray
+	.section-title Клиенты и отзывы
+	.client-slider-wrap
+		.client-slider-container
+			- for (var i=0;i<4;i++)
+				.client-slider
+						.client-slider__el
+							.client-slider__el-text
+								p #{i} Леонид, здравствуйте! Письма получаю, огромное за это спасибо! Всё открывается, читается, слушается. Вообще, курсы интересны и поучительны, а главное, предельно лаконичны и понятны.Сотрудничество с вашей компанией приносит одно удовольствие. Удивительная оперативность в решении любых вопросов! Хочется отметить внимательность и приветливость всего персонала. А за терпеливость - им отдельное СПАСИБО! По вопросам, наверное, позднее, привыкаем к iiko.
+							.client-slider__el-info
+								.client-slider__el-logo
+									img(src="img/review-logo.png", alt="")
+								.client-slider__el-title Алексей Поздняков
+								.client-slider__el-about Совладелец и генеральный директор сети кофеек Coffe Crew
+								.client-slider__nav
+									.client-slider__nav-el.client-slider__nav-el-left
+										+icon("triangle-arrow-left","icon")
+									.client-slider__nav-el.client-slider__nav-el-right
+										+icon("triangle-arrow-right","icon")
+
+	.btn-row--center
+		a(href="#").get-review Все отзывы
+
+//help
+.section.section-help(style="background-image:url('img/bg-light.jpg')")
+	.main-cont
+		.help
+			.help-info
+				.help-info__title Требуется помощь специалиста?
+				.help-info__text Получите бесплатную консультацию нашего эксперта и узнайте как сделать ресторан лучше 
+				a(href="#").help-info__get Бесплатная консультация
+			.help-img
+				img(src="img/woomen.png", alt="")
+			
 
 include ./block_html/_script.pug

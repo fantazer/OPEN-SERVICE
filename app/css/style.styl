@@ -61,11 +61,6 @@ body
 .main-section-cont
 	position: relative
 
-.main-section-title
-	up()
-	color white
-	font-size: 5vw
-
 .header
 	position: absolute
 	top 0
@@ -129,9 +124,302 @@ body
 //.btn--icon
 //.nav-icon 
 //.sub-header 
-//.main-section-slogan 
-//.main-section-title 
-//.main-section-text 
-//.main-section-get 
-//.main-section-get__el 
-//.main-section-get__el-mark 
+.main-section-slogan
+	flex(mid)
+	fl()
+	position: relative
+	z-index 5
+	margin-top: 3%
+
+.main-section-title
+	@extend .type--xxl
+	color white
+	text-align: center
+	margin-bottom: 25px
+
+.main-section-text
+	width: 620px
+	text-align: center
+	color white
+	line-height: 1.8
+	margin-bottom: 55px
+
+.main-section-get
+	flex(mid)
+
+.main-section-get__el
+	@extend .btn--md
+	@extend .btn--light-dark
+	margin-right: 20px
+
+.main-section-get__el-mark
+	@extend .btn--md
+	@extend .btn--mark
+
+.sub-header__wrap
+	flex(between)
+
+.sub-header__el
+	padding-top: 25px
+	width: 100%
+	text-align: center
+	up()
+	color white
+	margin-bottom: 25px
+
+
+.tools
+	transform translateY(-50%)
+//.main-cont
+
+.tools-cont
+	position: relative
+
+.tools-wrap
+	flex(between)
+	height: 190px
+.tools__el
+	flex(mid)
+	fl()
+	cp()
+	padding 35px
+	background: white
+	width: 24%
+	box-shadow 0 20px 24px rgba(0, 0, 0, 0.04)
+	border-radius 5px
+	color black
+	&:hover
+		.tools__el-text
+			max-height 200px
+			transition: max-height 0.45s
+		.tools__el-title
+			.icon
+				display: inline-block
+.tools__el-icon
+	flex(mid)
+	round()
+	size 80px
+	background: $blue
+	margin-bottom: 20px
+	.icon
+		size 40px
+		fill white
+
+.tools__el-title
+	@extend .type--xlg
+	margin-bottom: 20px
+	.icon
+		size 15px
+		fill $blue
+		display: none
+.tools__el-text
+	transition: max-height 0.35s
+	text-align: center
+	line-height: 1.8
+	max-height: 0
+	overflow: hidden
+
+.section
+	padding: 70px 0
+
+.section--gray
+	background: #f1f6fb
+
+//.section-solution
+.section-title
+	@extend .type--xl
+	text-align: center
+	margin-bottom: 35px
+//.main-cont
+
+.solution__head-wrap
+	border-bottom:1px solid $border-color
+	flex(mid)
+
+.solution__head
+	flex(between)
+
+
+.solution__head-el
+	cp()
+	up()
+	padding: 20px
+	color #61676d
+	&:hover
+		color black
+		border-bottom:1px solid $red
+		margin-bottom: -1px
+
+.solution__cont
+	width: 85%
+	padding: 50px 0
+	margin: 0 auto
+	f()
+	justify-content: space-between
+
+.solution__cont-img
+	flex(mid)
+	width: 35%
+
+.solution__cont-info
+	width: 65%
+	margin-top: 20px
+
+.solution__title
+	@extend .type--xlg
+	margin-bottom: 25px
+
+.solution__text
+	line-height: 1.8
+	margin-bottom: 45px
+
+.solution__get
+	f()
+
+.solution__get-el
+	@extend .btn--md
+	@extend .btn--light
+	margin-right: 30px
+
+.solution__get-el-mark
+	@extend .btn--md
+	@extend .btn--mark
+
+
+.solution
+	box-shadow 0 20px 27px rgba(0, 0, 0, 0.09)
+	border-radius 5px
+	background: white
+	.tab-head--active
+		color black
+		border-bottom:1px solid $red
+		margin-bottom: -1px
+	.tab-cont
+		display: none
+	.tab-cont--active
+		display: flex
+
+.section-title--white
+	color white
+
+.section--mark
+	background-color $blue
+	background-image linear-gradient(to left, #a776dd 0%, #5077e7 100%)
+
+.facts-wrap
+	flex(between)
+	fw()
+
+.facts__el
+	width: calc(25% - 14px)
+	height: 180px
+	color white
+	margin-bottom: 20px
+	border 1px solid rgba(255, 255, 255, 0.3)
+	padding: 30px 35px
+
+
+.facts__el-title
+	@extend .type--lg
+	margin-bottom: 20px
+
+.facts__el-text
+	width: 65%
+	line-height: 1.6
+
+//.section-clients
+.client-slider-wrap
+	center(980px,10px)
+	margin-bottom: 45px
+//.client-slider
+
+.client-slider__el
+	f()
+	br(10px)
+	justify-content: space-between
+	padding: 40px
+	background: white
+
+.client-slider__el-text
+	width: 60%
+	padding-right: 50px
+	line-height: 1.8
+
+.client-slider__el-info
+	flex(mid)
+	fl()
+	width: 40%
+	padding: 0 50px
+	border-left 1px solid $border-color
+
+.client-slider__el-logo
+	margin-bottom: 20px
+
+.client-slider__el-title
+	margin-bottom: 20px
+	font-size: 18px
+
+.client-slider__el-about
+	text-align: center
+	margin-bottom: 20px
+	line-height:1.8
+
+.client-slider__nav
+	flex(mid)
+
+.client-slider__nav-el
+	flex(mid)
+	cp()
+	size 50px
+	border 1px solid $border-color
+	&:hover
+		.icon
+			fill darken($blue,10)
+	.icon
+		size 12px
+		fill $blue
+		tr(all)
+
+.client-slider__nav-el-left
+	border-radius 25px 0 0 25px
+//.icon
+.client-slider__nav-el-right
+	margin-left: -1px
+	border-radius 0 25px 25px 0
+
+.btn-row--center
+	flex(mid)
+	width: 100%
+
+
+.get-review
+	@extend .btn--md
+	@extend .btn--light
+
+//.section
+.section-help
+	padding-bottom: 0
+	bg-full()
+//.main-cont
+
+.help
+	flex(between)
+
+.help-info
+	width: 35%
+
+.help-info__title
+	@extend .type--xl
+	line-height: 1.4
+	margin-bottom: 30px
+
+.help-info__text
+	line-height: 1.8
+	margin-bottom: 60px
+
+.help-info__get
+	@extend .btn--md
+	@extend .btn--mark
+
+.help-img
+	width: 45%

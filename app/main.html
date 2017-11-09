@@ -10,45 +10,19 @@
 		<meta name="theme-color" content="#000" />
 		<meta name="msapplication-navbutton-color" content="#000" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="#000" />
-		<!--icons
-	link(rel="shortcut icon" href="img/fav/favicon.ico")
-	link(rel="apple-touch-icon" sizes="57x57" href="img/fav/apple-touch-icon-57x57.png")
-	link(rel="apple-touch-icon" sizes="60x60" href="img/fav/apple-touch-icon-60x60.png")
-	link(rel="apple-touch-icon" sizes="72x72" href="img/fav/apple-touch-icon-72x72.png")
-	link(rel="apple-touch-icon" sizes="76x76" href="img/fav/apple-touch-icon-76x76.png")
-	link(rel="apple-touch-icon" sizes="114x114" href="img/fav/apple-touch-icon-114x114.png")
-	link(rel="apple-touch-icon" sizes="120x120" href="img/fav/apple-touch-icon-120x120.png")
-	link(rel="apple-touch-icon" sizes="144x144" href="img/fav/apple-touch-icon-144x144.png")
-	link(rel="apple-touch-icon" sizes="152x152" href="img/fav/apple-touch-icon-152x152.png")
-	link(rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon-180x180.png")
-	meta(name="apple-mobile-web-app-capable" content="yes")
-	meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
-	meta(name="apple-mobile-web-app-title" content="My App")
-	link(rel="yandex-tableau-widget" href="img/fav/yandex-browser-manifest.json")
-	link(rel="icon" type="image/png" sizes="228x228" href="img/fav/coast-228x228.png")
-	link(rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png")
-	link(rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png")
-	link(rel="manifest" href="img/fav/manifest.json")
-	meta(name="mobile-web-app-capable" content="yes")
-	meta(name="theme-color" content="#020307")
-	meta(name="application-name" content="My App")
-	meta(name="msapplication-TileColor" content="#020307")
-	meta(name="msapplication-TileImage" content="img/fav/mstile-144x144.png")
-	meta(name="msapplication-config" content="img/fav/browserconfig.xml")
-	
-	-->
+		<!--icons-->
+		<link rel="shortcut icon" href="img/fav/favicon.ico" />
 		<!--SEO-->
 		<title>Document</title>
 		<meta name="description" itemprop="description" content="" />
 		<!--build:css css/vendor.css-->
 		<link rel="stylesheet" href="bower/normalize.css/normalize.css" />
-		<!--link(rel="stylesheet", href="bower/flexbox-grid-stylus/dist/flexbox-grid.min.css")-->
-		<!--link(rel="stylesheet", href="bower/components-font-awesome/css/font-awesome.css")-->
+		<link rel="stylesheet" href="bower/slick-carousel/slick/slick.css" />
+		<link rel="stylesheet" href="bower/slick-carousel/slick/slick-theme.css" />
 		<!--link(rel="stylesheet", href="bower/owl.carousel/dist/assets/owl.carousel.css")-->
 		<!--endbuild-->
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/style-edit.css" />
-		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic" rel="stylesheet" />
 	</head>
 	<!-- mixin nameMixin()-->
 	<!-- - var args = Array.prototype.slice.call(arguments)-->
@@ -109,13 +83,13 @@
 				<div class="sub-header">
 					<div class="main-cont">
 						<div class="sub-header__wrap">
-							<div class="sub-header__el">Автоматизация</div>
-							<div class="sub-header__el">Обслуживание</div>
-							<div class="sub-header__el">Консалтинг</div>
-							<div class="sub-header__el">Оборудование</div>
-							<div class="sub-header__el">База знаний</div>
-							<div class="sub-header__el">Блог</div>
-							<div class="sub-header__el">О компании</div>
+							<a class="sub-header__el" href="#">Автоматизация</a>
+							<a class="sub-header__el" href="#">Обслуживание</a>
+							<a class="sub-header__el" href="#">Консалтинг</a>
+							<a class="sub-header__el" href="#">Оборудование</a>
+							<a class="sub-header__el" href="#">База знаний</a>
+							<a class="sub-header__el" href="#">Блог</a>
+							<a class="sub-header__el" href="#">О компании</a>
 						</div>
 					</div>
 				</div>
@@ -129,9 +103,391 @@
 				</div>
 			</div>
 		</div>
+		<div class="tools">
+			<div class="main-cont">
+				<div class="tools-cont">
+					<div class="tools-wrap">
+						<a class="tools__el" href="#">
+							<div class="tools__el-icon">
+								<svg class="icon">
+									<use xlink:href="#atom"></use>
+								</svg>
+							</div>
+							<div class="tools__el-title">
+								<span>Автоматизация</span>
+								<svg class="icon">
+									<use xlink:href="#arrow-simple-right"></use>
+								</svg>
+							</div>
+							<div class="tools__el-text">Обеспечение правильной работы с системой всех сотрудников ресторана</div>
+						</a>
+						<a class="tools__el" href="#">
+							<div class="tools__el-icon">
+								<svg class="icon">
+									<use xlink:href="#support"></use>
+								</svg>
+							</div>
+							<div class="tools__el-title">
+								<span>Обслуживание</span>
+								<svg class="icon">
+									<use xlink:href="#arrow-simple-right"></use>
+								</svg>
+							</div>
+							<div class="tools__el-text">Обеспечение правильной работы с системой всех сотрудников ресторана</div>
+						</a>
+						<a class="tools__el" href="#">
+							<div class="tools__el-icon">
+								<svg class="icon">
+									<use xlink:href="#folder"></use>
+								</svg>
+							</div>
+							<div class="tools__el-title">
+								<span>Консалтинг</span>
+								<svg class="icon">
+									<use xlink:href="#arrow-simple-right"></use>
+								</svg>
+							</div>
+							<div class="tools__el-text">Обеспечение правильной работы с системой всех сотрудников ресторана</div>
+						</a>
+						<a class="tools__el" href="#">
+							<div class="tools__el-icon">
+								<svg class="icon">
+									<use xlink:href="#service"></use>
+								</svg>
+							</div>
+							<div class="tools__el-title">
+								<span>Оборудование</span>
+								<svg class="icon">
+									<use xlink:href="#arrow-simple-right"></use>
+								</svg>
+							</div>
+							<div class="tools__el-text">Обеспечение правильной работы с системой всех сотрудников ресторана</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="config"></div>
+		<!--solution automatic-->
+		<div class="section section-solution section--gray">
+			<div class="section-title">Решения для автоматизации HoReCa</div>
+			<div class="main-cont">
+				<div class="solution">
+					<div class="solution__head-wrap">
+						<div class="solution__head">
+							<div class="solution__head-el tab-head">Сеть заведений</div>
+							<div class="solution__head-el tab-head">Ресторана</div>
+							<div class="solution__head-el tab-head">Фастфуда</div>
+							<div class="solution__head-el tab-head">Бара</div>
+							<div class="solution__head-el tab-head">Кафе</div>
+							<div class="solution__head-el tab-head">Кофейни</div>
+							<div class="solution__head-el tab-head">Столовой</div>
+							<div class="solution__head-el tab-head">Пиццерии</div>
+							<div class="solution__head-el tab-head">Доставки</div>
+						</div>
+					</div>
+					<div class="solution-info">
+						<div class="solution__cont tab-cont tab-cont--active">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием </div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+						<div class="solution__cont tab-cont">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием 0</div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+						<div class="solution__cont tab-cont">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием 1</div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+						<div class="solution__cont tab-cont">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием 2</div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+						<div class="solution__cont tab-cont">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием 3</div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+						<div class="solution__cont tab-cont">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием 4</div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+						<div class="solution__cont tab-cont">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием 5</div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+						<div class="solution__cont tab-cont">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием 6</div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+						<div class="solution__cont tab-cont">
+							<div class="solution__cont-img">
+								<img src="img/phone.jpg" alt="" />
+							</div>
+							<div class="solution__cont-info">
+								<div class="solution__title">Управление рестораном с быстрым обслуживанием 7</div>
+								<div class="solution__text">В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.</div>
+								<div class="solution__get">
+									<div class="solution__get-el">Подробнее</div>
+									<div class="solution__get-el-mark">Оформить</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--facts-->
+		<div class="section section-facts section--mark">
+			<div class="section-title section-title--white">Факты и достижения</div>
+			<div class="facts">
+				<div class="main-cont">
+					<div class="facts-wrap">
+						<div class="facts__el">
+							<div class="facts__el-title">1 467</div>
+							<div class="facts__el-text">Реализованных проектов</div>
+						</div>
+						<div class="facts__el">
+							<div class="facts__el-title">250</div>
+							<div class="facts__el-text">Сэкономленных рабочих часов</div>
+						</div>
+						<div class="facts__el">
+							<div class="facts__el-title">№1</div>
+							<div class="facts__el-text">Первые в рейтинге iiko</div>
+						</div>
+						<div class="facts__el">
+							<div class="facts__el-title">24/7</div>
+							<div class="facts__el-text">Поддержка</div>
+						</div>
+						<div class="facts__el">
+							<div class="facts__el-title">3 часа</div>
+							<div class="facts__el-text">На устранение проблем</div>
+						</div>
+						<div class="facts__el">
+							<div class="facts__el-title">На 120%</div>
+							<div class="facts__el-text">Увеличение прибыли клиента</div>
+						</div>
+						<div class="facts__el">
+							<div class="facts__el-title">На 80%</div>
+							<div class="facts__el-text">Увеличение потока клиентов</div>
+						</div>
+						<div class="facts__el">
+							<div class="facts__el-title">На 250%</div>
+							<div class="facts__el-text">Увеличение среднего чека</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--clients-->
+		<div class="section section-clients section--gray">
+			<div class="section-title">Клиенты и отзывы</div>
+			<div class="client-slider-wrap">
+				<div class="client-slider-container">
+					<div class="client-slider">
+						<div class="client-slider__el">
+							<div class="client-slider__el-text">
+								<p>0 Леонид, здравствуйте! Письма получаю, огромное за это спасибо! Всё открывается, читается, слушается. Вообще, курсы интересны и поучительны, а главное, предельно лаконичны и понятны.Сотрудничество с вашей компанией приносит одно удовольствие.
+									Удивительная оперативность в решении любых вопросов! Хочется отметить внимательность и приветливость всего персонала. А за терпеливость - им отдельное СПАСИБО! По вопросам, наверное, позднее, привыкаем к iiko.</p>
+							</div>
+							<div class="client-slider__el-info">
+								<div class="client-slider__el-logo">
+									<img src="img/review-logo.png" alt="" />
+								</div>
+								<div class="client-slider__el-title">Алексей Поздняков</div>
+								<div class="client-slider__el-about">Совладелец и генеральный директор сети кофеек Coffe Crew</div>
+								<div class="client-slider__nav">
+									<div class="client-slider__nav-el client-slider__nav-el-left">
+										<svg class="icon">
+											<use xlink:href="#triangle-arrow-left"></use>
+										</svg>
+									</div>
+									<div class="client-slider__nav-el client-slider__nav-el-right">
+										<svg class="icon">
+											<use xlink:href="#triangle-arrow-right"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="client-slider">
+						<div class="client-slider__el">
+							<div class="client-slider__el-text">
+								<p>1 Леонид, здравствуйте! Письма получаю, огромное за это спасибо! Всё открывается, читается, слушается. Вообще, курсы интересны и поучительны, а главное, предельно лаконичны и понятны.Сотрудничество с вашей компанией приносит одно удовольствие.
+									Удивительная оперативность в решении любых вопросов! Хочется отметить внимательность и приветливость всего персонала. А за терпеливость - им отдельное СПАСИБО! По вопросам, наверное, позднее, привыкаем к iiko.</p>
+							</div>
+							<div class="client-slider__el-info">
+								<div class="client-slider__el-logo">
+									<img src="img/review-logo.png" alt="" />
+								</div>
+								<div class="client-slider__el-title">Алексей Поздняков</div>
+								<div class="client-slider__el-about">Совладелец и генеральный директор сети кофеек Coffe Crew</div>
+								<div class="client-slider__nav">
+									<div class="client-slider__nav-el client-slider__nav-el-left">
+										<svg class="icon">
+											<use xlink:href="#triangle-arrow-left"></use>
+										</svg>
+									</div>
+									<div class="client-slider__nav-el client-slider__nav-el-right">
+										<svg class="icon">
+											<use xlink:href="#triangle-arrow-right"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="client-slider">
+						<div class="client-slider__el">
+							<div class="client-slider__el-text">
+								<p>2 Леонид, здравствуйте! Письма получаю, огромное за это спасибо! Всё открывается, читается, слушается. Вообще, курсы интересны и поучительны, а главное, предельно лаконичны и понятны.Сотрудничество с вашей компанией приносит одно удовольствие.
+									Удивительная оперативность в решении любых вопросов! Хочется отметить внимательность и приветливость всего персонала. А за терпеливость - им отдельное СПАСИБО! По вопросам, наверное, позднее, привыкаем к iiko.</p>
+							</div>
+							<div class="client-slider__el-info">
+								<div class="client-slider__el-logo">
+									<img src="img/review-logo.png" alt="" />
+								</div>
+								<div class="client-slider__el-title">Алексей Поздняков</div>
+								<div class="client-slider__el-about">Совладелец и генеральный директор сети кофеек Coffe Crew</div>
+								<div class="client-slider__nav">
+									<div class="client-slider__nav-el client-slider__nav-el-left">
+										<svg class="icon">
+											<use xlink:href="#triangle-arrow-left"></use>
+										</svg>
+									</div>
+									<div class="client-slider__nav-el client-slider__nav-el-right">
+										<svg class="icon">
+											<use xlink:href="#triangle-arrow-right"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="client-slider">
+						<div class="client-slider__el">
+							<div class="client-slider__el-text">
+								<p>3 Леонид, здравствуйте! Письма получаю, огромное за это спасибо! Всё открывается, читается, слушается. Вообще, курсы интересны и поучительны, а главное, предельно лаконичны и понятны.Сотрудничество с вашей компанией приносит одно удовольствие.
+									Удивительная оперативность в решении любых вопросов! Хочется отметить внимательность и приветливость всего персонала. А за терпеливость - им отдельное СПАСИБО! По вопросам, наверное, позднее, привыкаем к iiko.</p>
+							</div>
+							<div class="client-slider__el-info">
+								<div class="client-slider__el-logo">
+									<img src="img/review-logo.png" alt="" />
+								</div>
+								<div class="client-slider__el-title">Алексей Поздняков</div>
+								<div class="client-slider__el-about">Совладелец и генеральный директор сети кофеек Coffe Crew</div>
+								<div class="client-slider__nav">
+									<div class="client-slider__nav-el client-slider__nav-el-left">
+										<svg class="icon">
+											<use xlink:href="#triangle-arrow-left"></use>
+										</svg>
+									</div>
+									<div class="client-slider__nav-el client-slider__nav-el-right">
+										<svg class="icon">
+											<use xlink:href="#triangle-arrow-right"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="btn-row--center">
+				<a class="get-review" href="#">Все отзывы</a>
+			</div>
+		</div>
+		<!--help-->
+		<div class="section section-help" style="background-image:url('img/bg-light.jpg');">
+			<div class="main-cont">
+				<div class="help">
+					<div class="help-info">
+						<div class="help-info__title">Требуется помощь специалиста?</div>
+						<div class="help-info__text">Получите бесплатную консультацию нашего эксперта и узнайте как сделать ресторан лучше </div>
+						<a class="help-info__get" href="#">Бесплатная консультация</a>
+					</div>
+					<div class="help-img">
+						<img src="img/woomen.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
 		<!--build:js js/combined.js-->
 		<script src="bower/jquery/dist/jquery.js"></script>
 		<script src="bower/svg4everybody/dist/svg4everybody.js"></script>
+		<script src="bower/slick-carousel/slick/slick.js"></script>
 		<!--script(src='bower/owl.carousel/dist/owl.carousel.min.js')-->
 		<!--script(src="js/jquery.smoothscroll.js")-->
 		<!-- endbuild-->

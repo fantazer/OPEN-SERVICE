@@ -99,13 +99,6 @@ h4
 h5
 	@extend .type--md
 
-a
-	color $blue
-	tr(all)
-	&:hover
-		color $red
-	&:visiter
-		color $red
 
 p
 	@extend .type--main
@@ -113,9 +106,9 @@ p
 .link--mark
 	color $blue
 	&:hover
-		color darken($blue,20)
+		color $red
 	&:visiter
-		color darken($blue,30)
+		color $red
 
 .link--main
 	color $link-color
@@ -130,7 +123,6 @@ p
 	text-decoration underline
 	&:hover
 		text-decoration none
-
 
 // ============================ Buttons ============================
 
@@ -228,7 +220,7 @@ btnStyleLight(br-btn,color-btn)
 	border 1px solid rgba(255, 255, 255, 0.3)
 	&:hover
 		border 1px solid rgba(255, 255, 255, 1)
-
+		color white
 .btn--grey
 	@extend .btn
 	border 1px solid #dddddd

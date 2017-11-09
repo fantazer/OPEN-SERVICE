@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<!--create by ANATOLY KUZNETSOV-->
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<!--colors-tabs-->
+		<meta name="theme-color" content="#000" />
+		<meta name="msapplication-navbutton-color" content="#000" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+		<!--icons-->
+		<link rel="shortcut icon" href="img/fav/favicon.ico" />
+		<!--SEO-->
+		<title>Document</title>
+		<meta name="description" itemprop="description" content="" />
+		<link rel="stylesheet" href="css/vendor.css">
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-edit.css" />
+	</head>
+	<!-- mixin nameMixin()-->
+	<!-- - var args = Array.prototype.slice.call(arguments)-->
+	<!-- - for item in args-->
+
+	<body>
+		<div class="main-cont main-cont--all">
+			<div class="elements-hr"></div>
+			<div class="all-page-color">
+				<div class="all-page-color__el">
+					<div class="all-page-color__block" style="background-color:#000000;"></div>
+					<div class="all-page-color__el-name">#000000</div>
+				</div>
+				<div class="all-page-color__el">
+					<div class="all-page-color__block" style="background-color:#0095c6;"></div>
+					<div class="all-page-color__el-name">#0095c6</div>
+				</div>
+				<div class="all-page-color__el">
+					<div class="all-page-color__block" style="background-color:#f20022;"></div>
+					<div class="all-page-color__el-name">#f20022</div>
+				</div>
+				<div class="all-page-color__el">
+					<div class="all-page-color__block" style="background-color:#efefef;"></div>
+					<div class="all-page-color__el-name">#efefef</div>
+				</div>
+			</div>
+			<div class="elements-hr"></div>
+			<h1>Заголовок h1 class = "type--xl"</h1>
+			<p class="type--xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique
+				enim qui voluptatibus est earum provident eum.</p>
+			<h2>Заголовок h2 class = "type--lg"</h2>
+			<p class="type--lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique
+				enim qui voluptatibus est earum provident eum.</p>
+			<h3>Заголовок h3 class = "type--md"</h3>
+			<p class="type--md"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique
+				enim qui voluptatibus est earum provident eum.</p>
+			<h4>Заголовок h4 class = "type--main"</h4>
+			<p class="type--main"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique
+				enim qui voluptatibus est earum provident eum.</p>
+			<h5>Заголовок h5 class = "type--sm"</h5>
+			<p class="type--sm"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique
+				enim qui voluptatibus est earum provident eum.</p>
+			<h6>Заголовок h6 class = "type--xs"</h6>
+			<p class="type--xs"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur soluta doloremque, necessitatibus repellendus iure error at excepturi voluptatem incidunt quos quam, dolorem dolore explicabo nihil nisi odio dolor optio? Exercitationem hic amet, similique
+				enim qui voluptatibus est earum provident eum.</p>
+			<div class="elements-hr"></div>
+			<a class="btn--md btn--mark" href="#">Стандартная</a>
+			<a class="btn--md btn--disable" href="#">Неактивная</a>
+			<a class="btn--md btn--light" href="#">Дополнительная</a>
+			<a class="btn--md btn--light" href="#">
+				<div class="btn--icon">
+					<span>C иконкой</span>
+					<svg class="nav-icon">
+						<use xlink:href="#arrow-right"></use>
+					</svg>
+				</div>
+			</a>
+			<a class="btn--md btn--mark" href="#">
+				<div class="btn--icon">
+					<span>C иконкой</span>
+					<svg class="nav-icon">
+						<use xlink:href="#arrow-right"></use>
+					</svg>
+				</div>
+			</a>
+			<div class="elements-hr"></div>
+			<a class="btn--sm btn--mark" href="#">Кнопка small</a>
+			<a class="btn--sm btn--disable" href="#">Неактивная small</a>
+			<a class="btn--sm btn--light" href="#">Второстепенная small</a>
+			<a class="btn--sm btn--light" href="#">
+				<div class="btn--icon">
+					<span>C иконкой small</span>
+					<svg class="nav-icon">
+						<use xlink:href="#checked"></use>
+					</svg>
+				</div>
+			</a>
+			<div class="elements-hr"></div>
+			<div class="elements-buttons-block">
+				<button class="btn--sm btn--mark">Кнопка типа button</button>
+				<button class="btn--sm btn--light">Кнопка типа button</button>
+				<button class="btn--sm btn--disable">Кнопка типа button</button>
+				<input class="btn--sm btn--mark" type="submit" value="Кнопка типа submit" />
+				<input class="btn--sm btn--light" type="submit" value="Кнопка типа submit" />
+				<input class="btn--sm btn--disable" type="submit" value="Кнопка типа submit" />
+			</div>
+			<div class="elements-hr"></div>
+			<div class="elements-link-block">
+				<a class="link--mark" href="#">Цветная ссылка</a>
+				<a class="link--main" href="#">Новая ссылка</a>
+				<a class="link--text" href="#">Ссылка в тексте</a>
+			</div>
+			<div class="elements-hr"></div>
+			<div class="elements-input-block">
+				<input class="input" type="text" placeholder="Username" />
+				<input class="input" type="text" placeholder="Passwords" />
+				<textarea class="textarea" name="" cols="30" rows="10" placeholder="Text"></textarea>
+			</div>
+			<div class="elements-hr"></div>
+			<div class="elements-checkbox-block">
+				<div class="check-el">
+					<label class="style-label style-label--checkbox style-label--disable">
+						<input class="sytle-input" type="checkbox" />
+						<div class="sytle-input-element">
+							<svg class="icon-check">
+								<use xlink:href="#checked"></use>
+							</svg>
+						</div>
+						<div class="sytle-input-text">Наименование услуги</div>
+					</label>
+				</div>
+				<br/>
+				<div class="check-el">
+					<label class="style-label style-label--checkbox">
+						<input class="sytle-input" type="checkbox" />
+						<div class="sytle-input-element">
+							<svg class="icon-check">
+								<use xlink:href="#checked"></use>
+							</svg>
+						</div>
+						<div class="sytle-input-text">Наименование услуги</div>
+					</label>
+				</div>
+				<br/>
+				<div class="check-el">
+					<label class="style-label style-label--radio">
+						<input class="sytle-input" type="radio" name="group" />
+						<div class="sytle-input-element">
+							<div class="icon-radio"></div>
+						</div>
+						<div class="sytle-input-text">Наименование услуги</div>
+					</label>
+				</div>
+				<br/>
+				<div class="check-el">
+					<label class="style-label style-label--radio">
+						<input class="sytle-input" type="radio" name="group" />
+						<div class="sytle-input-element">
+							<div class="icon-radio"></div>
+						</div>
+						<div class="sytle-input-text">Наименование услуги</div>
+					</label>
+				</div>
+				<br/>
+			</div>
+			<div class="element-select">
+				<select class="select-beauty select">
+					<option value="1" data-display="Выберите налог">Нет</option>
+					<option value="2">Новый налог 1</option>
+					<option value="3">Новый налог 2</option>
+					<option value="4">Новый налог 3</option>
+				</select>
+			</div>
+			<div class="elements-hr"></div>
+			<div class="element-list-svg">
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#arrow-down"></use>
+					</svg>
+					<div class="element-list-svg__name">arrow-down</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#arrow-left"></use>
+					</svg>
+					<div class="element-list-svg__name">arrow-left</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#arrow-right"></use>
+					</svg>
+					<div class="element-list-svg__name">arrow-right</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#arrow-simple-right"></use>
+					</svg>
+					<div class="element-list-svg__name">arrow-simple-right</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#arrow-up"></use>
+					</svg>
+					<div class="element-list-svg__name">arrow-up</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#atom"></use>
+					</svg>
+					<div class="element-list-svg__name">atom</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#cancel"></use>
+					</svg>
+					<div class="element-list-svg__name">cancel</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#checked"></use>
+					</svg>
+					<div class="element-list-svg__name">checked</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#close"></use>
+					</svg>
+					<div class="element-list-svg__name">close</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#folder"></use>
+					</svg>
+					<div class="element-list-svg__name">folder</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#garbage"></use>
+					</svg>
+					<div class="element-list-svg__name">garbage</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#heart"></use>
+					</svg>
+					<div class="element-list-svg__name">heart</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#house"></use>
+					</svg>
+					<div class="element-list-svg__name">house</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#interface"></use>
+					</svg>
+					<div class="element-list-svg__name">interface</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#like"></use>
+					</svg>
+					<div class="element-list-svg__name">like</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#magnifying-glass"></use>
+					</svg>
+					<div class="element-list-svg__name">magnifying-glass</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#mail"></use>
+					</svg>
+					<div class="element-list-svg__name">mail</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#menu"></use>
+					</svg>
+					<div class="element-list-svg__name">menu</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#phone-call"></use>
+					</svg>
+					<div class="element-list-svg__name">phone-call</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#Phone"></use>
+					</svg>
+					<div class="element-list-svg__name">Phone</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#placeholder"></use>
+					</svg>
+					<div class="element-list-svg__name">placeholder</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#service"></use>
+					</svg>
+					<div class="element-list-svg__name">service</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#share"></use>
+					</svg>
+					<div class="element-list-svg__name">share</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#soc-facebook"></use>
+					</svg>
+					<div class="element-list-svg__name">soc-facebook</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#soc-google"></use>
+					</svg>
+					<div class="element-list-svg__name">soc-google</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#soc-in"></use>
+					</svg>
+					<div class="element-list-svg__name">soc-in</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#soc-instagram"></use>
+					</svg>
+					<div class="element-list-svg__name">soc-instagram</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#soc-ok"></use>
+					</svg>
+					<div class="element-list-svg__name">soc-ok</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#soc-twitter"></use>
+					</svg>
+					<div class="element-list-svg__name">soc-twitter</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#soc-vk"></use>
+					</svg>
+					<div class="element-list-svg__name">soc-vk</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#soc-youtube"></use>
+					</svg>
+					<div class="element-list-svg__name">soc-youtube</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#sprite"></use>
+					</svg>
+					<div class="element-list-svg__name">sprite</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#star"></use>
+					</svg>
+					<div class="element-list-svg__name">star</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#statistick"></use>
+					</svg>
+					<div class="element-list-svg__name">statistick</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#support"></use>
+					</svg>
+					<div class="element-list-svg__name">support</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#triangle-arrow-left"></use>
+					</svg>
+					<div class="element-list-svg__name">triangle-arrow-left</div>
+				</div>
+				<div class="element-list-svg__icon">
+					<svg class="icon-el">
+						<use xlink:href="#triangle-arrow-right"></use>
+					</svg>
+					<div class="element-list-svg__name">triangle-arrow-right</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/combined.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/script-edit.js"></script>
+	</body>
+
+</html>

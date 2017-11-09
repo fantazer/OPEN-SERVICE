@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../svg/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 51.2em 977.2em;
+    background-size: 51.2em 979.2em;
 }
 
 .no-svg .icon:before {
@@ -323,10 +323,19 @@
 
 
 
-  .icon.triangle-arrow:before {
+  .icon.triangle-arrow-left:before {
       background-position: 0em -975.8em;
-      width: 1em;
-      height: 1.397em;
+      width: 1.3em;
+      height: 1.7em;
+  }
+
+
+
+
+  .icon.triangle-arrow-right:before {
+      background-position: 0em -977.5em;
+      width: 1.3em;
+      height: 1.7em;
   }
 
 
