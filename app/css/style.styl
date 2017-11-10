@@ -85,6 +85,7 @@ body
 .header-info__text
 	color rgba(255, 255, 255, 0.4)
 	margin-bottom: 10px
+	cp()
 
 .header-info__numb
 	@extend .type--xlg
@@ -92,20 +93,43 @@ body
 
 .header-info__toggle
 	position: relative
+	width: 180px
 
 .header-info__text--town
 	color $blue
+	display: inline-block
 	.icon
 		size 8px
 		fill $blue
 
 .header-info__sub
 	position: absolute
+	background: white
+	br(5px)
+	width: 255px
+	z-index 5
 	display: none
 
-//.header-info__sub-title
-//.header-info__sub-el
 
+.header-info__sub-title
+	border-bottom:1px solid $border-color
+	text-align: center
+	padding: 20px
+	font-size: 18px
+	color black
+
+.header-info__sub-el
+	display: block
+	color  black
+	border-bottom:1px solid $border-color
+	padding: 15px 25px
+	text-align: left
+	tr(all)
+	&:last-child
+		border-bottom:0
+	&:hover
+		color $blue
+		padding-left: 30px
 .header-top
 	border-bottom 1px solid rgba(255, 255, 255, 0.15)
 
@@ -290,14 +314,25 @@ body
 	box-shadow 0 20px 27px rgba(0, 0, 0, 0.09)
 	border-radius 5px
 	background: white
-	.tab-head--active
-		color black
-		border-bottom:1px solid $red
-		margin-bottom: -1px
-	.tab-cont
-		display: none
-	.tab-cont--active
-		display: flex
+.tab-head--active
+	color black
+	border-bottom:1px solid $red
+	margin-bottom: -1px
+.tab-cont
+	position: absolute
+	top 0
+	left: 0
+	z-index: -1
+	display: flex
+	transition all 4s
+	opacity:0
+.tab-cont--active
+	opacity: 1
+	position: relative
+	top initial
+	left initial
+	z-index: 3
+	transition all 2s
 
 .section-title--white
 	color white
@@ -395,7 +430,7 @@ body
 .get-review
 	@extend .btn--md
 	@extend .btn--light
-
+	background: none
 //.section
 .section-help
 	padding-bottom: 0
@@ -423,3 +458,141 @@ body
 
 .help-img
 	width: 45%
+
+//.footer
+//.main-cont
+.footer-tab
+	width: 55%
+.footer-wrap
+	f()
+	justify-content: space-between
+	padding: 80px 0
+	background: white
+.footer__head
+	@extend .solution__head
+	width: 100%
+.footer__head-wrap
+	@extend .solution__head-wrap
+//.footer__head
+.footer__head-el
+	@extend .solution__head-el
+	padding: 10px 15px
+	text-align: center
+	width: auto
+//.tab-head
+//.tab-head--active
+	//@extend .solution-head--active
+//.footer-info
+.footer__cont
+	padding: 30px 10px
+
+//.tab-cont
+.footer-tab__cont
+	width: 100%
+	f()
+	justify-content: space-between
+
+.footer-tab__info
+	padding-right: 50px
+	border-right:1px solid $border-color
+	width: 40%
+
+.footer__cont-adr__numb
+	display: block
+	font-size: 18px
+	color #6d6d6d
+	font-weight bold
+	margin-bottom: 15px
+	span
+		color black!important
+.footer__cont-adr__mail
+	display: block
+	color $blue
+
+.footer__tab-adr
+	f()
+	align-items: center
+	padding-left: 50px
+	line-height:1.8
+	span
+		width: 275px
+		display: inline-block
+	width: 60%
+
+.footer-help
+	width: 20%
+
+.footer-help__title
+	@extend .type--xlg
+	margin-bottom: 30px
+
+.footer-help__phone
+	display: block
+	font-weight:700
+	color black
+	font-size: 18px
+	margin-bottom: 20px
+
+.footer-help__mail
+	display: block
+	color $blue
+
+.footer-soc
+	width: 165px
+
+.footer-soc__title
+	margin-bottom: 30px
+	@extend .type--xlg
+.soc__row
+	width: 100%
+	flex(between)
+.footer-soc__el
+	&:hover
+		.icon
+			fill darken($blue,20)
+	.icon
+		size 20px
+		fill $blue
+		tr(all)
+
+.footer-sub__wrap
+	f()
+	justify-content: space-between
+
+.footer-sub
+	padding: 50px 0 25px 0
+	background: $blue
+	background-image linear-gradient(to left, rgba(221, 85, 146, 0.56) 0%, rgba(157, 120, 195, 0.56) 50%, rgba(80, 182, 232, 0.56) 100%)
+
+.footer-sub__info
+	width: 25%
+
+.footer-sub__info-title
+	color white
+	font-size: 18px
+	margin-bottom: 25px
+
+.footer-sub__info-link
+	color rgba(255, 255, 255, 0.6)
+	tr(all)
+	&:hover
+		color white
+
+.footer-sub__nav
+	width: 60%
+	flex(between)
+	fw()
+.footer-sub__nav-el
+	margin-bottom: 25px
+	width: 25%
+	color rgba(255, 255, 255, 0.6)
+	tr(all)
+	&:hover
+		color white
+
+.footer-sub__logo
+	width: 100px
+
+.header-info__sub-el--active
+	color $blue
+	padding-left: 30px

@@ -17,20 +17,21 @@ include block_html/_include.pug
 						.header-info__el
 							.header-info__toggle
 								.header-info__text.header-info__text--town
-									span Санкт-Петербург
+									span Москва
 									+icon("arrow-down","icon")
 								.header-info__sub
-									.header-info__sub-title
-										-
-											var items = [
-												'Москва',
-												'Санкт-Петербург',
-												'Татарстан',
-												'Сочи',
-												'Новосибирск'
-												];
-										each item in items
-											.header-info__sub-el #{item}
+									.header-info__sub-title Выберите свой регион
+									-
+										var items = [
+											'Москва',
+											'Санкт-Петербург',
+											'Татарстан',
+											'Сочи',
+											'Новосибирск'
+											];
+									each item in items
+
+										a(href="#").header-info__sub-el(class=item== 'Москва' ? 'header-info__sub-el--active' : null) #{item}
 							a(href="#").header-info__numb 8-800-555-14-98
 					.header-get
 						.header-get__el
@@ -121,19 +122,10 @@ include block_html/_include.pug
 							'Доставки'
 						];
 					each item in items
-						.solution__head-el.tab-head #{item}
+						.solution__head-el.tab-head(class=item== 'Сеть заведений' ? 'tab-head--active' : null) #{item}
 			.solution-info
-				.solution__cont.tab-cont.tab-cont--active
-					.solution__cont-img
-						img(src="img/phone.jpg", alt="")
-					.solution__cont-info
-						.solution__title Управление рестораном с быстрым обслуживанием #{i}
-						.solution__text В iiko — масса полезных инструментов для ресторана быстрого обслуживания: удобные меню-борды, табло статуса заказа, поддержка формата take away, мобильные приложения для гостей, персонала и руководителя и многое другое.
-						.solution__get
-							.solution__get-el Подробнее
-							.solution__get-el-mark Оформить
-				- for (var i=0;i<8;i++)
-					.solution__cont.tab-cont
+				- for (var i=0;i<9;i++)
+					.solution__cont.tab-cont(class=i==0 ? 'tab-cont--active' : null)
 						.solution__cont-img
 							img(src="img/phone.jpg", alt="")
 						.solution__cont-info
@@ -225,4 +217,76 @@ include block_html/_include.pug
 				img(src="img/woomen.png", alt="")
 			
 
+//footer
+.footer
+	.main-cont
+		.footer-wrap
+			.footer-tab
+				.footer__head-wrap
+					.footer__head
+						-
+							var items = [
+								'Москва',
+								'Санкт-Петербург',
+								'Татарстан',
+								'Сочи',
+								'Новосибирск'
+							];
+						each item in items
+							.footer__head-el.tab-head(class=item == 'Москва' ? 'tab-head--active' : null) #{item}
+				.footer-info
+					- for (var i=0;i<5;i++)
+						.footer__cont.tab-cont(class=i == 0 ? 'tab-cont--active' : null)
+							.footer-tab__cont
+								.footer-tab__info
+									a(href="tel:+7(499)281-62-08").footer__cont-adr__numb +7(499)
+										span 281-62-08 #{i}
+									a(href="mailto:msk@open-s.info").footer__cont-adr__mail msk@open-s.info
+
+								.footer__tab-adr
+									span г. Москва, 23й км. Калужского шоссе, домовл. 14
+
+
+			.footer-help
+				.footer-help__title Техподдержка 24/7
+				a(href="tel:8-800-505-72-50").footer-help__phone 8-800-505-72-50
+				a(href="mailto:info@open-s.info").footer-help__mail info@open-s.info
+			.footer-soc
+				.footer-soc__title Мы в соц.сетях
+				.soc__row
+					-
+						var items = [
+							'soc-vk',
+							'soc-facebook',
+							'soc-instagram',
+							'soc-youtube'
+							];
+					each item in items
+						a(href="#").footer-soc__el
+							+icon(item,"icon")
+
+//footer-sub
+.footer-sub
+	.main-cont
+		.footer-sub__wrap
+			.footer-sub__info
+				.footer-sub__info-title 2010-2017 OpenService
+				a(href="#").footer-sub__info-link Политика конфиденциальности
+			.footer-sub__nav
+				-
+					var items = [
+						'Автоматизация',
+					'Обслуживание',
+					'Консалтинг',
+					'Оборудование',
+					'База знаний',
+					'Блог',
+					'О компании',
+					'Контакты'
+						];
+				each item in items
+					a(href="#").footer-sub__nav-el #{item}
+			.footer-sub__logo
+				a(href="#")
+					img(src="img/logo-jq.png", alt="")
 include ./block_html/_script.pug

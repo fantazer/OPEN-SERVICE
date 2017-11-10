@@ -1,30 +1,55 @@
 $(document).ready(function(){
 
+	//town-list
+	$('.header-info__toggle').click(function(event){
+				event.stopPropagation();
+				$(".header-info__sub").slideToggle("fast");
+		});
+		$(".header-info__sub").on("click", function (event) {
+			event.stopPropagation();
+		});
+		$(document).on("click", function () {
+				$(".header-info__sub").slideUp();
+		});
+
+		$('.header-info__sub-el').click(function(){
+			$('.header-info__sub-el').removeClass('header-info__sub-el--active');
+			$(this).addClass('header-info__sub-el--active');
+			$(".header-info__sub").slideUp();
+
+			var curentTxt = $(this).text();
+			$('.header-info__text span').text(curentTxt);
+		});
+	//town-list-end
+
 	//slider clients
 	$('.client-slider-container').slick({
-  slidesToShow: 1,
-  autoplay: true,
-  speed: 500,
-  vertical:false,
-  prevArrow: $('.client-slider__nav-el-left'),
-	nextArrow: $('.client-slider__nav-el-right')
-});
+			slidesToShow: 1,
+			autoplay: true,
+			speed: 500,
+			vertical:false,
+			prevArrow: $('.client-slider__nav-el-left'),
+			nextArrow: $('.client-slider__nav-el-right')
+	});
 	//slider-end
 
 	//Tab
-	$('.tab-head').click(function(){
+	var initTab = function(el){
+		$(el+' .tab-head').click(function(){
 		var currentTab = $(this).index();
-		console.log('$(this).index()',$(this).index());
-		$('.tab-head').removeClass('tab-head--active');
-		$(this).addClass('tab-head--active');
-		$('.tab-cont').each(function(){
-			if($(this).index()==currentTab){
-				$(this).addClass('tab-cont--active')
-			}else{
-				$(this).removeClass('tab-cont--active')
-			}
-		})
-	});
+			$(el+' .tab-head').removeClass('tab-head--active');
+			$(this).addClass('tab-head--active');
+			$(el+' .tab-cont').each(function(){
+				if($(this).index()==currentTab){
+					$(this).addClass('tab-cont--active')
+				}else{
+					$(this).removeClass('tab-cont--active')
+				}
+			})
+		});
+	};
+	initTab('.solution');
+	initTab('.footer-tab');
 	//Tab-end
 
 
