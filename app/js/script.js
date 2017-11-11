@@ -1,5 +1,25 @@
 $(document).ready(function(){
 
+	//toggle pin
+		$('.config__toggle-pin').click(function(){
+			$(this).toggleClass("config__toggle-pin--active");
+			$(this).closest('.config-el').find('.config-content').toggleClass("config-content--active");
+		});
+	//toggle pin==edn
+
+	// tooltip
+	$('.config__stat ').click(function(e){
+			$(this).find('.config__tip').toggleClass("config__tip--show").click(function(e){
+					e.stopPropagation();
+			});
+			e.stopPropagation();
+		});
+		$(document).on("click", function () {
+				$('.config__tip').removeClass("config__tip--show");
+		});
+	// tooltip === end
+
+
 	//town-list
 	$('.header-info__toggle').click(function(event){
 				event.stopPropagation();
@@ -20,7 +40,7 @@ $(document).ready(function(){
 			var curentTxt = $(this).text();
 			$('.header-info__text span').text(curentTxt);
 		});
-	//town-list-end
+	//town-list===end
 
 	//slider clients
 	$('.client-slider-container').slick({
@@ -31,7 +51,7 @@ $(document).ready(function(){
 			prevArrow: $('.client-slider__nav-el-left'),
 			nextArrow: $('.client-slider__nav-el-right')
 	});
-	//slider-end
+	//slider===end
 
 	//Tab
 	var initTab = function(el){
@@ -50,7 +70,7 @@ $(document).ready(function(){
 	};
 	initTab('.solution');
 	initTab('.footer-tab');
-	//Tab-end
+	//Tab===end
 
 
 

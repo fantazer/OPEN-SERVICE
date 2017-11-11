@@ -100,7 +100,76 @@ include block_html/_include.pug
 						+icon("arrow-simple-right","icon")
 					.tools__el-text Обеспечение правильной работы с системой всех сотрудников ресторана
 
-.config
+.section.section-config
+	.section-title Что даёт автоматизация
+	.section-title-sub Выберите отделы для автоматизации и сравните результаты
+	.main-cont
+		.config
+			.config-col
+				.config-el
+					.config__head
+						.config__toggle
+							.config__toggle-pin
+								span
+							.config__toggle-text Офис
+						.config__stat
+							.config__tip
+								.config__tip-wrap
+									.config__tip-coner
+									.config__tip-title Время затраты отдела в часах/неделю
+									.config__tip-chart
+									.config__tip-row
+										.config__tip-color.config__tip-color--purp
+										.config__tip-text До внедрения
+									.config__tip-row
+										.config__tip-color.config__tip-color--red
+										.config__tip-text Сэкономленное время после автоматизации
+
+							.config__stat-head
+								.config__stat-title Статистика
+								.config__stat-icon
+									+icon("statistick","icon")
+					.config-content
+						.config-content__filter
+						.config-title Владелец/Управляющий
+						.config-text Полный контроль работы заведения Защита от воровства
+						.config-link
+							a(href="#").config-link__el Iiko Back Office
+							a(href="#").config-link__el Iiko Dashboard
+
+			.config-col-chart
+				p chart
+			.config-col
+				.config-el
+					.config__head
+						.config__toggle
+							.config__toggle-pin
+								span
+							.config__toggle-text Офис
+						.config__stat
+							.config__tip
+								.config__tip-wrap
+									.config__tip-coner
+									.config__tip-title Время затраты отдела в часах/неделю
+									.config__tip-chart
+									.config__tip-row
+										.config__tip-color.config__tip-color--purp
+										.config__tip-text До внедрения
+									.config__tip-row
+										.config__tip-color.config__tip-color--red
+										.config__tip-text
+
+							.config__stat-head
+								.config__stat-title Статистика
+								.config__stat-icon
+									+icon("statistick","icon")
+					.config-content
+						.config-content__filter
+						.config-title Владелец/Управляющий
+						.config-text Полный контроль работы заведения Защита от воровства
+						.config-link
+							a(href="#").config-link__el Iiko Back Office
+							a(href="#").config-link__el Iiko Dashboard
 
 //solution automatic
 .section.section-solution.section--gray

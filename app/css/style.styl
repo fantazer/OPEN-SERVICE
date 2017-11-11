@@ -596,3 +596,173 @@ body
 .header-info__sub-el--active
 	color $blue
 	padding-left: 30px
+
+//.section
+//.section-config
+//.section-title
+.section-title-sub
+	text-align: center
+	color #7b8089
+	@extend .type--xlg
+	margin-bottom: 70px
+//.main-cont
+.config
+	f()
+	justify-content: space-between
+	position: relative
+.config-col
+	width: 32%
+//.config-el
+.config__head
+	f()
+	justify-content: space-between
+	position: relative
+	width: 100%
+	padding-bottom: 20px
+	border-bottom 1px solid $border-color
+	margin-bottom: 30px
+
+.config__toggle
+	f()
+	align-items: center
+.config__toggle-pin
+	cp()
+	width 40px
+	height 20px
+	padding: 2px
+	border-radius 10px
+	background-color $blue
+	position: relative
+	margin-right: 20px
+	span
+		round()
+		tr(all)
+		display: inline-block
+		size 16px
+		background: white
+.config__toggle-pin--active
+	background: $gray
+	span
+		tr(all)
+		margin-left: auto
+		margin-left: 18px
+
+.config__toggle-text
+	@extend .type--xlg
+
+.config__stat
+	position: relative
+
+.config__stat-head
+	f()
+	cp()
+	position: relative
+	&:before
+		content ""
+		position: absolute
+		width: 100%
+		left 0px
+		height: 1px
+		background: $blue
+		bottom -3px
+.config__stat-title
+	color $blue
+	margin-right: 10px
+.config__stat-icon
+	.icon
+		size 12px
+		fill $blue
+
+.config-content
+	position: relative
+
+.config-title
+	typeSize(18,15)
+	font-family "Museo Sans Cyrl"
+	font-weight bold
+	margin-bottom: 15px
+
+.config-text
+	line-height:1.8
+	margin-bottom: 35px
+//.config-link
+
+.config-link__el
+	display: inline-block
+	color $blue
+	&:first-child
+		margin-right: 20px
+
+.config-content__filter
+	position: absolute
+	width: 100%
+	height: 100%
+	top 0
+	left 0
+	z-index 10
+	display: none
+
+.config-content--active
+	.config-title
+		color $gray
+	.config-text
+		color $gray
+	.config-link__el
+		color $gray
+	.config-content__filter
+		display: block
+
+.config__tip
+	position: absolute
+	right: -300px
+	background:white
+	width: 280px
+	box-shadow 0 15px 60px rgba(0, 0, 0, 0.15)
+	border-radius 5px
+	transform translateY(-50%)
+	display: none
+
+.config__tip--show
+	display: block
+
+.config__tip-wrap
+	padding: 30px
+	position: relative
+
+.config__tip-coner
+	position: absolute
+	size 20px
+	background: white
+	transform rotate(-45deg)
+	left -10px
+	top 50%
+
+.config__tip-title
+	@extend .type--md
+	text-align: center
+
+.config__tip-chart
+	size 150px
+
+.config__tip-row
+	f()
+	justify-content: space-between
+	margin-bottom: 10px
+
+.config__tip-color
+	width 25px
+	height 15px
+	border-radius 8px
+
+.config__tip-color--purp
+	background-color #7377e3
+
+.config__tip-text
+	width:calc(100% - 40px)
+	line-height: 1.6
+	margin-top: -5px
+.config__tip-color--red
+	background-color $red
+
+
+//.config-col-chart
