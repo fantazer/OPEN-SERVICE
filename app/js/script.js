@@ -1,18 +1,126 @@
+
+
 $(document).ready(function(){
+	//$(".progress-bar").loading();
+
+	$('.main-section').vide({
+	webm:'img/video.webm'
+	},{
+		muted: true,
+		loop: true,
+		posterType:"webm"
+	});
+
+	//modal
+	$('.modal-content').click(function(event){
+		event.stopPropagation();
+	});
+	var scrollPos = 0;
+
+	var openModal = function () {
+	if(!$('.modal-layer').hasClass('modal-layer-show')){
+		$('.modal-layer').addClass('modal-layer-show');
+	}
+	 scrollPos = $(window).scrollTop();
+		$('body').css({
+			overflow: 'hidden',
+			position: 'fixed',
+			overflowY: 'scroll',
+			top : -scrollPos,
+			width:'100%'
+		});
+		return scrollPos;
+	};
+
+	var closeModal = function () {
+  	$('.modal-layer').removeClass('modal-layer-show');
+  	$("body").removeClass("modal-fix");
+  	$('body').css({
+			overflow: '',
+			position: '',
+			top: ''
+		})
+    $(window).scrollTop(scrollPos);
+    $('.modal').removeClass('modal__show');
+		$('.enter').removeClass('enter--open');
+		$('.basket').removeClass('basket--open');
+	};
+
+	var initModal = function(el){
+		openModal();
+		$('.modal').each(function () {
+			if ($(this).data('modal')===el){
+				$(this).addClass('modal__show')
+			} else {
+				$(this).removeClass('modal__show')
+			}
+		});
+		var modalHeightCont = $(window).height();
+		$('.modal-filter').height(modalHeightCont);
+		$('.modal-wrap').css('height',modalHeightCont );
+		$('.modal-wrap').css('minHeight',modalHeightCont );
+	}
+
+	$('.modal-get').click(function (){
+		var currentModal = $(this).data("modal");
+		initModal(currentModal);
+	});
+
+	$('.modal-layer , .modal-close').click(function (){
+		closeModal();
+	});
+	//modal
+
+	//chart
+	$(".main-chart-bar").circleProgress({
+    value: 0.75,
+    size: 380,
+    startAngle:-1.6,
+    lineCap: 'round',
+    thickness:20,
+    fill: {
+      gradient: ["#6972da", "#a076dd"]
+    }
+  });
+	//chart===end
+
 
 	//toggle pin
 		$('.config__toggle-pin').click(function(){
 			$(this).toggleClass("config__toggle-pin--active");
-			$(this).closest('.config-el').find('.config-content').toggleClass("config-content--active");
+			$(this).closest('.config-el').toggleClass("config-content--active");
 		});
 	//toggle pin==edn
 
-	// tooltip
-	$('.config__stat ').click(function(e){
-			$(this).find('.config__tip').toggleClass("config__tip--show").click(function(e){
-					e.stopPropagation();
-			});
-			e.stopPropagation();
+
+
+	$('.config__stat').click(function(e){
+			$('.config__tip').removeClass("config__tip--show");
+			if(
+				!$(this)
+				.closest('.config-el')
+				.find('.config__toggle-pin')
+				.hasClass("config__toggle-pin--active")
+				)
+			{
+				$(this).find('.config__tip').toggleClass("config__tip--show").click(function(e){
+						e.stopPropagation();
+				});
+				e.stopPropagation();
+
+				$('.tooltip-filter').addClass('tooltip-filter--show');
+				//init progress bar
+				$(".progress-bar").loading({
+					duration:100
+				});
+				var valueChart = $('.progress-bar').data('percent');
+				$('.value-chart').text("-" + valueChart + "%");
+				//init progress bar
+			}
+		});
+
+		$('.tooltip-filter').click(function(){
+			$('.tooltip-filter').removeClass('tooltip-filter--show');
 		});
 		$(document).on("click", function () {
 				$('.config__tip').removeClass("config__tip--show");
@@ -197,3 +305,54 @@ $(document).ready(function(){
 	catch( e ){}
 
 }( window, document ) );
+
+
+;
+(function ($) {
+	$.fn.loading = function () {
+		var DEFAULTS = {
+			percent: 75,
+			duration: 1000
+		};
+
+		$(this).each(function () {
+			var $target = $(this);
+
+			var opts = {
+				backgroundColor: $target.data('color') ? $target.data('color').split(',')[0] : DEFAULTS.backgroundColor,
+				progressColor: $target.data('color') ? $target.data('color').split(',')[1] : DEFAULTS.progressColor,
+				percent: $target.data('percent') ? $target.data('percent') : DEFAULTS.percent,
+				duration: $target.data('duration') ? $target.data('duration') : DEFAULTS.duration
+			};
+			// console.log(opts);
+
+			$target.append('<div class="background"></div><div class="rotate"></div><div class="left"></div><div class="right"></div><div class=""><span class="value-chart"></span></div>');
+
+			$target.find('.background').css('background-color', opts.backgroundColor);
+			$target.find('.left').css('background-color', opts.backgroundColor);
+			$target.find('.rotate').css('background-color', opts.progressColor);
+			$target.find('.right').css('background-color', opts.progressColor);
+
+			var $rotate = $target.find('.rotate');
+			setTimeout(function () {
+				$rotate.css({
+					'transition': 'transform ' + opts.duration + 'ms linear',
+					'transform': 'rotate(' + opts.percent * 3.6 + 'deg)'
+				});
+			}, 1);
+
+			if (opts.percent > 50) {
+				var animationRight = 'toggle ' + (opts.duration / opts.percent * 50) + 'ms step-end';
+				var animationLeft = 'toggle ' + (opts.duration / opts.percent * 50) + 'ms step-start';
+				$target.find('.right').css({
+					animation: animationRight,
+					opacity: 1
+				});
+				$target.find('.left').css({
+					animation: animationLeft,
+					opacity: 0
+				});
+			}
+		});
+	}
+})(jQuery);

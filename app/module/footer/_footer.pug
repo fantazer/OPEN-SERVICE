@@ -1,3 +1,17 @@
 mixin footer()
 	//block footer
+
+	.modal-layer
+		.modal-cont
+			.modal-filter
+			.modal-wrap
+				.modal(data-modal="TEMPLATE")
+					.modal-content
+						.modal-close
+							+icon("close","icon")
+						.modal-title Восстановление пароля
+						form(action="#")
+							.input-btn-row
+								input(type="text" placeholder="Логин").input
+								input(type="submit" value="Выслать").input-btn
 	//block footer end
