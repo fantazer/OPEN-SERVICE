@@ -3,9 +3,11 @@
 $(document).ready(function(){
 	//$(".progress-bar").loading();
 
-	$('.main-section').vide({
-	webm:'img/video.webm'
-	},{
+	$('.main-section').vide(
+	{
+		webm:'img/video.webm'
+	},
+	{
 		muted: true,
 		loop: true,
 		posterType:"webm"

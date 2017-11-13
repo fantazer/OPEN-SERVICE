@@ -611,7 +611,7 @@ body
 	justify-content: space-between
 	position: relative
 .config-col
-	width: 30%
+	width: 28%
 //.config-el
 .config__head
 	f()
@@ -724,14 +724,15 @@ body
 			background: $gray
 .config__tip
 	position: absolute
-	right: -300px
+	//right: -300px
 	background:white
 	width: 280px
 	box-shadow 0 15px 60px rgba(0, 0, 0, 0.15)
 	border-radius 5px
-	transform translateY(-50%)
+	//transform translateY(-50%)
 	display: none
-
+	top calc(100% + 20px)
+	right 0%
 .config__tip--show
 	display: block
 	z-index 150
@@ -746,8 +747,8 @@ body
 	size 20px
 	background: white
 	transform rotate(-45deg)
-	left -10px
-	top 50%
+	right 20px
+	top -10px
 
 .config__tip-title
 	@extend .type--md
@@ -830,7 +831,10 @@ body
 .main-chart
 	padding: 0 20px
 	position: relative
+	flex(mid)
+	fl()
 .main-chart-bar
+
 	z-index 5
 	width: 100%
 	border-radius 50%
@@ -840,10 +844,44 @@ body
 	canvas
 		max-width 100%
 		max-height 100%
+
+.main-chart-cont
+	position: absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+	flex(mid)
+	fl()
+
+.main-chart-val
+	flex(mid)
+	margin-bottom: 20px
+
+.chart-smile
+	margin-right: 20px
+	.icon
+		size 40px
+		fill #677bd3
+
+.main-chart-title
+	@extend .type--xlg
+	text-align: center
+	margin-bottom: 20px
+
+.main-chart-text
+	text-align: center
+
+.chart-percent
+	@extend .type--xl
+	color #677bd3
+	margin-top: -5px
+
 .config-col-chart
-	width: 38%
 	f()
 	justify-content: center
+	min-width 380px
+	width: 38%
 
 .chart-line
 	position: absolute
@@ -870,6 +908,12 @@ body
 	transform-origin: top right
 	transform rotate(40deg)
 	left -100%
+
+.chart-line--center
+	transform-origin: top right
+	transform rotate(90deg)
+	right 50%
+	bottom 0
 
 //modal
 .modal-layer
@@ -1009,4 +1053,10 @@ body
 	min-height 100%
 	z-index: -100;
 
+.main-chart-wrap
+	max-width 380px
+	margin-bottom: 60px
+
+.chart-el--center
+	width: 90%
 //modal===end

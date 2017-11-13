@@ -65,6 +65,7 @@ include block_html/_include.pug
 			a(href="#").main-section-get__el Выбрать готовый пакет
 			a(href="#").main-section-get__el-mark  Бесплатная консультация
 
+//section tools
 .tools
 	.main-cont
 		.tools-cont
@@ -101,6 +102,7 @@ include block_html/_include.pug
 						+icon("arrow-simple-right","icon")
 					.tools__el-text Обеспечение правильной работы с системой всех сотрудников ресторана
 
+// section config
 .section.section-config
 	.section-title Что даёт автоматизация
 	.section-title-sub Выберите отделы для автоматизации и сравните результаты
@@ -182,8 +184,53 @@ include block_html/_include.pug
 			.config-col-chart
 
 				.main-chart
+					//circle bar
 					.main-chart-wrap
+
 						.main-chart-bar
+							.main-chart-cont
+								.main-chart-val
+									.chart-smile
+										+icon("smile-good","icon")
+									.chart-percent 178%
+								.main-chart-title Клиенты довольны <br> Прибыль растёт
+								.main-chart-text Повышение лояльности к заведению <br> Быстрое, качественное <br> обслуживание
+					.chart-el.chart-el--center
+						.config-el
+							.config__head
+								.chart-line.chart-line--center
+								.config__toggle
+									.config__toggle-pin
+										span
+									.config__toggle-text Кухня
+								.config__stat
+									.config__tip
+										.config__tip-wrap
+											.config__tip-coner
+											.config__tip-title Бухгалтер-калькулятор
+											.config__tip-chart
+												.progress-bar(data-percent="50")
+											.config__tip-row
+												.config__tip-color.config__tip-color--purp
+												.config__tip-text До внедрения
+											.config__tip-row
+												.config__tip-color.config__tip-color--red
+												.config__tip-text Сэкономленное время после автоматизации
+
+									.config__stat-head
+										.config__stat-title Статистика
+										.config__stat-icon
+											+icon("statistick","icon")
+							.config-content
+								.config-content__filter
+								.config-title Повар
+								.config-text Эффективное производство Качественное планирование склада
+								.config-link
+									a(href="#").config-link__el Iiko Back Office
+									a(href="#").config-link__el Iiko Dashboard
+
+
+
 			//chart-column
 			.config-col
 				//chart-el
@@ -252,6 +299,7 @@ include block_html/_include.pug
 						.config-link
 							a(href="#").config-link__el Iiko Back Office
 							a(href="#").config-link__el Iiko Dashboard
+
 //solution automatic
 .section.section-solution.section--gray
 	.section-title Решения для автоматизации HoReCa
