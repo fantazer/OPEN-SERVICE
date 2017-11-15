@@ -31,8 +31,7 @@ include block_html/_include.pug
 											'Новосибирск'
 											];
 									each item in items
-
-										a(href="#").header-info__sub-el(class=item== 'Москва' ? 'header-info__sub-el--active' : null) #{item}
+										a.header-info__sub-el(href="#" class=item== 'Москва' ? 'header-info__sub-el--active' : null) #{item}
 							a(href="#").header-info__numb 8-800-555-14-98
 					.header-get
 						.header-get__el
@@ -57,13 +56,21 @@ include block_html/_include.pug
 							];
 					each item in items
 						a(href="#").sub-header__el #{item}
+		.main-cont.main-cont-slider
+			.main-section-slider-control
+				.slider-control__el.slider-control__el--left
+					+icon("triangle-arrow-left","icon")
+				.slider-control__el.slider-control__el--right
+					+icon("triangle-arrow-right","icon")
+			.main-section-slider
+				- for (var i=0;i<3;i++)
+					.main-section-slogan
+						.main-section-title Автоматизация ресторанов #{i + 1}
+						.main-section-text Мы помогаем управлять бизнесом и финансами, быстро строить и анализировать любые отчеты, сокращать расходы и увеличивать продажи системы iiko
+						.main-section-get
+							a(href="#").main-section-get__el Выбрать готовый пакет
+							a(href="#").main-section-get__el-mark  Бесплатная консультация
 
-	.main-section-slogan
-		.main-section-title Автоматизация ресторанов
-		.main-section-text Мы помогаем управлять бизнесом и финансами, быстро строить и анализировать любые отчеты, сокращать расходы и увеличивать продажи системы iiko
-		.main-section-get
-			a(href="#").main-section-get__el Выбрать готовый пакет
-			a(href="#").main-section-get__el-mark  Бесплатная консультация
 
 //section tools
 .tools
@@ -124,7 +131,9 @@ include block_html/_include.pug
 									.config__tip-coner
 									.config__tip-title Время затраты отдела в часах/неделю
 									.config__tip-chart
-										.progress-bar(data-percent="50")
+										.progress-bar(data-value="1")
+										.config__tip-chart-val
+											span -100%
 									.config__tip-row
 										.config__tip-color.config__tip-color--purp
 										.config__tip-text До внедрения
@@ -151,14 +160,16 @@ include block_html/_include.pug
 						.config__toggle
 							.config__toggle-pin
 								span
-							.config__toggle-text Склад
+							.config__toggle-text Бар
 						.config__stat
 							.config__tip
 								.config__tip-wrap
 									.config__tip-coner
 									.config__tip-title Бухгалтер-калькулятор
 									.config__tip-chart
-										.progress-bar(data-percent="20")
+										.progress-bar(data-value=".5")
+											.config__tip-chart-val
+												span -50%
 									.config__tip-row
 										.config__tip-color.config__tip-color--purp
 										.config__tip-text До внедрения
@@ -172,13 +183,11 @@ include block_html/_include.pug
 									+icon("statistick","icon")
 					.config-content
 						.config-content__filter
-						.config-title Бухгалтер-калькулятор
-						.config-text Полный контроль формирования себестоимости.Своевременные достоверные отчеты
+						.config-title Бармен
+						.config-text Быстрая инвентаризация бара. Открытие/закрытие смены по чек листу
 						.config-link
 							a(href="#").config-link__el Iiko Back Office
 							a(href="#").config-link__el Iiko Dashboard
-
-
 
 			//center-part
 			.config-col-chart
@@ -186,15 +195,17 @@ include block_html/_include.pug
 				.main-chart
 					//circle bar
 					.main-chart-wrap
-
 						.main-chart-bar
 							.main-chart-cont
-								.main-chart-val
-									.chart-smile
-										+icon("smile-good","icon")
-									.chart-percent 178%
-								.main-chart-title Клиенты довольны <br> Прибыль растёт
-								.main-chart-text Повышение лояльности к заведению <br> Быстрое, качественное <br> обслуживание
+								.main-chart-textbox
+									.main-chart-val
+										.chart-smile
+											+icon("smile-good","icon")
+										.chart-percent
+											span.chart-percent-val 0
+											span %
+									.main-chart-title Клиенты довольны <br> Прибыль растёт
+									.main-chart-text Повышение лояльности к заведению <br> Быстрое, качественное <br> обслуживание
 					.chart-el.chart-el--center
 						.config-el
 							.config__head
@@ -209,7 +220,9 @@ include block_html/_include.pug
 											.config__tip-coner
 											.config__tip-title Бухгалтер-калькулятор
 											.config__tip-chart
-												.progress-bar(data-percent="50")
+												.progress-bar(data-value=".5")
+													.config__tip-chart-val
+														span -50%
 											.config__tip-row
 												.config__tip-color.config__tip-color--purp
 												.config__tip-text До внедрения
@@ -240,14 +253,16 @@ include block_html/_include.pug
 						.config__toggle
 							.config__toggle-pin
 								span
-							.config__toggle-text Бар
+							.config__toggle-text Склад
 						.config__stat
 							.config__tip
 								.config__tip-wrap
 									.config__tip-coner
 									.config__tip-title Бухгалтер-калькулятор
 									.config__tip-chart
-										.progress-bar(data-percent="20")
+										.progress-bar(data-value="1")
+											.config__tip-chart-val
+												span -100%
 									.config__tip-row
 										.config__tip-color.config__tip-color--purp
 										.config__tip-text До внедрения
@@ -261,11 +276,15 @@ include block_html/_include.pug
 									+icon("statistick","icon")
 					.config-content
 						.config-content__filter
-						.config-title Бармен
-						.config-text Быстрая инвентаризация бара. Открытие/закрытие смены по чек листу
+						.config-title Бухгалтер-калькулятор
+						.config-text Полный контроль формирования себестоимости.Своевременные  отчеты
 						.config-link
 							a(href="#").config-link__el Iiko Back Office
 							a(href="#").config-link__el Iiko Dashboard
+
+
+
+
 				//chart-el
 				.config-el
 					.config__head
@@ -280,7 +299,9 @@ include block_html/_include.pug
 									.config__tip-coner
 									.config__tip-title Бухгалтер-калькулятор
 									.config__tip-chart
-										.progress-bar(data-percent="20")
+										.progress-bar(data-value=".5")
+											.config__tip-chart-val
+												span -50%
 									.config__tip-row
 										.config__tip-color.config__tip-color--purp
 										.config__tip-text До внедрения

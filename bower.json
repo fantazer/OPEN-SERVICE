@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "slick-carousel": "^1.8.1",
-    "circliful": "^1.2.0"
+    "circliful": "^1.2.0",
+    "jquery-animateNumber": "^0.0.14"
   }
 }

@@ -153,7 +153,8 @@ body
 	fl()
 	position: relative
 	z-index 5
-	margin-top: 3%
+	margin-top: 5%
+	padding-bottom: 2px
 
 .main-section-title
 	@extend .type--xxl
@@ -166,7 +167,7 @@ body
 	text-align: center
 	color white
 	line-height: 1.8
-	margin-bottom: 55px
+	margin: 0 auto 55px auto
 
 .main-section-get
 	flex(mid)
@@ -805,10 +806,10 @@ body
 	.background
 		background-color #7377e3
 	.rotate
-		clip rect(0 75px 150px 0)
+		clip rect(0 55px 150px 0)
 		background-color $red
 	.left
-		clip rect(0 75px 150px 0)
+		clip rect(0 55px 150px 0)
 		opacity 1
 		background-color #7377e3
 	.right
@@ -854,6 +855,9 @@ body
 	flex(mid)
 	fl()
 
+.main-chart-textbox
+	width: 75%
+	//border 1px solid red
 .main-chart-val
 	flex(mid)
 	margin-bottom: 20px
@@ -1060,3 +1064,44 @@ body
 .chart-el--center
 	width: 90%
 //modal===end
+
+.main-cont-slider
+	position: relative
+.main-section-slider-control
+	position: absolute
+	width: 100%
+	left: 0
+	top 50%
+	z-index 5
+	flex(between)
+	.icon
+		size 14px
+		fill white
+.slider-control__el
+	round()
+	flex(mid)
+	tr(all)
+	border 1px solid white
+	size 50px
+	opacity .5
+	cp()
+	&:hover
+		opacity 1
+
+.slider-control__el--left
+		.icon
+			margin-left: -3px
+.slider-control__el--right
+		.icon
+			margin-right: -3px
+
+.config__tip-chart
+	position: relative
+.config__tip-chart-val
+	position: absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+	flex(mid)
+	@extend .type--xlg

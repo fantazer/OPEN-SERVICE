@@ -1,8 +1,11 @@
 
-
 $(document).ready(function(){
-	//$(".progress-bar").loading();
 
+	//$(".progress-bar").loading();
+	
+
+	
+	//video bg
 	$('.main-section').vide(
 	{
 		webm:'img/video.webm'
@@ -12,6 +15,7 @@ $(document).ready(function(){
 		loop: true,
 		posterType:"webm"
 	});
+	//video bg end
 
 	//modal
 	$('.modal-content').click(function(event){
@@ -75,7 +79,7 @@ $(document).ready(function(){
 
 	//chart
 	$(".main-chart-bar").circleProgress({
-    value: 0.75,
+    value: 0,
     size: 380,
     startAngle:-1.6,
     lineCap: 'round',
@@ -84,6 +88,7 @@ $(document).ready(function(){
       gradient: ["#6972da", "#a076dd"]
     }
   });
+
 	//chart===end
 
 
@@ -112,8 +117,14 @@ $(document).ready(function(){
 
 				$('.tooltip-filter').addClass('tooltip-filter--show');
 				//init progress bar
-				$(".progress-bar").loading({
-					duration:100
+				$(".progress-bar").circleProgress({
+					animation:true,
+					size: 150,
+					startAngle:-1.6,
+					lineCap: 'round',
+					thickness:10,
+					fill:'#F0383E',
+					emptyFill:"#7476E3"
 				});
 				var valueChart = $('.progress-bar').data('percent');
 				$('.value-chart').text("-" + valueChart + "%");
@@ -163,6 +174,17 @@ $(document).ready(function(){
 	});
 	//slider===end
 
+	//slider clients
+	$('.main-section-slider').slick({
+			slidesToShow: 1,
+			//autoplay: true,
+			speed: 500,
+			vertical:false,
+			prevArrow: $('.slider-control__el--left'),
+			nextArrow: $('.slider-control__el--right')
+	});
+	//slider===end
+
 	//Tab
 	var initTab = function(el){
 		$(el+' .tab-head').click(function(){
@@ -183,7 +205,46 @@ $(document).ready(function(){
 	//Tab===end
 
 
+	//animate values percent charts
 
+	var mainChartConst = 3.5;
+	var currentPercent;
+	$('.config__toggle-pin').click(function(){
+		var mainChartVal = 0;
+		$('.config__stat').each(function(){
+			if(!$(this).closest('.config-el').hasClass('config-content--active')){
+				currentPercent = $(this).find('.progress-bar').data('value')*100;
+				mainChartVal += currentPercent/3.5;
+				console.log('currentPercent',currentPercent);
+
+				return mainChartVal;
+			}
+		});
+		console.log('mainChartVal',mainChartVal);
+		$('.main-chart-bar').circleProgress({
+			value: mainChartVal/100,
+			size: 380,
+			startAngle:-1.6,
+			lineCap: 'round',
+			thickness:20,
+			animation: {
+					duration: 3000,
+					easing: 'circleProgressEasing'
+			}
+		});
+		var currentNumber = $('.chart-percent-val').text();
+		$({numberValue: currentNumber}).animate({numberValue: mainChartVal*3.5}, {
+				duration: 2000,
+				easing: 'linear',
+				step: function (now) {
+								$('.chart-percent-val').text(now.toFixed(0));
+				}
+		});
+
+
+		return mainChartVal;
+	});
+	//animate values percent charts=== end
 
 
 	function detectIE() {
