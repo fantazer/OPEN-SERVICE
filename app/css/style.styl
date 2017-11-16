@@ -43,20 +43,20 @@ body
 	left: 0
 	background-color #000000
 	background-image linear-gradient(to left, #751540 0%, #21539f 100%)
-	opacity 0.8
+	opacity 0.7
 	width: 100%
 	height: 100%
 	
 
 .main-section
+	flex(mid)
+	bg-full()
 	width: 100%
 	height: 720px
 	background: rgba(0, 0, 0, 0.61)
 	position: relative
-	flex(mid)
 	background-attachment fixed
 	background-repeat: no-repeat
-	bg-full()
 
 .main-section-cont
 	position: relative
@@ -69,6 +69,8 @@ body
 	z-index 50
 
 .header-logo
+	+below(1024px)
+		width: 15%
 	width: 18%
 
 
@@ -78,20 +80,36 @@ body
 
 
 .header-info
+	+below(768px)
+		width: 60%
 	flex(between)
 	width: 36%
-//.header-info__el 
+.header-info__el
+	+below(768px)
+		&:first-child
+			display: none
+		width: 100%
+		f()
+	width: 45%
 
 .header-info__text
+	+below(768px)
+		margin-bottom: 0
 	color rgba(255, 255, 255, 0.4)
 	margin-bottom: 10px
 	cp()
 
 .header-info__numb
+	+below(1200px)
+		font-size: 14px
 	@extend .type--xlg
 	color white
 
 .header-info__toggle
+	+below(1024px)
+		width: 150px
+	+below(768px)
+		flex(mid)
 	position: relative
 	width: 180px
 
@@ -112,6 +130,10 @@ body
 
 
 .header-info__sub-title
+	+below(1024px)
+		font-size: 14px
+		text-align: left
+		padding: 20px 30px
 	border-bottom:1px solid $border-color
 	text-align: center
 	padding: 20px
@@ -119,6 +141,8 @@ body
 	color black
 
 .header-info__sub-el
+	+below(1024px)
+		font-size: 14px
 	display: block
 	color  black
 	border-bottom:1px solid $border-color
@@ -134,20 +158,43 @@ body
 	border-bottom 1px solid rgba(255, 255, 255, 0.15)
 
 .header-get
+	+below(1200px)
+		width: 40%
+		justify-content: flex-end
+	+below(1024px)
+		min-width 350px
+	+below(768px)
+		display: none
 	flex(between)
 	width: 38%
 .header-get__el
+	+below(1200px)
+		font-size: 12px
+		padding: 15px
 	@extend .btn--md
 	@extend .btn--light-dark
+	&:first-child
+		+below(1024px)
+			margin-right: 10px
+		margin-right: 20px
 	padding: 15px 20px
 	.nav-icon
 		margin-left: 0
-	.icon
+	.nav-icon
+		+below(1024px)
+			size 15px
 		size 15px
 		fill $blue
 //.btn--icon
 //.nav-icon 
-//.sub-header 
+//.sub-header
+.header-toggle
+	+above(769px)
+		display: none
+	.icon
+		fill white
+		size 20px
+		cp()
 .main-section-slogan
 	flex(mid)
 	fl()
@@ -157,12 +204,16 @@ body
 	padding-bottom: 2px
 
 .main-section-title
+	+below(1024px)
+		font-size: 35px
 	@extend .type--xxl
 	color white
 	text-align: center
 	margin-bottom: 25px
 
 .main-section-text
+	+below(768px)
+		width: 60%
 	width: 620px
 	text-align: center
 	color white
@@ -182,16 +233,22 @@ body
 	@extend .btn--mark
 
 .sub-header__wrap
+	+below(768px)
+		display: none
 	flex(between)
 
 .sub-header__el
+	+below(1024px)
+		font-size: 11px
+	up()
+	tr(all)
 	padding-top: 25px
 	width: 100%
 	text-align: center
-	up()
 	color white
 	margin-bottom: 25px
-
+	&:hover
+		opacity .7
 
 .tools
 	transform translateY(-50%)
@@ -250,7 +307,9 @@ body
 .section--gray
 	background: #f1f6fb
 
-//.section-solution
+.section-solution
+	padding-bottom: 80px
+
 .section-title
 	@extend .type--xl
 	text-align: center
@@ -266,6 +325,8 @@ body
 
 
 .solution__head-el
+	+below(1200px)
+		font-size: 12px
 	cp()
 	up()
 	padding: 20px
@@ -434,15 +495,16 @@ body
 	background: none
 //.section
 .section-help
-	padding-bottom: 0
+	padding: 0
 	bg-full()
-//.main-cont
+	.main-cont
+		center(960px,10px)
 
 .help
 	flex(between)
 
 .help-info
-	width: 35%
+	width: 45%
 
 .help-info__title
 	@extend .type--xl
@@ -460,11 +522,19 @@ body
 .help-img
 	width: 45%
 
-//.footer
-//.main-cont
+.footer
+	.main-cont
+		+below(1024px)
+			center(640px,10px)
 .footer-tab
+	+below(1024px)
+		width: 100%
 	width: 55%
 .footer-wrap
+	+below(1024px)
+		fw()
+		padding-top: 10px
+		padding-bottom: 30px
 	f()
 	justify-content: space-between
 	padding: 80px 0
@@ -483,8 +553,12 @@ body
 //.tab-head
 //.tab-head--active
 	//@extend .solution-head--active
-//.footer-info
+.footer-info
+	+below(1024px)
+		margin-bottom: 20px
 .footer__cont
+	+below(1024px)
+		padding: 30px 0px
 	padding: 30px 10px
 
 //.tab-cont
@@ -499,6 +573,8 @@ body
 	width: 40%
 
 .footer__cont-adr__numb
+	+below(640px)
+		font-size: 14px
 	display: block
 	font-size: 18px
 	color #6d6d6d
@@ -521,9 +597,13 @@ body
 	width: 60%
 
 .footer-help
+	+below(1024px)
+		width: 50%
 	width: 20%
 
 .footer-help__title
+	+below(1200px)
+		font-size: 18px
 	@extend .type--xlg
 	margin-bottom: 30px
 
@@ -539,9 +619,13 @@ body
 	color $blue
 
 .footer-soc
+	+below(1024px)
+		margin-right: auto
 	width: 165px
 
 .footer-soc__title
+	+below(1200px)
+		font-size: 18px
 	margin-bottom: 30px
 	@extend .type--xlg
 .soc__row
@@ -557,15 +641,24 @@ body
 		tr(all)
 
 .footer-sub__wrap
+	+below(1024px)
+		align-items: center
 	f()
 	justify-content: space-between
 
 .footer-sub
+	.main-cont
+		+below(1024px)
+			center(640px,10px)
+	+below(1024px)
+		padding: 50px 0
 	padding: 50px 0 25px 0
 	background: $blue
 	background-image linear-gradient(to left, rgba(221, 85, 146, 0.56) 0%, rgba(157, 120, 195, 0.56) 50%, rgba(80, 182, 232, 0.56) 100%)
 
 .footer-sub__info
+	+below(1024px)
+		width: 40%
 	width: 25%
 
 .footer-sub__info-title
@@ -580,6 +673,8 @@ body
 		color white
 
 .footer-sub__nav
+	+below(1024px)
+		display: none
 	width: 60%
 	flex(between)
 	fw()
@@ -599,7 +694,8 @@ body
 	padding-left: 30px
 
 //.section
-//.section-config
+.section-config
+	padding-top: 0
 //.section-title
 .section-title-sub
 	text-align: center
@@ -733,7 +829,7 @@ body
 	//transform translateY(-50%)
 	display: none
 	top calc(100% + 20px)
-	right 0%
+	right -25%
 .config__tip--show
 	display: block
 	z-index 150
@@ -1066,6 +1162,8 @@ body
 //modal===end
 
 .main-cont-slider
+	+below(1024px)
+		margin-top: 5vw
 	position: relative
 .main-section-slider-control
 	position: absolute

@@ -77,19 +77,7 @@ $(document).ready(function(){
 	});
 	//modal
 
-	//chart
-	$(".main-chart-bar").circleProgress({
-    value: 0,
-    size: 380,
-    startAngle:-1.6,
-    lineCap: 'round',
-    thickness:20,
-    fill: {
-      gradient: ["#6972da", "#a076dd"]
-    }
-  });
 
-	//chart===end
 
 
 	//toggle pin
@@ -206,6 +194,22 @@ $(document).ready(function(){
 
 
 	//animate values percent charts
+		//chart
+	$(".main-chart-bar").circleProgress({
+    value: 0,
+    size: 380,
+    startAngle:-1.6,
+    lineCap: 'round',
+    thickness:20,
+    fill: {
+      gradient: ["#6972da", "#a076dd"]
+    },
+    animation: {
+					duration: 3000,
+					easing: 'circleProgressEasing'
+			}
+  });
+	//chart===end
 
 	var mainChartConst = 3.5;
 	var currentPercent;
@@ -221,17 +225,9 @@ $(document).ready(function(){
 			}
 		});
 		console.log('mainChartVal',mainChartVal);
-		$('.main-chart-bar').circleProgress({
-			value: mainChartVal/100,
-			size: 380,
-			startAngle:-1.6,
-			lineCap: 'round',
-			thickness:20,
-			animation: {
-					duration: 3000,
-					easing: 'circleProgressEasing'
-			}
-		});
+		$('.main-chart-bar').circleProgress(
+			'value', mainChartVal/100
+		);
 		var currentNumber = $('.chart-percent-val').text();
 		$({numberValue: currentNumber}).animate({numberValue: mainChartVal*3.5}, {
 				duration: 2000,

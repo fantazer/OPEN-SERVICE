@@ -40,7 +40,8 @@ include block_html/_include.pug
 								span Связаться с нами
 						.header-get__el
 							span Бесплатная консультация
-
+					.header-toggle
+						+icon("menu","icon")
 		.sub-header
 			.main-cont
 				.sub-header__wrap
@@ -118,11 +119,11 @@ include block_html/_include.pug
 			//chart-column
 			.config-col
 				//chart-el
-				.config-el.config-el--first
+				.config-el.config-el--first.config-content--active
 					.config__head
 						.chart-line.chart-line--left-top
 						.config__toggle
-							.config__toggle-pin
+							.config__toggle-pin.config__toggle-pin--active
 								span
 							.config__toggle-text Офис
 						.config__stat
@@ -154,11 +155,11 @@ include block_html/_include.pug
 							a(href="#").config-link__el Iiko Dashboard
 
 				//chart-el
-				.config-el
+				.config-el.config-content--active
 					.config__head
 						.chart-line.chart-line--left-bottom
 						.config__toggle
-							.config__toggle-pin
+							.config__toggle-pin.config__toggle-pin--active
 								span
 							.config__toggle-text Бар
 						.config__stat
@@ -207,11 +208,11 @@ include block_html/_include.pug
 									.main-chart-title Клиенты довольны <br> Прибыль растёт
 									.main-chart-text Повышение лояльности к заведению <br> Быстрое, качественное <br> обслуживание
 					.chart-el.chart-el--center
-						.config-el
+						.config-el.config-content--active
 							.config__head
 								.chart-line.chart-line--center
 								.config__toggle
-									.config__toggle-pin
+									.config__toggle-pin.config__toggle-pin--active
 										span
 									.config__toggle-text Кухня
 								.config__stat
@@ -247,11 +248,11 @@ include block_html/_include.pug
 			//chart-column
 			.config-col
 				//chart-el
-				.config-el.config-el--first
+				.config-el.config-el--first.config-content--active
 					.config__head
 						.chart-line.chart-line--right-top
 						.config__toggle
-							.config__toggle-pin
+							.config__toggle-pin.config__toggle-pin--active
 								span
 							.config__toggle-text Склад
 						.config__stat
@@ -286,11 +287,11 @@ include block_html/_include.pug
 
 
 				//chart-el
-				.config-el
+				.config-el.config-content--active
 					.config__head
 						.chart-line.chart-line--right-bottom
 						.config__toggle
-							.config__toggle-pin
+							.config__toggle-pin.config__toggle-pin--active
 								span
 							.config__toggle-text Зал
 						.config__stat
@@ -459,7 +460,7 @@ include block_html/_include.pug
 							.footer-tab__cont
 								.footer-tab__info
 									a(href="tel:+7(499)281-62-08").footer__cont-adr__numb +7(499)
-										span 281-62-08 #{i}
+										span 281-62-08
 									a(href="mailto:msk@open-s.info").footer__cont-adr__mail msk@open-s.info
 
 								.footer__tab-adr
