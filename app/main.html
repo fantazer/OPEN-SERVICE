@@ -27,6 +27,10 @@
 	<!-- mixin nameMixin()-->
 	<!-- - var args = Array.prototype.slice.call(arguments)-->
 	<!-- - for item in args-->
+	<!--charts-el-->
+	<!--charts-el===edn-->
+	<!--charts containers-->
+	<!--charts containers===end-->
 
 	<body>
 		<!--.main-section(style="background-image:url('img/main-baner.jpg')")-->
@@ -212,7 +216,7 @@
 			<div class="main-cont">
 				<div class="config">
 					<!--chart-column-->
-					<div class="config-col">
+					<div class="config-col config-col--one">
 						<!--chart-el-->
 						<div class="config-el config-el--first config-content--active">
 							<div class="config__head">
@@ -253,6 +257,10 @@
 										</div>
 									</div>
 								</div>
+								<div class="config__toggle-slide">
+									<div class="config__toggle-el config__toggle-el--show">Подробнее</div>
+									<div class="config__toggle-el config__toggle-el--hide">Свернуть</div>
+								</div>
 							</div>
 							<div class="config-content">
 								<div class="config-content__filter"></div>
@@ -261,6 +269,28 @@
 								<div class="config-link">
 									<a class="config-link__el" href="#">Iiko Back Office</a>
 									<a class="config-link__el" href="#">Iiko Dashboard</a>
+								</div>
+								<div class="config-chart-mobile">
+									<div class="config__tip">
+										<div class="config__tip-wrap">
+											<div class="config__tip-coner"></div>
+											<div class="config__tip-title">Время затраты отдела в часах/неделю</div>
+											<div class="config__tip-chart">
+												<div class="progress-bar" data-value="1"></div>
+												<div class="config__tip-chart-val">
+													<span>-100%</span>
+												</div>
+											</div>
+											<div class="config__tip-row">
+												<div class="config__tip-color config__tip-color--purp"></div>
+												<div class="config__tip-text">До внедрения</div>
+											</div>
+											<div class="config__tip-row">
+												<div class="config__tip-color config__tip-color--red"></div>
+												<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -305,6 +335,10 @@
 										</div>
 									</div>
 								</div>
+								<div class="config__toggle-slide">
+									<div class="config__toggle-el config__toggle-el--show">Подробнее</div>
+									<div class="config__toggle-el config__toggle-el--hide">Свернуть</div>
+								</div>
 							</div>
 							<div class="config-content">
 								<div class="config-content__filter"></div>
@@ -313,6 +347,269 @@
 								<div class="config-link">
 									<a class="config-link__el" href="#">Iiko Back Office</a>
 									<a class="config-link__el" href="#">Iiko Dashboard</a>
+								</div>
+								<div class="config-chart-mobile">
+									<div class="config__tip">
+										<div class="config__tip-wrap">
+											<div class="config__tip-coner"></div>
+											<div class="config__tip-title">Бухгалтер-калькулятор</div>
+											<div class="config__tip-chart">
+												<div class="progress-bar" data-value=".5">
+													<div class="config__tip-chart-val">
+														<span>-50%</span>
+													</div>
+												</div>
+											</div>
+											<div class="config__tip-row">
+												<div class="config__tip-color config__tip-color--purp"></div>
+												<div class="config__tip-text">До внедрения</div>
+											</div>
+											<div class="config__tip-row">
+												<div class="config__tip-color config__tip-color--red"></div>
+												<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="config-col-mobile">
+							<div class="chart-el chart-el--center">
+								<div class="config-el config-content--active">
+									<div class="config__head">
+										<div class="chart-line chart-line--center"></div>
+										<div class="config__toggle">
+											<div class="config__toggle-pin config__toggle-pin--active">
+												<span></span>
+											</div>
+											<div class="config__toggle-text">Кухня</div>
+										</div>
+										<div class="config__stat">
+											<div class="config__tip">
+												<div class="config__tip-wrap">
+													<div class="config__tip-coner"></div>
+													<div class="config__tip-title">Бухгалтер-калькулятор</div>
+													<div class="config__tip-chart">
+														<div class="progress-bar" data-value=".5">
+															<div class="config__tip-chart-val">
+																<span>-50%</span>
+															</div>
+														</div>
+													</div>
+													<div class="config__tip-row">
+														<div class="config__tip-color config__tip-color--purp"></div>
+														<div class="config__tip-text">До внедрения</div>
+													</div>
+													<div class="config__tip-row">
+														<div class="config__tip-color config__tip-color--red"></div>
+														<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+													</div>
+												</div>
+											</div>
+											<div class="config__stat-head">
+												<div class="config__stat-title">Статистика</div>
+												<div class="config__stat-icon">
+													<svg class="icon">
+														<use xlink:href="#statistick"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+										<div class="config__toggle-slide">
+											<div class="config__toggle-el config__toggle-el--show">Подробнее</div>
+											<div class="config__toggle-el config__toggle-el--hide">Свернуть</div>
+										</div>
+									</div>
+									<div class="config-content">
+										<div class="config-content__filter"></div>
+										<div class="config-title">Повар</div>
+										<div class="config-text">Эффективное производство Качественное планирование склада</div>
+										<div class="config-link">
+											<a class="config-link__el" href="#">Iiko Back Office</a>
+											<a class="config-link__el" href="#">Iiko Dashboard</a>
+										</div>
+										<div class="config-chart-mobile">
+											<div class="config__tip">
+												<div class="config__tip-wrap">
+													<div class="config__tip-coner"></div>
+													<div class="config__tip-title">Бухгалтер-калькулятор</div>
+													<div class="config__tip-chart">
+														<div class="progress-bar" data-value=".5">
+															<div class="config__tip-chart-val">
+																<span>-50%</span>
+															</div>
+														</div>
+													</div>
+													<div class="config__tip-row">
+														<div class="config__tip-color config__tip-color--purp"></div>
+														<div class="config__tip-text">До внедрения</div>
+													</div>
+													<div class="config__tip-row">
+														<div class="config__tip-color config__tip-color--red"></div>
+														<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--chart-el-->
+							<div class="config-el config-el--first config-content--active">
+								<div class="config__head">
+									<div class="chart-line chart-line--right-top"></div>
+									<div class="config__toggle">
+										<div class="config__toggle-pin config__toggle-pin--active">
+											<span></span>
+										</div>
+										<div class="config__toggle-text">Склад</div>
+									</div>
+									<div class="config__stat">
+										<div class="config__tip">
+											<div class="config__tip-wrap">
+												<div class="config__tip-coner"></div>
+												<div class="config__tip-title">Бухгалтер-калькулятор</div>
+												<div class="config__tip-chart">
+													<div class="progress-bar" data-value="1">
+														<div class="config__tip-chart-val">
+															<span>-100%</span>
+														</div>
+													</div>
+												</div>
+												<div class="config__tip-row">
+													<div class="config__tip-color config__tip-color--purp"></div>
+													<div class="config__tip-text">До внедрения</div>
+												</div>
+												<div class="config__tip-row">
+													<div class="config__tip-color config__tip-color--red"></div>
+													<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+												</div>
+											</div>
+										</div>
+										<div class="config__stat-head">
+											<div class="config__stat-title">Статистика</div>
+											<div class="config__stat-icon">
+												<svg class="icon">
+													<use xlink:href="#statistick"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="config__toggle-slide">
+										<div class="config__toggle-el config__toggle-el--show">Подробнее</div>
+										<div class="config__toggle-el config__toggle-el--hide">Свернуть</div>
+									</div>
+								</div>
+								<div class="config-content">
+									<div class="config-content__filter"></div>
+									<div class="config-title">Бухгалтер-калькулятор</div>
+									<div class="config-text">Полный контроль формирования себестоимости.Своевременные отчеты</div>
+									<div class="config-link">
+										<a class="config-link__el" href="#">Iiko Back Office</a>
+										<a class="config-link__el" href="#">Iiko Dashboard</a>
+									</div>
+									<div class="config-chart-mobile">
+										<div class="config__tip">
+											<div class="config__tip-wrap">
+												<div class="config__tip-coner"></div>
+												<div class="config__tip-title">Бухгалтер-калькулятор</div>
+												<div class="config__tip-chart">
+													<div class="progress-bar" data-value="1">
+														<div class="config__tip-chart-val">
+															<span>-100%</span>
+														</div>
+													</div>
+												</div>
+												<div class="config__tip-row">
+													<div class="config__tip-color config__tip-color--purp"></div>
+													<div class="config__tip-text">До внедрения</div>
+												</div>
+												<div class="config__tip-row">
+													<div class="config__tip-color config__tip-color--red"></div>
+													<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--chart-el-->
+							<div class="config-el config-content--active">
+								<div class="config__head">
+									<div class="chart-line chart-line--right-bottom"></div>
+									<div class="config__toggle">
+										<div class="config__toggle-pin config__toggle-pin--active">
+											<span></span>
+										</div>
+										<div class="config__toggle-text">Зал</div>
+									</div>
+									<div class="config__stat">
+										<div class="config__tip">
+											<div class="config__tip-wrap">
+												<div class="config__tip-coner"></div>
+												<div class="config__tip-title">Бухгалтер-калькулятор</div>
+												<div class="config__tip-chart">
+													<div class="progress-bar" data-value=".5">
+														<div class="config__tip-chart-val">
+															<span>-50%</span>
+														</div>
+													</div>
+												</div>
+												<div class="config__tip-row">
+													<div class="config__tip-color config__tip-color--purp"></div>
+													<div class="config__tip-text">До внедрения</div>
+												</div>
+												<div class="config__tip-row">
+													<div class="config__tip-color config__tip-color--red"></div>
+													<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+												</div>
+											</div>
+										</div>
+										<div class="config__stat-head">
+											<div class="config__stat-title">Статистика</div>
+											<div class="config__stat-icon">
+												<svg class="icon">
+													<use xlink:href="#statistick"></use>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="config__toggle-slide">
+										<div class="config__toggle-el config__toggle-el--show">Подробнее</div>
+										<div class="config__toggle-el config__toggle-el--hide">Свернуть</div>
+									</div>
+								</div>
+								<div class="config-content">
+									<div class="config-content__filter"></div>
+									<div class="config-title">Официант</div>
+									<div class="config-text">Быстрое обслуживание клиентов. Предотвращение конфликтных ситуаций.</div>
+									<div class="config-link">
+										<a class="config-link__el" href="#">Iiko Back Office</a>
+										<a class="config-link__el" href="#">Iiko Dashboard</a>
+									</div>
+									<div class="config-chart-mobile">
+										<div class="config__tip">
+											<div class="config__tip-wrap">
+												<div class="config__tip-coner"></div>
+												<div class="config__tip-title">Бухгалтер-калькулятор</div>
+												<div class="config__tip-chart">
+													<div class="progress-bar" data-value=".5">
+														<div class="config__tip-chart-val">
+															<span>-50%</span>
+														</div>
+													</div>
+												</div>
+												<div class="config__tip-row">
+													<div class="config__tip-color config__tip-color--purp"></div>
+													<div class="config__tip-text">До внедрения</div>
+												</div>
+												<div class="config__tip-row">
+													<div class="config__tip-color config__tip-color--red"></div>
+													<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -386,6 +683,10 @@
 												</div>
 											</div>
 										</div>
+										<div class="config__toggle-slide">
+											<div class="config__toggle-el config__toggle-el--show">Подробнее</div>
+											<div class="config__toggle-el config__toggle-el--hide">Свернуть</div>
+										</div>
 									</div>
 									<div class="config-content">
 										<div class="config-content__filter"></div>
@@ -395,13 +696,36 @@
 											<a class="config-link__el" href="#">Iiko Back Office</a>
 											<a class="config-link__el" href="#">Iiko Dashboard</a>
 										</div>
+										<div class="config-chart-mobile">
+											<div class="config__tip">
+												<div class="config__tip-wrap">
+													<div class="config__tip-coner"></div>
+													<div class="config__tip-title">Бухгалтер-калькулятор</div>
+													<div class="config__tip-chart">
+														<div class="progress-bar" data-value=".5">
+															<div class="config__tip-chart-val">
+																<span>-50%</span>
+															</div>
+														</div>
+													</div>
+													<div class="config__tip-row">
+														<div class="config__tip-color config__tip-color--purp"></div>
+														<div class="config__tip-text">До внедрения</div>
+													</div>
+													<div class="config__tip-row">
+														<div class="config__tip-color config__tip-color--red"></div>
+														<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!--chart-column-->
-					<div class="config-col">
+					<div class="config-col config-col--three">
 						<!--chart-el-->
 						<div class="config-el config-el--first config-content--active">
 							<div class="config__head">
@@ -443,6 +767,10 @@
 										</div>
 									</div>
 								</div>
+								<div class="config__toggle-slide">
+									<div class="config__toggle-el config__toggle-el--show">Подробнее</div>
+									<div class="config__toggle-el config__toggle-el--hide">Свернуть</div>
+								</div>
 							</div>
 							<div class="config-content">
 								<div class="config-content__filter"></div>
@@ -451,6 +779,29 @@
 								<div class="config-link">
 									<a class="config-link__el" href="#">Iiko Back Office</a>
 									<a class="config-link__el" href="#">Iiko Dashboard</a>
+								</div>
+								<div class="config-chart-mobile">
+									<div class="config__tip">
+										<div class="config__tip-wrap">
+											<div class="config__tip-coner"></div>
+											<div class="config__tip-title">Бухгалтер-калькулятор</div>
+											<div class="config__tip-chart">
+												<div class="progress-bar" data-value="1">
+													<div class="config__tip-chart-val">
+														<span>-100%</span>
+													</div>
+												</div>
+											</div>
+											<div class="config__tip-row">
+												<div class="config__tip-color config__tip-color--purp"></div>
+												<div class="config__tip-text">До внедрения</div>
+											</div>
+											<div class="config__tip-row">
+												<div class="config__tip-color config__tip-color--red"></div>
+												<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -495,6 +846,10 @@
 										</div>
 									</div>
 								</div>
+								<div class="config__toggle-slide">
+									<div class="config__toggle-el config__toggle-el--show">Подробнее</div>
+									<div class="config__toggle-el config__toggle-el--hide">Свернуть</div>
+								</div>
 							</div>
 							<div class="config-content">
 								<div class="config-content__filter"></div>
@@ -503,6 +858,29 @@
 								<div class="config-link">
 									<a class="config-link__el" href="#">Iiko Back Office</a>
 									<a class="config-link__el" href="#">Iiko Dashboard</a>
+								</div>
+								<div class="config-chart-mobile">
+									<div class="config__tip">
+										<div class="config__tip-wrap">
+											<div class="config__tip-coner"></div>
+											<div class="config__tip-title">Бухгалтер-калькулятор</div>
+											<div class="config__tip-chart">
+												<div class="progress-bar" data-value=".5">
+													<div class="config__tip-chart-val">
+														<span>-50%</span>
+													</div>
+												</div>
+											</div>
+											<div class="config__tip-row">
+												<div class="config__tip-color config__tip-color--purp"></div>
+												<div class="config__tip-text">До внедрения</div>
+											</div>
+											<div class="config__tip-row">
+												<div class="config__tip-color config__tip-color--red"></div>
+												<div class="config__tip-text">Сэкономленное время после автоматизации</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

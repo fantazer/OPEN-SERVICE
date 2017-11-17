@@ -117,82 +117,19 @@ include block_html/_include.pug
 	.main-cont
 		.config
 			//chart-column
-			.config-col
+			.config-col.config-col--one
 				//chart-el
-				.config-el.config-el--first.config-content--active
-					.config__head
-						.chart-line.chart-line--left-top
-						.config__toggle
-							.config__toggle-pin.config__toggle-pin--active
-								span
-							.config__toggle-text Офис
-						.config__stat
-							.config__tip
-								.config__tip-wrap
-									.config__tip-coner
-									.config__tip-title Время затраты отдела в часах/неделю
-									.config__tip-chart
-										.progress-bar(data-value="1")
-										.config__tip-chart-val
-											span -100%
-									.config__tip-row
-										.config__tip-color.config__tip-color--purp
-										.config__tip-text До внедрения
-									.config__tip-row
-										.config__tip-color.config__tip-color--red
-										.config__tip-text Сэкономленное время после автоматизации
-
-							.config__stat-head
-								.config__stat-title Статистика
-								.config__stat-icon
-									+icon("statistick","icon")
-					.config-content
-						.config-content__filter
-						.config-title Владелец/Управляющий
-						.config-text Полный контроль работы заведения Защита от воровства
-						.config-link
-							a(href="#").config-link__el Iiko Back Office
-							a(href="#").config-link__el Iiko Dashboard
-
+				+chartOffice()
 				//chart-el
-				.config-el.config-content--active
-					.config__head
-						.chart-line.chart-line--left-bottom
-						.config__toggle
-							.config__toggle-pin.config__toggle-pin--active
-								span
-							.config__toggle-text Бар
-						.config__stat
-							.config__tip
-								.config__tip-wrap
-									.config__tip-coner
-									.config__tip-title Бухгалтер-калькулятор
-									.config__tip-chart
-										.progress-bar(data-value=".5")
-											.config__tip-chart-val
-												span -50%
-									.config__tip-row
-										.config__tip-color.config__tip-color--purp
-										.config__tip-text До внедрения
-									.config__tip-row
-										.config__tip-color.config__tip-color--red
-										.config__tip-text Сэкономленное время после автоматизации
-
-							.config__stat-head
-								.config__stat-title Статистика
-								.config__stat-icon
-									+icon("statistick","icon")
-					.config-content
-						.config-content__filter
-						.config-title Бармен
-						.config-text Быстрая инвентаризация бара. Открытие/закрытие смены по чек листу
-						.config-link
-							a(href="#").config-link__el Iiko Back Office
-							a(href="#").config-link__el Iiko Dashboard
-
+				+chartBar()
+				.config-col-mobile
+					+chartKichen()
+					//chart-el
+					+chartGarage()
+					//chart-el
+					+chartPlace()
 			//center-part
 			.config-col-chart
-
 				.main-chart
 					//circle bar
 					.main-chart-wrap
@@ -207,120 +144,13 @@ include block_html/_include.pug
 											span %
 									.main-chart-title Клиенты довольны <br> Прибыль растёт
 									.main-chart-text Повышение лояльности к заведению <br> Быстрое, качественное <br> обслуживание
-					.chart-el.chart-el--center
-						.config-el.config-content--active
-							.config__head
-								.chart-line.chart-line--center
-								.config__toggle
-									.config__toggle-pin.config__toggle-pin--active
-										span
-									.config__toggle-text Кухня
-								.config__stat
-									.config__tip
-										.config__tip-wrap
-											.config__tip-coner
-											.config__tip-title Бухгалтер-калькулятор
-											.config__tip-chart
-												.progress-bar(data-value=".5")
-													.config__tip-chart-val
-														span -50%
-											.config__tip-row
-												.config__tip-color.config__tip-color--purp
-												.config__tip-text До внедрения
-											.config__tip-row
-												.config__tip-color.config__tip-color--red
-												.config__tip-text Сэкономленное время после автоматизации
-
-									.config__stat-head
-										.config__stat-title Статистика
-										.config__stat-icon
-											+icon("statistick","icon")
-							.config-content
-								.config-content__filter
-								.config-title Повар
-								.config-text Эффективное производство Качественное планирование склада
-								.config-link
-									a(href="#").config-link__el Iiko Back Office
-									a(href="#").config-link__el Iiko Dashboard
-
-
-
+					+chartKichen()
 			//chart-column
-			.config-col
+			.config-col.config-col--three
 				//chart-el
-				.config-el.config-el--first.config-content--active
-					.config__head
-						.chart-line.chart-line--right-top
-						.config__toggle
-							.config__toggle-pin.config__toggle-pin--active
-								span
-							.config__toggle-text Склад
-						.config__stat
-							.config__tip
-								.config__tip-wrap
-									.config__tip-coner
-									.config__tip-title Бухгалтер-калькулятор
-									.config__tip-chart
-										.progress-bar(data-value="1")
-											.config__tip-chart-val
-												span -100%
-									.config__tip-row
-										.config__tip-color.config__tip-color--purp
-										.config__tip-text До внедрения
-									.config__tip-row
-										.config__tip-color.config__tip-color--red
-										.config__tip-text Сэкономленное время после автоматизации
-
-							.config__stat-head
-								.config__stat-title Статистика
-								.config__stat-icon
-									+icon("statistick","icon")
-					.config-content
-						.config-content__filter
-						.config-title Бухгалтер-калькулятор
-						.config-text Полный контроль формирования себестоимости.Своевременные  отчеты
-						.config-link
-							a(href="#").config-link__el Iiko Back Office
-							a(href="#").config-link__el Iiko Dashboard
-
-
-
-
+				+chartGarage()
 				//chart-el
-				.config-el.config-content--active
-					.config__head
-						.chart-line.chart-line--right-bottom
-						.config__toggle
-							.config__toggle-pin.config__toggle-pin--active
-								span
-							.config__toggle-text Зал
-						.config__stat
-							.config__tip
-								.config__tip-wrap
-									.config__tip-coner
-									.config__tip-title Бухгалтер-калькулятор
-									.config__tip-chart
-										.progress-bar(data-value=".5")
-											.config__tip-chart-val
-												span -50%
-									.config__tip-row
-										.config__tip-color.config__tip-color--purp
-										.config__tip-text До внедрения
-									.config__tip-row
-										.config__tip-color.config__tip-color--red
-										.config__tip-text Сэкономленное время после автоматизации
-
-							.config__stat-head
-								.config__stat-title Статистика
-								.config__stat-icon
-									+icon("statistick","icon")
-					.config-content
-						.config-content__filter
-						.config-title Официант
-						.config-text Быстрое обслуживание клиентов. Предотвращение конфликтных ситуаций.
-						.config-link
-							a(href="#").config-link__el Iiko Back Office
-							a(href="#").config-link__el Iiko Dashboard
+				+chartPlace()
 
 //solution automatic
 .section.section-solution.section--gray

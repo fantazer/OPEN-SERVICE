@@ -80,17 +80,13 @@ $(document).ready(function(){
 
 
 
-	//toggle pin
-		$('.config__toggle-pin').click(function(){
-			$(this).toggleClass("config__toggle-pin--active");
-			$(this).closest('.config-el').toggleClass("config-content--active");
-		});
-	//toggle pin==edn
 
 
 
-	$('.config__stat').click(function(e){
+
+	$('.config__stat').add('.config__toggle-slide').click(function(e){
 			$('.config__tip').removeClass("config__tip--show");
+
 			if(
 				!$(this)
 				.closest('.config-el')
@@ -103,7 +99,16 @@ $(document).ready(function(){
 				});
 				e.stopPropagation();
 
-				$('.tooltip-filter').addClass('tooltip-filter--show');
+				if($(this).hasClass(".config__stat")){
+					$('.tooltip-filter').addClass('tooltip-filter--show');
+				}
+				else{
+					if($('.config__toggle-slide').is(':visible')){
+						$(this).closest('.config-el').find('.config-content').slideToggle();
+					}
+					$(this).toggleClass('config__toggle--active');
+				}
+
 				//init progress bar
 				$(".progress-bar").circleProgress({
 					animation:true,
@@ -120,6 +125,8 @@ $(document).ready(function(){
 			}
 		});
 
+
+
 		$('.tooltip-filter').click(function(){
 			$('.tooltip-filter').removeClass('tooltip-filter--show');
 		});
@@ -128,6 +135,9 @@ $(document).ready(function(){
 		});
 	// tooltip === end
 
+	// toggle mobile config
+
+	// toggle mobile config === end
 
 	//town-list
 	$('.header-info__toggle').click(function(event){
@@ -213,9 +223,20 @@ $(document).ready(function(){
 
 	var mainChartConst = 3.5;
 	var currentPercent;
+
+	//toggle pin
 	$('.config__toggle-pin').click(function(){
+		if(!$(this).closest('.config-el').hasClass("config-content--active")){
+			$(this).closest('.config-el').find('.config__toggle-slide').removeClass("config__toggle--active")
+		}
+		if($('.config__toggle-slide').is(':visible')){
+			$(this).closest('.config-el').find('.config-content').slideUp();
+		}
+		$(this).toggleClass("config__toggle-pin--active");
+		$(this).closest('.config-el').toggleClass("config-content--active");
+
 		var mainChartVal = 0;
-		$('.config__stat').each(function(){
+		$('.config__stat ').each(function(){
 			if(!$(this).closest('.config-el').hasClass('config-content--active')){
 				currentPercent = $(this).find('.progress-bar').data('value')*100;
 				mainChartVal += currentPercent/3.5;
@@ -224,12 +245,16 @@ $(document).ready(function(){
 				return mainChartVal;
 			}
 		});
-		console.log('mainChartVal',mainChartVal);
+
 		$('.main-chart-bar').circleProgress(
 			'value', mainChartVal/100
 		);
 		var currentNumber = $('.chart-percent-val').text();
-		$({numberValue: currentNumber}).animate({numberValue: mainChartVal*3.5}, {
+		$({numberValue: currentNumber}).animate(
+			{
+				numberValue: mainChartVal*3.5
+			},
+			{
 				duration: 2000,
 				easing: 'linear',
 				step: function (now) {
@@ -240,6 +265,7 @@ $(document).ready(function(){
 
 		return mainChartVal;
 	});
+	//toggle pin==edn
 	//animate values percent charts=== end
 
 

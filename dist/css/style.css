@@ -2184,6 +2184,11 @@ body {
 .section-config {
   padding-top: 0;
 }
+@media only screen and (max-width: 1024px) {
+  .section-config .main-cont {
+    width: 740px;
+  }
+}
 .section-title-sub {
   text-align: center;
   color: #7b8089;
@@ -2199,6 +2204,13 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+}
+@media only screen and (max-width: 1024px) {
+  .config {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
 }
 .config-col {
   width: 28%;
@@ -2217,6 +2229,12 @@ body {
   padding-bottom: 20px;
   border-bottom: 1px solid #d0d5e0;
   margin-bottom: 30px;
+}
+@media only screen and (max-width: 1024px) {
+  .config__head {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
 }
 .config__toggle {
   display: -webkit-box;
@@ -2263,24 +2281,32 @@ body {
 .config__stat {
   position: relative;
 }
-.config__stat-head {
+@media only screen and (max-width: 1024px) {
+  .config__stat {
+    display: none;
+  }
+}
+.config__stat-head,
+.config__toggle-el {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: relative;
 }
-.config__stat-head:hover {
+.config__stat-head:hover,
+.config__toggle-el:hover {
   cursor: pointer;
 }
-.config__stat-head:before {
+.config__stat-head:before,
+.config__toggle-el:before {
   content: "";
   position: absolute;
   width: 100%;
   left: 0px;
   height: 1px;
-  background: #2f81e6;
-  bottom: -3px;
+  bottom: -5px;
+  border-top: 1px dotted #2f81e6;
 }
 .config__stat-title {
   color: #2f81e6;
@@ -2293,6 +2319,12 @@ body {
 }
 .config-content {
   position: relative;
+}
+@media only screen and (max-width: 1024px) {
+  .config-content {
+    display: none;
+    padding-bottom: 30px;
+  }
 }
 .config-title {
   font-size: 18px;
@@ -2348,7 +2380,17 @@ body {
 }
 .config-content--active .config__stat-head:before {
   content: "";
-  background: #ccd5eb;
+  border-top: 1px dotted #ccd5eb;
+}
+.config-content--active .config__toggle-el {
+  color: #ccd5eb;
+}
+.config-content--active .config__toggle-el:hover {
+  cursor: initial;
+}
+.config-content--active .config__toggle-el:before {
+  content: "";
+  border-top: 1px dotted #ccd5eb;
 }
 .config__tip {
   position: absolute;
@@ -2482,6 +2524,11 @@ opacity 0 100% {
 .config-el--first {
   margin-bottom: 120px;
 }
+@media only screen and (max-width: 1024px) {
+  .config-el--first {
+    margin-bottom: 0;
+  }
+}
 .main-chart {
   padding: 0 20px;
   position: relative;
@@ -2500,6 +2547,14 @@ opacity 0 100% {
   -webkit-flex-flow: column;
       -ms-flex-flow: column;
           flex-flow: column;
+}
+@media only screen and (max-width: 1024px) {
+  .main-chart {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 .main-chart-bar {
   z-index: 5;
@@ -2586,12 +2641,32 @@ opacity 0 100% {
   min-width: 380px;
   width: 38%;
 }
+@media only screen and (max-width: 1024px) {
+  .config-col-chart {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .config-col--one {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .config-col--three {
+    display: none;
+  }
+}
 .chart-line {
   position: absolute;
   height: 1px;
   background: #d0d5e0;
   width: 100%;
   bottom: -1px;
+}
+@media only screen and (max-width: 1024px) {
+  .chart-line {
+    display: none;
+  }
 }
 .chart-line--left-top {
   -webkit-transform-origin: top left;
@@ -2844,6 +2919,11 @@ opacity 0 100% {
 .chart-el--center {
   width: 90%;
 }
+@media only screen and (max-width: 1024px) {
+  .chart-el--center {
+    display: none;
+  }
+}
 .main-cont-slider {
   position: relative;
 }
@@ -2904,8 +2984,18 @@ opacity 0 100% {
 .slider-control__el:hover {
   opacity: 1;
 }
+@media only screen and (max-width: 1024px) {
+  .slider-control__el--left {
+    margin-left: 20px;
+  }
+}
 .slider-control__el--left .icon {
   margin-left: -3px;
+}
+@media only screen and (max-width: 1024px) {
+  .slider-control__el--right {
+    margin-right: 20px;
+  }
 }
 .slider-control__el--right .icon {
   margin-right: -3px;
@@ -2931,4 +3021,54 @@ opacity 0 100% {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.config__toggle-slide {
+  position: relative;
+}
+@media only screen and (min-width: 1025px) {
+  .config__toggle-slide {
+    display: none;
+  }
+}
+.config__toggle--active .config__toggle-el--show {
+  display: none;
+}
+.config__toggle--active .config__toggle-el--hide {
+  display: block;
+}
+.config__toggle-el--hide {
+  display: none;
+}
+.config__toggle-el {
+  color: #2f81e6;
+}
+.config__toggle-el:before {
+  content: "";
+  border-color: #2f81e6;
+}
+@media only screen and (min-width: 1025px) {
+  .config-col-mobile {
+    display: none;
+  }
+}
+.config-col-mobile .chart-el--center {
+  display: block;
+  width: 100%;
+}
+@media only screen and (min-width: 1025px) {
+  .config-chart-mobile {
+    display: none;
+  }
+}
+.config-chart-mobile .config__tip {
+  position: static;
+  display: block;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  top: initial;
+  right: initial;
+  width: 100%;
+}
+.config__toggle-slide--active {
+  color: #2f81e6;
 }

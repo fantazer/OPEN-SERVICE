@@ -3,46 +3,268 @@
 // - for item in args
 
 mixin icon(name,cls)
-  svg(class=cls)
-    use(xlink:href="#" + name)
+	svg(class=cls)
+		use(xlink:href="#" + name)
 
 mixin checkbox(text,disable)
-  .check-el
-    if disable
-      label.style-label.style-label--checkbox.style-label--disable
-        input(type="checkbox").sytle-input
-        .sytle-input-element
-          +icon("checked","icon-check")
-        .sytle-input-text=text
-    else
-      label.style-label.style-label--checkbox
-        input(type="checkbox").sytle-input
-        .sytle-input-element
-          +icon("checked","icon-check")
-        .sytle-input-text=text
+	.check-el
+		if disable
+			label.style-label.style-label--checkbox.style-label--disable
+				input(type="checkbox").sytle-input
+				.sytle-input-element
+					+icon("checked","icon-check")
+				.sytle-input-text=text
+		else
+			label.style-label.style-label--checkbox
+				input(type="checkbox").sytle-input
+				.sytle-input-element
+					+icon("checked","icon-check")
+				.sytle-input-text=text
 mixin radio(text,group,disable)
-  .check-el
-    if disable
-      label.style-label.style-label--radio.style-label--disable
-        input(type="radio" name="group").sytle-input
-        .sytle-input-element
-          .icon-radio
-        .sytle-input-text=text
-    else
-      label.style-label.style-label--radio
-        input(type="radio" name="group").sytle-input
-        .sytle-input-element
-          .icon-radio
-        .sytle-input-text=text
+	.check-el
+		if disable
+			label.style-label.style-label--radio.style-label--disable
+				input(type="radio" name="group").sytle-input
+				.sytle-input-element
+					.icon-radio
+				.sytle-input-text=text
+		else
+			label.style-label.style-label--radio
+				input(type="radio" name="group").sytle-input
+				.sytle-input-element
+					.icon-radio
+				.sytle-input-text=text
 
 mixin incr(a)
-  - a = a || 1
-  .elements-icr-block
-    .incr
-      .incr__minus.incr__nav
-        +icon("minus","icon")
-      .incr__val
-        span=a
-        .incr__val-coner
-      .incr__plus.incr__nav
-        +icon("plus","icon")
+	- a = a || 1
+	.elements-icr-block
+		.incr
+			.incr__minus.incr__nav
+				+icon("minus","icon")
+			.incr__val
+				span=a
+				.incr__val-coner
+			.incr__plus.incr__nav
+				+icon("plus","icon")
+
+//charts-el
+mixin inChartOffice()
+	.config__tip
+		.config__tip-wrap
+			.config__tip-coner
+			.config__tip-title Время затраты отдела в часах/неделю
+			.config__tip-chart
+				.progress-bar(data-value="1")
+				.config__tip-chart-val
+					span -100%
+			.config__tip-row
+				.config__tip-color.config__tip-color--purp
+				.config__tip-text До внедрения
+			.config__tip-row
+				.config__tip-color.config__tip-color--red
+				.config__tip-text Сэкономленное время после автоматизации
+
+mixin inChartBar()
+	.config__tip
+		.config__tip-wrap
+			.config__tip-coner
+			.config__tip-title Бухгалтер-калькулятор
+			.config__tip-chart
+				.progress-bar(data-value=".5")
+					.config__tip-chart-val
+						span -50%
+			.config__tip-row
+				.config__tip-color.config__tip-color--purp
+				.config__tip-text До внедрения
+			.config__tip-row
+				.config__tip-color.config__tip-color--red
+				.config__tip-text Сэкономленное время после автоматизации
+
+mixin inChartKichen()
+	.config__tip
+		.config__tip-wrap
+			.config__tip-coner
+			.config__tip-title Бухгалтер-калькулятор
+			.config__tip-chart
+				.progress-bar(data-value=".5")
+					.config__tip-chart-val
+						span -50%
+			.config__tip-row
+				.config__tip-color.config__tip-color--purp
+				.config__tip-text До внедрения
+			.config__tip-row
+				.config__tip-color.config__tip-color--red
+				.config__tip-text Сэкономленное время после автоматизации
+
+mixin inChartGarage()
+	.config__tip
+		.config__tip-wrap
+			.config__tip-coner
+			.config__tip-title Бухгалтер-калькулятор
+			.config__tip-chart
+				.progress-bar(data-value="1")
+					.config__tip-chart-val
+						span -100%
+			.config__tip-row
+				.config__tip-color.config__tip-color--purp
+				.config__tip-text До внедрения
+			.config__tip-row
+				.config__tip-color.config__tip-color--red
+				.config__tip-text Сэкономленное время после автоматизации
+
+mixin inchartPlace()
+	.config__tip
+		.config__tip-wrap
+			.config__tip-coner
+			.config__tip-title Бухгалтер-калькулятор
+			.config__tip-chart
+				.progress-bar(data-value=".5")
+					.config__tip-chart-val
+						span -50%
+			.config__tip-row
+				.config__tip-color.config__tip-color--purp
+				.config__tip-text До внедрения
+			.config__tip-row
+				.config__tip-color.config__tip-color--red
+				.config__tip-text Сэкономленное время после автоматизации
+
+//charts-el===edn
+
+//charts containers
+
+mixin chartOffice()
+	.config-el.config-el--first.config-content--active
+		.config__head
+			.chart-line.chart-line--left-top
+			.config__toggle
+				.config__toggle-pin.config__toggle-pin--active
+					span
+				.config__toggle-text Офис
+			.config__stat
+				+inChartOffice()
+				.config__stat-head
+					.config__stat-title Статистика
+					.config__stat-icon
+						+icon("statistick","icon")
+			.config__toggle-slide
+				.config__toggle-el.config__toggle-el--show Подробнее
+				.config__toggle-el.config__toggle-el--hide Свернуть
+		.config-content
+			.config-content__filter
+			.config-title Владелец/Управляющий
+			.config-text Полный контроль работы заведения Защита от воровства
+			.config-link
+				a(href="#").config-link__el Iiko Back Office
+				a(href="#").config-link__el Iiko Dashboard
+			.config-chart-mobile
+				+inChartOffice()
+
+mixin chartBar()
+	.config-el.config-content--active
+		.config__head
+			.chart-line.chart-line--left-bottom
+			.config__toggle
+				.config__toggle-pin.config__toggle-pin--active
+					span
+				.config__toggle-text Бар
+			.config__stat
+				+inChartBar()
+				.config__stat-head
+					.config__stat-title Статистика
+					.config__stat-icon
+						+icon("statistick","icon")
+			.config__toggle-slide
+				.config__toggle-el.config__toggle-el--show Подробнее
+				.config__toggle-el.config__toggle-el--hide Свернуть
+		.config-content
+			.config-content__filter
+			.config-title Бармен
+			.config-text Быстрая инвентаризация бара. Открытие/закрытие смены по чек листу
+			.config-link
+				a(href="#").config-link__el Iiko Back Office
+				a(href="#").config-link__el Iiko Dashboard
+			.config-chart-mobile
+				+inChartBar()
+
+mixin chartKichen()
+	.chart-el.chart-el--center
+		.config-el.config-content--active
+			.config__head
+				.chart-line.chart-line--center
+				.config__toggle
+					.config__toggle-pin.config__toggle-pin--active
+						span
+					.config__toggle-text Кухня
+				.config__stat
+					+inChartKichen()
+					.config__stat-head
+						.config__stat-title Статистика
+						.config__stat-icon
+							+icon("statistick","icon")
+				.config__toggle-slide
+					.config__toggle-el.config__toggle-el--show Подробнее
+					.config__toggle-el.config__toggle-el--hide Свернуть
+			.config-content
+				.config-content__filter
+				.config-title Повар
+				.config-text Эффективное производство Качественное планирование склада
+				.config-link
+					a(href="#").config-link__el Iiko Back Office
+					a(href="#").config-link__el Iiko Dashboard
+				.config-chart-mobile
+					+inChartKichen()
+
+mixin chartGarage()
+	.config-el.config-el--first.config-content--active
+		.config__head
+			.chart-line.chart-line--right-top
+			.config__toggle
+				.config__toggle-pin.config__toggle-pin--active
+					span
+				.config__toggle-text Склад
+			.config__stat
+				+inChartGarage()
+				.config__stat-head
+					.config__stat-title Статистика
+					.config__stat-icon
+						+icon("statistick","icon")
+			.config__toggle-slide
+				.config__toggle-el.config__toggle-el--show Подробнее
+				.config__toggle-el.config__toggle-el--hide Свернуть
+		.config-content
+			.config-content__filter
+			.config-title Бухгалтер-калькулятор
+			.config-text Полный контроль формирования себестоимости.Своевременные  отчеты
+			.config-link
+				a(href="#").config-link__el Iiko Back Office
+				a(href="#").config-link__el Iiko Dashboard
+			.config-chart-mobile
+				+inChartGarage()
+
+mixin chartPlace()
+	.config-el.config-content--active
+		.config__head
+			.chart-line.chart-line--right-bottom
+			.config__toggle
+				.config__toggle-pin.config__toggle-pin--active
+					span
+				.config__toggle-text Зал
+			.config__stat
+				+inchartPlace()
+				.config__stat-head
+					.config__stat-title Статистика
+					.config__stat-icon
+						+icon("statistick","icon")
+			.config__toggle-slide
+				.config__toggle-el.config__toggle-el--show Подробнее
+				.config__toggle-el.config__toggle-el--hide Свернуть
+		.config-content
+			.config-content__filter
+			.config-title Официант
+			.config-text Быстрое обслуживание клиентов. Предотвращение конфликтных ситуаций.
+			.config-link
+				a(href="#").config-link__el Iiko Back Office
+				a(href="#").config-link__el Iiko Dashboard
+			.config-chart-mobile
+				+inchartPlace()
+//charts containers===end

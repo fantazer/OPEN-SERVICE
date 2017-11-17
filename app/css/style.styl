@@ -386,7 +386,6 @@ body
 	left: 0
 	z-index: -1
 	display: flex
-	transition all 4s
 	opacity:0
 .tab-cont--active
 	opacity: 1
@@ -394,7 +393,7 @@ body
 	top initial
 	left initial
 	z-index: 3
-	transition all 2s
+	transition all 1.6s
 
 .section-title--white
 	color white
@@ -695,6 +694,9 @@ body
 
 //.section
 .section-config
+	+below(1024px)
+		.main-cont
+			width: 740px
 	padding-top: 0
 //.section-title
 .section-title-sub
@@ -704,6 +706,8 @@ body
 	margin-bottom: 70px
 //.main-cont
 .config
+	+below(1024px)
+		fw()
 	f()
 	justify-content: space-between
 	position: relative
@@ -711,6 +715,9 @@ body
 	width: 28%
 //.config-el
 .config__head
+	+below(1024px)
+		margin-bottom: 15px
+		padding-bottom: 15px
 	f()
 	justify-content: space-between
 	position: relative
@@ -748,6 +755,8 @@ body
 	@extend .type--xlg
 
 .config__stat
+	+below(1024px)
+		display: none
 	position: relative
 
 .config__stat-head
@@ -760,8 +769,9 @@ body
 		width: 100%
 		left 0px
 		height: 1px
-		background: $blue
-		bottom -3px
+		bottom -5px
+		border-top 1px dotted $blue
+
 .config__stat-title
 	color $blue
 	margin-right: 10px
@@ -771,6 +781,9 @@ body
 		fill $blue
 
 .config-content
+	+below(1024px)
+		display: none
+		padding-bottom: 30px
 	position: relative
 
 .config-title
@@ -818,7 +831,14 @@ body
 			cursor initial
 		&:before
 			content ""
-			background: $gray
+			border-top 1px dotted $gray
+	.config__toggle-el
+		color $gray
+		&:hover
+			cursor initial
+		&:before
+			content ""
+			border-top 1px dotted $gray
 .config__tip
 	position: absolute
 	//right: -300px
@@ -923,9 +943,13 @@ body
 //chart ==end
 
 .config-el--first
+	+below(1024px)
+		margin-bottom: 0
 	margin-bottom: 120px
 
 .main-chart
+	+below(1024px)
+		justify-content: flex-start
 	padding: 0 20px
 	position: relative
 	flex(mid)
@@ -978,12 +1002,24 @@ body
 	margin-top: -5px
 
 .config-col-chart
+	+below(1024px)
+		width: 50%
 	f()
 	justify-content: center
 	min-width 380px
 	width: 38%
 
+.config-col--one
+	+below(1024px)
+		width: 45%
+.config-col--three
+	+below(1024px)
+		display: none
+
+
 .chart-line
+	+below(1024px)
+		display: none
 	position: absolute
 	height: 1px
 	background: $border-color
@@ -1158,6 +1194,8 @@ body
 	margin-bottom: 60px
 
 .chart-el--center
+	+below(1024px)
+		display: none
 	width: 90%
 //modal===end
 
@@ -1187,11 +1225,15 @@ body
 		opacity 1
 
 .slider-control__el--left
-		.icon
-			margin-left: -3px
+	+below(1024px)
+		margin-left: 20px
+	.icon
+		margin-left: -3px
 .slider-control__el--right
-		.icon
-			margin-right: -3px
+	+below(1024px)
+		margin-right: 20px
+	.icon
+		margin-right: -3px
 
 .config__tip-chart
 	position: relative
@@ -1203,3 +1245,48 @@ body
 	height: 100%
 	flex(mid)
 	@extend .type--xlg
+
+
+
+.config__toggle-slide
+	+above(1025px)
+		display: none
+	position: relative
+
+.config__toggle--active
+	.config__toggle-el--show
+		display: none
+	.config__toggle-el--hide
+		display: block
+
+.config__toggle-el--hide
+	display: none
+
+.config__toggle-el
+	@extend .config__stat-head
+	color $blue
+	&:before
+		content ""
+		border-color $blue
+
+
+.config-col-mobile
+	+above(1025px)
+		display: none
+	.chart-el--center
+		display: block
+		width: 100%
+
+.config-chart-mobile
+	+above(1025px)
+		display: none
+	.config__tip
+		position: static
+		display: block
+		box-shadow none
+		top initial
+		right initial
+		width: 100%
+
+.config__toggle-slide--active
+	color $blue
