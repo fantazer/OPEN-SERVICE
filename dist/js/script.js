@@ -1,7 +1,31 @@
 
 $(document).ready(function(){
 
-	//$(".progress-bar").loading();
+
+
+	// resize function
+	var fixChartColl = function(){
+		var currentSize = $(window).width();
+			if( currentSize < 1025 && currentSize > 640){
+				$(".main-chart-wrap").stick_in_parent({
+					'offset_top':100 //отступ
+				})
+			} else {
+				$(".main-chart-wrap").trigger("sticky_kit:detach");
+			}
+
+	};
+	fixChartColl();
+
+	$(window).resize(function(){
+		fixChartColl();
+	});
+
+	// resize function === end
+
+	// scroll fix
+
+	// scroll fix === end
 	
 
 	
@@ -167,6 +191,7 @@ $(document).ready(function(){
 			autoplay: true,
 			speed: 500,
 			vertical:false,
+			fade: true,
 			prevArrow: $('.client-slider__nav-el-left'),
 			nextArrow: $('.client-slider__nav-el-right')
 	});
@@ -176,7 +201,7 @@ $(document).ready(function(){
 	$('.main-section-slider').slick({
 			slidesToShow: 1,
 			//autoplay: true,
-			speed: 500,
+			speed: 1000,
 			vertical:false,
 			prevArrow: $('.slider-control__el--left'),
 			nextArrow: $('.slider-control__el--right')
@@ -314,6 +339,33 @@ $(document).ready(function(){
 		 localStorage.clear();
 	 });
 	// ==== clear storage end =====
+
+	//slide-menu
+	var hideToggleByClass = function(targetClick,toggleEl,toggleClassName) {
+			$(targetClick).click(function(event){
+					event.stopPropagation();
+					$(toggleEl).addClass(toggleClassName);
+					openModal();
+			});
+			$(toggleEl).on("click", function (event) {
+				event.stopPropagation();
+			});
+			$(document).on("click", function () {
+					$(toggleEl).removeClass(toggleClassName);
+			});
+		};
+		hideToggleByClass('.header-toggle','.nav','nav--open');
+		hideToggleByClass('.header-mobile__icon','.nav','nav--open');
+
+		$('.header-mobile__icon').click(function(){
+			$('body').addClass("body-window");
+		});
+
+		$('.menu-close').click(function(){
+			$('.nav').removeClass('nav--open');
+			$('body').removeClass("body-window");
+		});
+	//slide-menu-end
 
 	
 	/* ###### For SlideToggle Elements  ######*/
