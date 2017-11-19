@@ -73,6 +73,8 @@ body
 .header-logo
 	+below(1024px)
 		width: 15%
+	+below(640px)
+		width: 30%
 	width: 18%
 
 
@@ -84,6 +86,8 @@ body
 .header-info
 	+below(768px)
 		width: 60%
+	+below(640px)
+		display: none
 	flex(between)
 	width: 36%
 .header-info__el
@@ -217,6 +221,8 @@ body
 .main-section-text
 	+below(768px)
 		width: 60%
+	+below(640px)
+		display: none
 	width: 620px
 	text-align: center
 	color white
@@ -224,14 +230,22 @@ body
 	margin: 0 auto 55px auto
 
 .main-section-get
+	+below(640px)
+		fw()
 	flex(mid)
 
 .main-section-get__el
+	+below(640px)
+		margin-right: 0
+		margin-bottom: 20px
+		width: 100%
 	@extend .btn--md
 	@extend .btn--light-dark
 	margin-right: 20px
 
 .main-section-get__el-mark
+	+below(640px)
+		width: 100%
 	@extend .btn--md
 	@extend .btn--mark
 
@@ -258,11 +272,16 @@ body
 		.main-cont
 			center(640px,10px)
 		transform translateY(-105px)
-
+	+below(640px)
+		background: #f0f5fa
+		transform translateY(0px)
+		padding-bottom: 40px
 	transform translateY(-50%)
 //.main-cont
 
 .tools-cont
+	+below(640px)
+		margin-top: -140px
 	position: relative
 
 .tools-wrap
@@ -275,6 +294,9 @@ body
 	+below(1024px)
 		width: 48%
 		margin-bottom: 20px
+	+below(640px)
+		flex(mid)
+		fl()
 	flex(mid)
 	fl()
 	cp()
@@ -285,13 +307,16 @@ body
 	border-radius 5px
 	color black
 	&:hover
-		.tools__el-text
-			max-height 200px
-			transition: max-height 0.45s
-		.tools__el-title
-			.icon
-				display: inline-block
+		+above(1024px)
+			.tools__el-text
+				max-height 200px
+				transition: max-height 0.45s
+			.tools__el-title
+				.icon
+					display: inline-block
 .tools__el-icon
+	+below(640px)
+		margin: 0 auto 30px auto
 	flex(mid)
 	round()
 	size 80px
@@ -304,13 +329,20 @@ body
 .tools__el-title
 	+below(1024px)
 		font-size: 18px
+	+below(640px)
+		text-align: center
 	@extend .type--xlg
 	margin-bottom: 20px
 	.icon
+		+below(1024px)
+			display: inline-block
 		size 15px
 		fill $blue
 		display: none
 .tools__el-text
+	+below(1024px)
+		height: auto
+		max-height:initial!important
 	transition: max-height 0.35s
 	text-align: center
 	line-height: 1.8
@@ -318,22 +350,35 @@ body
 	overflow: hidden
 
 .section
+	+below(640px)
+		padding: 30px 0
 	padding: 70px 0
 
 .section--gray
 	background: #f1f6fb
 
 .section-solution
+	+below(640px)
+		margin-bottom: 0px
+		padding-bottom: 60px
 	padding-bottom: 80px
 
 .section-title
+	+below(640px)
+		text-align: center
+		width: 85%
+		margin:0 auto 35px auto
+
 	@extend .type--xl
 	text-align: center
 	margin-bottom: 35px
 //.main-cont
 
+.section-facts
+	.slick-dots li button:before
+		content: '•'
+		color white
 .solution__head-wrap
-
 	border-bottom:1px solid $border-color
 	flex(mid)
 
@@ -357,6 +402,11 @@ body
 		margin-bottom: -1px
 
 .solution__cont
+	+below(1024px)
+		width: 95%
+	+below(640px)
+		fw()
+		padding-bottom: 0
 	width: 85%
 	padding: 50px 0
 	margin: 0 auto
@@ -364,10 +414,18 @@ body
 	justify-content: space-between
 
 .solution__cont-img
+	+below(768px)
+		width: 45%
+	+below(640px)
+		width: 100%
 	flex(mid)
 	width: 35%
 
 .solution__cont-info
+	+below(768px)
+		width: 45%
+	+below(640px)
+		width: 100%
 	width: 65%
 	margin-top: 20px
 
@@ -380,9 +438,16 @@ body
 	margin-bottom: 45px
 
 .solution__get
+	+below(768px)
+		flex(mid)
 	f()
 
 .solution__get-el
+	+below(1024px)
+		background: none
+	+below(640px)
+		padding: 15px 15px
+		margin-right: 15px
 	@extend .btn--md
 	@extend .btn--light
 	margin-right: 30px
@@ -461,12 +526,19 @@ body
 
 //.section-clients
 .client-slider-wrap
+	+below(768px)
+		center(640px,10px)
+
 	position: relative
 	center(980px,10px)
 	margin-bottom: 45px
 //.client-slider
 
 .client-slider__el
+	+below(768px)
+		fw()
+	+below(640px)
+		padding: 25px 20px
 	f()
 	br(10px)
 	justify-content: space-between
@@ -474,11 +546,29 @@ body
 	background: white
 
 .client-slider__el-text
+	+below(768px)
+		order 2
+		width: 100%
+	order 1
 	width: 60%
 	padding-right: 50px
 	line-height: 1.8
 
 .client-slider__el-info
+	+below(768px)
+		order 1
+		width: 100%
+		padding: 0 0 25px 0
+		border-left 0
+		border-bottom 1px solid $border-color
+		f()
+		justify-content: flex-start
+		flex-flow row
+	+below(640px)
+		padding-bottom: 0
+		border-bottom 1px solid $blue
+		margin-bottom: 5px
+	order 2
 	flex(mid)
 	fl()
 	width: 40%
@@ -486,14 +576,24 @@ body
 	border-left 1px solid $border-color
 
 .client-slider__el-logo
+	+below(768px)
+		margin-bottom: 0
+		margin-right: 50px
+	+below(640px)
+		display: none
 	margin-bottom: 20px
 
 .client-slider__el-title
+	+below(768px)
+		text-align: left
 	text-align: center
 	margin-bottom: 20px
 	font-size: 18px
 
 .client-slider__el-about
+	+below(768px)
+		text-align: left
+		max-width 250px
 	text-align: center
 	margin-bottom: 20px
 	line-height:1.8
@@ -544,16 +644,28 @@ body
 	flex(between)
 
 .help-info
+	+below(640px)
+		width: 100%
+		flex(mid)
+		fl()
+		padding-bottom: 50px
 	width: 45%
 
 .help-info__title
 	+below(1024px)
 		font-size: 25px
+	+below(640px)
+		text-align: center
+		width: 80%
+		margin:0 auto 35px auto
 	@extend .type--xl
 	line-height: 1.4
 	margin-bottom: 30px
 
 .help-info__text
+	+below(640px)
+		text-align: center
+		margin-bottom: 50px
 	line-height: 1.8
 	margin-bottom: 60px
 
@@ -562,6 +674,8 @@ body
 	@extend .btn--mark
 
 .help-img
+	+below(640px)
+		display: none
 	width: 45%
 
 .footer
@@ -571,12 +685,16 @@ body
 .footer-tab
 	+below(1024px)
 		width: 100%
+	+below(640px)
+		display: none
 	width: 55%
 .footer-wrap
 	+below(1024px)
 		fw()
 		padding-top: 30px
 		padding-bottom: 30px
+	+below(640px)
+		padding: 50px 0
 	f()
 	justify-content: space-between
 	padding: 80px 0
@@ -642,6 +760,11 @@ body
 .footer-help
 	+below(1024px)
 		width: 50%
+	+below(640px)
+		width: 100%
+		flex(mid)
+		fl()
+		margin-bottom: 50px
 	width: 20%
 
 .footer-help__title
@@ -664,6 +787,10 @@ body
 .footer-soc
 	+below(1024px)
 		margin-right: auto
+	+below(640px)
+		width: 100%
+		flex(mid)
+		fl()
 	width: 165px
 
 .footer-soc__title
@@ -672,6 +799,8 @@ body
 	margin-bottom: 30px
 	@extend .type--xlg
 .soc__row
+	+below(640px)
+		width: 165px
 	width: 100%
 	flex(between)
 .footer-soc__el
@@ -686,6 +815,8 @@ body
 .footer-sub__wrap
 	+below(1024px)
 		align-items: center
+	+below(640px)
+		fw()
 	f()
 	justify-content: space-between
 
@@ -693,8 +824,12 @@ body
 	.main-cont
 		+below(1024px)
 			center(640px,10px)
+		+below(640px)
+			padding: 0
 	+below(1024px)
 		padding: 50px 0
+	+below(640px)
+		padding-bottom: 0
 	padding: 50px 0 25px 0
 	background: $blue
 	background-image linear-gradient(to left, rgba(221, 85, 146, 0.56) 0%, rgba(157, 120, 195, 0.56) 50%, rgba(80, 182, 232, 0.56) 100%)
@@ -702,6 +837,11 @@ body
 .footer-sub__info
 	+below(1024px)
 		width: 40%
+	+below(640px)
+		width: 100%
+		padding-bottom: 35px
+		text-align: center
+		border-bottom 1px solid rgba(255, 255, 255, 0.2)
 	width: 25%
 
 .footer-sub__info-title
@@ -730,6 +870,10 @@ body
 		color white
 
 .footer-sub__logo
+	+below(640px)
+		flex(mid)
+		width: 100%
+		margin: 20px 0
 	width: 100px
 
 .header-info__sub-el--active
@@ -740,7 +884,19 @@ body
 .section-config
 	+below(1024px)
 		.main-cont
+			+below(640px)
+				width: 100%
 			width: 740px
+	+below(640px)
+		padding-top: 30px
+		.section-title
+			width: 80%
+			margin:0 auto 35px auto
+		.section-title-sub
+			width: 80%
+			margin:0 auto 35px auto
+		.main-cont
+			padding: 0
 	padding-top: 0
 //.section-title
 .section-title-sub
@@ -748,6 +904,7 @@ body
 	color #7b8089
 	@extend .type--xlg
 	margin-bottom: 70px
+	line-height: 1.6
 //.main-cont
 .config
 	+below(1024px)
@@ -762,6 +919,9 @@ body
 	+below(1024px)
 		margin-bottom: 15px
 		padding-bottom: 15px
+	+below(640px)
+		padding: 15px
+		margin-bottom: 0
 	f()
 	justify-content: space-between
 	position: relative
@@ -828,6 +988,9 @@ body
 	+below(1024px)
 		display: none
 		padding-bottom: 30px
+	+below(640px)
+		padding: 15px
+		background: #f1f6fb
 	position: relative
 
 .config-title
@@ -883,7 +1046,10 @@ body
 		&:before
 			content ""
 			border-top 1px dotted $gray
+
 .config__tip
+	+below(640px)
+		background: none
 	position: absolute
 	//right: -300px
 	background:white
@@ -904,6 +1070,8 @@ body
 	position: relative
 
 .config__tip-coner
+	+below(640px)
+		display: none
 	position: absolute
 	size 20px
 	background: white
@@ -994,12 +1162,15 @@ body
 .main-chart
 	+below(1024px)
 		justify-content: flex-start
+	+below(640px)
+		padding: 10px
 	padding: 0 20px
 	position: relative
 	flex(mid)
 	fl()
 .main-chart-bar
-
+	+below(640px)
+		size 320px
 	z-index 5
 	width: 100%
 	border-radius 50%
@@ -1048,6 +1219,9 @@ body
 .config-col-chart
 	+below(1024px)
 		width: 50%
+	+below(640px)
+		width: 100%
+		min-width 100%
 	f()
 	justify-content: center
 	min-width 380px
@@ -1056,6 +1230,8 @@ body
 .config-col--one
 	+below(1024px)
 		width: 45%
+	+below(640px)
+		width: 100%
 .config-col--three
 	+below(1024px)
 		display: none
@@ -1250,6 +1426,8 @@ body
 		margin-top: 5vw
 	position: relative
 .main-section-slider-control
+	+below(640px)
+		display: none
 	position: absolute
 	width: 100%
 	left: 0
@@ -1319,6 +1497,8 @@ body
 .config-col-mobile
 	+above(1025px)
 		display: none
+	+below(640px)
+		margin-bottom: 30px
 	.chart-el--center
 		display: block
 		width: 100%
@@ -1341,20 +1521,89 @@ body
 	+below(768px)
 		width: 100vw
 		height: 100vh
+		min-height 400px
+		overflow-y scroll
 	tr(all)
 	position: fixed
 	top 0
 	right 0
-	width: 500px
+	width: 320px
 	z-index: 20
-	background: #1b2230
-	transform translateX(-100%)
+	background-color: #000000;
+	background-image: linear-gradient(-29deg, #a64bda 0%, #3766ee 100%);
+	transform translateX(200%)
 	height: 100vh
 
 .nav--open
-	transform translateX(50%)
+	transform translateX(0%)
 	z-index 1100
+
 .body-window
 	max-width:100vw
 	max-height:100vh
 	overflow:hidden
+
+.nav-wrap
+	padding: 20px
+	height: 100vh
+	min-height 400px
+	overflow-y auto
+	padding-bottom: 40px
+.nav-content
+	flex(mid)
+	fl()
+	height: 100%
+.nav-list
+	flex(mid)
+	fl()
+
+.nav-close
+	position: absolute
+	top 20px
+	right: 20px
+	cp()
+	.icon
+		fill white
+		size 16px
+
+.nav-get
+	flex(between)
+	fw()
+	margin-bottom: 10%
+.nav-get__el
+	padding: 15px
+	width: 100%
+	@extend .btn--md
+	@extend .btn--light-dark
+	&:first-child
+		margin-bottom: 20px
+	padding: 15px 20px
+	.nav-icon
+		margin-left: 0
+	.nav-icon
+		+below(1024px)
+			size 15px
+		size 15px
+		fill $blue
+
+
+.nav-list__el
+	up()
+	color white
+	margin-bottom: 25%
+
+.header-info__el--nav
+	flex(mid)
+	width: 100%
+	.header-info__toggle
+		flex(mid)
+		fl()
+	.header-info__sub
+		position: static
+		margin: 10px 0
+.nav-phone
+	text-align: center
+	font-size: 24px
+	display: block
+	color white
+	margin-top: 3%

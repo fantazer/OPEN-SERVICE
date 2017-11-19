@@ -3,30 +3,8 @@ $(document).ready(function(){
 
 
 
-	// resize function
-	var fixChartColl = function(){
-		var currentSize = $(window).width();
-			if( currentSize < 1025 && currentSize > 640){
-				$(".main-chart-wrap").stick_in_parent({
-					'offset_top':100 //отступ
-				})
-			} else {
-				$(".main-chart-wrap").trigger("sticky_kit:detach");
-			}
 
-	};
-	fixChartColl();
 
-	$(window).resize(function(){
-		fixChartColl();
-	});
-
-	// resize function === end
-
-	// scroll fix
-
-	// scroll fix === end
-	
 
 	
 	//video bg
@@ -100,14 +78,6 @@ $(document).ready(function(){
 		closeModal();
 	});
 	//modal
-
-
-
-
-
-
-
-
 	$('.config__stat').add('.config__toggle-slide').click(function(e){
 			$('.config__tip').removeClass("config__tip--show");
 
@@ -166,7 +136,7 @@ $(document).ready(function(){
 	//town-list
 	$('.header-info__toggle').click(function(event){
 				event.stopPropagation();
-				$(".header-info__sub").slideToggle("fast");
+				$(this).find(".header-info__sub").slideToggle("fast");
 		});
 		$(".header-info__sub").on("click", function (event) {
 			event.stopPropagation();
@@ -188,10 +158,11 @@ $(document).ready(function(){
 	//slider clients
 	$('.client-slider-container').slick({
 			slidesToShow: 1,
-			autoplay: true,
+			//autoplay: true,
+			autoplay: false,
 			speed: 500,
 			vertical:false,
-			fade: true,
+			//fade: true,
 			prevArrow: $('.client-slider__nav-el-left'),
 			nextArrow: $('.client-slider__nav-el-right')
 	});
@@ -207,6 +178,8 @@ $(document).ready(function(){
 			nextArrow: $('.slider-control__el--right')
 	});
 	//slider===end
+
+
 
 	//Tab
 	var initTab = function(el){
@@ -361,27 +334,69 @@ $(document).ready(function(){
 			$('body').addClass("body-window");
 		});
 
-		$('.menu-close').click(function(){
+		$('.nav-close').click(function(){
 			$('.nav').removeClass('nav--open');
 			$('body').removeClass("body-window");
+			closeModal();
 		});
 	//slide-menu-end
 
-	
-	/* ###### For SlideToggle Elements  ######*/
-	/*var hideToggle = function(targetClick,toggleEl) {
-		$(targetClick).click(function(event){
-				event.stopPropagation();
-				$(toggleEl).slideToggle("fast");
-		});
-		$(toggleEl).on("click", function (event) {
-			event.stopPropagation();
-		});
-		$(document).on("click", function () {
-				$(toggleEl).hide();
-		});
-	}
-	hideToggle('.icon-bars','.top-menu_link');*/
+		// resize function
+	var currentSize = $(window).width();
+	var fixChartColl = function(){
+			if( currentSize < 1025 && currentSize > 640){
+				$(".main-chart-wrap").stick_in_parent({
+					'offset_top':100 //отступ
+				})
+			} else {
+				$(".main-chart-wrap").trigger("sticky_kit:detach");
+			}
+	};
+
+	//tools slider
+	var sliderMobile = function(){
+			if( currentSize < 641){
+					$('.tools-wrap, .facts-wrap').not('.slick-initialized').slick({
+						responsive: [
+							{
+								breakpoint: 9999,
+								settings: "unslick"
+							},
+							{
+								breakpoint: 640,
+								settings: {
+									slidesToShow: 1,
+									slidesToScroll: 1,
+									infinite: true,
+									prevArrow: false,
+    							nextArrow: false,
+									dots: true
+								}
+							}
+						]
+					});
+			}
+	};
+
+	var chartMobile = function() {
+		/*if( currentSize < 641){
+			$(".main-chart-bar").circleProgress('size', 320);
+		}*/
+	};
+
+	fixChartColl();
+	sliderMobile();
+	chartMobile();
+
+	$(window).resize(function(){
+		var currentSize = $(window).width();
+		sliderMobile();
+		fixChartColl();
+		chartMobile();
+		return currentSize;
+	});
+
+	// resize function === end
 
 })
 

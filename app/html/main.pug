@@ -243,9 +243,10 @@ include block_html/_include.pug
 							.client-slider__el-info
 								.client-slider__el-logo
 									img(src="img/review-logo.png", alt="")
-								.client-slider__el-title Алексей Поздняков
-								.client-slider__el-about Совладелец и генеральный директор сети кофеек Coffe Crew
-								.client-slider__nav
+								.client-slider__el-block
+									.client-slider__el-title Алексей Поздняков
+									.client-slider__el-about Совладелец и генеральный директор сети кофеек Coffe Crew
+								//.client-slider__nav
 									.client-slider__nav-el.client-slider__nav-el-left
 										+icon("triangle-arrow-left","icon")
 									.client-slider__nav-el.client-slider__nav-el-right
@@ -343,6 +344,47 @@ include block_html/_include.pug
 .tooltip-filter
 
 .nav
-	h1 привет
+	.nav-wrap
+		.nav-close
+			+icon("close","icon")
+		.nav-content
+			.nav-list
+				-
+					var items = [
+						'Автоматизация',
+						'Обслуживание',
+						'Консалтинг',
+						'Оборудование',
+						'База знаний',
+						'Блог',
+						'О компании'
+					];
+				each item in items
+					a(href="#").nav-list__el #{item}
+			.nav-get
+				.nav-get__el
+					.btn--icon
+						+icon("Phone","nav-icon")
+						span Связаться с нами
+				.nav-get__el
+					span Бесплатная консультация
+			.header-info__el.header-info__el--nav
+				.header-info__toggle
+					.header-info__text.header-info__text--town
+						span Москва
+						+icon("arrow-down","icon")
+					.header-info__sub
+						.header-info__sub-title Выберите свой регион
+						-
+							var items = [
+							'Москва',
+							'Санкт-Петербург',
+							'Татарстан',
+							'Сочи',
+							'Новосибирск'
+							];
+						each item in items
+							a.header-info__sub-el(href="#" class=item == 'Москва' ? 'header-info__sub-el--active' : null) #{item}
+			a(href="tel:8-800-555-14-98").nav-phone 8-800-555-14-98
 
 include ./block_html/_script.pug
