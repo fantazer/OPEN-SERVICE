@@ -237,20 +237,20 @@ include block_html/_include.pug
 		.client-slider-container
 			- for (var i=0;i<4;i++)
 				.client-slider
-						.client-slider__el
-							.client-slider__el-text
-								p #{i} Леонид, здравствуйте! Письма получаю, огромное за это спасибо! Всё открывается, читается, слушается. Вообще, курсы интересны и поучительны, а главное, предельно лаконичны и понятны.Сотрудничество с вашей компанией приносит одно удовольствие. Удивительная оперативность в решении любых вопросов! Хочется отметить внимательность и приветливость всего персонала. А за терпеливость - им отдельное СПАСИБО! По вопросам, наверное, позднее, привыкаем к iiko.
-							.client-slider__el-info
-								.client-slider__el-logo
-									img(src="img/review-logo.png", alt="")
-								.client-slider__el-block
-									.client-slider__el-title Алексей Поздняков
-									.client-slider__el-about Совладелец и генеральный директор сети кофеек Coffe Crew
-								//.client-slider__nav
-									.client-slider__nav-el.client-slider__nav-el-left
-										+icon("triangle-arrow-left","icon")
-									.client-slider__nav-el.client-slider__nav-el-right
-										+icon("triangle-arrow-right","icon")
+					.client-slider__el
+						.client-slider__el-text
+							p #{i} Леонид, здравствуйте! Письма получаю, огромное за это спасибо! Всё открывается, читается, слушается. Вообще, курсы интересны и поучительны, а главное, предельно лаконичны и понятны.Сотрудничество с вашей компанией приносит одно удовольствие. Удивительная оперативность в решении любых вопросов! Хочется отметить внимательность и приветливость всего персонала. А за терпеливость - им отдельное СПАСИБО! По вопросам, наверное, позднее, привыкаем к iiko.
+						.client-slider__el-info
+							.client-slider__el-logo
+								img(src="img/review-logo.png", alt="")
+							.client-slider__el-block
+								.client-slider__el-title Алексей Поздняков
+								.client-slider__el-about Совладелец и генеральный директор сети кофеек Coffe Crew
+		.client-slider__nav
+			.client-slider__nav-el.client-slider__nav-el-left
+				+icon("triangle-arrow-left","icon")
+			.client-slider__nav-el.client-slider__nav-el-right
+				+icon("triangle-arrow-right","icon")
 
 	.btn-row--center
 		a(href="#").get-review Все отзывы
@@ -343,6 +343,7 @@ include block_html/_include.pug
 +footer()
 .tooltip-filter
 
+//navigation
 .nav
 	.nav-wrap
 		.nav-close

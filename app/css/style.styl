@@ -339,6 +339,9 @@ body
 		size 15px
 		fill $blue
 		display: none
+	span
+		display: inline-block
+		margin-right: 10px
 .tools__el-text
 	+below(1024px)
 		height: auto
@@ -381,25 +384,29 @@ body
 .solution__head-wrap
 	border-bottom:1px solid $border-color
 	flex(mid)
-
+	overflow: hidden
 .solution__head
 	flex(between)
 	+below(1024px)
 		width 1200px
-		overflow auto
-
+		overflow scroll
+		padding-bottom: 1px
+		margin-bottom: -1px
 .solution__head-el
 	+below(1200px)
 		font-size: 12px
+		min-width 140px
+		text-align: center
 	white-space: nowrap
 	cp()
 	up()
 	padding: 20px
 	color #61676d
 	&:hover
-		color black
-		border-bottom:1px solid $red
-		margin-bottom: -1px
+		+above(1024px)
+			color black
+			border-bottom:1px solid $red
+			margin-bottom: -1px
 
 .solution__cont
 	+below(1024px)
@@ -467,6 +474,7 @@ body
 .tab-head--active
 	+below(1024px)
 		margin-bottom: 0px
+		padding-bottom: 19px
 	color black
 	border-bottom:1px solid $red
 	margin-bottom: -1px
@@ -532,7 +540,9 @@ body
 	position: relative
 	center(980px,10px)
 	margin-bottom: 45px
-//.client-slider
+
+.client-slider
+	position: relative
 
 .client-slider__el
 	+below(768px)
@@ -549,6 +559,8 @@ body
 	+below(768px)
 		order 2
 		width: 100%
+		padding-bottom: 50px
+		padding-right: 0
 	order 1
 	width: 60%
 	padding-right: 50px
@@ -573,6 +585,7 @@ body
 	fl()
 	width: 40%
 	padding: 0 50px
+	padding-bottom: 50px
 	border-left 1px solid $border-color
 
 .client-slider__el-logo
@@ -599,7 +612,13 @@ body
 	line-height:1.8
 
 .client-slider__nav
+	+below(768px)
+		right: 40px
+		bottom 5%
 	flex(mid)
+	position: absolute
+	bottom 12%
+	right 17%
 
 .client-slider__nav-el
 	flex(mid)
@@ -613,6 +632,7 @@ body
 		size 12px
 		fill $blue
 		tr(all)
+
 
 .client-slider__nav-el-left
 	border-radius 25px 0 0 25px
@@ -1177,6 +1197,8 @@ body
 	box-shadow 0 18px 10px rgba(127, 115, 219, 0.2)
 	background: white
 	position: relative
+	top 0
+	left 0
 	canvas
 		max-width 100%
 		max-height 100%
@@ -1414,7 +1436,6 @@ body
 		margin-bottom: 0
 	max-width 380px
 	margin-bottom: 60px
-
 .chart-el--center
 	+below(1024px)
 		display: none
@@ -1520,7 +1541,7 @@ body
 .nav
 	+below(768px)
 		width: 100vw
-		height: 100vh
+		height: 100%
 		min-height 400px
 		overflow-y scroll
 	tr(all)
@@ -1540,19 +1561,18 @@ body
 
 .body-window
 	max-width:100vw
-	max-height:100vh
+	max-height:100%
 	overflow:hidden
 
 .nav-wrap
 	padding: 20px
 	height: 100vh
-	min-height 400px
-	overflow-y auto
 	padding-bottom: 40px
 .nav-content
-	flex(mid)
-	fl()
+	/*flex(mid)
+	fl()*/
 	height: 100%
+	padding: 40px 0
 .nav-list
 	flex(mid)
 	fl()
@@ -1590,7 +1610,7 @@ body
 .nav-list__el
 	up()
 	color white
-	margin-bottom: 25%
+	margin-bottom: 6%
 
 .header-info__el--nav
 	flex(mid)

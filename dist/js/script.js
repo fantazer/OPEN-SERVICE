@@ -1,12 +1,62 @@
 
 $(document).ready(function(){
 
+	// resize function
+	var currentSize = $(window).width();
+	var fixChartColl = function(){
+			if( currentSize < 1025 && currentSize > 640){
+				$(".main-chart-wrap").stick_in_parent({
+					'offset_top':100 //отступ
+				})
+			} else {
+				$(".main-chart-wrap").trigger("sticky_kit:detach");
+			}
+	};
 
+	//tools slider
+	var sliderMobile = function(){
+			if( currentSize < 641){
+					$('.tools-wrap, .facts-wrap').not('.slick-initialized').slick({
+						responsive: [
+							{
+								breakpoint: 9999,
+								settings: "unslick"
+							},
+							{
+								breakpoint: 640,
+								settings: {
+									slidesToShow: 1,
+									slidesToScroll: 1,
+									infinite: true,
+									prevArrow: false,
+    							nextArrow: false,
+									dots: true
+								}
+							}
+						]
+					});
+			}
+	};
 
+	var chartMobile = function() {
+		/*if( currentSize < 641){
+			$(".main-chart-bar").circleProgress('size', 320);
+		}*/
+	};
 
+	fixChartColl();
+	sliderMobile();
+	chartMobile();
 
+	$(window).resize(function(){
+		var currentSize = $(window).width();
+		sliderMobile();
+		fixChartColl();
+		chartMobile();
+		return currentSize;
+	});
 
-	
+	// resize function === end
 	//video bg
 	$('.main-section').vide(
 	{
@@ -162,6 +212,7 @@ $(document).ready(function(){
 			autoplay: false,
 			speed: 500,
 			vertical:false,
+			adaptiveHeight: true,
 			//fade: true,
 			prevArrow: $('.client-slider__nav-el-left'),
 			nextArrow: $('.client-slider__nav-el-right')
@@ -341,62 +392,7 @@ $(document).ready(function(){
 		});
 	//slide-menu-end
 
-		// resize function
-	var currentSize = $(window).width();
-	var fixChartColl = function(){
-			if( currentSize < 1025 && currentSize > 640){
-				$(".main-chart-wrap").stick_in_parent({
-					'offset_top':100 //отступ
-				})
-			} else {
-				$(".main-chart-wrap").trigger("sticky_kit:detach");
-			}
-	};
 
-	//tools slider
-	var sliderMobile = function(){
-			if( currentSize < 641){
-					$('.tools-wrap, .facts-wrap').not('.slick-initialized').slick({
-						responsive: [
-							{
-								breakpoint: 9999,
-								settings: "unslick"
-							},
-							{
-								breakpoint: 640,
-								settings: {
-									slidesToShow: 1,
-									slidesToScroll: 1,
-									infinite: true,
-									prevArrow: false,
-    							nextArrow: false,
-									dots: true
-								}
-							}
-						]
-					});
-			}
-	};
-
-	var chartMobile = function() {
-		/*if( currentSize < 641){
-			$(".main-chart-bar").circleProgress('size', 320);
-		}*/
-	};
-
-	fixChartColl();
-	sliderMobile();
-	chartMobile();
-
-	$(window).resize(function(){
-		var currentSize = $(window).width();
-		sliderMobile();
-		fixChartColl();
-		chartMobile();
-		return currentSize;
-	});
-
-	// resize function === end
 
 })
 
