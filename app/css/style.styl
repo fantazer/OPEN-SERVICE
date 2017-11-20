@@ -405,9 +405,16 @@ body
 	&:hover
 		+above(1024px)
 			color black
-			border-bottom:1px solid $red
-			margin-bottom: -1px
+		border-bottom:1px solid $red
+		//margin-bottom: -1px
+		padding-bottom: 19px
 
+.tab-head--active
+	+below(1024px)
+		margin-bottom: 0px
+	color black
+	border-bottom:1px solid $red!important
+	padding-bottom: 19px
 .solution__cont
 	+below(1024px)
 		width: 95%
@@ -471,13 +478,7 @@ body
 	box-shadow 0 20px 27px rgba(0, 0, 0, 0.09)
 	border-radius 5px
 	background: white
-.tab-head--active
-	+below(1024px)
-		margin-bottom: 0px
-		padding-bottom: 19px
-	color black
-	border-bottom:1px solid $red
-	margin-bottom: -1px
+
 .tab-cont
 	position: absolute
 	top 0
