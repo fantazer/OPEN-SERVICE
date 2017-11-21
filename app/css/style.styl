@@ -156,6 +156,7 @@ body
 	padding: 15px 25px
 	text-align: left
 	tr(all)
+	cp()
 	&:last-child
 		border-bottom:0
 	&:hover
@@ -1630,3 +1631,67 @@ body
 	display: block
 	color white
 	margin-top: 3%
+
+.header-list-fixed
+	display: none
+
+.header-help-fixed
+	display: none
+
+.shrink
+	position fixed
+	top 0
+	left 0
+	background white
+	width 100%
+	margin 0
+	animation:  slideInDown  1s 1 ease-in-out
+	box-shadow 0 6px 15px rgba(0, 0, 0, 0.1)
+	z-index 200
+	.header-info
+		+below(768px)
+			display: flex
+		display: none
+	.header-info__numb
+		+below(768px)
+			color black
+
+	.header-get
+		display: none
+	.header-logo
+		width: 150px
+	.header-cont
+		+below(768px)
+			padding: 10px 0
+		padding: 0
+	.header-list-fixed
+		+below(768px)
+			display: none
+		f()
+		up()
+		justify-content: space-between
+		width: 50%
+		a
+			+below(1024px)
+				font-size: 12px
+			color black
+			font-size: 14px
+			padding: 25px 0
+			font-family: Museo Sans Cyrl
+			font-weight bold
+	.header-toggle
+		.icon
+			fill black
+	.header-help-fixed
+		+below(1024px)
+			padding: 25px 10px
+		+below(768px)
+			display: none
+		f()
+		tr(all)
+		height: 100%
+		background: $blue
+		padding: 25px
+		color white
+		&:hover
+			background: lighten($blue,5)

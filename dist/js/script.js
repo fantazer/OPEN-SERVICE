@@ -2,6 +2,21 @@
 $(document).ready(function(){
 
 	// resize function
+	var shrinkHeader = 250;
+	var heightHeader=$('.header-top').height();
+	$(window).scroll(function() {
+		var scroll = $(this).scrollTop();
+		if ( scroll >= shrinkHeader ) {
+				$('.header-top').addClass('shrink');
+				$('body').css('paddingTop',heightHeader);
+			}
+			else {
+					$('.header-top').removeClass('shrink');
+					$('body').css('paddingTop',0);
+			}
+	});
+
+
 	var currentSize = $(window).width();
 	var fixChartColl = function(){
 			if( currentSize < 1025 && currentSize > 640){

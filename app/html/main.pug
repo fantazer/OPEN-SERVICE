@@ -31,7 +31,7 @@ include block_html/_include.pug
 											'Новосибирск'
 											];
 									each item in items
-										a.header-info__sub-el(href="#" class=item== 'Москва' ? 'header-info__sub-el--active' : null) #{item}
+										.header-info__sub-el( class=item== 'Москва' ? 'header-info__sub-el--active' : null) #{item}
 							a(href="#").header-info__numb 8-800-555-14-98
 					.header-get
 						.header-get__el
@@ -42,6 +42,18 @@ include block_html/_include.pug
 							span Бесплатная консультация
 					.header-toggle
 						+icon("menu","icon")
+					.header-list-fixed
+						-
+							var items = [
+								'Автоматизация',
+								'Обслуживание',
+								'Консалтинг',
+								'Оборудование'
+							];
+						each item in items
+							a(href="#").header-list-fixed__el #{item}
+					a(href="#").header-help-fixed
+						span Бесплатная консультация
 		.sub-header
 			.main-cont
 				.sub-header__wrap
@@ -385,7 +397,7 @@ include block_html/_include.pug
 							'Новосибирск'
 							];
 						each item in items
-							a.header-info__sub-el(href="#" class=item == 'Москва' ? 'header-info__sub-el--active' : null) #{item}
+							.header-info__sub-el( class=item == 'Москва' ? 'header-info__sub-el--active' : null) #{item}
 			a(href="tel:8-800-555-14-98").nav-phone 8-800-555-14-98
 
 include ./block_html/_script.pug
