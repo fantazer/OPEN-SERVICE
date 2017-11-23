@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
 
+
+
 	// resize function
 	var shrinkHeader = 250;
 	var heightHeader=$('.header-top').height();
@@ -404,6 +406,12 @@ $(document).ready(function(){
 			$('.nav').removeClass('nav--open');
 			$('body').removeClass("body-window");
 			closeModal();
+		});
+
+		$('.nav-list__el').click(function(){
+			$(this).find('.nav-list__el-toggle').toggleClass('nav-list__el-toggle--active');
+
+			$(this).find('.nav-list__el-sub').slideToggle('.nav-list__el-toggle--active');
 		});
 	//slide-menu-end
 

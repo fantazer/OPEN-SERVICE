@@ -266,7 +266,31 @@ body
 	color white
 	margin-bottom: 25px
 	&:hover
-		opacity .7
+		.sub-header__drop
+			f()
+			fw()
+			max-height 400px
+			padding: 30px
+			background: white
+	position: relative
+
+.sub-header__drop
+	position: absolute
+	top 100%
+	display: none
+	width: 760px
+	z-index 200
+.sub-header__drop-el
+	color black
+
+.sub-header__drop-cont
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	align-content: flex-start
+	justify-content: flex-start
+	overflow: visible
+	padding: 0
 
 .tools
 	+below(1024px)
@@ -1273,12 +1297,12 @@ body
 	bottom -1px
 
 .chart-line--left-top
-	transform-origin: top left;
+	transform-origin: top left
 	transform rotate(40deg)
 	right -100%
 
 .chart-line--left-bottom
-	transform-origin: top left;
+	transform-origin: top left
 	transform rotate(-40deg)
 	right -100%
 
@@ -1426,14 +1450,14 @@ body
 	z-index 100
 
 #videobg
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height:100%;
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height:100%
 	min-width 100%
 	min-height 100%
-	z-index: -100;
+	z-index: -100
 
 .main-chart-wrap
 	+below(1024px)
@@ -1543,7 +1567,7 @@ body
 	color $blue
 
 .nav
-	+below(768px)
+	+below(640px)
 		width: 100vw
 		height: 100%
 		min-height 400px
@@ -1570,16 +1594,20 @@ body
 
 .nav-wrap
 	padding: 20px
-	height: 100vh
-	padding-bottom: 40px
-.nav-content
-	/*flex(mid)
-	fl()*/
 	height: 100%
-	padding: 40px 0
-.nav-list
+	padding-bottom: 40px
+	overflow scroll
+	max-height 100%
+.nav-content
 	flex(mid)
 	fl()
+	//height: 100%
+	padding: 40px 0
+.nav-list
+	width: 100%
+	flex(mid)
+	fl()
+	margin-bottom: 40px
 
 .nav-close
 	position: absolute
@@ -1610,11 +1638,63 @@ body
 		size 15px
 		fill $blue
 
-
 .nav-list__el
-	up()
+	display: block
+	width: 100%
+
+.nav-list__el-text
 	color white
-	margin-bottom: 6%
+
+.nav-list__el-cont
+	padding: 20px
+	up()
+	cp()
+	flex(between)
+	color white
+	width: 100%
+	border-bottom:1px solid rgba(255, 255, 255, 0.2)
+
+.nav-list__el-toggle
+	position: relative
+	size 15px
+	&:before
+		content ""
+		position: absolute
+		left 7px
+		top 0
+		width: 1px
+		background: white
+		height: 100%
+		tr(all)
+	&:after
+		content ""
+		position: absolute
+		left 0px
+		top 7px
+		width: 100%
+		background: white
+		height: 1px
+
+.nav-list__el-toggle--active
+	&:before
+		content ""
+		position: absolute
+		left 7px
+		top 0
+		width: 1px
+		background: white
+		height: 100%
+		transform rotate(90deg)
+
+.nav-list__el-sub
+	display: none
+	width: 100%
+	padding: 20px
+.nav-list__el-sub__el
+	padding: 10px
+	color white
+	width: 100%
+	display: block
 
 .header-info__el--nav
 	flex(mid)
@@ -1695,3 +1775,6 @@ body
 		color white
 		&:hover
 			background: lighten($blue,5)
+
+.sub-header__el-link
+	color white

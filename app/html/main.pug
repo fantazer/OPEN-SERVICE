@@ -68,7 +68,13 @@ include block_html/_include.pug
 							'О компании'
 							];
 					each item in items
-						a(href="#").sub-header__el #{item}
+						.sub-header__el
+							a(href="#").sub-header__el-link #{item}
+							.sub-header__drop
+								.sub-header__drop-cont
+									- for (var i=0;i<20;i++)
+										.sub-header__drop-el #{i} признаков успешного ресторана
+
 		.main-cont.main-cont-slider
 			.main-section-slider-control
 				.slider-control__el.slider-control__el--left
@@ -373,7 +379,14 @@ include block_html/_include.pug
 						'О компании'
 					];
 				each item in items
-					a(href="#").nav-list__el #{item}
+					.nav-list__el
+						.nav-list__el-cont
+							a(href="#").nav-list__el-text #{item}
+							.nav-list__el-toggle
+						.nav-list__el-sub
+							- for (var i=0;i< 5;i++)
+								a(href="#").nav-list__el-sub__el пункт #{i+1}
+
 			.nav-get
 				.nav-get__el
 					.btn--icon
