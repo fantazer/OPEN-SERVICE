@@ -195,7 +195,12 @@ body
 		fill $blue
 //.btn--icon
 //.nav-icon 
-//.sub-header
+.sub-header
+	position: relative
+	.main-cont
+		+below(1024px)
+			padding: 0
+		position: static
 .header-toggle
 	+above(769px)
 		display: none
@@ -259,39 +264,46 @@ body
 	+below(1024px)
 		font-size: 11px
 	up()
-	tr(all)
-	padding-top: 25px
 	width: 100%
 	text-align: center
 	color white
-	margin-bottom: 25px
+	padding: 25px 0
 	&:hover
+		background: white
+		.sub-header__el-link
+			color black
 		.sub-header__drop
-			f()
-			fw()
-			max-height 400px
-			padding: 30px
 			background: white
-	position: relative
-
+			display: block
 .sub-header__drop
 	position: absolute
 	top 100%
+	left 0
 	display: none
 	width: 760px
 	z-index 200
+	background: none
+	width: 100%
+	tr(all)
 .sub-header__drop-el
 	color black
-
+	width: 30%
+	padding: 10px 0
+	text-align: left
+	text-transform: none
 .sub-header__drop-cont
 	display: flex
-	flex-direction: column
+	//flex-direction: column
 	flex-wrap: wrap
 	align-content: flex-start
 	justify-content: flex-start
 	overflow: visible
 	padding: 0
+	max-height: 500px
+	padding: 20px
 
+.sub-header__drop--fixed
+	border-top: 1px solid #e6e1e1
 .tools
 	+below(1024px)
 		.main-cont
@@ -1750,15 +1762,15 @@ body
 		f()
 		up()
 		justify-content: space-between
-		width: 50%
-		a
+		width: 55%
+		.sub-header__el-link
 			+below(1024px)
 				font-size: 12px
 			color black
 			font-size: 14px
-			padding: 25px 0
 			font-family: Museo Sans Cyrl
 			font-weight bold
+
 	.header-toggle
 		.icon
 			fill black
@@ -1778,3 +1790,17 @@ body
 
 .sub-header__el-link
 	color white
+	display: inline-block
+	display: inline-block
+
+
+.sub-header__el--fixed
+	padding: 0
+	.sub-header__el-link
+		padding: 25px 10px
+		width: 100%
+		&:hover
+			border-left: 1px solid #e6e1e1
+			border-right: 1px solid #e6e1e1
+			padding: 25px 8px
+

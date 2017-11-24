@@ -51,7 +51,13 @@ include block_html/_include.pug
 								'Оборудование'
 							];
 						each item in items
-							a(href="#").header-list-fixed__el #{item}
+							.sub-header__el.sub-header__el--fixed
+								a(href="#").sub-header__el-link #{item}
+								.sub-header__drop.sub-header__drop--fixed
+									.main-cont
+										.sub-header__drop-cont
+											- for (var i=0;i<20;i++)
+												a(href="#").sub-header__drop-el #{i} признаков успешного ресторана
 					a(href="#").header-help-fixed
 						span Бесплатная консультация
 		.sub-header
@@ -71,9 +77,10 @@ include block_html/_include.pug
 						.sub-header__el
 							a(href="#").sub-header__el-link #{item}
 							.sub-header__drop
-								.sub-header__drop-cont
-									- for (var i=0;i<20;i++)
-										.sub-header__drop-el #{i} признаков успешного ресторана
+								.main-cont
+									.sub-header__drop-cont
+										- for (var i=0;i<20;i++)
+											a(href="#").sub-header__drop-el #{i} признаков успешного ресторана
 
 		.main-cont.main-cont-slider
 			.main-section-slider-control
