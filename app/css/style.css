@@ -1537,6 +1537,10 @@ body {
             flex-wrap: wrap;
   }
 }
+.tools-wrap .slick-dots li button:before {
+  font-size: 12px;
+  color: #2f81e6;
+}
 .tools__el {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1854,6 +1858,7 @@ body {
 }
 .solution__title {
   margin-bottom: 25px;
+  line-height: 1.6;
 }
 .solution__text {
   line-height: 1.8;
@@ -1984,6 +1989,13 @@ body {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
 }
+.facts-wrap .slick-dots {
+  bottom: 40px;
+}
+.facts-wrap .slick-dots li button:before {
+  content: '•';
+  font-size: 12px;
+}
 .facts__el {
   width: -webkit-calc(25% - 14px);
   width: calc(25% - 14px);
@@ -1997,6 +2009,12 @@ body {
   .facts__el {
     width: -webkit-calc(50% - 14px);
     width: calc(50% - 14px);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .facts__el {
+    height: 220px;
+    margin-bottom: 0;
   }
 }
 .facts__el-title {
@@ -2014,6 +2032,11 @@ body {
 @media only screen and (max-width: 1024px) {
   .facts__el-text {
     font-size: 16px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .facts__el-text {
+    font-size: 15px;
   }
 }
 .client-slider-wrap {
@@ -2514,9 +2537,13 @@ body {
           align-items: center;
 }
 .footer__head-el {
-  padding: 10px 15px;
+  padding: 10px 15px 11px 15px;
   text-align: center;
   width: auto;
+  min-width: auto;
+}
+.footer__head-el:hover {
+  padding-bottom: 10px;
 }
 @media only screen and (max-width: 1024px) {
   .footer-info {
@@ -4095,6 +4122,11 @@ opacity 0 100% {
 .header-help-fixed {
   display: none;
 }
+@media only screen and (max-width: 1024px) {
+  .header-help-fixed {
+    font-size: 12px;
+  }
+}
 .shrink {
   position: fixed;
   top: 0;
@@ -4122,6 +4154,11 @@ opacity 0 100% {
 @media only screen and (max-width: 768px) {
   .shrink .header-info__numb {
     color: #111;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .shrink .header-info__el {
+    display: none;
   }
 }
 .shrink .header-get {
@@ -4163,7 +4200,12 @@ opacity 0 100% {
 }
 @media only screen and (max-width: 1024px) {
   .shrink .header-list-fixed .sub-header__el-link {
-    font-size: 12px;
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .shrink .main-cont {
+    padding-right: 0;
   }
 }
 .shrink .header-toggle .icon {
