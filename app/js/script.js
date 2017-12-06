@@ -1,8 +1,6 @@
 
 $(document).ready(function(){
 
-
-
 	// resize function
 	var shrinkHeader = 250;
 	var heightHeader=$('.header-top').height();
@@ -77,7 +75,9 @@ $(document).ready(function(){
 	//video bg
 	$('.main-section').vide(
 	{
-		webm:'img/video.webm'
+		webm:'img/video.webm',
+		mp4:'img/video.mp4',
+		ogv:'img/video.ogv'
 	},
 	{
 		muted: true,
