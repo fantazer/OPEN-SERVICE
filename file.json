@@ -4,6 +4,10 @@
 		"footer":"footer"
 	},
 	"page":{
-		"index":"index"
+		"index":"index",
+		"oborudovanie":"oborudovanie",
+		"support":"support",
+		"blog-list":"blog-list",
+		"blog-item":"blog-item"
 	}
 }

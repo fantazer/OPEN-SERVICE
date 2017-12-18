@@ -1,3 +1,79 @@
 mixin header()
+	.header
+		.header-top
+			.main-cont
+				.header-cont
+					a(href="/").header-logo
+						img(src="img/Logo.svg", alt="")
+					.header-info
+						.header-info__el
+							.header-info__text Техподдержка
+							a(href="#").header-info__numb 8-800-505-72-50
+						.header-info__el
+							.header-info__toggle
+								.header-info__text.header-info__text--town
+									span Москва
+									+icon("arrow-down","icon")
+								.header-info__sub
+									.header-info__sub-title Выберите свой регион
+									-
+										var items = [
+										'Москва',
+										'Санкт-Петербург',
+										'Татарстан',
+										'Сочи',
+										'Новосибирск'
+										];
+									each item in items
+										.header-info__sub-el( class=item == 'Москва' ? 'header-info__sub-el--active' : null) #{item}
+							a(href="#").header-info__numb 8-800-555-14-98
+					.header-get
+						.header-get__el
+							.btn--icon
+								+icon("Phone","nav-icon")
+								span Связаться с нами
+						.header-get__el
+							span Бесплатная консультация
+					.header-toggle
+						+icon("menu","icon")
+					.header-list-fixed
+						-
+							var items = [
+							'Автоматизация',
+							'Обслуживание',
+							'Консалтинг',
+							'Оборудование'
+							];
+						each item in items
+							.sub-header__el.sub-header__el--fixed
+								a(href="#").sub-header__el-link #{item}
+								.sub-header__drop.sub-header__drop--fixed
+									.main-cont
+										.sub-header__drop-cont
+											- for (var i=0;i<20;i++)
+												a(href="#").sub-header__drop-el #{i} признаков успешного ресторана
+					a(href="#").header-help-fixed
+						span Бесплатная консультация
+		.sub-header
+			.main-cont
+				.sub-header__wrap
+					-
+						var items = [
+						'Автоматизация',
+						'Обслуживание',
+						'Консалтинг',
+						'Оборудование',
+						'База знаний',
+						'Блог',
+						'О компании'
+						];
+					each item in items
+						.sub-header__el
+							a(href="#").sub-header__el-link #{item}
+							.sub-header__drop
+								.main-cont
+									.sub-header__drop-cont
+										- for (var i=0;i<20;i++)
+											a(href="#").sub-header__drop-el #{i} признаков успешного ресторана
 
 	//block header end

@@ -267,4 +267,26 @@ mixin chartPlace()
 				a(href="#").config-link__el Iiko Dashboard
 			.config-chart-mobile
 				+inchartPlace()
+
+mixin question-form()
+	.question-form
+		.question-form__title.title-lg.title--center Задать вопрос
+		form(action="")
+			.question-form__wrap
+				.question-form__inputs
+					input(type="text" placeholder="Ваше имя" name="").input
+					input(type="text" placeholder="Должность" name="").input
+					input(type="text" placeholder="Компания" name="").input
+				.question-form__textarea
+					textarea(name="", cols="30", rows="5" placeholder="Вопрос").textarea
+
+			.question-form__confirm
+				+checkbox('Согласен с условиями обработки персональных данных')
+				input(type="submit" placeholder="" value='Отправить').btn--md-fix.btn--mark
+
+mixin bread()
+	.bread
+		a(href="#").bread__el Пункт 1
+		a(href="#").bread__el Пункт 2
+		a(href="#").bread__el Пункт 3
 //charts containers===end

@@ -1,6 +1,77 @@
 mixin footer()
 	//block footer
+	//footer
+	.footer
+		.main-cont
+			.footer-wrap
+				.footer-tab
+					.footer__head-wrap
+						.footer__head
+							-
+								var items = [
+								'Москва',
+								'Санкт-Петербург',
+								'Татарстан',
+								'Сочи',
+								'Новосибирск'
+								];
+							each item in items
+								.footer__head-el.tab-head(class=item == 'Москва' ? 'tab-head--active' : null) #{item}
+					.footer-info
+						- for (var i=0;i<5;i++)
+							.footer__cont.tab-cont(class=i == 0 ? 'tab-cont--active' : null)
+								.footer-tab__cont
+									.footer-tab__info
+										a(href="tel:+7(499)281-62-08").footer__cont-adr__numb +7(499)
+											span 281-62-08
+										a(href="mailto:msk@open-s.info").footer__cont-adr__mail msk@open-s.info
 
+									.footer__tab-adr
+										span г. Москва, 23й км. Калужского шоссе, домовл. 14
+
+
+				.footer-help
+					.footer-help__title Техподдержка 24/7
+					a(href="tel:8-800-505-72-50").footer-help__phone 8-800-505-72-50
+					a(href="mailto:info@open-s.info").footer-help__mail info@open-s.info
+				.footer-soc
+					.footer-soc__title Мы в соц.сетях
+					.soc__row
+						-
+							var items = [
+							'soc-vk',
+							'soc-facebook',
+							'soc-instagram',
+							'soc-youtube'
+							];
+						each item in items
+							a(href="#").footer-soc__el
+								+icon(item,"icon")
+
+	//footer-sub
+	.footer-sub
+		.main-cont
+			.footer-sub__wrap
+				.footer-sub__info
+					.footer-sub__info-title 2010-2017 OpenService
+					a(href="#").footer-sub__info-link Политика конфиденциальности
+				.footer-sub__nav
+					-
+						var items = [
+						'Автоматизация',
+						'Обслуживание',
+						'Консалтинг',
+						'Оборудование',
+						'База знаний',
+						'Блог',
+						'О компании',
+						'Контакты'
+						];
+					each item in items
+						a(href="#").footer-sub__nav-el #{item}
+				.footer-sub__logo
+					a(href="#")
+						img(src="img/logo-jq.svg", alt="")
 	.modal-layer
 		.modal-cont
 			.modal-filter
@@ -14,4 +85,57 @@ mixin footer()
 							.input-btn-row
 								input(type="text" placeholder="Логин").input
 								input(type="submit" value="Выслать").input-btn
+
+	.tooltip-filter
+	//navigation
+	.nav
+		.nav-wrap
+			.nav-close
+				+icon("close","icon")
+			.nav-content
+				.nav-list
+					-
+						var items = [
+						'Автоматизация',
+						'Обслуживание',
+						'Консалтинг',
+						'Оборудование',
+						'База знаний',
+						'Блог',
+						'О компании'
+						];
+					each item in items
+						.nav-list__el
+							.nav-list__el-cont
+								a(href="#").nav-list__el-text #{item}
+								.nav-list__el-toggle
+							.nav-list__el-sub
+								- for (var i=0;i< 5;i++)
+								a(href="#").nav-list__el-sub__el пункт #{i + 1}
+
+				.nav-get
+					.nav-get__el
+						.btn--icon
+							+icon("Phone","nav-icon")
+							span Связаться с нами
+					.nav-get__el
+						span Бесплатная консультация
+				.header-info__el.header-info__el--nav
+					.header-info__toggle
+						.header-info__text.header-info__text--town
+							span Москва
+							+icon("arrow-down","icon")
+						.header-info__sub
+							.header-info__sub-title Выберите свой регион
+							-
+								var items = [
+								'Москва',
+								'Санкт-Петербург',
+								'Татарстан',
+								'Сочи',
+								'Новосибирск'
+								];
+							each item in items
+								.header-info__sub-el( class=item == 'Москва' ? 'header-info__sub-el--active' : null) #{item}
+				a(href="tel:8-800-555-14-98").nav-phone 8-800-555-14-98
 	//block footer end

@@ -1,0 +1,57 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Оборудование для автоматизации работы ресторанного бизнеса
+
+.oborud-descr
+	.main-cont
+		.oborud-descr__wrap
+			.oborud-descr__col
+				p Мы предоставляем только надежное оборудование, которое гарантирует бесперебойную работу вашего заведения. Все оборудование есть в наличии на наших складах, поэтому мы сможем доставить и настроить его в самые короткие сроки
+				.oborud-descr__link
+					-
+						var items = [
+							'Серверное оборудование',
+							'POS моноблоки ',
+							'Фискальные регистраторы и денежные ящики',
+							'Перефирийное оборудование',
+							'Программное Обеспечение'
+							];
+					each item in items
+						a(href="#").oborud-descr__link-el #{item}
+			.oborud-descr__col
+				.title-md Каталог продукции
+				p В нашем каталоге представлено Серверное оборудование, POS моноблоки, ФР и денежные ящики, а также периферийное оборудование.
+				a(href="#").btn--md-fix.btn--mark Заказать
+
+- for (var j=0;j< 3;j++)
+	.main-cont
+		.title-lg.title--center Серверное оборудование
+		.product
+			- for (var i=0;i< 3;i++)
+				.product-el
+					.product-el__img(style="background-image:url('img/product.jpg')")
+					.product-el__info
+						.product-el__title Сенсорный моноблок OpenPos Lite + ОС Windows 10 Embedded
+						.product-el__text Диагональ экрана 15" Разрешение экрана 1024x768 Intel® Celeron® J1900 (2.0 GHz) Quad-Core Processor. Диск: SSD 64Gb (SATA2, 3Gb/s, 2.5', поддержка AHCI). Память: 4Gb (DDR3L, 1333, Socket 1 x SODIMM, поддержка до 8Gb)
+					.product-el__get
+						.product-el__price 41 990 руб.
+						.product-el__btn-row
+							.product-el__btn-el
+								a(href="#").btn--sm-fix.btn--light Настроить
+							.product-el__btn-el
+								a(href="#").btn--sm-fix.btn--mark Купить
+
++question-form()
+
+.footer-item
+	+footer()
+
+
+include ./block_html/_script.pug

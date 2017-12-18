@@ -1,0 +1,63 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Блог
+		.blog-filter
+			.blog-filter__el
+				.select-beauty--light
+					select.select-beauty
+						option Любой месяц
+						option Январь
+						option Февраль
+						option Март
+			.blog-filter__el
+				.select-beauty--light
+					select.select-beauty
+						option Все темы
+						option Январь
+						option Февраль
+						option Март
+
+.main-content
+	.blog-list__wrap
+		.main-cont
+			.blog-list
+				- for (var i=0;i<2;i++)
+					.blog-item
+						.blog-item__img(style="background-image:url('img/blog.jpg')")
+						.blog-item__content
+							.blog-item__date 11 Ноября 2017
+							.blog-item__text Теперь olap отчеты доступны в мобильном ios приложении iiko DashBoard
+							a(href="#").blog-item__get Отчеты
+				.blog-item.blog-subscr
+					.blog-subscr__icon
+						+icon("subsc","icon")
+					.blog-subscr__title Подписаться <br> на новости
+					.blog-subscr__get
+						.subscr-form
+							form(action="")
+								.subscr-form__row
+									input(type="text" placeholder="Ваш Email")
+									button(type="submit")
+										+icon("arrow-simple-right","icon")
+					.blog-subscr__confirm Нажимая отправить <br> Вы соглашаетесь с условиями <br> обработки персональных данных
+				- for (var i=0;i<3;i++)
+					.blog-item
+						.blog-item__img(style="background-image:url('img/blog.jpg')")
+						.blog-item__content
+							.blog-item__date 11 Ноября 2017
+							.blog-item__text Теперь olap отчеты доступны в мобильном ios приложении iiko DashBoard
+							a(href="#").blog-item__get Отчеты
+	.btn-row--center
+		a(href="#").btn--md-fix.btn--mark Показать ещё
+
+.footer-item
+	+footer()
+
+include ./block_html/_script.pug

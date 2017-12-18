@@ -1,102 +1,24 @@
 include block_html/_style.pug
 include block_html/_include.pug
 
-
 //.main-section(style="background-image:url('img/main-baner.jpg')")
 .main-section
 	.main-section-filter
-	.header
-		.header-top
-			.main-cont
-				.header-cont
-					a(href="/").header-logo
-						img(src="img/Logo.svg", alt="")
-					.header-info
-						.header-info__el
-							.header-info__text Техподдержка
-							a(href="#").header-info__numb 8-800-505-72-50
-						.header-info__el
-							.header-info__toggle
-								.header-info__text.header-info__text--town
-									span Москва
-									+icon("arrow-down","icon")
-								.header-info__sub
-									.header-info__sub-title Выберите свой регион
-									-
-										var items = [
-											'Москва',
-											'Санкт-Петербург',
-											'Татарстан',
-											'Сочи',
-											'Новосибирск'
-											];
-									each item in items
-										.header-info__sub-el( class=item== 'Москва' ? 'header-info__sub-el--active' : null) #{item}
-							a(href="#").header-info__numb 8-800-555-14-98
-					.header-get
-						.header-get__el
-							.btn--icon
-								+icon("Phone","nav-icon")
-								span Связаться с нами
-						.header-get__el
-							span Бесплатная консультация
-					.header-toggle
-						+icon("menu","icon")
-					.header-list-fixed
-						-
-							var items = [
-								'Автоматизация',
-								'Обслуживание',
-								'Консалтинг',
-								'Оборудование'
-							];
-						each item in items
-							.sub-header__el.sub-header__el--fixed
-								a(href="#").sub-header__el-link #{item}
-								.sub-header__drop.sub-header__drop--fixed
-									.main-cont
-										.sub-header__drop-cont
-											- for (var i=0;i<20;i++)
-												a(href="#").sub-header__drop-el #{i} признаков успешного ресторана
-					a(href="#").header-help-fixed
-						span Бесплатная консультация
-		.sub-header
-			.main-cont
-				.sub-header__wrap
-					-
-						var items = [
-							'Автоматизация',
-							'Обслуживание',
-							'Консалтинг',
-							'Оборудование',
-							'База знаний',
-							'Блог',
-							'О компании'
-							];
-					each item in items
-						.sub-header__el
-							a(href="#").sub-header__el-link #{item}
-							.sub-header__drop
-								.main-cont
-									.sub-header__drop-cont
-										- for (var i=0;i<20;i++)
-											a(href="#").sub-header__drop-el #{i} признаков успешного ресторана
-
-		.main-cont.main-cont-slider
-			.main-section-slider-control
-				.slider-control__el.slider-control__el--left
-					+icon("triangle-arrow-left","icon")
-				.slider-control__el.slider-control__el--right
-					+icon("triangle-arrow-right","icon")
-			.main-section-slider
-				- for (var i=0;i<3;i++)
-					.main-section-slogan
-						.main-section-title Автоматизация ресторанов #{i + 1}
-						.main-section-text Мы помогаем управлять бизнесом и финансами, быстро строить и анализировать любые отчеты, сокращать расходы и увеличивать продажи системы iiko
-						.main-section-get
-							a(href="#").main-section-get__el Выбрать готовый пакет
-							a(href="#").main-section-get__el-mark  Бесплатная консультация
-
+	+header()
+	.main-cont.main-cont-slider
+		.main-section-slider-control
+			.slider-control__el.slider-control__el--left
+				+icon("triangle-arrow-left","icon")
+			.slider-control__el.slider-control__el--right
+				+icon("triangle-arrow-right","icon")
+		.main-section-slider
+			- for (var i=0;i<3;i++)
+				.main-section-slogan
+					.main-section-title Автоматизация ресторанов #{i + 1}
+					.main-section-text Мы помогаем управлять бизнесом и финансами, быстро строить и анализировать любые отчеты, сокращать расходы и увеличивать продажи системы iiko
+					.main-section-get
+						a(href="#").main-section-get__el Выбрать готовый пакет
+						a(href="#").main-section-get__el-mark  Бесплатная консультация
 //section tools
 .tools
 	.main-cont
@@ -133,7 +55,6 @@ include block_html/_include.pug
 						span Оборудование
 						+icon("arrow-simple-right","icon")
 					.tools__el-text Обеспечение правильной работы с системой всех сотрудников ресторана
-
 // section config
 .section.section-config
 	.section-title Что даёт автоматизация
@@ -175,7 +96,6 @@ include block_html/_include.pug
 				+chartGarage()
 				//chart-el
 				+chartPlace()
-
 //solution automatic
 .section.section-solution.section--gray
 	.section-title Решения для автоматизации HoReCa
@@ -208,7 +128,6 @@ include block_html/_include.pug
 							.solution__get
 								.solution__get-el Подробнее
 								.solution__get-el-mark Оформить
-
 //facts
 .section.section-facts.section--mark
 	.section-title.section-title--white Факты и достижения
@@ -254,7 +173,6 @@ include block_html/_include.pug
 					.facts__el
 						.facts__el-title #{item.val}
 						.facts__el-text #{item.text}
-
 //clients
 .section.section-clients.section--gray
 	.section-title Клиенты и отзывы
@@ -280,7 +198,6 @@ include block_html/_include.pug
 
 	.btn-row--center
 		a(href="#").get-review Все отзывы
-
 //help
 .section.section-help(style="background-image:url('img/bg-light.jpg')")
 	.main-cont
@@ -293,132 +210,5 @@ include block_html/_include.pug
 				img(src="img/woomen.png", alt="")
 			
 
-//footer
-.footer
-	.main-cont
-		.footer-wrap
-			.footer-tab
-				.footer__head-wrap
-					.footer__head
-						-
-							var items = [
-								'Москва',
-								'Санкт-Петербург',
-								'Татарстан',
-								'Сочи',
-								'Новосибирск'
-							];
-						each item in items
-							.footer__head-el.tab-head(class=item == 'Москва' ? 'tab-head--active' : null) #{item}
-				.footer-info
-					- for (var i=0;i<5;i++)
-						.footer__cont.tab-cont(class=i == 0 ? 'tab-cont--active' : null)
-							.footer-tab__cont
-								.footer-tab__info
-									a(href="tel:+7(499)281-62-08").footer__cont-adr__numb +7(499)
-										span 281-62-08
-									a(href="mailto:msk@open-s.info").footer__cont-adr__mail msk@open-s.info
-
-								.footer__tab-adr
-									span г. Москва, 23й км. Калужского шоссе, домовл. 14
-
-
-			.footer-help
-				.footer-help__title Техподдержка 24/7
-				a(href="tel:8-800-505-72-50").footer-help__phone 8-800-505-72-50
-				a(href="mailto:info@open-s.info").footer-help__mail info@open-s.info
-			.footer-soc
-				.footer-soc__title Мы в соц.сетях
-				.soc__row
-					-
-						var items = [
-							'soc-vk',
-							'soc-facebook',
-							'soc-instagram',
-							'soc-youtube'
-							];
-					each item in items
-						a(href="#").footer-soc__el
-							+icon(item,"icon")
-
-//footer-sub
-.footer-sub
-	.main-cont
-		.footer-sub__wrap
-			.footer-sub__info
-				.footer-sub__info-title 2010-2017 OpenService
-				a(href="#").footer-sub__info-link Политика конфиденциальности
-			.footer-sub__nav
-				-
-					var items = [
-						'Автоматизация',
-					'Обслуживание',
-					'Консалтинг',
-					'Оборудование',
-					'База знаний',
-					'Блог',
-					'О компании',
-					'Контакты'
-						];
-				each item in items
-					a(href="#").footer-sub__nav-el #{item}
-			.footer-sub__logo
-				a(href="#")
-					img(src="img/logo-jq.svg", alt="")
-
 +footer()
-.tooltip-filter
-
-//navigation
-.nav
-	.nav-wrap
-		.nav-close
-			+icon("close","icon")
-		.nav-content
-			.nav-list
-				-
-					var items = [
-						'Автоматизация',
-						'Обслуживание',
-						'Консалтинг',
-						'Оборудование',
-						'База знаний',
-						'Блог',
-						'О компании'
-					];
-				each item in items
-					.nav-list__el
-						.nav-list__el-cont
-							a(href="#").nav-list__el-text #{item}
-							.nav-list__el-toggle
-						.nav-list__el-sub
-							- for (var i=0;i< 5;i++)
-								a(href="#").nav-list__el-sub__el пункт #{i+1}
-
-			.nav-get
-				.nav-get__el
-					.btn--icon
-						+icon("Phone","nav-icon")
-						span Связаться с нами
-				.nav-get__el
-					span Бесплатная консультация
-			.header-info__el.header-info__el--nav
-				.header-info__toggle
-					.header-info__text.header-info__text--town
-						span Москва
-						+icon("arrow-down","icon")
-					.header-info__sub
-						.header-info__sub-title Выберите свой регион
-						-
-							var items = [
-							'Москва',
-							'Санкт-Петербург',
-							'Татарстан',
-							'Сочи',
-							'Новосибирск'
-							];
-						each item in items
-							.header-info__sub-el( class=item == 'Москва' ? 'header-info__sub-el--active' : null) #{item}
-			a(href="tel:8-800-555-14-98").nav-phone 8-800-555-14-98
-
 include ./block_html/_script.pug

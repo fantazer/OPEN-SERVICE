@@ -1,6 +1,9 @@
 
 $(document).ready(function(){
 
+
+	$('.select-beauty').niceSelect();
+
 	// resize function
 	var shrinkHeader = 250;
 	var heightHeader=$('.header-top').height();
@@ -361,7 +364,7 @@ $(document).ready(function(){
 	return false;
 }
 
-	console.log(detectIE());
+	/*console.log(detectIE());
 	if (detectIE() <= 14 && detectIE()) {
 		$('body').empty();
 		$('body').prepend('' +
@@ -369,10 +372,10 @@ $(document).ready(function(){
 			'<div class="old-browser-text"> Сайт не поддерживае Браузер Internet Explorer</div><br>' +
 			'<div class="old-browser-text"> Установите <br><br> Chrome Firefox Opera </div><br>' +
 		'</div>');
-	}
+	}*/
 
 	//for init SVG 
-	svg4everybody();
+	//svg4everybody();
 	// ==== clear storage =====
 	 localStorage.clear();
 	 sessionStorage.clear();

@@ -30,7 +30,7 @@ $link-color = black
 
 $link-color-visited = gray
 $link-color-hover = black
-$border-color = #d0d5e0
+$border-color = #e1e1e1
 
 //  ============================ Typography ============================
 
@@ -102,7 +102,9 @@ h5
 
 p
 	@extend .type--main
-
+	margin-bottom: 20px
+	margin-top: 0
+	line-height: 1.6
 .link--mark
 	color $blue
 	&:hover
@@ -161,15 +163,30 @@ btnStyleLight(br-btn,color-btn)
 	.nav-icon
 		size 10px
 
+.btn--sm-fix
+	@extend .btn
+	font-size: 15px
+	padding: 15px
+	width: 130px
+
 .btn--md
 	@extend .btn
 	font-size 15px
 	padding 15px 35px
 
+.btn--md-fix
+	@extend .btn
+	padding: 15px
+	font-size: 15px
+	width: 200px
+
+
 .btn--lg
 	@extend .btn
 	font-size 20px
 	padding 10px 30px
+
+
 
 .btn--mobile
 	@extend .btn
@@ -295,7 +312,7 @@ button
 	border-radius 4px
 	font-family $v-font
 	display block!important
-	margin-bottom 10px
+	margin-bottom 20px
 	placeholder(#888888)
 	tr(all)
 	&:focus
