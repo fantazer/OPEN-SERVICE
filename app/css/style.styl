@@ -2146,7 +2146,24 @@ select.select-beauty
 	text-align: center
 	color white
 
-//.main-content
+.main-content
+	ul
+		list-style: none
+		margin-bottom: 40px
+		padding-left: 20px
+		li
+			margin-bottom: 10px
+			position: relative
+			line-height: 1.4
+			&:before
+				content ''
+				position: absolute
+				left - 20px
+				height: 1px
+				width: 12px
+				background: $main-text-color
+				top 10px
+
 .content
 	f()
 	justify-content: space-between
@@ -2221,6 +2238,7 @@ select.select-beauty
 	color white
 	margin-top: 30px
 	line-height: 1.4
+	center(760px,10px)
 
 .intro-section__title-sub--sm
 	text-align: center
@@ -2478,3 +2496,92 @@ select.select-beauty
 	.footer
 		border 0px
 //.btn--light
+
+.main-cont--sm
+	center(760px,10px)
+
+.baner-support
+	bg-full()
+	padding: 110px 0
+	position: relative
+	margin: 70px 0
+	.filter
+		position: absolute
+		top 0
+		left 0
+		width: 100%
+		height: 100%
+		opacity 0.9
+		background-image linear-gradient(to left, #751540 0%, #21539f 100%)
+
+.baner-support__title
+	@extend .type--xl
+	center(720px,0)
+	text-align: center
+	color white
+	position: relative
+	margin-bottom: 40px
+	line-height: 1.4
+
+.support-form
+	center(500px,10px)
+	.select-beauty--light
+		width: 48%
+	.nice-select
+		width: 100%
+
+.form-row
+	margin-bottom: 20px
+
+.support-form
+	placeholder(white)
+	.input
+		width: 100%
+		color white
+
+
+.form-row--half
+	flex(between)
+	.input
+		width: 48%
+
+.chekbox-row--light
+	color white
+	.sytle-input-element
+		background: none
+
+.support-form__footer
+	flex(between)
+	margin-top: 25px
+	button
+		@extend .btn--md-fix
+		@extend .btn--mark
+
+.support-form__price
+	@extend .type--lg
+	color white
+
+.select-beauty--title
+	.list
+		li
+			&:first-child
+				display: none
+
+.advant-support
+	flex(between)
+	margin-bottom: 70px
+.advant-support__el
+	width: 32%
+	padding: 40px 30px
+	background: $blue
+	br(5px)
+	box-shadow 0 31px 32px rgba(47, 129, 230, 0.28)
+.advant-support__title
+	@extend .type--lg
+	margin-bottom: 30px
+	color white
+.advant-support__text
+	color white
+	width: 80%
+	line-height: 1.6
+
