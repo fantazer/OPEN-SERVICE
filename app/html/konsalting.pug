@@ -1,0 +1,76 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section.intro-section--extend
+	.main-cont
+		+bread()
+		.intro-section__title Экспертиза складского учета
+		.intro-section__title-sub.intro-section__title-sub--sm Для тех, кто хочет проверить, как ведется складской учет в ресторане. От 2 дней до 1 недели, с выездами в ресторан
+
+
+.main-content
+	.main-cont
+		.title-lg.title--center Схема проведения экспертизы
+		.scheme
+			.scheme__el
+				.scheme__el-num 1
+				.scheme__el-wrap
+					.scheme__el-title Экзамен
+					.scheme__el-text Проведем экзамен (проверку знаний) сотрудника (бухгалтера-калькулятора)
+			.scheme__el
+				.scheme__el-num 2
+				.scheme__el-wrap
+					.scheme__el-title Проверка
+					.scheme__el-text Проверим ТТК, номенклатуру, первичную документацию, включая внутренние
+			.scheme__el
+				.scheme__el-num 3
+				.scheme__el-wrap
+					.scheme__el-title Перемещения и списания
+					.scheme__el-text Проведем экзамен (проверку знаний) сотрудника (бухгалтера-калькулятора)
+			.scheme__el
+				.scheme__el-num 6
+				.scheme__el-wrap
+					.scheme__el-title Результат
+					.scheme__el-text Наше экспертное заключение, анализ найденных ошибок и рекомендации по дальнейшей работе в складском учете
+			.scheme__el
+				.scheme__el-num 5
+				.scheme__el-wrap
+					.scheme__el-title Разбор
+					.scheme__el-text Разбираем результаты инвентаризаций по складам
+			.scheme__el
+				.scheme__el-num 4
+				.scheme__el-wrap
+					.scheme__el-title Инвентаризация
+					.scheme__el-text Проведем частичную, выездную инвентаризацию (если Вы из города представительства)
+
+.baner-konsalt(style="background-image:url('img/konsalt.jpg')")
+	.filter
+	.baner-konsalt__title Заказать экспертизу складского учета для вашего ресторана
+	.baner-konsalt__get
+		.baner-konsalt__price От 15 000 руб.
+		a(href="#").baner-konsalt__btn Оформить
+
+.main-cont
+	.title-lg.title--center Пример результатов
+	.scheme-result
+		.scheme-result__el
+			.scheme-result__el-title Как работать ресторану, когда бухгалтер – калькулятор в декретном отпуске
+			.scheme-result__el-text Также у нас есть еще три кейса, но мы их не выкладываем в общий доступ из-за политики конфиденциальности. Мы можем вам их прислать в бумажном виде после личного общения.
+			a(href="#").scheme-result__el-get Читать
+		.scheme-result__el
+			.scheme-result__el-title Как работать ресторану, когда бухгалтер – калькулятор в декретном отпуске
+			.scheme-result__el-text Также у нас есть еще три кейса, но мы их не выкладываем в общий доступ из-за политики конфиденциальности. Мы можем вам их прислать в бумажном виде после личного общения.
+			a(href="#").scheme-result__el-get Читать
+		.scheme-result__el
+			.scheme-result__el-title Как работать ресторану, когда бухгалтер – калькулятор в декретном отпуске
+			.scheme-result__el-video
+				+icon("play-round","icon")
+
++question-form()
+.footer-item
+	+footer()
+
+include ./block_html/_script.pug

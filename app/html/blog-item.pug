@@ -3,15 +3,12 @@ include block_html/_include.pug
 
 .header-white
 	+header()
-
 .intro-section(style="background-image:url('img/spb.jpg')")
 	.filter
 	.main-cont
 		+bread()
 		.intro-section__date 11 Октября 2017
 		.intro-section__title Где в Санкт-Петербурге открывать ресторан?
-
-
 .main-content
 	.main-cont
 		.content
@@ -63,7 +60,6 @@ include block_html/_include.pug
 							button(type="submit")
 								+icon("arrow-simple-right","icon")
 				.subscr-news-text Нажимая отправить Вы соглашаетесь с условиями обработки персональных данных
-
 	.main-cont
 		.blog-list.blog-list--simple
 			- for (var i=0;i<3;i++)

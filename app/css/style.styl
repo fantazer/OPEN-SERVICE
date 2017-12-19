@@ -1882,10 +1882,10 @@ body
 
 .intro-section__title
 	@extend .type--xxl
+	center(980px,0)
 	text-align: center
 	color white
 	line-height: 1.4
-	width: 70%
 	margin: 0 auto
 
 .title-md
@@ -2061,11 +2061,19 @@ select.select-beauty
 	margin-bottom: 65px
 //.main-cont
 .blog-list
-	f()
-	fw()
+	+below(768px)
+		grid-template-columns repeat(2, 1fr)
+	+below(640px)
+		grid-template-columns repeat(1, 1fr)
+	display: grid
+	grid-template-columns repeat(3, 1fr)
+	grid-gap 20px
 	margin-top: -50px
 .blog-item
-	item(3,20px)
+	tr(all)
+	&:hover
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+		cp()
 .blog-item__content
 	padding: 30px
 	background: white
@@ -2085,6 +2093,7 @@ select.select-beauty
 .blog-item__get
 	@extend .btn--md
 	@extend .btn--light
+	padding: 10px 30px
 
 .blog-subscr
 	background: $blue
@@ -2117,6 +2126,7 @@ select.select-beauty
 		background: $blue
 		color white
 		outline: 0 !important
+		width calc(100% - 65px)
 	button
 		background: white
 		border 0
@@ -2206,3 +2216,265 @@ select.select-beauty
 
 .blog-list--simple
 	margin-top: 0
+
+.intro-section__title-sub
+	color white
+	margin-top: 30px
+	line-height: 1.4
+
+.intro-section__title-sub--sm
+	text-align: center
+	center(530px,0)
+
+.intro-section--extend
+	margin-bottom: 70px
+
+.scheme
+	flex(between)
+	fw()
+.scheme__el
+	br(5px)
+	border 1px solid $border-color
+	width: 32%
+	margin-bottom: 40px
+	position: relative
+	&:nth-child(1),
+	&:nth-child(2)
+		.scheme__el-wrap
+			&:before
+				content ''
+				position: absolute
+				width: 6.5%
+				height: 1px
+				background: $border-color
+				right -6.5%
+				top 50%
+	&:nth-child(3)
+		.scheme__el-wrap
+			&:before
+				content ''
+				position: absolute
+				width: 1px
+				right 50%
+				height: 40px
+				background: $border-color
+				bottom -40px
+	&:nth-child(5),
+	&:nth-child(6)
+		.scheme__el-wrap
+			&:before
+				content ''
+				position: absolute
+				width: 6.5%
+				height: 1px
+				background: $border-color
+				left -6.5%
+				top 50%
+.scheme__el-wrap
+	padding: 60px 30px 0px 30px
+	position: relative
+	height: 200px
+
+.scheme__el-num
+	round()
+	flex(mid)
+	position: absolute
+	size 45px
+	box-shadow: 0 9px 9px rgba(47, 129, 230, 0.5);
+	background: $blue
+	color white
+	top calc(-45px / 2)
+	left 30px
+
+.scheme__el-title
+	@extend .type--md
+	margin-bottom: 15px
+.scheme__el-text
+	line-height: 1.5
+
+.baner-konsalt
+	bg-full()
+	padding: 110px 0
+	position: relative
+	margin-bottom: 70px
+	.filter
+		position: absolute
+		top 0
+		left 0
+		width: 100%
+		height: 100%
+		opacity 0.7
+		background-image linear-gradient(to left, #751540 0%, #21539f 100%)
+
+.baner-konsalt__title
+	@extend .type--xl
+	center(720px,0)
+	text-align: center
+	color white
+	position: relative
+	margin-bottom: 40px
+	line-height: 1.4
+
+.baner-konsalt__get
+	flex(mid)
+	position: relative
+
+.baner-konsalt__price
+	@extend .type--xlg
+	color white
+	margin-right: 30px
+
+.baner-konsalt__btn
+	@extend .btn--md-fix
+	@extend .btn--mark
+
+.scheme-result
+	f()
+	justify-content: space-between
+	margin-bottom: 70px
+
+.scheme-result__el
+	f()
+	fl()
+	br(5px)
+	padding: 40px 30px
+	border 1px solid $border-color
+	width: 32%
+	min-height: 380px
+
+.scheme-result__el-title
+	@extend .type--md
+	margin-bottom: 25px
+	line-height: 1.6
+.scheme-result__el-text
+	line-height: 1.6
+	margin-bottom: 20px
+.scheme-result__el-get
+	margin-top: auto
+	color $blue
+.scheme-result__el-video
+	flex(mid)
+	.icon
+		size 110px
+		fill blue
+		cp()
+	round()
+	flex(mid)
+	position: absolute
+	size 45px
+	box-shadow: 0 9px 9px rgba(47, 129, 230, 0.5);
+	background: $blue
+	color white
+	top calc(-45px / 2)
+	left 30px
+
+.knowledge-item
+	margin-top: 40px
+	margin-bottom: 60px
+.knowledge-item__head
+	padding: 30px 30px 30px 13%
+	br(5px)
+	border 1px solid $border-color
+	border-bottom 0
+	position: relative
+.knowledge-item__numb
+	round()
+	flex(mid)
+	@extend .type--xlg
+	position: absolute
+	size 50px
+	box-shadow: 0 9px 9px rgba(47, 129, 230, 0.5);
+	background: $blue
+	color white
+	top calc(-45px / 2)
+	left 3%
+.knowledge-item__title
+	@extend .type--xlg
+	margin-bottom: 20px
+.knowledge-item__text
+	line-height: 1.6
+//.knowledge-item__img
+.usefull
+	f()
+	align-items: center
+.usefull__text
+	@extend .type--lg
+	margin-right: 5%
+.usefull__get
+	f()
+.usefull__get-el
+	&:first-child
+		margin-right: 20px
+	.btn--md
+		width: 100px
+
+.how
+	flex(between)
+.how__el
+	br(5px)
+	border 1px solid $border-color
+	width: 32%
+	padding: 30px
+.how__el-title
+	@extend .type--xlg
+	line-height: 1.6
+	margin-bottom: 30px
+.how__el-get
+	@extend .btn--md
+	@extend .btn--light
+	padding: 10px 30px
+
+.contact
+	display: grid
+	grid-template-columns repeat(3, 1fr)
+	grid-gap 20px
+	margin-top: -50px
+	margin-bottom: 60px
+.contact__el
+	f()
+	fl()
+	padding: 40px 30px
+	br(5px)
+	border 1px solid $border-color
+	background: white
+
+.contact__el-title
+	@extend .type--lg
+	margin-bottom: 25px
+.contact__el-text
+	line-height: 1.4
+	margin-bottom: 35px
+.contact__el-phone
+	margin-bottom: 40px
+.contact__el-phone__el
+	@extend .type--md
+	margin-bottom: 10px
+.contact__el-mail
+	color $blue
+	display: block
+	margin-bottom: 20px
+	margin-top: auto
+.contact__el-get
+	a
+		@extend .btn--md
+		@extend .btn--light
+		padding: 10px 30px
+		display: inline-block
+
+.contact-map
+	background: $white
+	width: 100%
+	padding: 12%
+	margin-bottom: 60px
+
+.contact-about
+	center(760px,0)
+
+.section__contact-about
+	margin-top: 90px
+
+.footer-item--close
+	margin-top: 0
+	.footer
+		border 0px
+//.btn--light

@@ -1,0 +1,67 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__date
+		.intro-section__title Как внести комментарии к блюдам
+.main-content
+	.main-cont
+		.content
+			.content-info
+				p Наткнулись мы тут на очень увлекательную и интересную статью «Горячие точки: где в Петербурге стоит открывать ресторан?" и обнаружили для себя приятный сюрприз.  В статье проведено исследование, которое показывает где максимально благоприятные условия для открытия ресторана или кафе. Перед аналитиком стояла задача - «определить соотношение между открывающимися и закрывающимися ресторанами в зависимости от района города с 2007 по 2017 год».
+				- for (var i=0;i<2;i++)
+					.knowledge-item
+						.knowledge-item__head
+							.knowledge-item__numb #{i+1}
+							.knowledge-item__title Go online for a fast and easy option
+							.knowledge-item__text By going online, you will be able to print your driving record as soon as you pay the fee. Make sure you are using a computer that has a printer so you can print your driving record
+						.knowledge-item__img
+							img(src="img/spb-img.jpg", alt="")
+				.usefull
+					.usefull__text Была ли эта статья полезной?
+					.usefull__get
+						.usefull__get-el
+							a(href="#").btn--md.btn--light Нет
+						.usefull__get-el
+							a(href="#").btn--md.btn--light Да
+			.content-toolbar
+				.toolbar-form
+					.toolbar-form__title Автоматизация <br> ресторана
+					form(action="#")
+						input(type="text" placeholder="Имя").input
+						input(type="text" placeholder="Компания").input
+						input(type="text" placeholder="Телефон").input
+						input(type="text" placeholder="Email").input
+						.check-el
+							label.style-label.style-label--checkbox
+								input(type="checkbox").sytle-input
+								.sytle-input-element
+									+icon("checked","icon-check")
+								.sytle-input-text Я согласен с условиями <br> обработки персональных данных
+						.btn-row--center
+							input(type="submit" value="Отправить").btn--md-fix.btn--mark
+		.subscr-news
+			.title-lg.title--center Получать полезные статьи
+			.subscr-form__cont
+				.subscr-form.subscr-form--light
+					form(action="")
+						.subscr-form__row
+							input(type="text" placeholder="Ваш Email")
+							button(type="submit")
+								+icon("arrow-simple-right","icon")
+				.subscr-news-text Нажимая отправить Вы соглашаетесь с условиями обработки персональных данных
+		.how
+			- for (var i=0;i<3;i++)
+				.how__el
+					.how__el-title Исправить сумму заказа или тип оплаты
+					a(href="#").how__el-get Работа приложения
+
+
+.footer-item
+	+footer()
+
+include ./block_html/_script.pug

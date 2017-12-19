@@ -1,0 +1,39 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__date
+		.intro-section__title Контакты
+.main-content
+	.main-cont
+		.contact
+			- for (var i=0;i<6;i++)
+				.contact__el
+					.contact__el-title г. Москва
+					.contact__el-text 23й км. Калужского шоссе, домовл. 14, стр. 3Бизнес Парк "K2", 3й этаж.
+					.contact__el-phone
+						.contact__el-phone__el +7(499)281-62-08
+						.contact__el-phone__el +7(499)281-62-08
+					a(href="#").contact__el-mail spb@open-s.info
+					.contact__el-get
+						a(href="#") Копировать Email
+
+.contact-map
++question-form()
+
+.section.section--gray.section__contact-about
+	.title-lg.title--center Получать полезные статьи
+	.contact-about
+		p Open Service помогает ресторанам становиться лучше с помощью различных программ, обкатанных на собственных ресторанах. Мы помогаем управлять бизнесом и финансами, быстро строить и анализировать любые отчеты, сокращать расходы и увеличивать продажи. В числе наших клиентов 1200 ресторанов - как одиночные предприятия, так и федеральные ресторанные сети.
+
+		p Мы делаем автоматизацию простой и доступной. Храним данные клиентов в разных независимых дата-центрах в России, Латвии и Германии. Наша всероссийская горячая линия работает круглосуточно и без выходных. Суммарный опыт работы наших сотрудников именно в ресторанах давно превысил 100 лет. Мы говорим с вами на одном языке. Мы – рестораторы.
+
+
+.footer-item.footer-item--close
+	+footer()
+
+include ./block_html/_script.pug
