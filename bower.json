@@ -26,6 +26,7 @@
     "jquery-animateNumber": "^0.0.14",
     "sticky-kit": "^1.1.2",
     "dragscroll": "^0.0.8",
-    "jquery-nice-select": "^1.1.0"
+    "jquery-nice-select": "^1.1.0",
+    "masonry": "^4.2.0"
   }
 }

@@ -1,7 +1,12 @@
 
 $(document).ready(function(){
 
-
+	$('.knowledge').masonry({
+	  itemSelector: '.knowledge__el',
+	  gutter:20,
+	  isFitWidth: true,
+	  stamp: '#biggerBlock'
+	});
 	$('.select-beauty').niceSelect();
 
 	// resize function

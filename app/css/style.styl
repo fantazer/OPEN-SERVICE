@@ -79,6 +79,8 @@ body
 
 
 .header-cont
+	+below(640px)
+		padding: 15px 0
 	flex(between)
 	padding: 25px 0
 
@@ -1843,6 +1845,10 @@ body
 		border-top 1px solid rgba(104, 104, 104, 0.15)
 	.sub-header__el-link
 		color black
+	.header-toggle
+		.icon
+			fill black
+
 
 .bread
 	+below(768px)
@@ -2374,18 +2380,12 @@ select.select-beauty
 	flex(mid)
 	.icon
 		size 110px
-		fill blue
+		fill $blue
 		cp()
-	round()
-	flex(mid)
-	position: absolute
-	size 45px
-	box-shadow: 0 9px 9px rgba(47, 129, 230, 0.5);
-	background: $blue
-	color white
-	top calc(-45px / 2)
-	left 30px
 
+.knowledge
+	margin: 0 auto
+	margin-top: -50px
 .knowledge-item
 	margin-top: 40px
 	margin-bottom: 60px
@@ -2585,3 +2585,92 @@ select.select-beauty
 	width: 80%
 	line-height: 1.6
 
+.knowledge__el
+	br(5px)
+	padding: 30px
+	margin-bottom: 20px
+	.btn--md
+		padding: 12px 30px
+.knowledge__el--light
+	background: white
+	border 1px solid $border-color
+
+.knowledge__el-title
+	@extend .type--md
+	line-height: 1.4
+
+.knowledge__el--sm
+	f()
+	fl()
+	height: 200px
+	width: 280px
+	.btn--md
+		margin-top: auto
+	.knowledge__el-title
+		span
+			margin-right: 5px
+
+.knowledge__el--md
+	f()
+	fl()
+	height: 420px
+	width: 280px
+
+.knowledge__el-get
+	margin-top: auto
+	.btn--md
+		&:nth-child(1)
+			margin-bottom: 20px
+
+.knowledge__el--mark
+	background: $blue
+	color white
+	.knowledge__el-title
+		@extend .type--lg
+		span
+			display: block
+			color #7aabe7
+
+.knowledge__el--long
+	width: 580px
+	height: 200px
+	border 1px solid $border-color
+	.knowledge__el-title
+		text-align: center
+		margin-bottom: 20px
+	.subscr-form__row
+		margin-bottom: 10px
+		input
+			padding: 15px 25px
+
+
+.knowledge__form
+	flex(mid)
+	fl()
+
+.knowledge__el--form
+	background: white
+
+.knowledge-filter
+	f()
+	justify-content: center
+	margin-top: 30px
+	margin-bottom: 50px
+.knowledge-filter__el
+	&:first-child
+		margin-right: 20px
+
+.search-row
+	position: relative
+	input
+		color white
+		padding-right: 50px
+		width: 340px
+		height: 65px
+	.icon
+		size 20px
+		fill white
+		position: absolute
+		top 20px
+		right 25px
+		cp()
