@@ -172,7 +172,7 @@ body
 		width: 40%
 		justify-content: flex-end
 	+below(1024px)
-		min-width 350px
+		min-width 410px
 	+below(768px)
 		display: none
 	flex(between)
@@ -1853,6 +1853,7 @@ body
 .bread
 	+below(768px)
 		margin-bottom: 20px
+		display: none
 	f()
 	margin-bottom: 40px
 
@@ -1880,6 +1881,7 @@ body
 	padding-top: 20px
 	padding-bottom: 85px
 	position: relative
+	bg-full()
 	.filter
 		position: absolute
 		top 0
@@ -1943,6 +1945,7 @@ body
 .title-lg
 	+below(768px)
 		margin-bottom: 30px
+		padding: 0px 10px
 	@extend .type--xl
 	margin-bottom: 50px
 
@@ -2056,7 +2059,9 @@ body
 //.sytle-input
 //.sytle-input-element
 //.icon-check
-//.sytle-input-text
+.sytle-input-text
+	width:calc(100% - 50px)
+
 //.btn--md-fix
 //.btn--mark
 .question-form__confirm
@@ -2100,6 +2105,8 @@ body
 		white-space: nowrap
 		&:hover
 			background: #f4f4f4!important
+		.current
+			font-weight 300!important
 select.select-beauty
 	display: none!important
 
@@ -2125,15 +2132,26 @@ select.select-beauty
 		border 0px
 
 .blog-filter
+	+below(640px)
+		fw()
 	f()
 	justify-content: center
 	margin-top: 30px
 	margin-bottom: 50px
 .blog-filter__el
+	+below(640px)
+		width: 100%
+		.nice-select
+			width: 100%
 	&:first-child
+		+below(640px)
+			margin-right: 0
+			margin-bottom: 20px
 		margin-right: 20px
 
 .blog-list__wrap
+	+below(640px)
+		margin-bottom: 30px
 	margin-bottom: 65px
 //.main-cont
 .blog-list
@@ -2151,6 +2169,8 @@ select.select-beauty
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 		cp()
 .blog-item__content
+	+below(640px)
+		padding: 15px
 	padding: 30px
 	background: white
 	border-radius 0px 0px 5px 5px
@@ -2167,6 +2187,9 @@ select.select-beauty
 	line-height: 1.6
 	margin-bottom: 30px
 .blog-item__get
+	+below(640px)
+		padding: 10px 20px
+		font-size: 12px
 	@extend .btn--md
 	@extend .btn--light
 	padding: 10px 30px
@@ -2219,6 +2242,8 @@ select.select-beauty
 	margin-top: 10%
 
 .intro-section__date
+	+below(768px)
+		margin-bottom: 20px
 	text-align: center
 	color white
 
@@ -2227,6 +2252,8 @@ select.select-beauty
 		list-style: none
 		margin-bottom: 40px
 		padding-left: 20px
+		+below(768px)
+			margin-bottom: 20px
 		li
 			margin-bottom: 10px
 			position: relative
@@ -2241,18 +2268,35 @@ select.select-beauty
 				top 10px
 
 .content
+	+below(768px)
+		flex(mid)
+		fw()
+		fl()
 	f()
 	justify-content: space-between
 .content-info
+	+below(768px)
+		width: 100%
+		padding: 30px 0
 	width: calc(100% - 340px - 60px)
 	padding: 50px 0
 .content-type__mark
+	+below(768px)
+		margin: 30px 0
+	+below(640px)
+		font-size: 16px
 	@extend .type--xlg
 	margin: 60px 0
 .content-info__img
+	+below(768px)
+		margin-bottom: 30px
 	margin-bottom: 60px
 
 .social-share
+	+below(768px)
+		margin-top: 30px
+		flex(mid)
+		fl()
 	margin-top: 60px
 
 .social-share__text
@@ -2264,9 +2308,20 @@ select.select-beauty
 		margin-right: 20px
 //.icon
 .content-toolbar
+	+below(768px)
+		margin-top: 0
+		width: 80%
+		margin-bottom: 30px
+		.sytle-input-text
+			br
+				display: none
+	+below(640px)
+		width: 100%
 	width: 340px
 	margin-top: -40px
 .toolbar-form
+	+below(768px)
+		padding: 15px
 	background: white
 	br(5px)
 	padding: 30px 20px
@@ -2282,6 +2337,8 @@ select.select-beauty
 	margin-bottom: 30px
 
 .subscr-news
+	+below(768px)
+		margin-bottom: 30px
 	padding: 60px 0
 	border-top 1px solid $border-color
 	border-bottom 1px solid $border-color
@@ -2321,12 +2378,31 @@ select.select-beauty
 	center(530px,0)
 
 .intro-section--extend
+	+below(768px)
+		margin-bottom: 30px
 	margin-bottom: 70px
 
 .scheme
-	flex(between)
+	f()
+	justify-content: space-between
 	fw()
 .scheme__el
+	+below(768px)
+		width: 48%
+		&:nth-child(1)
+			order 1
+		&:nth-child(2)
+			order 2
+		&:nth-child(3)
+			order 3
+		&:nth-child(4)
+			order 6
+		&:nth-child(5)
+			order 5
+		&:nth-child(6)
+			order 4
+	+below(640px)
+		width: 100%
 	br(5px)
 	border 1px solid $border-color
 	width: 32%
@@ -2365,6 +2441,13 @@ select.select-beauty
 				left -6.5%
 				top 50%
 .scheme__el-wrap
+	+below(1024px)
+		padding: 35px 20px 35px 20px
+		height: auto
+	+below(768px)
+		&:before
+			content ''
+			display: none!important
 	padding: 60px 30px 0px 30px
 	position: relative
 	height: 200px
@@ -2384,9 +2467,14 @@ select.select-beauty
 	@extend .type--md
 	margin-bottom: 15px
 .scheme__el-text
+	+below(1024px)
+		font-size: 12px
 	line-height: 1.5
 
 .baner-konsalt
+	+below(768px)
+		padding: 10% 0
+		margin-bottom: 30px
 	bg-full()
 	padding: 110px 0
 	position: relative
@@ -2401,8 +2489,10 @@ select.select-beauty
 		background-image linear-gradient(to left, #751540 0%, #21539f 100%)
 
 .baner-konsalt__title
+	+below(768px)
+		margin-bottom: 30px
 	@extend .type--xl
-	center(720px,0)
+	center(720px,10px)
 	text-align: center
 	color white
 	position: relative
@@ -2410,10 +2500,15 @@ select.select-beauty
 	line-height: 1.4
 
 .baner-konsalt__get
+	+below(768px)
+		fl()
 	flex(mid)
 	position: relative
 
 .baner-konsalt__price
+	+below(768px)
+		margin-right: 0
+		margin-bottom: 20px
 	@extend .type--xlg
 	color white
 	margin-right: 30px
@@ -2423,11 +2518,19 @@ select.select-beauty
 	@extend .btn--mark
 
 .scheme-result
+	+below(768px)
+		fw()
+		margin-bottom: 30px
 	f()
 	justify-content: space-between
 	margin-bottom: 70px
 
 .scheme-result__el
+	+below(768px)
+		width: 100%
+		min-height auto
+		margin-bottom: 20px
+		padding: 20px
 	f()
 	fl()
 	br(5px)
@@ -2449,6 +2552,8 @@ select.select-beauty
 .scheme-result__el-video
 	flex(mid)
 	.icon
+		+below(768px)
+			size 70px
 		size 110px
 		fill $blue
 		cp()
@@ -2457,6 +2562,8 @@ select.select-beauty
 	margin: 0 auto
 	margin-top: -50px
 .knowledge-item
+	+below(768px)
+		margin: 30px 0
 	margin-top: 40px
 	margin-bottom: 60px
 .knowledge-item__head
@@ -2466,6 +2573,9 @@ select.select-beauty
 	border-bottom 0
 	position: relative
 .knowledge-item__numb
+	+below(768px)
+		size 40px
+		font-size: 14px
 	round()
 	flex(mid)
 	@extend .type--xlg
@@ -2483,9 +2593,17 @@ select.select-beauty
 	line-height: 1.6
 //.knowledge-item__img
 .usefull
+	+below(768px)
+		fw()
+		fl()
 	f()
 	align-items: center
 .usefull__text
+	+below(1024px)
+		font-size: 18px
+	+below(768px)
+		margin-right: 0
+		margin-bottom: 20px
 	@extend .type--lg
 	margin-right: 5%
 .usefull__get
@@ -2497,13 +2615,24 @@ select.select-beauty
 		width: 100px
 
 .how
+	+below(640px)
+		fw()
+		fl()
+		flex(mid)
 	flex(between)
 .how__el
+	+below(640px)
+		fl()
+		flex(mid)
+		width: 100%
 	br(5px)
 	border 1px solid $border-color
 	width: 32%
 	padding: 30px
+	margin: 20px
 .how__el-title
+	+below(1024px)
+		font-size: 18px
 	@extend .type--xlg
 	line-height: 1.6
 	margin-bottom: 30px
@@ -2513,12 +2642,21 @@ select.select-beauty
 	padding: 10px 30px
 
 .contact
+	+below(768px)
+		grid-template-columns repeat(2, 1fr)
+		margin-top: 30px
+		margin-bottom: 30px
+	+below(640px)
+		grid-template-columns repeat(1, 1fr)
 	display: grid
 	grid-template-columns repeat(3, 1fr)
 	grid-gap 20px
 	margin-top: -50px
 	margin-bottom: 60px
 .contact__el
+	+below(768px)
+		padding: 20px
+		flex(mid)
 	f()
 	fl()
 	padding: 40px 30px
@@ -2530,9 +2668,13 @@ select.select-beauty
 	@extend .type--lg
 	margin-bottom: 25px
 .contact__el-text
+	+below(768px)
+		text-align: center
 	line-height: 1.4
 	margin-bottom: 35px
 .contact__el-phone
+	+below(768px)
+		margin-bottom: 20px
 	margin-bottom: 40px
 .contact__el-phone__el
 	@extend .type--md
@@ -2550,15 +2692,21 @@ select.select-beauty
 		display: inline-block
 
 .contact-map
+	+below(768px)
+		margin-bottom: 30px
+		padding: 30%
+	min-height 350px
 	background: $white
 	width: 100%
 	padding: 12%
 	margin-bottom: 60px
 
 .contact-about
-	center(760px,0)
+	center(760px,10px)
 
 .section__contact-about
+	+below(768px)
+		margin-top: 30px
 	margin-top: 90px
 
 .footer-item--close
@@ -2571,6 +2719,9 @@ select.select-beauty
 	center(760px,10px)
 
 .baner-support
+	+below(768px)
+		margin: 30px 0
+		padding: 10% 10px
 	bg-full()
 	padding: 110px 0
 	position: relative
@@ -2585,6 +2736,8 @@ select.select-beauty
 		background-image linear-gradient(to left, #751540 0%, #21539f 100%)
 
 .baner-support__title
+	+below(768px)
+		margin-bottom: 30px
 	@extend .type--xl
 	center(720px,0)
 	text-align: center
@@ -2596,11 +2749,16 @@ select.select-beauty
 .support-form
 	center(500px,10px)
 	.select-beauty--light
+		+below(640px)
+			width: 100%
+			margin-bottom: 20px
 		width: 48%
 	.nice-select
 		width: 100%
 
 .form-row
+	+below(640px)
+		margin-bottom: 0
 	margin-bottom: 20px
 
 .support-form
@@ -2612,7 +2770,11 @@ select.select-beauty
 
 .form-row--half
 	flex(between)
+	+below(640px)
+		fw()
 	.input
+		+below(640px)
+			width: 100%
 		width: 48%
 
 .chekbox-row--light
@@ -2621,6 +2783,9 @@ select.select-beauty
 		background: none
 
 .support-form__footer
+	+below(768px)
+		flex(mid)
+		fl()
 	flex(between)
 	margin-top: 25px
 	button
@@ -2628,6 +2793,8 @@ select.select-beauty
 		@extend .btn--mark
 
 .support-form__price
+	+below(768px)
+		margin-bottom: 20px
 	@extend .type--lg
 	color white
 
@@ -2638,9 +2805,17 @@ select.select-beauty
 				display: none
 
 .advant-support
-	flex(between)
+	+below(768px)
+		fw()
+		margin-bottom: 10px
+	f()
+	justify-content: space-between
 	margin-bottom: 70px
 .advant-support__el
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
+
 	width: 32%
 	padding: 40px 30px
 	background: $blue
@@ -2651,6 +2826,8 @@ select.select-beauty
 	margin-bottom: 30px
 	color white
 .advant-support__text
+	+below(768px)
+		width: 100%
 	color white
 	width: 80%
 	line-height: 1.6
@@ -2666,10 +2843,15 @@ select.select-beauty
 	border 1px solid $border-color
 
 .knowledge__el-title
+	+below(640px)
+		margin-bottom: 20px
 	@extend .type--md
 	line-height: 1.4
 
 .knowledge__el--sm
+	+below(640px)
+		width: 100%
+		height: auto
 	f()
 	fl()
 	height: 200px
@@ -2681,6 +2863,9 @@ select.select-beauty
 			margin-right: 5px
 
 .knowledge__el--md
+	+below(768px)
+		width: 100%
+		height: auto
 	f()
 	fl()
 	height: 420px
@@ -2702,6 +2887,8 @@ select.select-beauty
 			color #7aabe7
 
 .knowledge__el--long
+	+below(640px)
+		width: 100%
 	width: 580px
 	height: 200px
 	border 1px solid $border-color
@@ -2722,17 +2909,31 @@ select.select-beauty
 	background: white
 
 .knowledge-filter
+	+below(768px)
+		fw()
 	f()
 	justify-content: center
 	margin-top: 30px
 	margin-bottom: 50px
 .knowledge-filter__el
+	+below(768px)
+		width: 100%
+		max-width 320px
+		.nice-select
+			width: 100%
+			max-width 320px
 	&:first-child
+		+below(768px)
+			margin-right: 0
 		margin-right: 20px
 
 .search-row
 	position: relative
+	placeholder(white)
 	input
+		+below(768px)
+			width: 100%
+			max-width 320px
 		color white
 		padding-right: 50px
 		width: 340px
