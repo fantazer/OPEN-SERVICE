@@ -1873,6 +1873,8 @@ body
 		right -25px
 
 .intro-section
+	+below(768px)
+		padding-bottom: 40px
 	background-color #000000
 	background-image linear-gradient(to left, #c03674 0%, #316dc7 100%)
 	padding-top: 20px
@@ -1887,6 +1889,8 @@ body
 		background: rgba(0, 0, 0, 0.4)
 
 .intro-section__title
+	+below(768px)
+		font-size: 24px
 	@extend .type--xxl
 	center(980px,0)
 	text-align: center
@@ -1899,19 +1903,35 @@ body
 	margin-bottom: 20px
 
 .oborud-descr
+	+below(768px)
+		margin-bottom: 30px
 	border-bottom 1px solid $border-color
 	margin-bottom: 60px
 .oborud-descr__wrap
+	+below(768px)
+		fw()
+
 	f()
 	justify-content: space-between
 .oborud-descr__col
+	+below(768px)
+		width: 100%
+		padding: 20px
 	width: 50%
 	padding-top: 40px
 	padding-bottom: 20px
 	&:first-child
+		+below(768px)
+			border-right 0
+			border-bottom 1px solid $border-color
+			padding: 20px
 		padding-right: 35px
 		border-right 1px solid $border-color
 	&:nth-child(2)
+		+below(768px)
+			padding: 20px
+			fl()
+			flex(mid)
 		padding-left: 35px
 .oborud-descr__link
 	fw()
@@ -1921,6 +1941,8 @@ body
 	margin-bottom: 20px
 
 .title-lg
+	+below(768px)
+		margin-bottom: 30px
 	@extend .type--xl
 	margin-bottom: 50px
 
@@ -1928,18 +1950,31 @@ body
 	text-align: center
 
 .product
+	+below(768px)
+		margin-bottom: 30px
 	margin-bottom: 50px
 .product-el
+	+below(1024px)
+		fw()
 	border-radius 5px
 	border 1px solid #cdcdcd
 	overflow hidden
 	margin-bottom: 20px
 	f()
 .product-el__img
+	+below(640px)
+		width: 100%
+		height: auto
+		padding: 35%
 	width: 220px
 	height: 220px
 	bg-full()
 .product-el__info
+	+below(1024px)
+		width calc(100% - 220px)
+	+below(640px)
+		width: 100%
+		padding: 15px
 	width: 55%
 	padding: 30px
 .product-el__title
@@ -1949,37 +1984,68 @@ body
 .product-el__text
 	line-height: 1.6
 .product-el__get
+	+below(1024px)
+		width: 100%
+		flex(between)
+		flex-flow row
+		border-left 0
+		padding: 20px
+		border-top:1px solid $border-color
+	+below(640px)
+		fl()
+		flex(mid)
+		min-width auto
 	flex(mid)
 	fl()
 	width: calc(45% - 220px)
 	border-left:1px solid $border-color
 	min-width 310px
 .product-el__price
+	+below(1024px)
+		margin-bottom: 0
+	+below(640px)
+		margin-bottom: 20px
 	@extend .type--lg
 	margin-bottom: 30px
 
 .product-el__btn-row
+	+below(1024px)
+		width: auto
 	flex(around)
 	width: 100%
-//.product-el__btn-el
+.product-el__btn-el
+	+below(1024px)
+		&:nth-child(1)
+			.btn--sm-fix
+				margin-right: 20px
 //.btn--sm-fix
 //.btn--light
 //.btn--mark
 
 .question-form
-	center(780px,0)
+	+below(768px)
+		center(640px,10px)
+	center(780px,10px)
 .question-form__wrap
+	+below(768px)
+		fw()
+		margin-bottom: 30px
 	f()
 	justify-content: space-between
 	margin-bottom: 50px
 //.question-form__title
 .question-form__inputs
+	+below(768px)
+		width: 100%
+		margin-bottom: 20px
 	width: 49%
 	.input
 		width: 100%
 		&:last-child
 			margin-bottom: 0
 .question-form__textarea
+	+below(768px)
+		width: 100%
 	width: 49%
 	.textarea
 		width: 100%
@@ -1997,9 +2063,13 @@ body
 	flex(mid)
 	fl()
 	.style-label--checkbox
+		+below(768px)
+			margin-bottom: 30px
 		margin-bottom: 50px
 
 .footer-item
+	+below(768px)
+		margin-top: 60px
 	margin-top: 100px
 	.footer
 		border-top: 1px solid $border-color

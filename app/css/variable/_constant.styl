@@ -63,7 +63,7 @@ typeSize(fontSm,font)
 
 
 .type--md
-	typeSize(18,15)
+	typeSize(18,14)
 	font-family "Museo Sans Cyrl"
 	font-weight bold
 
@@ -73,12 +73,12 @@ typeSize(fontSm,font)
 	font-weight bold
 
 .type--lg
-	typeSize(30,24)
+	typeSize(30,20)
 	font-family "Museo Sans Cyrl"
 	font-weight bold
 
 .type--xl
-	typeSize(40,28)
+	typeSize(40,24)
 	font-family "Museo Sans Cyrl"
 
 .type--xxl
@@ -164,6 +164,10 @@ btnStyleLight(br-btn,color-btn)
 		size 10px
 
 .btn--sm-fix
+	+below(640px)
+		font-size: 12px
+		padding: 10px
+		width: 90px
 	@extend .btn
 	font-size: 15px
 	padding: 15px
@@ -175,6 +179,10 @@ btnStyleLight(br-btn,color-btn)
 	padding 15px 35px
 
 .btn--md-fix
+	+below(640px)
+		width: 150px
+		padding: 10px
+		font-size: 12px
 	@extend .btn
 	padding: 18px 15px
 	font-size: 15px
