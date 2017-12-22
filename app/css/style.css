@@ -4881,6 +4881,16 @@ opacity 0 100% {
       -ms-flex-flow: column;
           flex-flow: column;
 }
+@media only screen and (max-width: 768px) {
+  .question-form__confirm .btn--md-fix {
+    padding: 15px 45px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .question-form__confirm .btn--md-fix {
+    width: 100%;
+  }
+}
 .question-form__confirm .style-label--checkbox {
   margin-bottom: 50px;
 }
@@ -5325,6 +5335,12 @@ select.select-beauty {
 @media only screen and (max-width: 768px) {
   .toolbar-form {
     padding: 15px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .toolbar-form .btn--md-fix {
+    padding: 15px 45px;
+    width: 100%;
   }
 }
 .toolbar-form .input {
@@ -5980,6 +5996,11 @@ select.select-beauty {
 @media only screen and (max-width: 1024px) {
   .how__el-title {
     font-size: 18px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .how__el-title {
+    text-align: center;
   }
 }
 .how__el-get {

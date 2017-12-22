@@ -2065,6 +2065,12 @@ body
 //.btn--md-fix
 //.btn--mark
 .question-form__confirm
+	+below(768px)
+		.btn--md-fix
+			padding: 15px 45px
+	+below(480px)
+		.btn--md-fix
+			width: 100%
 	flex(mid)
 	fl()
 	.style-label--checkbox
@@ -2322,6 +2328,10 @@ select.select-beauty
 .toolbar-form
 	+below(768px)
 		padding: 15px
+	+below(640px)
+		.btn--md-fix
+			padding: 15px 45px
+			width: 100%
 	background: white
 	br(5px)
 	padding: 30px 20px
@@ -2633,6 +2643,8 @@ select.select-beauty
 .how__el-title
 	+below(1024px)
 		font-size: 18px
+	+below(640px)
+		text-align: center
 	@extend .type--xlg
 	line-height: 1.6
 	margin-bottom: 30px
