@@ -204,6 +204,8 @@ body
 			padding: 0
 		position: static
 .header-toggle
+	+below(640px)
+		margin-right: 10px
 	+above(769px)
 		display: none
 	.icon
@@ -1897,7 +1899,7 @@ body
 	center(980px,0)
 	text-align: center
 	color white
-	line-height: 1.4
+	line-height: 1.3
 	margin: 0 auto
 
 .title-md
@@ -1927,14 +1929,14 @@ body
 			border-right 0
 			border-bottom 1px solid $border-color
 			padding: 20px
-		padding-right: 35px
+		padding-right: 40px
 		border-right 1px solid $border-color
 	&:nth-child(2)
 		+below(768px)
 			padding: 20px
 			fl()
 			flex(mid)
-		padding-left: 35px
+		padding-left: 40px
 .oborud-descr__link
 	fw()
 	f()
@@ -2060,7 +2062,7 @@ body
 //.sytle-input-element
 //.icon-check
 .sytle-input-text
-	width:calc(100% - 50px)
+	width:calc(100% - 40px)
 
 //.btn--md-fix
 //.btn--mark
@@ -2131,6 +2133,12 @@ select.select-beauty
 		background: none
 		color white
 		border: solid 1px rgba(255, 255, 255, 0.6);
+		&:after
+			content ""
+			border-right: 2px solid #fff
+			border-bottom: 2px solid #fff
+		.current
+			font-weight 300!important
 	.nice-select.open
 		border-radius 5px 5px 0 0
 		background: white
@@ -2143,7 +2151,7 @@ select.select-beauty
 	f()
 	justify-content: center
 	margin-top: 30px
-	margin-bottom: 50px
+	margin-bottom: 10px
 .blog-filter__el
 	+below(640px)
 		width: 100%
@@ -2165,11 +2173,15 @@ select.select-beauty
 		grid-template-columns repeat(2, 1fr)
 	+below(640px)
 		grid-template-columns repeat(1, 1fr)
+		margin-top: 30px
+		grid-gap 0px
 	display: grid
 	grid-template-columns repeat(3, 1fr)
 	grid-gap 20px
 	margin-top: -50px
 .blog-item
+	+below(640px)
+		margin-bottom: 20px
 	tr(all)
 	&:hover
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -2192,6 +2204,7 @@ select.select-beauty
 	@extend .type--xlg
 	line-height: 1.6
 	margin-bottom: 30px
+	color black
 .blog-item__get
 	+below(640px)
 		padding: 10px 20px
@@ -2224,6 +2237,9 @@ select.select-beauty
 	placeholder(#d4d4d4)
 	f()
 	input
+		&:focus
+			border 1px solid $blue
+			box-shadow 0 11px 8px rgba(47,129,230,0.15)
 		border-radius 28px 0 0 28px
 		margin-bottom: 0
 		border 1px solid $border-color
@@ -2232,6 +2248,7 @@ select.select-beauty
 		color white
 		outline: 0 !important
 		width calc(100% - 65px)
+		tr(all)
 	button
 		background: white
 		border 0
@@ -2349,6 +2366,7 @@ select.select-beauty
 .subscr-news
 	+below(768px)
 		margin-bottom: 30px
+		padding: 30px 0
 	padding: 60px 0
 	border-top 1px solid $border-color
 	border-bottom 1px solid $border-color
@@ -2381,7 +2399,7 @@ select.select-beauty
 	color white
 	margin-top: 30px
 	line-height: 1.4
-	center(760px,10px)
+	center(740px,10px)
 
 .intro-section__title-sub--sm
 	text-align: center
@@ -2465,6 +2483,7 @@ select.select-beauty
 .scheme__el-num
 	round()
 	flex(mid)
+	@extend .type--xlg
 	position: absolute
 	size 45px
 	box-shadow: 0 9px 9px rgba(47, 129, 230, 0.5);
@@ -2538,7 +2557,7 @@ select.select-beauty
 .scheme-result__el
 	+below(768px)
 		width: 100%
-		min-height auto
+		min-height initial
 		margin-bottom: 20px
 		padding: 20px
 	f()
@@ -2550,6 +2569,8 @@ select.select-beauty
 	min-height: 380px
 
 .scheme-result__el-title
+	+below(768px)
+		margin-bottom: 10px
 	@extend .type--md
 	margin-bottom: 25px
 	line-height: 1.6
@@ -2660,6 +2681,7 @@ select.select-beauty
 		margin-bottom: 30px
 	+below(640px)
 		grid-template-columns repeat(1, 1fr)
+		grid-gap 0px
 	display: grid
 	grid-template-columns repeat(3, 1fr)
 	grid-gap 20px
@@ -2669,6 +2691,8 @@ select.select-beauty
 	+below(768px)
 		padding: 20px
 		flex(mid)
+	+below(640px)
+		margin-bottom: 20px
 	f()
 	fl()
 	padding: 40px 30px
@@ -2714,7 +2738,7 @@ select.select-beauty
 	margin-bottom: 60px
 
 .contact-about
-	center(760px,10px)
+	center(750px,10px)
 
 .section__contact-about
 	+below(768px)
@@ -2728,7 +2752,7 @@ select.select-beauty
 //.btn--light
 
 .main-cont--sm
-	center(760px,10px)
+	center(740px,10px)
 
 .baner-support
 	+below(768px)
@@ -2845,6 +2869,8 @@ select.select-beauty
 	line-height: 1.6
 
 .knowledge__el
+	+below(640px)
+		padding: 20px
 	br(5px)
 	padding: 30px
 	margin-bottom: 20px
@@ -2857,6 +2883,8 @@ select.select-beauty
 .knowledge__el-title
 	+below(640px)
 		margin-bottom: 20px
+		font-size: 16px
+		text-align: center
 	@extend .type--md
 	line-height: 1.4
 
@@ -2884,12 +2912,21 @@ select.select-beauty
 	width: 280px
 
 .knowledge__el-get
+	+below(640px)
+		flex(mid)
+		fl()
+		width: 100%
+		.btn--md
+			width: 100%
 	margin-top: auto
 	.btn--md
 		&:nth-child(1)
 			margin-bottom: 20px
 
 .knowledge__el--mark
+	+below(640px)
+		flex(mid)
+		fl()
 	background: $blue
 	color white
 	.knowledge__el-title
@@ -2923,6 +2960,9 @@ select.select-beauty
 .knowledge-filter
 	+below(768px)
 		fw()
+		center(640px,10px)
+		flex(mid)
+		fl()
 	f()
 	justify-content: center
 	margin-top: 30px

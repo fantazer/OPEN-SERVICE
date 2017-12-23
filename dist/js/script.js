@@ -369,7 +369,7 @@ $(document).ready(function(){
 	return false;
 }
 
-	/*console.log(detectIE());
+	console.log(detectIE());
 	if (detectIE() <= 14 && detectIE()) {
 		$('body').empty();
 		$('body').prepend('' +
@@ -377,7 +377,7 @@ $(document).ready(function(){
 			'<div class="old-browser-text"> Сайт не поддерживае Браузер Internet Explorer</div><br>' +
 			'<div class="old-browser-text"> Установите <br><br> Chrome Firefox Opera </div><br>' +
 		'</div>');
-	}*/
+	}
 
 	//for init SVG 
 	//svg4everybody();
@@ -486,7 +486,7 @@ $(document).ready(function(){
 }( window, document ) );
 
 
-;
+
 (function ($) {
 	$.fn.loading = function () {
 		var DEFAULTS = {

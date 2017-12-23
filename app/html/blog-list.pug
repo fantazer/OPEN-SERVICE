@@ -29,12 +29,13 @@ include block_html/_include.pug
 		.main-cont
 			.blog-list
 				- for (var i=0;i<2;i++)
-					.blog-item
-						.blog-item__img(style="background-image:url('img/blog.jpg')")
-						.blog-item__content
-							.blog-item__date 11 Ноября 2017
-							.blog-item__text Теперь olap отчеты доступны в мобильном ios приложении iiko DashBoard
-							a(href="#").blog-item__get Отчеты
+						.blog-item
+							a(href="#")
+								.blog-item__img(style="background-image:url('img/blog.jpg')")
+								.blog-item__content
+									.blog-item__date 11 Ноября 2017
+									.blog-item__text Теперь olap отчеты доступны в мобильном ios приложении iiko DashBoard
+									a(href="#").blog-item__get Отчеты
 				.blog-item.blog-subscr
 					.blog-subscr__icon
 						+icon("subsc","icon")
@@ -49,11 +50,12 @@ include block_html/_include.pug
 					.blog-subscr__confirm Нажимая отправить <br> Вы соглашаетесь с условиями <br> обработки персональных данных
 				- for (var i=0;i<3;i++)
 					.blog-item
-						.blog-item__img(style="background-image:url('img/blog.jpg')")
-						.blog-item__content
-							.blog-item__date 11 Ноября 2017
-							.blog-item__text Теперь olap отчеты доступны в мобильном ios приложении iiko DashBoard
-							a(href="#").blog-item__get Отчеты
+						a(href="#")
+							.blog-item__img(style="background-image:url('img/blog.jpg')")
+							.blog-item__content
+								.blog-item__date 11 Ноября 2017
+								.blog-item__text Теперь olap отчеты доступны в мобильном ios приложении iiko DashBoard
+								a(href="#").blog-item__get Отчеты
 	.btn-row--center
 		a(href="#").btn--md-fix.btn--mark Показать ещё
 
