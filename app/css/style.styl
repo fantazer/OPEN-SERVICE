@@ -2997,3 +2997,231 @@ select.select-beauty
 		top 20px
 		right 25px
 		cp()
+
+.footer-cat
+	padding: 70px 0
+	background: #f1f6fb
+.footer-cat-list
+	f()
+	fw()
+	margin-left: -10px
+	margin-right: -10px
+
+.footer-cat-list__el
+	border-radius 5px
+	background-color #ffffff
+	padding: 25px 20px
+	margin: 0 10px
+	margin-bottom: 20px
+	width:calc(25% - 20px)
+	tr(all)
+	&:hover
+		box-shadow 0 10px 20px rgba(47, 129, 230, 0.45)
+		border-radius 5px
+		background: $blue
+		.footer-cat-list__el-text
+			color white
+		.footer-cat-list__el-link
+			color white
+.footer-cat-list__el-text
+	tr(all)
+	line-height: 1.6
+	margin-bottom: 20px
+	color black
+.footer-cat-list__el-link
+	tr(all)
+	color $blue
+	font-weight: 700
+	font-family: 'Museo Sans Cyrl'
+
+.footer-cat-list__el--active
+	box-shadow 0 10px 20px rgba(47, 129, 230, 0.45)
+	border-radius 5px
+	background: $blue
+	.footer-cat-list__el-text
+		color white
+	.footer-cat-list__el-link
+		color white
+
+.footer-cost
+	flex(mid)
+	fl()
+	margin: 70px 0
+.footer-cost__val
+	@extend .type--lg
+	margin-bottom: 35px
+.footer-cost__get
+	@extend .btn--md-fix
+	@extend .btn--mark
+.intro-section-get
+	@extend .btn--md-fix
+	@extend .btn--mark
+	margin-top: 45px
+
+.service-info
+	flex(between)
+	padding: 60px 0 75px 0
+.service-info__content
+	width: 40%
+.service-info__title
+	@extend .type--xl
+	margin-bottom: 30px
+.service-info__text
+	line-height: 1.6
+.service-info__img
+	width: 50%
+
+.cour-descr
+	background: #f1f6fb
+	padding: 40px 0
+.cour-descr__wrap
+	flex(between)
+.cour-descr__card
+	flex(mid)
+	fl()
+	width: 480px
+	padding: 50px 50px 80px 50px
+	background: white
+	box-shadow 0 15px 20px rgba(0, 0, 0, 0.06)
+	border-radius 5px
+.cour-descr__card-icon
+	flex(mid)
+	round()
+	size 200px
+	border 1px solid $blue
+	margin-bottom: 40px
+	img
+		size 100px
+.cour-descr__card-text
+	text-align: center
+	line-height: 1.6
+	color rgba(0, 0, 0, 0.7)
+.cour-descr__text
+	width: 50%
+.cour-param-wrap
+	padding-top: 70px
+.cour-param
+	f()
+	fw()
+	border 1px solid white
+	position: relative
+	&:before
+		content ""
+		position: absolute
+		top 0
+		left: 0
+		width: calc(100% - 1px)
+		height: calc(100% + 2px)
+		border 3px solid white
+.cour-param__el
+	width:calc(100% / 3)
+	padding: 30px 20px 40px 20px
+	border 1px solid rgba(112, 112, 112, 0.3)
+	margin-right: -1px
+	margin-bottom: -1px
+.cour-param__name
+	@extend .type--xl
+	margin-top: -30px
+.cour-param__title
+	@extend .type--md
+	margin-bottom: 15px
+	color $blue
+.cour-param__text
+	line-height: 1.6
+	color rgba(0, 0, 0, 0.7)
+
+.app
+	f()
+	justify-content: space-between
+	padding-top: 70px
+.app-content
+	width: 55%
+
+.app-content__text
+	line-height: 1.6
+	margin-bottom: 30px
+.app-content__title
+	margin-bottom: 30px
+	@extend .type--md
+.app-list
+	width: 85%
+.app-list__el
+	f()
+	margin-bottom: 30px
+.app-list__icon
+	margin-right: 30px
+	img
+		size 35px
+.app-list__text
+	width: calc(100% - 60px)
+	line-height: 1.6
+
+.service-adv
+	padding: 45px 0
+	border-top 1px solid rgba(112, 112, 112, 0.45)
+	border-bottom 1px solid rgba(112, 112, 112, 0.45)
+	f()
+	justify-content: center
+	align-items: center
+.service-adv__icon
+	flex(mid)
+	round()
+	size 200px
+	border 1px solid $blue
+	margin-right: 30px
+	img
+		size 100px
+.service-adv__text
+	width: 60%
+
+.sms
+	padding: 20px 0
+	border-top 1px solid rgba(112, 112, 112, 0.45)
+	border-bottom 1px solid rgba(112, 112, 112, 0.45)
+	margin-bottom: 20px
+.sms__title
+	@extend .type--md
+	margin-bottom: 20px
+.sms__list
+	f()
+.sms__el
+	margin-right: 10px
+	display: inline-block
+	font-family:Museo Sans Cyrl
+	font-weight:700
+	color $blue
+	&:nth-child(2)
+		padding: 0 10px
+		border-left 1px solid $border-color
+		border-right 1px solid $border-color
+.service-info--sms
+	padding-bottom: 0
+	.service-info__text
+		margin-bottom: 20px
+	.service-info__content
+		width: 75%
+		margin-right: 10%
+
+.service-info__wrap
+	padding: 70px 0
+	border-bottom 1px solid rgba(112,112,112,0.45)
+	.service-info
+		padding: 0
+		margin-bottom: 60px
+
+.service-info__list
+	f()
+	fw()
+.service-info__list-el
+	width: calc(100% / 3 - 20px)
+	padding: 0 20px 20px 20px
+	line-height: 1.6
+	position: relative
+	&:before
+		content ""
+		position: absolute
+		size 10px
+		round()
+		left 0
+		top 7px
+		background: $blue

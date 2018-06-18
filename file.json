@@ -12,6 +12,14 @@
 		"konsalting":"konsalting",
 		"contact":"contact",
 		"knowledge":"knowledge",
-		"knowledge-item":"knowledge-item"
+		"knowledge-item":"knowledge-item",
+		"logistik":"logistik",
+		"app":"app",
+		"atc":"atc",
+		"distribution":"distribution",
+		"SMS":"SMS",
+		"get-order":"get-order",
+		"courier":"courier",
+		"auto-delivery":"auto-delivery"
 	}
 }

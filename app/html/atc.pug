@@ -1,0 +1,38 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Подключение АТС к рабочему месту оператора iikoPbx
+		.btn-row--center
+			.intro-section-get Оставить заявку
+
+.main-cont
+	.service-info
+		.service-info__content
+			.service-info__title Быстрая обработка заказа
+			.service-info__text Модуль iikoPBX позволяет использовать АТС. Это уменьшает время обработки заказа и повышает уровень обслуживания клиентов. С помощью АТС можно разрешать проблемные ситуации, так как телефонные разговоры с клиентами записываются
+		.service-info__img
+			img(src="img/atc.png", alt="")
+
+.main-cont
+	.service-adv
+		.service-adv__icon
+			img(src="img/phone-mark.svg", alt="")
+		.service-adv__text
+			p Система находит клиента по номеру входящего звонка или предоставит его номер телефона, если клиент использует услуги ресторана впервые. Чтобы позвонить клиенту или курьеру, нужно выбрать соответствующую опцию в карточке доставки. В call-центре можно звонить клиентам и принимать звонки из списка клиентов доставки.
+			p Отвечать на звонки и звонить клиентам и курьерам можно и в call-центре, и в iikoFront. АТС используют как в ресторанах, так и на точке для банкетов, резервов и доставок
+
+
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

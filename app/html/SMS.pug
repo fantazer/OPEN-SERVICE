@@ -1,0 +1,39 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Пакет информационных сообщений iikoNotification
+		.btn-row--center
+			.intro-section-get Оставить заявку
+
+.main-cont
+	.service-info.service-info--sms
+		.service-info__content
+			.service-info__title Уведомляйте клиента
+			.service-info__text Хотите, чтобы клиенты получали актуальную информацию о выполнении заказов в SMS? К примеру, уведомление о том, что заказ принят и будет доставлен вовремя, или о скидке и снижении стоимости заказа, действующих акциях и прочее
+			.sms
+				.sms__title Приобретите один из пакетов на SMS-оповещение:
+				.sms__list
+					a(href="#").sms__el iikoNotification 2000
+					a(href="#").sms__el iikoNotification 5000
+					a(href="#").sms__el iikoNotification 10000.
+
+			.service-info__text Все сообщения отправляются на определенных этапах работы с заказом. Текст сообщений всегда можно поменять
+
+		.service-info__img
+			img(src="img/sms.png", alt="")
+
+
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

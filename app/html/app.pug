@@ -1,0 +1,50 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Мобильное приложение для курьера iikoDeliveryMan
+		.btn-row--center
+			.intro-section-get Оставить заявку
+
+.main-cont
+	.app
+		.app-content
+			.app-content__text У каждого курьера в вашем заведении появится мобильное приложение iikoDeliveryMan. С его помощью можно управлять работой курьеров службы доставки готовых блюд. Сервис создан для предприятий общественного питания, автоматизированных с помощью программных продуктов iikoDelivery. Его можно использовать как для отдельных заведений, так и для ресторанных сетей с централизованной службой доставки
+			.app-content__title Что может iikoDeliveryMan?
+			.app-list
+				.app-list__el
+					.app-list__icon
+						img(src="img/bell.svg", alt="")
+					.app-list__text Мгновенно уведомлять курьера о назначении, изменении или отмене заказа;
+				.app-list__el
+					.app-list__icon
+						img(src="img/location.svg", alt="")
+					.app-list__text Автоматически рассчитывать оптимальный маршрут и демонстрировать его курьеру с помощью приложения Яндекс.Навигатор;
+
+				.app-list__el
+					.app-list__icon
+						img(src="img/tasklist.svg", alt="")
+					.app-list__text Отмечать выполнение заказа курьером, контролировать срок исполнения;
+				.app-list__el
+					.app-list__icon
+						img(src="img/worker.svg", alt="")
+					.app-list__text Контролировать текущий статус курьеров;
+				.app-list__el
+					.app-list__icon
+						img(src="img/star-mark.svg", alt="")
+					.app-list__text Оперативно выгружать отчетность о качестве работы курьеров: по точкам приготовления заказов, по отдельным заказам, по каждому курьеру и т.п
+		.app-img
+			img(src="img/phone.png", alt="")
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug
