@@ -1877,7 +1877,7 @@ body
 
 .intro-section
 	+below(768px)
-		padding-bottom: 40px
+		padding-bottom: 30px
 	background-color #000000
 	background-image linear-gradient(to left, #c03674 0%, #316dc7 100%)
 	padding-top: 20px
@@ -2999,15 +2999,25 @@ select.select-beauty
 		cp()
 
 .footer-cat
+	+below(768px)
+		padding: 30px 0
 	padding: 70px 0
 	background: #f1f6fb
 .footer-cat-list
+	+below(768px)
+		margin-left: auto
+		margin-right: auto
+		max-width:640px
 	f()
 	fw()
 	margin-left: -10px
 	margin-right: -10px
 
 .footer-cat-list__el
+	+below(768px)
+		width:calc(50% - 20px)
+	+below(480px)
+		width: 100%
 	border-radius 5px
 	background-color #ffffff
 	padding: 25px 20px
@@ -3044,6 +3054,8 @@ select.select-beauty
 		color white
 
 .footer-cost
+	+below(768px)
+		margin: 30px 0
 	flex(mid)
 	fl()
 	margin: 70px 0
@@ -3054,29 +3066,70 @@ select.select-beauty
 	@extend .btn--md-fix
 	@extend .btn--mark
 .intro-section-get
+	+below(768px)
+		margin-top: 30px
 	@extend .btn--md-fix
 	@extend .btn--mark
 	margin-top: 45px
 
 .service-info
+	+below(768px)
+		padding: 30px 0
+		margin-left: auto
+		margin-right: auto
+		max-width 640px
+		fw()
+		flex(mid)
+	+below(640px)
+		max-width 480px
 	flex(between)
 	padding: 60px 0 75px 0
 .service-info__content
+	+below(768px)
+		width: 100%
+		order 2
 	width: 40%
 .service-info__title
+	+below(1024px)
+		font-size: 32px
+	+below(640px)
+		font-size: 24px
+		text-align: center
 	@extend .type--xl
 	margin-bottom: 30px
 .service-info__text
 	line-height: 1.6
 .service-info__img
+	+below(768px)
+		flex(mid)
+		width: 100%
+		order 1
+		margin-bottom: 30px
+	+below(640px)
+		img
+			max-width 220px
 	width: 50%
 
 .cour-descr
+	+below(768px)
+		padding: 30px 0
 	background: #f1f6fb
 	padding: 40px 0
 .cour-descr__wrap
+	+below(640px)
+		fw()
+		flex(mid)
+		margin-left: auto
+		margin-right: auto
+		max-width 480px
 	flex(between)
 .cour-descr__card
+	+below(1024px)
+		width: 45%
+		padding: 40px 30px
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	flex(mid)
 	fl()
 	width: 480px
@@ -3085,20 +3138,28 @@ select.select-beauty
 	box-shadow 0 15px 20px rgba(0, 0, 0, 0.06)
 	border-radius 5px
 .cour-descr__card-icon
+	+below(640px)
+		size 100px
 	flex(mid)
 	round()
 	size 200px
 	border 1px solid $blue
 	margin-bottom: 40px
 	img
+		+below(640px)
+			size 50px
 		size 100px
 .cour-descr__card-text
 	text-align: center
 	line-height: 1.6
 	color rgba(0, 0, 0, 0.7)
 .cour-descr__text
+	+below(640px)
+		width: 100%
 	width: 50%
 .cour-param-wrap
+	+below(768px)
+		padding-top: 30px
 	padding-top: 70px
 .cour-param
 	f()
@@ -3106,6 +3167,8 @@ select.select-beauty
 	border 1px solid white
 	position: relative
 	&:before
+		+below(768px)
+			display: none
 		content ""
 		position: absolute
 		top 0
@@ -3114,12 +3177,18 @@ select.select-beauty
 		height: calc(100% + 2px)
 		border 3px solid white
 .cour-param__el
+	+below(640px)
+		width:100%
+		border 0
+		border-bottom 1px solid rgba(112, 112, 112, 0.3)
 	width:calc(100% / 3)
 	padding: 30px 20px 40px 20px
 	border 1px solid rgba(112, 112, 112, 0.3)
 	margin-right: -1px
 	margin-bottom: -1px
 .cour-param__name
+	+below(768px)
+		font-size: 18px
 	@extend .type--xl
 	margin-top: -30px
 .cour-param__title
@@ -3129,12 +3198,21 @@ select.select-beauty
 .cour-param__text
 	line-height: 1.6
 	color rgba(0, 0, 0, 0.7)
-
 .app
+	+below(768px)
+		fw()
+		flex(mid)
+		margin-left: auto
+		margin-right: auto
+		max-width 640px
+		padding-top: 30px
 	f()
 	justify-content: space-between
 	padding-top: 70px
 .app-content
+	+below(768px)
+		width: 100%
+		margin-bottom: 30px
 	width: 55%
 
 .app-content__text
@@ -3144,11 +3222,16 @@ select.select-beauty
 	margin-bottom: 30px
 	@extend .type--md
 .app-list
+	+below(640px)
+		width: 100%
 	width: 85%
 .app-list__el
 	f()
 	margin-bottom: 30px
 .app-list__icon
+	+below(640px)
+		margin-right: 15px
+		margin-top: 5px
 	margin-right: 30px
 	img
 		size 35px
@@ -3156,22 +3239,40 @@ select.select-beauty
 	width: calc(100% - 60px)
 	line-height: 1.6
 
+.app-img
+	+below(768px)
+		display: none
 .service-adv
-	padding: 45px 0
+	+below(768px)
+		padding: 30px 0
+		margin-left: auto
+		margin-right: auto
+		max-width 640px
+		fw()
+		flex(mid)
+	padding 45px 0
 	border-top 1px solid rgba(112, 112, 112, 0.45)
 	border-bottom 1px solid rgba(112, 112, 112, 0.45)
 	f()
-	justify-content: center
-	align-items: center
+	justify-content center
+	align-items center
 .service-adv__icon
+	+below(768px)
+		size 150px
+		margin-bottom: 30px
+		margin-right: 0
 	flex(mid)
 	round()
 	size 200px
 	border 1px solid $blue
-	margin-right: 30px
+	margin-right 30px
 	img
+		+below(768px)
+			size 75px
 		size 100px
 .service-adv__text
+	+below(768px)
+		width: 100%
 	width: 60%
 
 .sms
@@ -3183,8 +3284,15 @@ select.select-beauty
 	@extend .type--md
 	margin-bottom: 20px
 .sms__list
+	+below(640px)
+		fw()
 	f()
 .sms__el
+	+below(640px)
+		text-align: center
+		width: 100%
+		margin: 0 0 10px 0
+		border 0
 	margin-right: 10px
 	display: inline-block
 	font-family:Museo Sans Cyrl
@@ -3199,13 +3307,20 @@ select.select-beauty
 	.service-info__text
 		margin-bottom: 20px
 	.service-info__content
+		+below(768px)
+			width: 100%
+			margin-right: 0
 		width: 75%
 		margin-right: 10%
 
 .service-info__wrap
+	+below(768px)
+		padding: 30px 0
 	padding: 70px 0
 	border-bottom 1px solid rgba(112,112,112,0.45)
 	.service-info
+		+below(768px)
+			margin-bottom: 10px
 		padding: 0
 		margin-bottom: 60px
 
@@ -3213,7 +3328,9 @@ select.select-beauty
 	f()
 	fw()
 .service-info__list-el
-	width: calc(100% / 3 - 20px)
+	+below(640px)
+		width: 100%
+	width: calc(100% / 3)
 	padding: 0 20px 20px 20px
 	line-height: 1.6
 	position: relative
