@@ -1,0 +1,48 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Система оповещения официантов CallWaiter
+
+.main-cont
+	.service-info__wrap
+		.service-info
+			.service-info__content
+				.service-info__title Удобный вызов официанта
+				.service-info__text
+					p Автоматизируйте процесс вызов официанта и сделайте взаимодействие зала и кухни эффективнее. CallWaiter ускоряет процесс обслуживания гостей, объединяя систему управления предприятием и систему вызова персонала
+			.service-info__img
+				img(src="img/steward-notifications-1.png", alt="")
+		.service-info__card
+			.service-info__card-title Как это работает?
+			.service-info__card-wrap
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/puzzle.svg", alt="")
+					.service-info__card-el-title Интеграция с системой
+					.service-info__card-text iiko интегрируется с вашей системой оповещения персонала, не требуя её замены
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/radio.svg", alt="")
+					.service-info__card-el-title Пейджеры официанта
+					.service-info__card-text Пейджеры официантов привязываются к пользователю в системе iiko, которая передает CallWaiter информацию о готовности блюд. Затем она поступает на пейджер официанта, принявшего заказ
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/bell-ring.svg", alt="")
+					.service-info__card-el-title Автоматические оповещения
+					.service-info__card-text При смене поварами статуса блюд на “готово” CallWaiter автоматически оповещает об этом нужного официанта. Теперь поварам не нужно отвлекаться на поиск нужной кнопки вызова
+
+
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

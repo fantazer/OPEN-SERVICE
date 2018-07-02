@@ -1,0 +1,42 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Решения для официанта, хостес
+
+.main-cont
+	.get-order-sub-head.get-order-sub-head--unborder
+		.get-order-sub-head__text Open Service предлагает современные решения для хостес и официантов, позволяющие систематизировать резервирование столов, увеличить скорость принятия заказов и улучшить качество общения с гостями
+
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Терминал официанта (iOS, Android)
+				.footer-cat-list__el-link iikoWaiter PRO
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Терминал официанта (Android, Windows CE)
+				.footer-cat-list__el-link SmartOrder
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация стандартов
+				.footer-cat-list__el-link iikoCheckList
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Учет банкетных заказов
+				.footer-cat-list__el-link iikoHostes
+
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Работы с резервами столов
+				.footer-cat-list__el-link SmartReserve
+
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные чаевые
+				.footer-cat-list__el-link от РФИ Банк
+.footer-item
+	+footer()
+
+include ./block_html/_script.pug

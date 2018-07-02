@@ -3059,7 +3059,9 @@ select.select-beauty
 	flex(mid)
 	fl()
 	margin: 70px 0
+	padding: 0 10px
 .footer-cost__val
+	text-align: center
 	@extend .type--lg
 	margin-bottom: 35px
 .footer-cost__get
@@ -3093,7 +3095,7 @@ select.select-beauty
 	+below(1024px)
 		font-size: 32px
 	+below(640px)
-		font-size: 24px
+		font-size: 18px
 		text-align: center
 	@extend .type--xl
 	margin-bottom: 30px
@@ -3327,11 +3329,18 @@ select.select-beauty
 .service-info__list
 	f()
 	fw()
+.service-info__list--four
+	.service-info__list-el
+		+below(1024px)
+			width: calc(100% / 3)
+		+below(1024px)
+			width: 100%
+		width: calc(100% / 4)
 .service-info__list-el
 	+below(640px)
 		width: 100%
 	width: calc(100% / 3)
-	padding: 0 20px 20px 20px
+	padding: 0 20px 35px 20px
 	line-height: 1.6
 	position: relative
 	&:before
@@ -3342,3 +3351,252 @@ select.select-beauty
 		left 0
 		top 7px
 		background: $blue
+
+.get-order-sub-head
+	+below(768px)
+		padding: 30px 0
+	padding: 60px 0
+	flex(mid)
+	fl()
+	border-bottom 1px solid rgba(112, 112, 112, 0.4)
+.get-order-sub-head__text
+	text-align: center
+	max-width 685px
+	line-height: 1.6
+
+.footer-cost__sub
+	+below(768px)
+		margin-bottom: 20px
+	margin-top: -20px
+	margin-bottom: 60px
+	font-weight: bold
+	font-family: Museo Sans Cyrl
+	text-align: center
+
+.service-info__card
+	padding-top: 50px
+	border-top 1px solid rgba(112, 112, 112, 0.3)
+.service-info__card-title
+	+below(1024px)
+		font-size: 32px
+	+below(640px)
+		font-size: 24px
+		text-align: center
+	@extend .type--xl
+	margin-bottom: 30px
+.service-info__card-el-title
+	+below(640px)
+		text-align: center
+	@extend .type--md
+	margin-bottom: 20px
+.service-info__card-title--mid
+	text-align: center
+.service-info__card-wrap
+	f()
+	fw()
+	margin-left: -10px
+	margin-right: -10px
+.service-info__card-wrap--four
+	.service-info__card-el
+		+below(1024px)
+			width: calc(100% / 2)
+		+below(640px)
+			width: 100%
+		width: calc(100% / 4)
+
+.service-info__card-wrap--two
+	.service-info__card-el
+		+below(1024px)
+			width: 100%
+		width: calc(100% / 2)
+	.service-info__card-el-title
+		+below(640px)
+			width: 100%
+		width: 70%
+
+.service-info__wrap--light
+	.service-info__title
+		margin-bottom: 0
+.service-info__card-el
+	+below(640px)
+		width: 100%
+		fl()
+		flex(mid)
+	width: calc(100% / 3)
+	padding: 20px 10px
+	line-height: 1.6
+.service-info__card-list-el
+	&:last-child
+		margin-bottom: 0
+	margin-bottom: 15px
+	line-height: 1.6
+
+.service-info__card-icon
+	margin-bottom: 20px
+	size 50px
+//.service-info__card-title
+//.service-info__card-text
+//.service-info__roll
+.service-info__roll-title
+	@extend .type--md
+	margin-bottom: 30px
+	font-weight: bold
+	font-family: Museo Sans Cyrl
+.service-info__roll-el
+	&:last-child
+		margin-bottom: 0
+	margin-bottom: 20px
+	padding-left: 30px
+	line-height: 1.6
+	position: relative
+	&:before
+		content ""
+		position: absolute
+		size 10px
+		round()
+		left 0
+		top 7px
+		background: $blue
+
+.service-info__wrap--unborder
+	border 0px
+	padding-bottom: 0
+	.service-info
+		margin-bottom: 0
+
+.service-info--weight
+	@extend .service-info--sms
+	align-items: flex-start
+.service-info--midle
+	align-items: center
+.get-order-sub-head--unborder
+	border 0px
+
+.footer-cat--light
+	background: none
+	padding: 0
+	.footer-cat-list__el
+		border 1px solid #d6d6d6
+
+.service-info--near
+	margin-bottom: 0!important
+
+.service-info__block
+	+below(768px)
+		padding-top: 30px
+		margin-top: 30px
+	flex(between)
+	fw()
+	padding-top: 70px
+	margin-top: 70px
+	border-top: 1px solid rgba(112,112,112,0.3);
+.service-info__block-el
+	+below(768px)
+		width: 100%
+		margin-bottom: 20px
+		
+	+below(640px)
+		fl()
+		flex(mid)
+	width: 48%
+	f()
+	justify-content: space-between
+.service-info__block-icon
+	+below(640px)
+		margin-bottom: 30px
+	size 80px
+	round()
+	flex(mid)
+	background-image: linear-gradient(180deg, #5077e7 0%, #a776dd 100%);
+	.icon
+		size 40px
+		fill white
+.service-info__block-content
+	+below(640px)
+		width: 100%
+	width:calc(100% - 100px)
+
+.service-info__block-title
+	+below(640px)
+		width: 100%
+		text-align: center
+	@extend .type--md
+	margin-bottom: 20px
+
+.service-info__block-text
+	line-height: 1.6
+
+.service-info__card-icon--two
+	f()
+	img
+		&:first-child
+			margin-right: 10px
+		&:nth-child(2)
+			margin-top: 5px
+
+//.how-work
+.how-work__title
+	@extend .type--lg
+	text-align: center
+	margin-bottom: 15px
+.how-work__text
+	max-width 550px
+	margin-left: auto
+	margin-right: auto
+	text-align: center
+	line-height: 1.6
+	margin-bottom: 15px
+.how-work__sub
+	@extend .type--md
+	text-align: center
+	margin-bottom: 40px
+.how-review-arrow
+	+below(640px)
+		display: none
+	flex(mid)
+	margin-bottom: 30px
+	.icon
+		size 38px
+		margin: 0 40px
+.how-review
+	+below(640px)
+		fw()
+		margin-bottom: 0
+	f()
+	justify-content: space-between
+	margin-bottom: 30px
+	&:last-child
+		margin-bottom: 0
+.how-review__el
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
+		padding: 40px 20px
+	f()
+	justify-content: space-between
+	width: 48%
+	padding: 45px 40px 60px 40px
+	border-radius 5px
+	border 1px solid #cecece
+.how-review__el-icon
+	.icon
+		size 50px
+		fill #5277e7
+.how-review__el-cont
+	width: calc(100% - 90px)
+.how-review__el-title
+	@extend .type--lg
+	margin-bottom: 20px
+.how-review__el-text
+	line-height: 1.6
+
+.how-review__el-icon--good
+	.icon
+		fill #00c21a
+
+.how-review__el-icon--bad
+	.icon
+		fill #f2003a
+
+.how-review--mid
+	flex(mid)

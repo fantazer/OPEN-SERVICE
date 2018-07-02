@@ -1,0 +1,47 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Контроль сроков хранения блюд iikoShelfManager
+.main-cont
+	.service-info__wrap
+		.service-info
+			.service-info__content
+				.service-info__title Контроль блюд
+				.service-info__text
+					p Поддерживайте необходимое количество блюд на раздаче и их качество с iikoShelfManager. Блюда всегда будут свежими и их приготовление не будет занимать больше установленного срока. Данное решение особенно актуально для ресторанов быстрого питания
+			.service-info__img
+				img(src="img/storage-time.png", alt="")
+		.service-info__card
+			.service-info__card-title Как это работает?
+			.service-info__card-wrap
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/wake-up.svg", alt="")
+					.service-info__card-el-title Срок жизни блюд
+					.service-info__card-text Для каждого блюда назначается “срок жизни”. Система отслеживает время приготовления каждой партии, а также количество готовых блюд на раздаче.
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/cooker.svg", alt="")
+					.service-info__card-el-title Информация для повара
+					.service-info__card-text Повар на кухонном экране отслеживает количество блюд, находящихся в продаже, а также их “срок”. Так, он оценивает необходимость приготовления дополнительных блюд и списания просроченных.
+
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/cashbox.svg", alt="")
+					.service-info__card-el-title Информация для кассира
+					.service-info__card-text Эта же информация доступна на экране кассиру. Это мотивирует его активнее продавать блюда со скоро истекающим “сроком
+
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

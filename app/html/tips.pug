@@ -1,0 +1,61 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Электронные чаевые от РФИ Банк
+.main-cont
+	.service-info__wrap.service-info__wrap--unborder
+		.service-info.service-info--weight.service-info--midle
+			.service-info__content
+				.service-info__title Еще больше автоматизации
+				.service-info__text
+					p РФИ Банк предоставляет рестораторам возможность получения чаевых персоналом электронно. Для функционирования электронных чаевых необходима поддержка оплаты банковскими картами iikoCheckOut
+			.service-info__img
+				img(src="img/tips.png", alt="")
+		.service-info__card
+			.service-info__card-title.service-info__card-title--mid Как это работает?
+			.how-work
+				.how-work__title Начало работы
+				.how-work__text При оплате заказа гостем с помощью терминала, меню терминала предлагает оценить качество обслуживания.
+				.how-work__sub Довольны ли вы обслуживанием?” <br> с вариантами ответа “Да” и “Нет”
+			.how-review-arrow
+				.how-review-arrow__left
+					+icon("arrow-skew-left","icon")
+				.how-review-arrow__right
+					+icon("arrow-skew-right","icon")
+			.how-review
+				.how-review__el
+					.how-review__el-icon.how-review__el-icon--good
+						+icon("good","icon")
+					.how-review__el-cont
+						.how-review__el-title Да
+						.how-review__el-text При выборе ответа “Да” появляется меню чаевых, предлагающее гостю самостоятельно определить их размер (5%, 10%, 15% от суммы чека)
+				.how-review__el
+					.how-review__el-icon.how-review__el-icon--bad
+						+icon("false","icon")
+					.how-review__el-cont
+						.how-review__el-title Нет
+						.how-review__el-text При выборе гостем “Нет” продолжается оплата по счету
+			.how-review-arrow
+				.how-review-arrow__right
+					+icon("arrow-skew-right","icon")
+				.how-review-arrow__left
+					+icon("arrow-skew-left","icon")
+			.how-review.how-review--mid
+				.how-review__el
+					.how-review__el-icon
+						+icon("check-payment","icon")
+					.how-review__el-cont
+						.how-review__el-title Оплата
+						.how-review__el-text При выборе ответа “Да” появляется меню чаевых, предлагающее гостю самостоятельно определить их размер (5%, 10%, 15% от суммы чека)
+.footer-cost
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

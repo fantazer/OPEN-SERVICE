@@ -1,0 +1,62 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Автоматизация стандартов iikoCheckList
+.main-cont
+	.service-info__wrap.service-info--weight
+		.service-info
+			.service-info__content
+				.service-info__title Еще больше автоматизации
+				.service-info__text
+					p Контролируйте исполнение сотрудниками ежедневных операций автоматизированно с iikoCheckList: ни один нюанс не будет упущен, а адаптация новых сотрудников будет проходить быстрее
+			.service-info__img
+				img(src="img/automation-standards.png", alt="")
+		.service-info__card
+			.service-info__card-title Возможности iikoCheckList:
+			.service-info__card-wrap.service-info__card-wrap--four
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/report.svg", alt="")
+					.service-info__card-el-title Чек-листы
+					.service-info__card-text Составление электронных чек-листов, доступных всем сотрудникам заведения
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/cloud.svg", alt="")
+					.service-info__card-el-title Личные данные
+					.service-info__card-text Отображение личных задач каждого сотрудника онлайн. Отметка о выполнении задачи происходит в системе
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/check.svg", alt="")
+					.service-info__card-el-title Статусы задач
+					.service-info__card-text Отслеживание менеджером выполнения задач сотрудниками и составление на их основе отчета об эффективности работы персонала
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/payment.svg", alt="")
+					.service-info__card-el-title Оплата
+					.service-info__card-text Оплата труда исходя из эффективности работника
+
+		.service-info__block
+			.service-info__block-el
+				.service-info__block-icon
+					+icon("tasklist","icon")
+				.service-info__block-content
+					.service-info__block-title Рутинный чек-лист
+					.service-info__block-text Рутинный чек-лист - это перечень регулярных мельчайших действий, которые должны выполнять все сотрудники ресторана. Главное назначение чек-листа - гарантия выполнения всех мелких, но необходимых действий. iikoCheckList позволяет сделать ежедневные мелочи прозрачными
+			.service-info__block-el
+				.service-info__block-icon
+					+icon("cloud-message","icon")
+				.service-info__block-content
+					.service-info__block-title Контрольный чек-лист
+					.service-info__block-text По контрольным чек-листам производится проверка того или иного сотрудника, процесса, помещения на предмет соответствия стандартам заведения. Проверка может проводиться в разных областях: от санитарного состояния ресторана до знаний сотрудников. По итогам проверок ставится оценка, влияющая на зарплату сотрудников
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

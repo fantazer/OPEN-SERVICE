@@ -1,0 +1,66 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Работы с резервами столов SmartReserve
+.main-cont
+	.service-info__wrap
+		.service-info.service-info--weight
+			.service-info__content
+				.service-info__title Автоматизируйте рабочее место хостес и привлекайтегостей на Интернет-площадках с системой SmartReserve.
+
+			.service-info__img
+				img(src="img/table-reservation.png", alt="")
+		.service-info__card
+			.service-info__card-wrap.service-info__card-wrap--two
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/graf.svg", alt="")
+					.service-info__card-el-title Повысьте заполняемость ресторана и сократите убытки:
+					.service-info__card-text
+						.service-info__card-list-el — Отслеживайте время посадки по резерву. Незаменимо для работы с гостями, приходящими без предварительного бронирования: вы можете сообщить им время, до которого стол свободен, а они - решить, подходит ли им это предложение.
+						.service-info__card-list-el — Гости могут резервировать столы в любое время: на сайте ресторана или на странице в социальной сети (в дополнение к стандартным способам бронирования).
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/cloud.svg", alt="")
+					.service-info__card-el-title Собирайте информацию о гостях, а также контролируйте процессы удаленно:
+					.service-info__card-text
+						.service-info__card-list-el — Собирайте полные данные и минимизируйте ошибки. Список резервов станет незаменимым инструментом проведения эффективных маркетинговых акций.
+						.service-info__card-list-el — Административная панель управляющего. Имейте постоянный доступ к статистике резервов и списку контактов гостей из любого места с возможностью выгрузки подробных отчётов о работе ресторана
+
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/star-mark.svg", alt="")
+					.service-info__card-el-title Улучшите уровень обслуживания и повысьте лояльность гостей:
+					.service-info__card-text
+						.service-info__card-list-el — “Оторвите” хостес от телефона. С решением SmartReserve скорость обработки телефонных знаков повышается в разы, позволяя хостес уделять внимание гостям в зале.
+						.service-info__card-list-el — Узнавайте о предпочтениях гостя еще до поднятия телефонной трубки хостес (как и о том, что гость находится в “чёрном” списке).
+						.service-info__card-list-el — Систематизируйте бронирование с помощью онлайн-расписания. Вместо неприятного отказа в бронировании при загруженности ресторана гость сможет выбрать доступное и удобное время посещения.
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/group-message.svg", alt="")
+					.service-info__card-el-title Упростите взаимодействие с партнерами и расширьте их список:
+					.service-info__card-text
+						.service-info__card-list-el — Оптимизируйте работу с консьерж-службами и интернет-площадками.
+						.service-info__card-list-el — При создании резерва оперативно выставляйте ярлык источника (с возможностью выгрузки таких резервов в Административной панели управляющего).
+						.service-info__card-list-el — Принимайте резервы через Интернет с автоматическим выставлением ярлыка источника (в том числе и для консьерж-служб, при наличии соответствующей договорённости).
+
+	.service-info__wrap.service-info__wrap--light
+		.service-info
+				.service-info__title В полноценное решение iikoHostes входят:
+		.service-info__list
+			.service-info__list-el Сенсорный терминал 10 дюймов
+			.service-info__list-el Программное обеспечение SmartReserve
+			.service-info__list-el Детектор входящих звонков
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

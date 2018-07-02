@@ -1,0 +1,35 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Решения для повара
+
+.main-cont
+	.get-order-sub-head.get-order-sub-head--unborder
+		.get-order-sub-head__text Open Service предлагает решения для сердца любого ресторана - поваров. Упрощайте взаимодействие работников кухни и зала, ускоряя процесс выдачи заказов
+
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Учет выпуска готовых блюда
+				.footer-cat-list__el-link iikoKitchen
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Контроль сроков хранения блюд
+				.footer-cat-list__el-link iikoShelfManager
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация кухни
+				.footer-cat-list__el-link iikoSousChef
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система оповещения официантов
+				.footer-cat-list__el-link CallWaiter
+
+.footer-item
+	+footer()
+
+include ./block_html/_script.pug

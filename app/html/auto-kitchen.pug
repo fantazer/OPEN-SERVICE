@@ -1,0 +1,48 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Автоматизация кухни iikoSousChef
+.main-cont
+	.service-info__wrap
+		.service-info
+			.service-info__content
+				.service-info__title Контролируйте кухню
+				.service-info__text
+					p iikoSousChef - это кухонный экран, помогающий повару быстрее приготовить блюдо, официанту - быстрее его отдать, а владельцу - держать все процессы под контролем.
+			.service-info__img
+				img(src="img/auto-kitchen.png", alt="")
+		.service-info__card
+			.service-info__card-title Возможности iikoSousChef:
+			.service-info__card-wrap.service-info__card-wrap--four
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/eye.svg", alt="")
+					.service-info__card-el-title Цветовые обозначения
+					.service-info__card-text Цветовые обозначения для удобства восприятия. Например, блюда горячего цеха находятся на красном фоне, холодного цеха - на синем. Теперь Шеф-повару легче распределять заказы, а поварам - концентрироваться только на своих блюдах
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/clock.svg", alt="")
+					.service-info__card-el-title Время приготовления
+					.service-info__card-text На экране отображается информация о максимальном времени приготовления, заданного в карточке каждого блюда. Им можно гибко управлять в часы-пик
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/group-message.svg", alt="")
+					.service-info__card-el-title Обратная связь
+					.service-info__card-text Обратная связь работников зала и кухни. Статус готовности каждого блюда доступен официанту на экране терминала
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/report.svg", alt="")
+					.service-info__card-el-title Отчетность
+					.service-info__card-text Возможность формирования отчетности в бэк офисе. Так как статус готовности каждого блюда и время фиксируются, iikoSousChef становится инструментом анализа загруженности кухни в определенные часы или дни недели
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

@@ -1,0 +1,58 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Терминал официанта iikoWaiter PRO (iOS, Android)
+.main-cont
+	.service-info__wrap
+		.service-info.service-info--weight.service-info--midle.service-info--near
+			.service-info__content
+				.service-info__title Еще больше автоматизации
+				.service-info__text Расширьте возможности стандартной системы автоматизации iiko с iikoWaiter PRO. Скорость обслуживания и его качество выйдут на новый уровень. Решение поддерживается операционными iOS и Android
+			.service-info__img
+				img(src="img/waiter-terminal-pro.png", alt="")
+		.service-info__card
+			.service-info__card-title Чем отличается iikoWaiter PRO?
+			.service-info__card-wrap
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/interface.svg", alt="")
+					.service-info__card-el-title Удобный современный интерфейс для оперативнойработы
+
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/guard.svg", alt="")
+					.service-info__card-el-title Гарантия работоспособности и сохранения заказов даже при сбоях сети Wi-Fi
+
+				.service-info__card-el
+					.service-info__card-icon.service-info__card-icon--two
+						img(src="img/apple.svg", alt="")
+						img(src="img/play.svg", alt="")
+					.service-info__card-el-title Кроссплатформенная лицензия на Android и iOS
+
+
+	.service-info__wrap.service-info__wrap--light
+		.service-info
+			.service-info__title Возможности iikoWaiter PRO:
+		.service-info__list
+			.service-info__list-el Создание новых заказов и редактирование уже существующих
+			.service-info__list-el Контекстный поиск блюд, а также быстрое меню для популярных позиций
+			.service-info__list-el Разделение заказа по гостям и добавление комментариев к блюдам
+			.service-info__list-el Выделение курсов подачи блюд
+			.service-info__list-el Отправка заказа на сервис-печать и печать пречека на удаленном принтере
+			.service-info__list-el Отображение статусов как блюд, так и заказов
+			.service-info__list-el Отображение стоп-листов
+			.service-info__list-el Поддержка одиночных, групповых, штучных и обязательных модификаторов
+			.service-info__list-el Push-уведомления о готовности блюд в спящем режиме (требуется интернет)
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug

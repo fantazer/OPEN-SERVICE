@@ -1,0 +1,32 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Контроль сроков хранения блюд iikoShelfManager
+.main-cont
+	.service-info__wrap.service-info__wrap--unborder
+		.service-info.service-info--weight
+			.service-info__content
+				.service-info__title Автоматизируйте процесс приготовления и учета готовых блюд с iikoKitchen.
+				.service-info__roll
+					.service-info__roll-title Возможности iikoKitchen:
+					.service-info__roll-el Производите инвентаризацию через терминал фронт офиса, снижая трудозатраты бухгалтера-калькулятора.
+					.service-info__roll-el Автоматизируйте “шведский” стол, контролируя количество съеденных блюд.
+					.service-info__roll-el Осуществляйте документооборот на терминале фронт-офиса (акты приготовления, заборные листы, перемещения и пр.)
+					.service-info__roll-el Маркируйте готовую продукции этикетками со штрих-кодом для стандартных фасовок и весовых блюд.
+					.service-info__roll-el Отправляйте заказ сразу в нужный отдел кухни.
+			.service-info__img
+				img(src="img/food-accounting.png", alt="")
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
++footer-cat()
++footer()
+
+include ./block_html/_script.pug
