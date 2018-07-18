@@ -1,0 +1,66 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Электронное табло iikoArrivals
+
+.main-cont
+	.service-info.service-info--border.service-info--start
+		.service-info__content
+			.service-info__title iikoArrivals - это электронное табло для отслеживания гостем текущего статуса своего заказа
+		.service-info__content
+			.service-info__roll
+				.service-info__roll-title Как работает iikoArrivals?
+				.service-info__roll-el При совершении заказа гость получает чек с индивидуальным номером.
+				.service-info__roll-el При передаче заказа на кухню его номер высвечивается на табло
+				.service-info__roll-el Статус заказа на табло меняется при окончании его выполнения
+				.service-info__roll-el Гость видит информацию о готовности своего заказа и забирает его
+				.service-info__roll-el Менеджер фиксирует факт выдачи заказа, его номер исчезает с табло
+	.service-info.service-info--border
+		.service-info__content
+			.service-info__text
+				p Информация на экране может быть различной: номер заказа, его текущий статус, время получения и ожидания готовности, имя гостя, его телефон и пр.
+
+				p Выберите подходящий вам шаблон электронного табло с приложением iikoArrivals. Оно представляет собой веб-страницу с видами табло, отличающимися цветовой схемой и расположением информации на экране. Настроить приложение вы сможете в специальном конфигурационном файле
+
+		.service-info__img
+			img(src="img/electronic-display.png", alt="")
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug

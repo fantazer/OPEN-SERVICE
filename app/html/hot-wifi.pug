@@ -1,0 +1,101 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Hot WiFi + роутер
+.main-cont
+	.service-info.service-info--border.service-info--weight-extend
+		.service-info__content
+			.service-info__title Пусть WiFi приносит реальную пользу бизнесу
+			.service-info__text  — гостевой WiFi с авторизацией, SMS-идентификацией и маркетинговыми возможностями для любых организаций
+			.service-info__title-sub Помощь бизнесу
+			.service-info__text Публичные сети WiFi включают в себя маркетинговые и аналитические возможности. Незаменимо для заведений с большим потоком гостей! Вы можете выбрать как готовый рабочий кейс, так и индивидуальный план установки Hot WiFi, который будет разработан специально для вашего заведения
+		.service-info__img
+			img(src="img/hot-wifi-1.png", alt="")
+
+	.service-info.service-info--border.service-info--weight-extend
+		.service-info__img
+			img(src="img/hot-wifi-2.png", alt="")
+		.service-info__content
+			.service-info__title Как работает Hot WiFi?
+			.service-info__title-sub Подключение
+			.service-info__text  Гость подключается к WiFi-сети с любого устройства
+			.service-info__title-sub Авторизация
+			.service-info__text
+				p Для получения доступа в Интернет гость должен выполнить любое из следующих действий:
+					ul
+						li Подписаться на вашу страницу в социальной сети.
+						li Разместить пост у себя на странице/в профиле.
+						li Пройти SMS-идентификацию
+
+	.service-info__card
+		.service-info__card-title Возможности iikoSousChef:
+		.service-info__card-wrap
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/group-message.svg", alt="")
+				.service-info__card-el-title “Рассказать друзьям” в обмен на WiFi
+				.service-info__card-text 90% потенциальных клиентов больше доверяют рекомендациям друзей, чем классической рекламе. Посты гостей в социальных сетях принесут более 10 000 просмотров вашей Интернет-рекламы ежедневно
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/interface.svg", alt="")
+				.service-info__card-el-title Брендинг стартовых страниц
+				.service-info__card-text Стартовые страницы - быстрый и удобный инструмент взаимодействия с аудиторией. Используйте встроенные шаблоны стартовых страниц или закажите индивидуальный дизайн
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/star-mark.svg", alt="")
+				.service-info__card-el-title Отзывы и оценки качества услуг через WiFi
+				.service-info__card-text Предотвратите возможные негативные отзывы в сети. Гость оценит качество услуги при подключении к WiFi, и вы сможете исправить ситуацию до её публичного освещения
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/speaker.svg", alt="")
+				.service-info__card-el-title Интернет-реклама для ваших гостей
+				.service-info__card-text С помощью Hot WiFi формируйте точную аудиторию для таргетинга рекламы на таких площадках, как VKontakte, Mail, Одноклассники и многих других
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/guard.svg", alt="")
+				.service-info__card-el-title Hot WiFi убережет от штрафов
+				.service-info__card-text По закону, пользователи публичного WiFi должны проходить обязательную идентификацию, что и обеспечивает система Hot WiFi
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/present.svg", alt="")
+				.service-info__card-el-title Привлечем гостя в ваше заведение
+				.service-info__card-text “Подарок” в социальных сетях - один из эффективных способов привлечения друзей уже посетивших вас гостей
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug

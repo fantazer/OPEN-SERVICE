@@ -1,0 +1,79 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Автоматизация маркетинга и коммуникации с гостями Plazius
+
+.main-cont
+	.service-info__wrap
+		.service-info
+			.service-info__content
+				.service-info__title Plazius для ресторанов: автоматизация и коммуникация
+		.service-info__list.service-info__list--four
+			.service-info__list-el Программа лояльности: Настраивайте бонусные программы, акции и скидки в несколько кликов
+			.service-info__list-el Информация о гостях: Получайте базу данных посетителей и всю историю их заказов
+			.service-info__list-el Аналитика: анализируйте эффективность программы лояльности и маркетинговых акций
+			.service-info__list-el Мотивация персонала: увеличивайте доход сотрудников с помощью безналичных чаевых
+			.service-info__list-el Целевые рассылки: делайте сегментированные e-mail и sms рассылки
+			.service-info__list-el Отзывы: Получайте моментальные отзывы гостей с привязкой к конкретному официанту и заведению
+			.service-info__list-el Интеграция с кассовыми системами: все операции происходят автоматически (оплата заказа, начисление и списание баллов и т.д.) на кассовых системах iiko, R-keeper, Frontol и других
+
+	.service-info__wrap
+		.service-info
+			.service-info__content
+				.service-info__title Plazius для гостей: экономия времени и денег
+		.service-info__list.service-info__list--four
+			.service-info__list-el Скорость: Счёт оплачивается без ожидания терминала и сдачи, тем самым упрощая работу официантов
+			.service-info__list-el Обратная связь: Отзывы гостей идут напрямую к управляющему
+			.service-info__list-el Лояльность: Гости информированы обо всех текущих акциях и о своем бонусном балансе
+			.service-info__list-el Навигация: Гости видят все ваши заведения с описаниями акций на карте
+
+	.service-info.service-info--weight-lg
+		.service-info__content
+			.service-info__title Мобильное приложение Plazius
+			.service-info__list.service-info__list--two
+				.service-info__list-el Платите легко: оплачивайте заказ и оставляйте чаевые, не дожидаясь официанта
+				.service-info__list-el Платите безопасно: Оплачивайте заказ без публичного ввода ПИН-кода и передачи карты в чужие руки
+				.service-info__list-el Платите выгодно: Получайте бонусы и оплачивайте ими следующие заказы
+				.service-info__list-el Платите свободно: Все бонусные карты теперь хранятся на вашем устройстве: освободите кошелек от лишнего пластика
+		.service-info__img
+			img(src="img/automation-marketing.png", alt="")
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug

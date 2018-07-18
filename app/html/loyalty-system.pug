@@ -1,0 +1,75 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Система лояльности iikoCard
+.main-cont
+	.service-info.service-info--border.service-info--start
+		.service-info__content
+			.service-info__title Организация питания
+			.service-info__roll
+				.service-info__roll-title Организовывайте с помощью iikoCard питание сотрудников, а также создавайте индивидуальные и групповые программы лояльности
+				.service-info__roll-el Используйте iikoCard для автоматизации как отдельных ресторанов, так и для сети в целом. iikoCard объединяет операции по картам в единую систему, упорядочивая информацию
+				.service-info__roll-el Выпускайте как именные карты, так и карты без персональных данных (например, посетителя мероприятия)
+				.service-info__roll-el Настраивайте форму анкеты для гостя максимально гибко. Анализ базы данных гостей проводится по любым заданным вами параметрам
+				.service-info__roll-el Карты iikoCard могут быть настроены как абонементы на посещения (например, фитнес-клуба). Абонементы могут выдаваться на конкретный срок, на определенное количество посещений либо без ограничений по посещениям
+		.service-info__img
+			img(src="img/loayalty-1.png", alt="")
+
+	.service-info.service-info--border.service-info--start
+		.service-info__img
+			img(src="img/loayalty-2.png", alt="")
+		.service-info__content
+			.service-info__title Схема питания
+			.service-info__roll
+				.service-info__roll-title Используйте наиболее подходящую схему корпоративного питания: оплату ваучером, списание с депозита, специальные скидки и многие другие
+				.service-info__roll-el Настройте лимитные схемы, указав максимальную сумму или количество оплат по карте за определённое время
+				.service-info__roll-el iikoCard может использоваться как талон на питание 		с ежедневной фиксированной суммой, обнуляющейся в конце дня
+
+	.service-info.service-info--border.service-info--start
+		.service-info__content
+			.service-info__title Без очередей
+			.service-info__roll
+				.service-info__roll-title Быстрота обслуживания и удобство оплаты спасут от очередей даже в горячие часы обеда. Привлекайте не только сотрудников клиентов, но и других гостей индивидуальными бонусно-депозитными картами
+				.service-info__roll-el Гость может получать бонусы за каждый визит (как % от суммы заказа или суммы оплаты гостевой картой)
+				.service-info__roll-el Установите фиксированное количество бонусов, которое будет начисляться за конкретное количество посещений в установленный период
+		.service-info__img
+			img(src="img/loayalty-3.png", alt="")
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug

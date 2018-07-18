@@ -1,0 +1,108 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title WiFi-Радар + роутер
+.main-cont
+	.service-info
+		.service-info__content
+			.service-info__title Повышайте продажи с WiFi-Радар
+			.service-info__text догоните рекламой на площадках Яндекс и myTarget как ваших посетителей, так и людей, прошедших мимо заведения
+		.service-info__img
+			img(src="img/radar.png", alt="")
+	.service-info__card
+		.service-info__card-title Как этим пользоваться?
+		.service-info__card-wrap
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/router.svg", alt="")
+				.service-info__card-el-title Установите WiFi-Радар
+				.service-info__card-text Специальный роутер собирает идентификаторы устройств с включенным WiFi
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/aim.svg", alt="")
+				.service-info__card-el-title Сформируйте аудиторию
+				.service-info__card-text Используя собранные идентификаторы, создайте аудиторию для таргетирования рекламы в Яндекс и myTarget
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/grow.svg", alt="")
+				.service-info__card-el-title Настройте рекламу
+				.service-info__card-text Направьте рекламу на ваших посетителей.
+	.service-info__card
+		.service-info__card-wrap.service-info__card-wrap--two
+			.service-info__card-el
+				.service-info__card-el-title-lg Принцип работы
+				.service-info__roll
+					.service-info__roll-el Все устройства с включенным WiFi делают запросы в фоновом режиме.
+					.service-info__roll-el Для подключения к сети устройства обмениваются идентификатором - MAC-адрес
+					.service-info__roll-el WiFi-Радар собирает MAC-адреса устройств и передает их в ваш личный кабинет
+			.service-info__card-el
+				.service-info__card-el-title-lg Управление из личного кабинета
+				.service-info__card-el-text
+					p Отслеживайте объем собранной аудитории и выгружайте её напрямую в рекламные кабинеты Яндекс и myTarget
+				.service-info__roll
+					.service-info__roll-el Фильтруйте аудиторию по ее отдалению от WiFi-Радар: от 5 до 50 метров
+					.service-info__roll-el Состав аудитории автоматически обновляется ежедневно
+					.service-info__roll-el Просматривайте статистику и структуру аудитории в личном кабинете
+			.service-info__card-el
+				.service-info__card-el-title-lg Узнайте количество людей, привлеченных рекламой,с WiFi-Радар
+				.service-info__roll
+					.service-info__roll-el Ежедневно WiFi-Радар сохраняет собранные MAC-адреса и передает их рекламным площадкам
+					.service-info__roll-el Яндекс и myTarget анализируют количество рекламных просмотров и посещений клиентов для вычисления оффлайн-конверсии
+					.service-info__roll-el Вышеперечисленное позволяет рекламодателю оценить эффективность онлайн-рекламы
+			.service-info__card-el
+				.service-info__card-el-title-lg Показывайте рекламу людям, похожим на ваших посетителей
+				.service-info__roll
+					.service-info__roll-el Все устройства с включенным WiFi делают запросы в фоновом режиме.
+					.service-info__roll-el Для подключения к сети устройства обмениваются идентификатором - MAC-адрес
+					.service-info__roll-el WiFi-Радар собирает MAC-адреса устройств и передает их в ваш личный кабинет
+
+			.service-info__card-el
+				.service-info__card-el-title-lg Кому необходим WiFi-Радар?
+				.service-info__card-el-text.service-info__card-el-text--blue
+					p Рестораны, гостиницы, фитнес-клубы, салоны красоты, клиники, торговые и развлекательные центры
+				.service-info__card-el-text
+					p Рестораны, гостиницы, фитнес-клубы, салоны красоты, клиники, торговые и развлекательные центры
+
+				.service-info__card-el-text.service-info__card-el-text--blue
+					p Мероприятия, концерты, BTL, промоутеры, рекламные агентства
+				.service-info__card-el-text
+					p Собирайте с помощью WiFi-Радар аудиторию гостей мероприятия или же догоняйте посетителей рекламой в Интернете после его проведения
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug

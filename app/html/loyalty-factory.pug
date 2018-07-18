@@ -1,0 +1,103 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Приложение Фабрика лояльности
+
+.main-cont
+	.get-order-sub-head.get-order-sub-head--unborder
+		.get-order-sub-head__text.get-order-sub-head__text--thick Повышайте средний чек и посещаемость с мобильной программой лояльности!
+	.service-info__card.service-info__card--extend.service-info__card--border
+		.service-info__card-title Что мы делаем?
+		.service-info__card-wrap
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/cloud.svg", alt="")
+				.service-info__card-el-title Брендированное мобильное приложение:
+				.service-info__card-el-text Собирайте актуальную клиентскую базу, вовлекая гостей ресторана в программу лояльности
+
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/crm.svg", alt="")
+				.service-info__card-el-title CRM-система:
+				.service-info__card-el-text Используя собранные идентификаторы, создайте аудиторию для таргетирования рекламы в Яндекс и myTarget
+
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/manager.svg", alt="")
+				.service-info__card-el-title Личный менеджер:
+				.service-info__card-el-text Поможет работать с мобильным приложением для ресторана и увеличивать выручку на протяжении всего времени сотрудничества
+
+
+	.service-info__card.service-info__card--extend.service-info__card--border
+		.service-info__card-title Что вы получаете?
+		.service-info__card-wrap
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/graf.svg", alt="")
+				.service-info__card-el-title Высокая вовлеченность:
+				.service-info__card-el-text 1/3 покупок совершаются через мобильное приложение программы лояльности
+
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/discussion.svg", alt="")
+				.service-info__card-el-title Высокая конверсия маркетингового канала:
+				.service-info__card-el-text Конверсия кампаний на основе push-уведомлений составляет 10-30%
+
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/payment.svg", alt="")
+				.service-info__card-el-title Увеличение потока гостей и выручки: :
+				.service-info__card-el-text Рост выручки за счет механик привлечения и удержания гостей достигает 12-20% в год!
+
+
+	.service-info.service-info--midle.service-info--near
+		.service-info__content
+			.service-info__title Как это работает?
+			.service-info__text
+				p Ваши гости устанавливают мобильное приложение ресторана как только оно появляется в Google Play и App Store. Интерфейс и дизайн приложения создаются на основе анализа поведения пользователей.
+
+				p Собирайте базу гостей, вовлеченных в программу лояльности: игровая механика бонусной программы мотивирует активное использование приложения.
+
+				p Закрепляйте аудиторию пользователей приложения и расширяйте её с точным таргетингом и актуальными бонусными предложениями. Повысьте лояльность гостей и увеличьте продажи с помощью таргетированных маркетинговых кампаний и совершении заказов непосредственно в приложении
+
+		.service-info__img
+						img(src="img/loyalty-factory.png", alt="")
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug
