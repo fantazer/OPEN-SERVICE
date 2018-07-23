@@ -1,0 +1,91 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section.intro-section--extend
+	.main-cont
+		+bread()
+		.intro-section__title Электронные карты CardPrice
+
+	.banner-extend
+		.banner-extend__cont
+			.banner-extend__title Переавтоматизация на iiko "под ключ"
+			.banner-extend__text
+				p Чемпионат мира уже закончился. Болели за нашу сборную? Теперь пора и ресторан обноваить! iiko — система, которая делает рестораны удобными для владельцев бизнеса, персонала и гостей. Увеличивает прибыль заведения, снижает издержки.
+		.banner-extend__val
+			.banner-extend__pers - 30%
+			.banner-extend__info Кодовое слово "Дзюба"
+			a(href="#").banner-extend__get Получить скидку
+.main-cont
+	.service-info
+		.service-info__content
+			.service-info__title Электронные карты лояльности для бизнеса
+			.service-info__title-sub Используйте CardPrice вместо пластиковых карт. Повышайте лояльность клиентов
+			.service-info__text
+				p С помощью сервиса автоматически выпускайте и распространяйте карты лояльности, купоны, визитки и другие типы электронных карт. Они будут установлены в устройствах ваших существующих и потенциальных клиентов. Работу и хранение карт обеспечивает системное приложение IOS Apple Wallet. Для устройств на Android и Windows Phone также действуют аналогичные электронные кошельки.
+
+				p CardPrice - удобное дополнение или же полная замена ваших пластиковых карт. Сбор персональных данных ваших клиентов и привлечение новых будут автоматизированы: в бумажных анкетах больше нет необходимости. Push-сообщения, отправляемые на карты, заменят sms-сообщения. Ваша карта всегда хранится на устройстве клиента и напоминает о себе при его приближении к вашему заведению через сервис геолокации.
+		.service-info__img
+			img(src="img/electronic-map.png", alt="")
+
+	.service-plan
+		.service-plan__el
+			.service-plan__el-title Старт
+			.service-plan__el-content
+				.service-plan__el-list
+					.service-plan__list-el 1 руб за клиента / 30 дней
+					.service-plan__list-el Выдача электронной карты - 10 руб
+					.service-plan__list-el Push-сообщение - 1 руб / карта
+					.service-plan__list-el Crm-cинхронизация - 1000 руб / 30 дней
+				a(href="#").service-plan__el-get Оставить заявку
+		.service-plan__el
+			.service-plan__el-title Бизнес
+			.service-plan__el-content
+				.service-plan__el-list
+					.service-plan__list-el От 5 000 руб / 30 дней
+					.service-plan__list-el Выдача электронной карты - 1 руб
+					.service-plan__list-el Push-сообщение - безлимитно
+					.service-plan__list-el Crm-cинхронизация - 1000 руб / 30 дней
+				a(href="#").service-plan__el-get Оставить заявку
+
+		.service-plan__el
+			.service-plan__el-title Корпорация
+			.service-plan__el-content
+				.service-plan__el-list
+					.service-plan__list-el От 10 000 руб / 30 дней
+					.service-plan__list-el Выдача электронной карты - 0 руб
+					.service-plan__list-el Push-сообщение - безлимитно
+					.service-plan__list-el Crm-cинхронизация - 1000 руб / 30 дней
+				a(href="#").service-plan__el-get Оставить заявку
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug

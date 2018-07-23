@@ -513,7 +513,8 @@ h3,
 .service-info__card-el-title-lg,
 .how-work__title,
 .how-review__el-title,
-.service-plan__el-title {
+.service-plan__el-title,
+.banner-extend__title {
   font-size: 30px;
   font-family: "Museo Sans Cyrl";
   font-weight: bold;
@@ -534,7 +535,8 @@ h3,
   .service-info__card-el-title-lg,
   .how-work__title,
   .how-review__el-title,
-  .service-plan__el-title {
+  .service-plan__el-title,
+  .banner-extend__title {
     font-size: 20px;
   }
 }
@@ -648,7 +650,8 @@ p {
 .support-form__footer button,
 .footer-cost__get,
 .intro-section-get,
-.service-plan__el-get {
+.service-plan__el-get,
+.banner-extend__get {
   -webkit-border-radius: 25px;
           border-radius: 25px;
   -webkit-transition: all 0.4s;
@@ -690,7 +693,8 @@ p {
 .support-form__footer button:hover,
 .footer-cost__get:hover,
 .intro-section-get:hover,
-.service-plan__el-get:hover {
+.service-plan__el-get:hover,
+.banner-extend__get:hover {
   cursor: pointer;
 }
 .btn--sm {
@@ -725,7 +729,8 @@ p {
 .blog-item__get,
 .how__el-get,
 .contact__el-get a,
-.service-plan__el-get {
+.service-plan__el-get,
+.banner-extend__get {
   font-size: 15px;
   padding: 15px 35px;
 }
@@ -843,7 +848,8 @@ p {
 .header-white .header-get__el,
 .blog-item__get,
 .how__el-get,
-.contact__el-get a {
+.contact__el-get a,
+.banner-extend__get {
   border: 1px solid #c6d0d9;
   background-color: #fff;
   color: #111;
@@ -858,7 +864,8 @@ p {
 .header-white .header-get__el:hover,
 .blog-item__get:hover,
 .how__el-get:hover,
-.contact__el-get a:hover {
+.contact__el-get a:hover,
+.banner-extend__get:hover {
   border: 1px solid #2f81e6;
   color: #2f81e6;
 }
@@ -872,13 +879,15 @@ p {
 .header-white .header-get__el .nav-icon,
 .blog-item__get .nav-icon,
 .how__el-get .nav-icon,
-.contact__el-get a .nav-icon {
+.contact__el-get a .nav-icon,
+.banner-extend__get .nav-icon {
   fill: #3a90c8;
 }
 .btn--light-dark,
 .header-get__el,
 .main-section-get__el,
-.nav-get__el {
+.nav-get__el,
+.banner-extend__get {
   background: none;
   color: #fff;
   border: 1px solid rgba(255,255,255,0.3);
@@ -886,7 +895,8 @@ p {
 .btn--light-dark:hover,
 .header-get__el:hover,
 .main-section-get__el:hover,
-.nav-get__el:hover {
+.nav-get__el:hover,
+.banner-extend__get:hover {
   border: 1px solid #fff;
   color: #fff;
 }
@@ -8208,4 +8218,110 @@ select.select-beauty {
 }
 .service-info__card-el-text--blue {
   color: #2f81e6;
+}
+.banner-extend {
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 15px 20px rgba(0,50,125,0.16);
+          box-shadow: 0 15px 20px rgba(0,50,125,0.16);
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 768px) {
+  .banner-extend {
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
+    -webkit-border-radius: 0;
+            border-radius: 0;
+  }
+}
+.banner-extend__cont {
+  padding: 40px;
+  background: #fff;
+  width: -webkit-calc(100% / 3 * 2);
+  width: calc(100% / 3 * 2);
+}
+@media only screen and (max-width: 640px) {
+  .banner-extend__cont {
+    width: 100%;
+    padding: 20px;
+  }
+}
+.banner-extend__title {
+  margin-bottom: 20px;
+}
+.banner-extend__val {
+  width: -webkit-calc(100% / 3);
+  width: calc(100% / 3);
+  background-image: -webkit-linear-gradient(270deg, #5077e7 0%, #a776dd 100%);
+  background-image: linear-gradient(180deg, #5077e7 0%, #a776dd 100%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  padding: 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .banner-extend__val {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .banner-extend__val {
+    width: 100%;
+  }
+}
+.banner-extend__pers {
+  color: #fff;
+  font-size: 70px;
+  font-weight: 700;
+  font-family: "Museo Sans Cyrl";
+  letter-spacing: 1.75px;
+  margin-bottom: 10px;
+}
+.banner-extend__info {
+  color: #fff;
+  margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+.intro-section--extend {
+  margin-bottom: 140px;
+  padding-bottom: 0;
+}
+@media only screen and (max-width: 768px) {
+  .intro-section--extend {
+    margin-bottom: 20px;
+  }
+}
+.intro-section--extend .intro-section__title {
+  margin-bottom: -5%;
+}
+@media only screen and (max-width: 768px) {
+  .intro-section--extend .intro-section__title {
+    margin-bottom: 20px;
+  }
 }
