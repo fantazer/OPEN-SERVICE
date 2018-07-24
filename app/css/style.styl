@@ -3726,53 +3726,118 @@ select.select-beauty
 
 .banner-extend
 	+below(768px)
+		margin-top: auto
 		transform translateY(0%)
-		border-radius 0
+		border-radius 5px
+		padding: 0
+		max-width 640px
+	margin-top: -4%
 	transform translateY(50%)
 	f()
 	fw()
+	justify-content: space-between
+	align-items: center
 	border-radius 5px
 	overflow hidden
 	box-shadow 0 15px 20px rgba(0, 50, 125, 0.16)
-	max-width 980px
+	max-width 1180px
 	margin-left: auto
 	margin-right: auto
+	background: white
+	padding: 30px 30px 40px 30px
+	position: relative
+	&:before
+		+below(768px)
+			display: none
+		content ''
+		position: absolute
+		width: 100%
+		height: 50%
+		left: 0
+		top 50%
+		background: #e6eaf3
+
 .banner-extend__cont
+	+below(1024px)
+		width:calc(100%  - 260px)
+	+below(768px)
+		width: 100%
 	+below(640px)
 		width: 100%
 		padding: 20px
-	padding: 40px
-	background: white
-	width:calc(100% / 3 * 2)
-
+	position: relative
+	width:calc(100%  - 320px)
 .banner-extend__title
+	+below(1200px)
+		font-size: 32px
+	+below(1024px)
+		font-size: 26px
+	+below(768px)
+		padding: 30px 0
 	@extend .type--lg
 	margin-bottom: 20px
-//.banner-extend__text
+	font-weight: 300
+	padding-bottom: 20px
+	border-bottom 1px solid $gray
+	font-size: 40px
+	text-align: center
+	img
+		display: inline-block
+		margin: 0 5px -3px 5px
+.banner-extend__text
+	+below(768px)
+		fw()
+		flex(mid)
+		fl()
+		padding: 30px 0px
+	f()
+	align-items: flex-start
+	justify-content: space-between
+	p
+		+below(1024px)
+			font-size: 12px
+		+below(768px)
+			width: 100%
+			margin-bottom: 20px
+			text-align: center
+		width:calc(100% - 220px)
+		margin-bottom: 0
 .banner-extend__val
 	+below(1024px)
 		padding: 20px
+		size 220px
+	+below(768px)
+		width: 100%
+		height: auto
+		border-radius 0
 	+below(640px)
 		width: 100%
 	width:calc(100% / 3)
 	background-image linear-gradient(180deg, #5077e7 0%, #a776dd 100%)
 	flex(mid)
 	fl()
-	padding: 40px
+	size 270px
+	round()
+	overflow hidden
+	position: relative
 .banner-extend__pers
+	+below(1024px)
+		font-size: 60px
 	color white
 	font-size: 70px
 	font-weight 700
 	font-family "Museo Sans Cyrl"
 	letter-spacing 1.75px
-	margin-bottom: 10px
 .banner-extend__info
-	color white
-	margin-bottom: 30px
-	margin-bottom: 30px
+	+below(768px)
+		margin-bottom: 0px
+	@extend .type--lg
+	color $blue
+	text-align: center
+	margin-bottom: 50px
 .banner-extend__get
 	@extend .btn--md
-	@extend .btn--light-dark
+	@extend .btn--mark
 
 .intro-section--extend
 	+below(768px)

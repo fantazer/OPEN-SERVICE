@@ -514,7 +514,8 @@ h3,
 .how-work__title,
 .how-review__el-title,
 .service-plan__el-title,
-.banner-extend__title {
+.banner-extend__title,
+.banner-extend__info {
   font-size: 30px;
   font-family: "Museo Sans Cyrl";
   font-weight: bold;
@@ -536,7 +537,8 @@ h3,
   .how-work__title,
   .how-review__el-title,
   .service-plan__el-title,
-  .banner-extend__title {
+  .banner-extend__title,
+  .banner-extend__info {
     font-size: 20px;
   }
 }
@@ -772,7 +774,8 @@ p {
 .support-form__footer button,
 .footer-cost__get,
 .intro-section-get,
-.service-plan__el-get {
+.service-plan__el-get,
+.banner-extend__get {
   color: #fff;
   background: #2f81e6;
 }
@@ -784,7 +787,8 @@ p {
 .support-form__footer button .nav-icon,
 .footer-cost__get .nav-icon,
 .intro-section-get .nav-icon,
-.service-plan__el-get .nav-icon {
+.service-plan__el-get .nav-icon,
+.banner-extend__get .nav-icon {
   fill: #fff;
 }
 .btn--mark:hover,
@@ -795,7 +799,8 @@ p {
 .support-form__footer button:hover,
 .footer-cost__get:hover,
 .intro-section-get:hover,
-.service-plan__el-get:hover {
+.service-plan__el-get:hover,
+.banner-extend__get:hover {
   background-color: #13509c;
   color: #fff;
 }
@@ -807,7 +812,8 @@ p {
 .support-form__footer button:active,
 .footer-cost__get:active,
 .intro-section-get:active,
-.service-plan__el-get:active {
+.service-plan__el-get:active,
+.banner-extend__get:active {
   background-color: #13509c;
   color: #fff;
 }
@@ -819,7 +825,8 @@ p {
 .support-form__footer button input[type="submit"],
 .footer-cost__get input[type="submit"],
 .intro-section-get input[type="submit"],
-.service-plan__el-get input[type="submit"] {
+.service-plan__el-get input[type="submit"],
+.banner-extend__get input[type="submit"] {
   border: 0;
 }
 .btn--mark .nav-icon,
@@ -830,7 +837,8 @@ p {
 .support-form__footer button .nav-icon,
 .footer-cost__get .nav-icon,
 .intro-section-get .nav-icon,
-.service-plan__el-get .nav-icon {
+.service-plan__el-get .nav-icon,
+.banner-extend__get .nav-icon {
   fill: #fff;
 }
 .btn--disable {
@@ -848,8 +856,7 @@ p {
 .header-white .header-get__el,
 .blog-item__get,
 .how__el-get,
-.contact__el-get a,
-.banner-extend__get {
+.contact__el-get a {
   border: 1px solid #c6d0d9;
   background-color: #fff;
   color: #111;
@@ -864,8 +871,7 @@ p {
 .header-white .header-get__el:hover,
 .blog-item__get:hover,
 .how__el-get:hover,
-.contact__el-get a:hover,
-.banner-extend__get:hover {
+.contact__el-get a:hover {
   border: 1px solid #2f81e6;
   color: #2f81e6;
 }
@@ -879,15 +885,13 @@ p {
 .header-white .header-get__el .nav-icon,
 .blog-item__get .nav-icon,
 .how__el-get .nav-icon,
-.contact__el-get a .nav-icon,
-.banner-extend__get .nav-icon {
+.contact__el-get a .nav-icon {
   fill: #3a90c8;
 }
 .btn--light-dark,
 .header-get__el,
 .main-section-get__el,
-.nav-get__el,
-.banner-extend__get {
+.nav-get__el {
   background: none;
   color: #fff;
   border: 1px solid rgba(255,255,255,0.3);
@@ -895,8 +899,7 @@ p {
 .btn--light-dark:hover,
 .header-get__el:hover,
 .main-section-get__el:hover,
-.nav-get__el:hover,
-.banner-extend__get:hover {
+.nav-get__el:hover {
   border: 1px solid #fff;
   color: #fff;
 }
@@ -8220,6 +8223,7 @@ select.select-beauty {
   color: #2f81e6;
 }
 .banner-extend {
+  margin-top: -4%;
   -webkit-transform: translateY(50%);
       -ms-transform: translateY(50%);
           transform: translateY(50%);
@@ -8230,29 +8234,67 @@ select.select-beauty {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-border-radius: 5px;
           border-radius: 5px;
   overflow: hidden;
   -webkit-box-shadow: 0 15px 20px rgba(0,50,125,0.16);
           box-shadow: 0 15px 20px rgba(0,50,125,0.16);
-  max-width: 980px;
+  max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
+  background: #fff;
+  padding: 30px 30px 40px 30px;
+  position: relative;
 }
 @media only screen and (max-width: 768px) {
   .banner-extend {
+    margin-top: auto;
     -webkit-transform: translateY(0%);
         -ms-transform: translateY(0%);
             transform: translateY(0%);
-    -webkit-border-radius: 0;
-            border-radius: 0;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    padding: 0;
+    max-width: 640px;
+  }
+}
+.banner-extend:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  top: 50%;
+  background: #e6eaf3;
+}
+@media only screen and (max-width: 768px) {
+  .banner-extend:before {
+    display: none;
   }
 }
 .banner-extend__cont {
-  padding: 40px;
-  background: #fff;
-  width: -webkit-calc(100% / 3 * 2);
-  width: calc(100% / 3 * 2);
+  position: relative;
+  width: -webkit-calc(100% - 320px);
+  width: calc(100% - 320px);
+}
+@media only screen and (max-width: 1024px) {
+  .banner-extend__cont {
+    width: -webkit-calc(100% - 260px);
+    width: calc(100% - 260px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner-extend__cont {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 640px) {
   .banner-extend__cont {
@@ -8262,6 +8304,84 @@ select.select-beauty {
 }
 .banner-extend__title {
   margin-bottom: 20px;
+  font-weight: 300;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccd5eb;
+  font-size: 40px;
+  text-align: center;
+}
+@media only screen and (max-width: 1200px) {
+  .banner-extend__title {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .banner-extend__title {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner-extend__title {
+    padding: 30px 0;
+  }
+}
+.banner-extend__title img {
+  display: inline-block;
+  margin: 0 5px -3px 5px;
+}
+.banner-extend__text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  .banner-extend__text {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    padding: 30px 0px;
+  }
+}
+.banner-extend__text p {
+  width: -webkit-calc(100% - 220px);
+  width: calc(100% - 220px);
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .banner-extend__text p {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner-extend__text p {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 .banner-extend__val {
   width: -webkit-calc(100% / 3);
@@ -8283,11 +8403,26 @@ select.select-beauty {
   -webkit-flex-flow: column;
       -ms-flex-flow: column;
           flex-flow: column;
-  padding: 40px;
+  width: 270px;
+  height: 270px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  overflow: hidden;
+  position: relative;
 }
 @media only screen and (max-width: 1024px) {
   .banner-extend__val {
     padding: 20px;
+    width: 220px;
+    height: 220px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner-extend__val {
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 0;
+            border-radius: 0;
   }
 }
 @media only screen and (max-width: 640px) {
@@ -8301,12 +8436,21 @@ select.select-beauty {
   font-weight: 700;
   font-family: "Museo Sans Cyrl";
   letter-spacing: 1.75px;
-  margin-bottom: 10px;
+}
+@media only screen and (max-width: 1024px) {
+  .banner-extend__pers {
+    font-size: 60px;
+  }
 }
 .banner-extend__info {
-  color: #fff;
-  margin-bottom: 30px;
-  margin-bottom: 30px;
+  color: #2f81e6;
+  text-align: center;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .banner-extend__info {
+    margin-bottom: 0px;
+  }
 }
 .intro-section--extend {
   margin-bottom: 140px;
