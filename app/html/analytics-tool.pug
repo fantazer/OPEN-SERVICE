@@ -1,0 +1,85 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Инструмент аналитики ресторанного бизнеса МОЗГ
+.main-cont
+	.service-info
+		.service-info__content
+			.service-info__title Отчёты в один клик
+			.service-info__text Получайте актуальные экономические отчёты и подсказки за несколько секунд в один клик. Забудьте про Excel, используйте время эффективно! Мозг помогает экономить управляющему ресторана и шеф-повару 200 часов в месяц
+		.service-info__img
+			img(src="img/analytics-tool.png", alt="")
+	.service-info__card
+		.service-info__card-title Возможности Мозг:
+		.service-info__card-wrap.service-info__card-wrap--two
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/payment.svg", alt="")
+				.service-info__card-el-title Управляйте выручкой
+				.service-info__card-text Сравнение любых периодов по ключевым показателям заведения происходит в два клика. Данные визуализируются в таблицах и графиках
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/report.svg", alt="")
+				.service-info__card-el-title Контролируйте выполнение плана
+				.service-info__card-text Мозг поможет настроить план выручки на каждый день для разных подразделений, опираясь на данные прошлого года
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/menu.svg", alt="")
+				.service-info__card-el-title Оптимизируйте меню
+				.service-info__card-text Решение предлагает подсказки по каждой позиции: оптимизировать стоимость, поставить в up-sell или удалить. Устраните ценовой дисбаланс и смотрите динамику себестоимости, цены и спроса по месяцам в одном отчете
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/grow.svg", alt="")
+				.service-info__card-el-title Отслеживайте основные показатели
+				.service-info__card-text Мозг автоматически сравнивает сравнивает данные о продажах текущего месяца с тем же периодом прошлого года и планом. Показывает отклонения в разрезе выручки, гостей и среднего чека
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/tasklist.svg", alt="")
+				.service-info__card-el-title Создавайте уникальные отчеты
+				.service-info__card-text Отчеты, которых нет в вашей системе автоматизации, формируются максимально быстро. Например, поток продаж по сумме чеков (на картинке)
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/payment-coins.svg", alt="")
+				.service-info__card-el-title Используйте умный прогноз выручки
+				.service-info__card-text Анализ фактических продаж позволяет создать правдивый прогноз выручки на конец месяца. Принимайте экстренные меры быстро, а не в конце месяца!
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/sale.svg", alt="")
+				.service-info__card-el-title Уникальная мотивация официантов 3+2
+				.service-info__card-text Мозг анализирует продажи с помощью порционного коэффициента. Находя среднее количество блюд и напитков на гостя в каждом чеке, начисляет утвержденный процент каждому официанту
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/plan.svg", alt="")
+				.service-info__card-el-title Планируйте производство и рабочее расписание
+				.service-info__card-text Система находит средние значения продаж по каждой позиции меню для каждого дня недели. При этом, резкие перепады (банкеты и пр.) исключаются. Идеальный инструмент шеф-повара для формирования станционных заданий по цехам на каждый день
+
+
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat
+	.main-cont
+		.footer-cat-list
+			-
+				var items = [
+				{name:'Видеонаблюдение', val:'iVideon'},
+				{name:'Видеонаблюдение ', val:'Trassir '},
+				{name:'Контроль над текущим заявками ', val:'iikoMonitoring'},
+				{name:'Актуальная аналитика онлайн', val:'iikoDashboard'},
+				{name:'Работа с документами', val:'SmartCloud'},
+				{name:'Автоматизация стандартов, чек-листы ', val:'Service Inspector'},
+				{name:'Инструмент аналитики ресторанного бизнеса ', val:'МОЗГ'}
+				];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

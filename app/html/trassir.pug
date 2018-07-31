@@ -1,0 +1,54 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Видеонаблюдение Trassir
+
+.main-cont
+	.service-info.service-info--weight-extend.service-info--border
+		.service-info__content
+			.service-info__title Обеспечьте безопасность вашего бизнеса с Trassir
+			.service-info__text Получайте наилучшее качество изображения и не ограничивайте себя в размерах архива с профессиональным программным обеспечением для систем безопасности Trassir
+		.service-info__img
+			img(src="img/trassir.png", alt="")
+
+	.service-info__wrap.service-info__wrap--light
+		.service-info
+			.service-info__title Преимущества Trassir:
+		.service-info__list
+			.service-info__list-el Максимальная безопасность с цепочкой “камеры - регистраторы - VMS - облако”
+			.service-info__list-el Система работает со всеми браузерами и приложениями, а данные хранятся в облаке
+			.service-info__list-el Возможность создания индивидуальных правил и  реакций на события
+			.service-info__list-el Настройка Trassir происходит удаленно и доступна с любого браузера. Клиенты ПО созданы под любое мобильное приложение или браузер
+			.service-info__list-el В функционал системы помимо видеонаблюдения входит контроль кассовых операций, определение номеров, детекция лиц, домофония, бизнес-аналитика и др
+			.service-info__list-el Trassir позволяет строить многоуровневые системы безопасности с поддержкой ОПС, СКУД, банкоматов и других устройств
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+
+.footer-cat
+	.main-cont
+		.footer-cat-list
+			-
+				var items = [
+				{name:'Видеонаблюдение', val:'iVideon'},
+				{name:'Видеонаблюдение ', val:'Trassir '},
+				{name:'Контроль над текущим заявками ', val:'iikoMonitoring'},
+				{name:'Актуальная аналитика онлайн', val:'iikoDashboard'},
+				{name:'Работа с документами', val:'SmartCloud'},
+				{name:'Автоматизация стандартов, чек-листы ', val:'Service Inspector'},
+				{name:'Инструмент аналитики ресторанного бизнеса ', val:'МОЗГ'}
+				];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

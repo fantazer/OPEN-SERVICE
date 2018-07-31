@@ -1,0 +1,78 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Видеонаблюдение iVideon
+
+.main-cont
+		.service-info.service-info--weight-extend.service-info--border
+			.service-info__content
+				.service-info__title Обеспечьте безопасность вашего бизнеса и контролируйте его удалённо с iVideon
+				.service-info__text Система доступна на платформах Windows, iOS,Mac OS X, Android и Linux. Не требует сложных настроек, внешних IP-адресов и лишена других ограничений стандартных систем наблюдения
+			.service-info__img
+				img(src="img/ivideon.png", alt="")
+
+		.service-info__wrap.service-info__wrap--light
+			.service-info
+				.service-info__title Возможности iVideon:
+			.service-info__list
+				.service-info__list-el Подключайте видеонаблюдение на неограниченном количестве объектов с возможностью доступа из любой точки мира
+				.service-info__list-el Получайте активные уведомления о подозрительных действиях, автоматически определяемых системой. Поддерживается детекция звука, движения, работают внешние датчики
+				.service-info__list-el Сохраняйте видео с камер наблюдения как в облаке, так и локально. iVideon объединяет видео с разных объектов в целостную систему
+				.service-info__list-el Гибко управляйте правами доступа к системе. Количество пользователей не ограничено. Нагрузка на каналы связи при этом не повышается
+				.service-info__list-el Применяйте самые сложные алгоритмы видеоанализа на базе мощных дата-центров
+				.service-info__list-el Открывайте публичный доступ или проводите трансляции в реальном времени. Организация займет меньше минуты, число пользователей не ограничено
+
+		.service-info__card
+			.service-info__card-title Отличия iVideon от других систем наблюдения:
+			.service-info__card-wrap.service-info__card-wrap--two
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/router.svg", alt="")
+					.service-info__card-el-title Экономия трафика
+					.service-info__card-text Запись события в облако происходит только после детекции движения, звука или при срабатывании внешних датчиков
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/3g.svg", alt="")
+					.service-info__card-el-title Работа в любых сетях передачи данных
+					.service-info__card-text Получайте качественное изображение с iVideon даже со спутниковым или 3G Интернетом
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/guard.svg", alt="")
+					.service-info__card-el-title Надежная защита персональных данных
+					.service-info__card-text Трафик полностью шифруется в соответствии со стандартом SSL, применяемым при совершении банковских операций
+				.service-info__card-el
+					.service-info__card-icon
+						img(src="img/puzzle.svg", alt="")
+					.service-info__card-el-title Многоуровневая система, гарантирующая сохранность данных
+					.service-info__card-text Более 15 дата-центров iVideon по всему миру могут взять на себя нагрузку при сбое в одном из узлов
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+
+.footer-cat
+	.main-cont
+		.footer-cat-list
+			-
+				var items = [
+						{name:'Видеонаблюдение', val:'iVideon'},
+						{name:'Видеонаблюдение ', val:'Trassir '},
+						{name:'Контроль над текущим заявками ', val:'iikoMonitoring'},
+						{name:'Актуальная аналитика онлайн', val:'iikoDashboard'},
+						{name:'Работа с документами', val:'SmartCloud'},
+						{name:'Автоматизация стандартов, чек-листы ', val:'Service Inspector'},
+						{name:'Инструмент аналитики ресторанного бизнеса ', val:'МОЗГ'}
+					];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

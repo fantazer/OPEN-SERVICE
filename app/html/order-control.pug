@@ -1,0 +1,63 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Контроль над текущим заявками iikoMonitoring
+.main-cont
+	.service-info.service-info--weight-extend.service-info--border
+		.service-info__content
+			.service-info__title Удаленно получайте актуальную информацию о всех процессах, происходящих в заведении с iikoMonitoring
+		.service-info__img
+			img(src="img/order-control.png", alt="")
+
+	.service-info__card
+		.service-info__card-title Получайте полную информацию о:
+		.service-info__card-wrap.service-info__card-wrap--four
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/table.svg", alt="")
+				.service-info__card-el-title Загрузке зала:
+				.service-info__card-text занятость столов по зонам обслуживания, разделение открытых столов по официантам, а также по каналам продажи (общий трафик/банкет/доставка)
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/tasklist.svg", alt="")
+				.service-info__card-el-title Заказ
+				.service-info__card-text сумма, размер скидки (при наличии), статус и заказы, не закрытые в прошлые смены
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/user.svg", alt="")
+				.service-info__card-el-title Гостях:
+				.service-info__card-text длительность текущих визитов, состав заказа по каждому гостю
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/tools.svg", alt="")
+				.service-info__card-el-title Операциях:
+				.service-info__card-text контроль неотпечатанных блюд, неисполненных подач блюд, удаленных позиций и причин их удаления
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat
+	.main-cont
+		.footer-cat-list
+			-
+				var items = [
+						{name:'Видеонаблюдение', val:'iVideon'},
+						{name:'Видеонаблюдение ', val:'Trassir '},
+						{name:'Контроль над текущим заявками ', val:'iikoMonitoring'},
+						{name:'Актуальная аналитика онлайн', val:'iikoDashboard'},
+						{name:'Работа с документами', val:'SmartCloud'},
+						{name:'Автоматизация стандартов, чек-листы ', val:'Service Inspector'},
+						{name:'Инструмент аналитики ресторанного бизнеса ', val:'МОЗГ'}
+					];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

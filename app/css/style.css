@@ -6819,7 +6819,7 @@ select.select-beauty {
   cursor: pointer;
 }
 .footer-cat {
-  padding: 70px 0;
+  padding: 70px 0 50px 0;
   background: #f1f6fb;
 }
 @media only screen and (max-width: 768px) {
@@ -7767,6 +7767,9 @@ select.select-beauty {
   margin-bottom: 20px;
   width: 50px;
   height: 50px;
+}
+.service-info__card-icon .img {
+  width: 80%;
 }
 .service-info__roll-title {
   margin-bottom: 30px;

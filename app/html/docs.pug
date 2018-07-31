@@ -1,0 +1,59 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Работа с документами SmartCloud
+.main-cont
+	.service-info.service-info--weight-extend.service-info--border.service-info--midle
+		.service-info__content
+			.service-info__title Используйте умный web-сервис SmartCloud для ресторанов, автоматизированных с iiko
+		.service-info__img
+			img(src="img/docs.png", alt="")
+
+	.service-info__card
+		.service-info__card-title Возможности SmartCloud:
+		.service-info__card-wrap
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/web.svg", alt="")
+				.service-info__card-el-title Онлайн доступ:
+				.service-info__card-text Имейте постоянный онлайн доступ к ключевым показателям эффективности заведения. Надежные и достоверные данные - опора в принятии верного управленческого решения, а быстрый доступ к ним - важный фактор успеха в критической ситуации
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/grow.svg", alt="")
+				.service-info__card-el-title ABC анализ
+				.service-info__card-text Проводите ABC анализ и многое другое. Инструменты анализа SmartCloud позволяют вносить изменения в меню: убирать и добавлять позиции, ликвидировать ценовую и смысловую конкуренцию блюд, вводить стимулирующие акции и пр. Выявляйте проблемы и недоработки деятельности заведения своевременно!
+			.service-info__card-el
+				.service-info__card-icon
+					img(src="img/web-cloud.svg", alt="")
+				.service-info__card-el-title Работа с "облака"
+				.service-info__card-text Документы, разработанные в SmartAnalyze, всегда доступны в браузере. Находитесь в едином информационном пространстве с коллегами в ресторанах и центральном офисе, работая с документами в SmartCloud
+
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat
+	.main-cont
+		.footer-cat-list
+			-
+				var items = [
+				{name:'Видеонаблюдение', val:'iVideon'},
+				{name:'Видеонаблюдение ', val:'Trassir '},
+				{name:'Контроль над текущим заявками ', val:'iikoMonitoring'},
+				{name:'Актуальная аналитика онлайн', val:'iikoDashboard'},
+				{name:'Работа с документами', val:'SmartCloud'},
+				{name:'Автоматизация стандартов, чек-листы ', val:'Service Inspector'},
+				{name:'Инструмент аналитики ресторанного бизнеса ', val:'МОЗГ'}
+				];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

@@ -334,7 +334,7 @@ gulp.task('make', function () {
 gulp.task( 'ftp', function() {
 		var ftpConf = JSON.parse(fs.readFileSync('./ftp.json'));
 		var conn = ftp.create( {
-				host: 'kuznetcov.org',
+				host: 'deploys.ru',
 				user: ftpConf.user,
 				password: ftpConf.pass,
 				parallel: 1,
@@ -344,8 +344,8 @@ gulp.task( 'ftp', function() {
 				'dist/**/**/**.*'
 		];
 		return gulp.src(globs, {buffer: false})
-				.pipe( conn.newer( 'kuznetcov.org/'+ftpConf.name) )
-				.pipe( conn.dest( 'kuznetcov.org/'+ftpConf.name) );
+				.pipe( conn.newer( '/httpdocs/deploys.ru/'+ftpConf.name) )
+				.pipe( conn.dest( '/httpdocs/deploys.ru/'+ftpConf.name) );
 });
 
 //LiveReload
