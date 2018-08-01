@@ -1,0 +1,450 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Электронные карты CardPrice
+
+.main-cont
+	.price-plan
+		.price-plan__el
+			.price-plan__el-title
+				.price-plan__el-price
+					.price-plan__el-price-val 2 990
+				.price-plan__el-text в месяц
+			.price-plan__el-content
+				.price-plan__el-sub-title Облачное решение для заведения без обслуживания у столиков: тариф iikoLite
+				.price-plan__el-list
+					.price-plan__list-el Только 1 касса
+					.price-plan__list-el Базовая функциональность
+					.price-plan__list-el Облачное хранение данных
+					.price-plan__list-el Включена базовая техподдержка
+				a(href="#").price-plan__el-get Купить
+		.price-plan__el
+			.price-plan__el-title
+				.price-plan__el-price
+					.price-plan__el-price-add от
+					.price-plan__el-price-val 5 990
+				.price-plan__el-text в месяц
+			.price-plan__el-content
+				.price-plan__el-sub-title Облачное решение для ресторана любого размера и формата: тариф iikoCloud
+				.price-plan__el-list
+					.price-plan__list-el Любое количество касс (или рабочих мест оператора колл-центра)
+					.price-plan__list-el Полная функциональность
+					.price-plan__list-el Облачное хранение данных
+					.price-plan__list-el Включена базовая техподдержка
+					.price-plan__list-el Дополнительные кассы со скидкой
+				a(href="#").price-plan__el-get Купить
+				.price-plan__el-about неограниченно
+		.price-plan__el
+			.price-plan__el-title
+				.price-plan__el-price
+					.price-plan__el-price-add от
+					.price-plan__el-price-val 55 970
+				.price-plan__el-text единовременно
+			.price-plan__el-content
+				.price-plan__el-sub-title Локальное решение для ресторанов любого размераи формата
+				.price-plan__el-list
+					.price-plan__list-el Индивидуальный расчёт стоимости в зависимости от конфигурации
+					.price-plan__list-el Полная функциональность
+					.price-plan__list-el Установка на собственный сервер
+					.price-plan__list-el Техподдержка от 1760 р. в месяц
+				a(href="#").price-plan__el-get Купить
+
+	.price-table
+		.service-info__card-title.service-info__card-title--mid Посмотрите, какие возможности вы получаете
+		table.mainTable
+			thead
+				tr
+					th Возможности
+					th.takeIikoRent(colspan='2') Облачное решение: взять iiko в аренду
+					th(rowspan='2') Установить собственный сервер: купить iiko
+				tr
+					th
+					th iikoLite
+					th iikoCloud
+			tbody
+				// Продажи, склад и базовый учёт
+				tr.catHeader
+					td(colspan='4') Продажи, склад и базовый учёт
+				tr
+					td Прием заказов и расчёт с гостями
+					td.firstCheckTd
+						+icon("round-check","icon table-check")
+					td.secondCheckTd
+						+icon("round-check","icon table-check")
+					td.thirdCheckTd
+						+icon("round-check","icon table-check")
+				tr
+					td Оплата банковскими картами
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td от 7 990 р.
+				tr
+					td Поддержка ЕГАИС и 54-ФЗ
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Простые скидки
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Печать сервис-чеков на кухню
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Онлайн-списание по техкартам
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Учёт и контроль выпуска готовых блюд
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td.longCell(rowspan='2') от 9 990 р.
+				tr
+					td Акты приготовления, списания, переработки, разбора и т.п.
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Контроль остатков и инвентаризация
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Преднастроенные отчёты
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Контроль запасов на складе, планирование закупок
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Контроль закупочных цен, поставщики
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				// Финансовый учёт и планирование
+				tr.catHeader
+					td(colspan='4') Финансовый учёт и планирование
+				tr
+					td Баланс, P&L, отчёт ДДС в режиме онлайн
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Планирование расходов и график платежей
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Управление дебиторской и кредиторской задолженностью
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Загрузка и выгрузка из банк-клиента
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td План-факт анализ
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				// Управление персоналом
+				tr.catHeader
+					td(colspan='4') Управление персоналом
+				tr
+					td Учёт рабочего времени
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Планирование и оптимизация расписания
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Конструктор мотивационных схем
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Персональный отчёт сотрудника
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Настройка прав доступа
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				// Обслуживание гостей и оптимизация кухни
+				tr.catHeader
+					td(colspan='4') Обслуживание гостей и оптимизация кухни
+				tr
+					td Обслуживание гостей у столиков
+					td
+					td
+						+icon("round-check","icon table-check")
+					td.longCell(rowspan='3') от 9 990 р.
+				tr
+					td Резервирование столиков, учёт пожеланий гостей
+					td
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Планирование банкетов с расчётом продуктов
+					td
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Создание блюд на кассе, комбо-предложения
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 990 р. в месяц
+				tr
+					td Тарифицируемые услуги - бильярд, караоке и т.п.
+					td
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Кухонный экран и управление очередью заказов
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 9 990 р.
+				tr
+					td Электронная очередь
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 9 990 р.
+				tr
+					td Контроль свежести блюд на раздаче
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 9 990 р.
+				tr
+					td Прием заказов с помощью мобильного терминала на базе iOS или Android
+					td
+					td от 490 р.
+					td от 9 990 р.
+				// Доставка готовых блюд
+				tr.catHeader
+					td(colspan='4') Доставка готовых блюд
+				tr
+					td
+						| Приём заказов по телефону (АТС), с сайта, из мобильного приложения, от агрегаторов и т.п.
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 4 990 р.
+				tr
+					td Централизованный прием и распределение заказов
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 12 490 р.
+				tr
+					td Контроль этапов доставки и логистика
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 9 990 р.
+				tr
+					td Контроль этапов производства и упаковки
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 9 990 р.
+				tr
+					td Онлайн контроль передвижений курьера
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 9 990 р.
+				// Бонусно-депозитная система
+				tr.catHeader
+					td(colspan='4') Бонусно-депозитная система
+				tr
+					td База гостей, распознавание по телефону и фото
+					td
+					td
+						+icon("round-check","icon table-check")
+					td.longCell(rowspan='4') от 990 р. в месяц
+				tr
+					td Конструктор программ лояльности - бонусы, скидки, ранги гостей
+					td
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Депозиты и клубная система обслуживания
+					td
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Корпоративные программы питания
+					td
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Мобильное приложение White Label для создания собственной системы лояльности
+					td
+					td от 2 990 р.
+					td от 2 990 р.
+				// Управление сетью ресторанов
+				tr.catHeader
+					td(colspan='4') Управление сетью ресторанов
+				tr
+					td Централизованное управление и консолидированный учёт
+					td
+					td
+						+icon("round-check","icon table-check")
+					td.longCell(rowspan='3') от 72 970 р.
+				tr
+					td Фабрика-кухня и обеспечение ресторанов сети
+					td
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Отчётность по сети в режиме онлайн
+					td
+					td
+						+icon("round-check","icon table-check")
+				tr
+					td Глобальные программы лояльности
+					td
+					td
+						+icon("round-check","icon table-check")
+					td от 990 р. в месяц
+				tr
+					td Управление франшизой
+					td
+					td от 3 000 р. в месяц
+					td от 3 000 р. в месяц
+				// Подключение сторонних приложений
+				tr.catHeader
+					td(colspan='4') Подключение сторонних приложений
+				tr
+					td Возможность разработки собственных приложений (доступ к API iiko)
+					td
+						+icon("round-check","icon table-check")
+					td
+						+icon("round-check","icon table-check")
+					td от 500 р. в месяц
+				tr
+					td Подключение к готовым партнёрским приложениям из маркетплейса iiko
+					td от 500 р. в месяц
+					td от 500 р. в месяц
+					td от 500 р. в месяц
+				tr.table-bg
+					td
+						.type--xlg Количество касс
+						span (или рабочих мест оператора колл-центра)
+					td 1
+					td неограничено
+					td зависит от конфигурации
+				tr.table-unborder
+					td
+					td
+						.table-price 2 990 р.
+						.reqularity в месяц
+					td
+						.table-price от 5 990 р.
+						.reqularity в месяц
+					td
+						.table-price от 55 970 р.
+						.reqularity единовременно
+				tr.table-unborder
+					td
+					td
+						a.table-get(href='#') Купить
+					td
+						a.table-get(href='#') Купить
+					td
+						a.table-get(href='#') Заказать расчёт
+
+	.service-info__card-title.service-info__card-title--mid Стоимость дополнительных касс для тарифа iikoCloud
+
+	.price-advant
+		.price-advant__row
+			.price-advant__row-text Дополнительная касса (или рабочее место оператора колл-центра)
+			.price-advant__row-val 1 990 р.
+		.price-advant__row
+			.price-advant__row-text Пакет из 3 дополнительных касс (или рабочих мест оператора колл-центра)
+			.price-advant__row-val 5 590 р.
+		.price-advant__row
+			.price-advant__row-text Пакет из 10 дополнительных касс (или рабочих мест оператора колл-центра)
+			.price-advant__row-val 17 990 р.
+		.price-advant__row
+			.price-advant__row-text Пакет из 250 дополнительных касс (или рабочих мест оператора колл-центра)
+			.price-advant__row-val 399 990 р.
+		.price-advant__row
+			.price-advant__row-text Дополнительная касса свыше 250 приобретённых (или рабочее место оператора колл-центра)
+			.price-advant__row-val 1 190 р.
++footer()
+
+include ./block_html/_script.pug

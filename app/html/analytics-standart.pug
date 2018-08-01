@@ -1,0 +1,104 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Автоматизация стандартов, чек-листы Service Inspector
+.main-cont
+	.service-info
+		.service-info__content
+			.service-info__title Управлять еще проще
+			.service-info__text
+				p Получайте актуальные экономические отчёты и подсказки за несколько секунд в один клик. Забудьте про Excel, используйте время эффективно! Мозг помогает экономить управляющему ресторана и шеф-повару 200 часов в месяц
+				.service-info__title-sub Цикл PDCA (Plan-Do-Check-Act)
+				p —  метод непрерывного улучшения качества, позволяющий бизнесу не стоять на месте. Регулярные проверки всего цикла производства или оказания услуг повысит ответственность за качество и поможет обнаружить слабые места
+		.service-info__img
+			img(src="img/analytics-standart.png", alt="")
+	.service-info__card
+		.service-info__card-title.service-info__card-title--mid Возможности Service Inspector:
+		.service-info__card-wrap.service-info__card-wrap--two.service-info__card-wrap--border
+			.service-info__card-el
+				.service-info__card-el-title Инспектирование заведений
+				.service-info__card-text Инспектор (менеджер, директор) проверяет работу сотрудников с помощью чек-листов, фотографируя недочеты и комментируя их в мобильном приложении
+			.service-info__card-el
+				.service-info__card-el-title Самоконтроль сотрудников
+				.service-info__card-text Персонал выполняет работу по пунктам в соответствии с чек-листом, фотографируя факт ее выполнения в мобильном приложении
+			.service-info__card-el
+				.service-info__card-el-title Тайный гость
+				.service-info__card-text Наши опытные тайные гости обеспечивают независимую оценку качества сервиса. Все недочеты фиксируются фотографиями и комментариями
+			.service-info__card-el
+				.service-info__card-el-title Постановка стандартов качества с нуля
+				.service-info__card-text Если у вас еще нет стандартов качества, мы разработаем чек-листы специально для вас
+
+	.service-info__card
+		.analytics
+			.analytics__list
+				.analytics__list-title Преимущества Service Inspector:
+				.analytics__list-wrap
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/web-cloud.svg", alt="")
+						.service-info__card-text Единое место хранения данных — облако
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/phone.svg", alt="")
+						.service-info__card-text Мобильные приложения на Android  и iOS, работающие как online, так и offline
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/graf.svg", alt="")
+						.service-info__card-text Информативные отчеты и графики для анализа деятельности
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/group-message.svg", alt="")
+						.service-info__card-text Фото, комментарии и обратная связь в реальном времени
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/pages.svg", alt="")
+						.service-info__card-text Выгрузка данных в Excel и PDF
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/check.svg", alt="")
+						.service-info__card-text Большая библиотека готовых чек-листов
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/mail.svg", alt="")
+						.service-info__card-text Рассылка уведомлений на e-mail
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/license.svg", alt="")
+						.service-info__card-text Лицензируются организации, а не сотрудники
+
+			.analytics__card
+				.analytics__card-title С Service Inspector забудьте о:
+				.analytics__card-list
+					.analytics__card-list-el  - Горах бумаг
+					.analytics__card-list-el - Ошибках ручного вода
+					.analytics__card-list-el - Хранении данных в разных местах
+					.analytics__card-list-el - Отсутствии стандартов качества
+					.analytics__card-list-el - Трудоемкости анализа полученного результата.
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat
+	.main-cont
+		.footer-cat-list
+			-
+				var items = [
+				{name:'Видеонаблюдение', val:'iVideon'},
+				{name:'Видеонаблюдение ', val:'Trassir '},
+				{name:'Контроль над текущим заявками ', val:'iikoMonitoring'},
+				{name:'Актуальная аналитика онлайн', val:'iikoDashboard'},
+				{name:'Работа с документами', val:'SmartCloud'},
+				{name:'Автоматизация стандартов, чек-листы ', val:'Service Inspector'},
+				{name:'Инструмент аналитики ресторанного бизнеса ', val:'МОЗГ'}
+				];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

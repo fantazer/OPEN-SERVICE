@@ -1,0 +1,76 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Выгрузка из iiko в 1С бухгалтерия
+.main-cont
+	.service-info
+		.service-info__content
+			.service-info__title Полный учет в ресторане
+			.service-info__text
+				p Система iiko предназначена для ведения полного управленческого учета в ресторане. Но для оформления налоговой отчетности существует выгрузка в 1С. Выгрузка в 1С представляет собой встраиваемый в 1С модуль с открытым исходным кодом.
+				p Выгрузка из iiko в 1С может работать как через файл, так и через интернет, обращаясь напрямую к серверу iiko из 1С.
+		.service-info__img
+			img(src="img/upload.png", alt="")
+	.service-info__card
+		.service-info__card-title Можно перегружать абсолютно все данные, например:
+		.service-info__card-wrap.service-info__card-wrap--between
+			.service-info__card-part.service-info__card-part--half
+				.service-info__card-el--line
+					.service-info__card-icon
+						img(src="img/storage.svg", alt="")
+					.service-info__card-text
+						.service-info__card-head Складские документы
+						.service-info__card-info (приходные накладные, акты списания, реализацию, перемещения, инвентаризации). Хотя, чаще всего, для налоговой отчетности достаточно документов, которые сильно влияют на общий товарный запас на предприятии - накладные и реализацию. Складская номенклатура может быть перегружена как в свернутом виде (по категории, по складу, по НДС), так и по-номенклатурно
+
+			.service-info__card-part.service-info__card-part--half
+				.service-info__card-el--mid.service-info__card-el--line
+					.service-info__card-icon
+						img(src="img/user-group.svg", alt="")
+					.service-info__card-text
+						.service-info__card-head Данные об учете рабочего времени для расчета зарплат
+				.service-info__card-el--mid.service-info__card-el--line
+					.service-info__card-icon
+						img(src="img/dollars.svg", alt="")
+					.service-info__card-text
+						.service-info__card-head Данные о движении денежных средств
+				.service-info__card-el--mid.service-info__card-el--line
+					.service-info__card-icon
+						img(src="img/notes.svg", alt="")
+					.service-info__card-text
+						.service-info__card-head Любые справочники (номенклатура, поставщики и т.д.)
+
+
+	.mark-text Очень часто у бухгалтера в ресторане есть личные пожелания о тех или иных проводках, которые должны в итоге получаться в 1С. Мы всегда идем навстречу и если стандартные настройки не подходят, мы дорабатываем выгрузку под конкретного бухгалтера.
+
+	.service-info__wrap.service-info__wrap--light
+		.service-info__card-title Перечень наиболее распространенных доработок:
+		.service-info__list.service-info__list--two
+			.service-info__list-el Привязка эквайринговых оплат непосредственно к тому отчету по продажам, которым он прошел в iiko
+			.service-info__list-el Настройка загрузки данных в конфигурации отличные от бухгалтерии предприятия, например Комплексную Автоматизацию или Управление производственным предприятиям
+			.service-info__list-el Возможность соотнесения подразделений/складов в iiko на юридические лица в 1С
+			.service-info__list-el Возможность учета комиссионных схем реализации
+			.service-info__list-el Возможность списания материалов в производство сразу при поступлении
+			.service-info__list-el Возможность формирования Приходных кассовых ордеров с приемом розничной выручки при загрузке актов реализации
+			.service-info__list-el Возможность ведения загрузки в режиме количество=себестоимости
+			.service-info__list-el Возможность полуавтоматического перехода с количественного учета на суммовой
+			.service-info__list-el Отключить отфильтровывание позиций с нулевой продажной ценой
+			.service-info__list-el Возможность настройки уникальной префиксации в сетях
+			.service-info__list-el Сохранение настроек группировки (аналитика/по группировкам)
+			.service-info__list-el Возможность полуавтоматической фильтрации загружаемых документов по указанному признаку
+			.service-info__list-el Возможность формирования отчетов о розничных продажах позднее отчетов о производстве
+			.service-info__list-el Возможность простановки статей затрат из карточек номенклатуры, а не из общей настройки на форме обработки
+			.service-info__list-el Возможность загрузки без себестоимости из iiko
+
+.footer-cost
+	.footer-cost__title Сколько стоит модуль выгрузки из iiko в 1C бухгалтерия?
+	.footer-cost__val Модуль (включая обучение и мелкие доработки) 15000 рублей.Крупные доработки оплачиваются по 2500 рублей в час
+	.footer-cost__get Оставить заявку
+
++footer()
+
+include ./block_html/_script.pug

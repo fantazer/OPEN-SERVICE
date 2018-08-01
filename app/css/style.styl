@@ -3013,6 +3013,9 @@ select.select-beauty
 	margin-left: -10px
 	margin-right: -10px
 
+.footer-cat-list
+	justify-content: center
+
 .footer-cat-list__el
 	+below(768px)
 		width:calc(50% - 20px)
@@ -3060,7 +3063,8 @@ select.select-beauty
 		margin: 30px 0
 	flex(mid)
 	fl()
-	margin: 70px 0
+	max-width 975px
+	margin: 70px auto
 	padding: 0 10px
 .footer-cost__val
 	text-align: center
@@ -3465,9 +3469,8 @@ select.select-beauty
 		text-align: center
 .service-info__card-icon
 	margin-bottom: 20px
-	size 50px
-	.img
-		width: 80%
+	img
+		size 50px
 //.service-info__card-title
 //.service-info__card-text
 //.service-info__roll
@@ -3850,3 +3853,256 @@ select.select-beauty
 		+below(768px)
 			margin-bottom: 20px
 		margin-bottom: -5%
+
+.service-info__card-wrap--border
+	.service-info__card-el
+		+below(1024px)
+			border 0
+			border-bottom 1px solid $border-color
+		&:nth-child(1)
+			border-right 1px solid $border-color
+			border-bottom 1px solid $border-color
+		&:nth-child(4)
+			+below(1024px)
+				border-bottom 0
+			border-left 1px solid $border-color
+			border-top 1px solid $border-color
+			margin-left: -1px
+			margin-top: -1px
+.service-info__card-wrap--between
+	f()
+	justify-content: space-between
+.analytics
+	f()
+	fw()
+	justify-content: space-between
+.analytics__list
+	+below(768px)
+		width: 100%
+		margin-bottom: 20px
+	width: 63%
+.analytics__list-wrap
+	+below(640px)
+		margin-left: 0
+		margin-right: 0
+	f()
+	fw()
+	margin-left: -20px
+	margin-right: -20px
+	.service-info__card-el
+		+below(640px)
+			width: 100%
+		width: calc(100% / 2);
+.analytics__card
+	+below(768px)
+		width: 100%
+	+below(640px)
+		padding: 20px
+	width: 34%
+	padding: 35px
+	background: $blue
+	br(5px)
+	color white
+.analytics__card-title
+	+below(640px)
+		margin-bottom: 15px
+	@extend .type--lg
+	margin-bottom: 30px
+.analytics__card-list-el
+	+below(640px)
+		margin-bottom: 10px
+	margin-bottom: 30px
+	line-height: 1.6
+.service-info__card-el--line
+	f()
+	justify-content: space-between
+	line-height:1.6
+	.service-info__card-text
+		+below(640px)
+			width: 100%
+			text-align: center
+		width calc(100% - 70px)
+
+.analytics__list-title
+	@extend .type--lg
+	margin-bottom: 30px
+
+//
+.price-plan
+	+below(768px)
+		padding: 30px 0
+		fw()
+		max-width 480px
+		margin-left: auto
+		margin-right: auto
+	f()
+	justify-content: space-between
+	align-items: center
+	padding: 80px 0
+.price-plan__el
+	+below(768px)
+		width: 100%
+		margin-bottom: 20px
+	width: 32%
+	border-radius 5px
+.price-plan__el-title
+	+below(640px)
+		padding: 20px
+	padding: 40px 20px
+	text-align: center
+	color white
+	border-radius: 5px 5px 0 0;
+	background-image: linear-gradient(180deg, #5077e7 0%, #a776dd 100%);
+.price-plan__el-content
+	+below(768px)
+		padding: 25px
+	flex(mid)
+	fl()
+	padding: 25px 25px 60px 25px
+	border 1px solid $border-color
+	margin-top: -1px
+.price-plan__el-list
+	+below(640px)
+		padding-bottom: 20px
+		margin-bottom: 20px
+	padding-bottom: 30px
+	border-bottom 1px solid $border-color
+	margin-bottom: 40px
+	width: 100%
+//.price-plan__list
+.price-plan__list-el
+	margin-bottom: 20px
+	&:last-child
+		margin-bottom: 0
+.price-plan__el-get
+	@extend .btn--md
+	@extend .btn--mark
+	width: 80%
+	text-align: center
+	&:nth-child(2)
+		margin-bottom: 20px
+.price-plan__el-price-val
+	@extend .type--xxl
+
+.price-plan__el-price
+	flex(mid)
+	margin-left: -20px
+.price-plan__el-price-add
+	margin-right: 10px
+
+.price-plan__el-sub-title
+	@extend .type--md
+	font-weight: 700
+	margin-bottom: 25px
+
+.price-plan__el-about
+	color #3b3f67
+	margin-top: 20px
+	opacity .7
+
+.table-check
+	size 30px
+
+.mainTable
+	th
+		line-height: 1.6
+		vertical-align:middle
+		padding: 25px 25px
+	td
+		line-height: 1.6
+		vertical-align:middle
+		padding: 25px 25px
+	tbody tr
+		&:nth-child(odd)
+			td,th
+				background-color: white
+	th + th, td + td, th + td,td + th
+		border-left 0
+
+.catHeader
+	td
+		background-image linear-gradient(270deg, #5077e7 0%, #a776dd 100%)
+		color white
+		margin-left: -1px
+		@extend .type--xlg
+.longCell
+	border-left 1px solid #ddd!important
+.table-get
+	@extend .btn--md
+	@extend .btn--mark
+
+.table-bg
+	color white
+	margin-left: -1px
+	td
+		background: #5077e7!important
+
+.table-price
+	@extend .type--xlg
+
+.price-table
+	+below(800px)
+		max-width 800px
+		overflow scroll
+	margin-bottom: 60px
+.price-advant
+	border-radius 5px
+	border 1px solid $border-color
+.price-advant__row
+	+below(768px)
+		fw()
+	flex(between)
+	padding: 25px 30px
+	border-bottom 1px solid $border-color
+	&:last-child
+		border-bottom 0px
+.price-advant__row-text
+	+below(768px)
+		width: 100%
+		margin-bottom: 10px
+		text-align: center
+.price-advant__row-val
+	+below(768px)
+		width: 100%
+		text-align: center
+	@extend .type--md
+
+.mark-text
+	+below(768px)
+		padding: 20px
+		margin-bottom: 40px
+	padding: 40px
+	background-color $white
+	margin-bottom: 70px
+	line-height: 1.6
+
+.service-info__card-head
+	+below(768px)
+		width: 100%
+	@extend .type--md
+	font-weight: 700
+	width: 80%
+.service-info__card-info
+	margin-top: 15px
+.service-info__card-part--half
+	+below(768px)
+		width: 100%
+		margin-bottom: 20px
+		padding: 0 10px
+	width: 48%
+	.service-info__card-el--line
+		+below(640px)
+			fl()
+			flex(mid)
+		margin-bottom: 20px
+.service-info__card-el--mid
+	align-items: center
+	.service-info__card-icon
+		margin-bottom: 0
+		+below(640px)
+			margin-bottom: 20px
+
+.footer-cost__title
+	text-align: center
+	@extend .type--xxl
+	margin-bottom: 30px
