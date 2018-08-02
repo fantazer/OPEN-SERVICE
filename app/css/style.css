@@ -6891,7 +6891,7 @@ select.select-beauty {
     max-width: 640px;
   }
 }
-.footer-cat-list {
+.footer-cat-list--mid {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -7824,6 +7824,11 @@ select.select-beauty {
 .service-info__card-icon img {
   width: 50px;
   height: 50px;
+}
+@media only screen and (max-width: 640px) {
+  .service-info__card-text {
+    text-align: center;
+  }
 }
 .service-info__roll-title {
   margin-bottom: 30px;
@@ -9253,6 +9258,7 @@ select.select-beauty {
   .vagais__card-title {
     font-size: 20px;
     margin-bottom: 15px;
+    text-align: center;
   }
 }
 .vagais__card-list-el {
@@ -9269,6 +9275,11 @@ select.select-beauty {
 }
 .vagais__list-title {
   margin-bottom: 30px;
+}
+@media only screen and (max-width: 640px) {
+  .vagais__list-title {
+    text-align: center;
+  }
 }
 .vagais__wrap {
   margin-top: 90px;

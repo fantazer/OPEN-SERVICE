@@ -3013,8 +3013,9 @@ select.select-beauty
 	margin-left: -10px
 	margin-right: -10px
 
-.footer-cat-list
+.footer-cat-list--mid
 	justify-content: center
+
 
 .footer-cat-list__el
 	+below(768px)
@@ -3474,7 +3475,9 @@ select.select-beauty
 	img
 		size 50px
 //.service-info__card-title
-//.service-info__card-text
+.service-info__card-text
+	+below(640px)
+		text-align: center
 //.service-info__roll
 .service-info__roll-title
 	@extend .type--md
@@ -4268,6 +4271,7 @@ select.select-beauty
 	+below(640px)
 		font-size: 20px
 		margin-bottom: 15px
+		text-align: center
 	@extend .type--xl
 	margin-bottom: 30px
 .vagais__card-list-el
@@ -4280,6 +4284,8 @@ select.select-beauty
 	.service-info__list-el
 		width: 100%
 .vagais__list-title
+	+below(640px)
+		text-align: center
 	@extend .type--xl
 	margin-bottom: 30px
 
