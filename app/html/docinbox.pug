@@ -1,0 +1,190 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title DocsInBox - электронный документопровод для ресторанов и поставщиков
+.main-cont
+	.docbox-banner
+		.docbox-banner-img
+			img(src="img/docsinbox.png", alt="")
+		.docbox-banner-text Сократите расходы на учет, экономьте время и упростите работу с ЕГАИС. DocsInBox - это достоверность и оперативность в одном, “облачном” флаконе. Взаимодействие поставщиков и ресторанов станет быстрым и прозрачным как никогда
+
+.docbox-work
+	.main-cont
+		.service-info__title Как это работает?
+		.docbox-work-wrap
+			.docbox-work__el
+				.docbox-work__el-head
+					.docbox-work__el-icon
+						img(src="img/star-mark.svg", alt="")
+					.docbox-work__el-arrow
+						+icon("arrow-simple-right","icon")
+				.docbox-work__el-text Поставщик отправляет накладные из 1С или другой системы
+			.docbox-work__el
+				.docbox-work__el-head
+					.docbox-work__el-icon
+						img(src="img/calc.svg", alt="")
+					.docbox-work__el-arrow
+						+icon("arrow-simple-right","icon")
+				.docbox-work__el-text Калькулятор сопоставляет номенклатуру
+			.docbox-work__el
+				.docbox-work__el-head
+					.docbox-work__el-icon
+						img(src="img/constract.svg", alt="")
+					.docbox-work__el-arrow
+						+icon("arrow-simple-right","icon")
+				.docbox-work__el-text DocsInBox отправляет ее в товаро-учетную систему
+			.docbox-work__el
+				.docbox-work__el-head
+					.docbox-work__el-icon
+						img(src="img/simle-check-round.svg", alt="")
+					.docbox-work__el-arrow
+						+icon("arrow-simple-right","icon")
+				.docbox-work__el-text Приемщик проверяет накладную в облаке и подтверждает ее
+
+
+.main-cont
+	.service-info__wrap.service-info__wrap--light.service-info__wrap--unborder
+		.service-info__card-title Преимущества DocsInBox для заведений:
+		.service-info__list.service-info__list--two
+			.service-info__list-el Автоматическое добавление накладных от поставщиков в товарно-учетную систему
+			.service-info__list-el Добавление актуальных изменений законодательства
+			.service-info__list-el Повышение оперативности за счет исключения ручного ввода и отсутствия ошибок
+			.service-info__list-el Полная поддержка ЕГАИС
+			.service-info__list-el Подтверждение накладных с любого устройства
+			.service-info__list-el Бесплатное тестирование
+			.service-info__list-el Возможность быстрого развертывания системы
+			.service-info__list-el Удобство работы с электронными документами
+
+	.service-info__wrap.service-info__wrap--light.service-info__wrap--unborder
+		.service-info__card-title Преимущества DocsInBox для поставщиков:
+		.service-info__list.service-info__list--two
+			.service-info__list-el Оперативность, минимизация ошибок, экономия времени и достоверность данных
+			.service-info__list-el Удобство работы с электронными документами (создание, корректировка, подтверждение документов)
+			.service-info__list-el Лояльность клиентов за счет скорости работы и отсутствия бумажной волокиты
+			.service-info__list-el Расширение клиентской базы за счет работы с заведениями, уже подключенными к DocsInBox, и предоставления дополнительного сервиса своим клиентам - предприятиям питания
+
+	.service-info__wrap.service-info__wrap--light
+		.docbox-table-title Пример внедрения DocsInBox <br> в сеть из 9 ресторанов – экономия 4.000.000 рублей в год!
+		.price-table
+			table.mainTable
+				tbody
+					tr.table-bg
+						td Показатель
+						td Было
+						td Стало
+						td Экономия в год
+					tr
+						td Финансовая отчетность по сети сдается
+						td 10-15 числа
+						td 5-го числа
+						td бесценно
+					tr
+						td Один оператор-калькулятор успевает вести
+						td 3 ресторана
+						td 6 ресторанов
+						td 480 000 руб
+					tr
+						td Среднее время вычерка в пути
+						td 7 дней
+						td 2 часа
+						td
+					tr
+						td Средний срок сверки с поставщиком
+						td 7 дней
+						td 1 день
+						td 72 дня
+					tr
+						td % ЕГАИС накладных, не принятых вовремя
+						td 2,5%
+						td 0,1%
+						td 600 000 руб
+					tr
+						td Потери на несогласованных колебаниях цен поставщиков,<br> в % от закупочного оборота
+						td 2%
+						td 0,4%
+						td 2 880 000 руб
+
+	.service-info.service-info--border
+		.service-info__content
+			.service-info__title Мобильное приложение DocsInBox:
+			.service-info__text
+				p Установите приложение DocsInBox на ваш смартфон и пользуйтесь возможностями облачного документопровода в любое время
+			.service-info__roll
+				.service-info__roll-title Возможности приложения:
+				.service-info__roll-el Сканирование акцизной марки товара и отображение информации.
+				.service-info__roll-el Формирование актов для ЕГАИС
+				.service-info__roll-el Совершение заказов “не отходя от кассы”: выбор даты поставки, вашего ресторана и нужного поставщика, отправка заказа
+				.service-info__roll-el Отправка заказа поставщику в любое время
+				.service-info__roll-el Возможность повтора постоянных и регулярных заказов
+		.service-info__img
+			img(src="img/docinbox-phone.png", alt="")
+
+
+	.service-info__wrap.service-info__wrap--unborder
+		.title-wrap-mid
+			.service-info__title Сколько стоит DocsInBox?
+			.service-info__title-sub Бесплатно - для поставщиков и заведений, принимающих лишь накладные по ЕГАИС. В остальных случаях есть тарифы, подходящие именно вашему ресторану и бюджету
+		.price-plan.price-plan--simple
+			.price-plan__el
+				.price-plan__el-title
+					.price-plan__el-price
+						.price-plan__el-price-val 3 000
+					.price-plan__el-text в месяц с одного ресторана
+				.price-plan__el-content
+					.price-plan__el-sub-title DocsInBox.Алкоголь
+					.price-plan__el-list
+						.price-plan__list-el
+							.price-plan__list-el Подтверждение накладных
+							.price-plan__list-el Акты списания алкоголя
+							.price-plan__list-el Алкогольная декларация
+							.price-plan__list-el Алкогольный журнал
+					a(href="#").price-plan__el-get Купить
+			.price-plan__el
+				.price-plan__el-title
+					.price-plan__el-price
+						.price-plan__el-price-val 6 000
+					.price-plan__el-text в месяц с одного ресторана
+				.price-plan__el-content
+					.price-plan__el-sub-title DocsInBox.Закупки
+					.price-plan__el-list
+						.price-plan__list-el Создание и отправка заказа поставщику
+						.price-plan__list-el Контроль статусов заказов
+						.price-plan__list-el Бланки заказов
+					.price-plan__el-info скидка 50% если покупать в пакете с другими продуктами
+					a(href="#").price-plan__el-get Купить
+			.price-plan__el
+				.price-plan__el-title
+					.price-plan__el-price
+						.price-plan__el-price-val 6 000
+					.price-plan__el-text в месяц с одного ресторана
+				.price-plan__el-content
+					.price-plan__el-sub-title DocsInBox.Продукты
+					.price-plan__el-list
+						.price-plan__list-el Подключение ваших поставщиков
+						.price-plan__list-el Контроль цен
+						.price-plan__list-el Импорт накладных в вашу iiko,
+						.price-plan__list-el RKeeper, 1C
+					a(href="#").price-plan__el-get Купить
+
+
+.footer-cat
+	.main-cont
+		.footer-cat-list.footer-cat-list--mid
+			-
+				var items = [
+					{name:'Выгрузка из iiko в 1С бухгалтерия', val:'1С бухгалтерия'},
+					{name:'Электронный документопровод для ресторанов и поставщиков', val:'DocsInBox '},
+					{name:'IT-решение по ФГИС “Меркурий” для HoReCa', val:'DocsInBox.ВЕГАИС  '}
+				];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

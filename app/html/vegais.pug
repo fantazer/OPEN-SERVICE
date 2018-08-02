@@ -1,0 +1,100 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title DocsInBox.ВЕГАИС - IT-решение по ФГИС “Меркурий” для HoReCa
+.main-cont
+	.docbox-banner
+		.docbox-banner-img
+			img(src="img/docsinbox.png", alt="")
+		.docbox-banner-text Начиная с 2018 года ветеринарные справки стали электронными. Все грузы, подконтрольные Госветнадзору, подлежат обязательной электронной ветеринарной сертификации в ФГИС “Меркурий”. Автоматизируйте работу ФГИС "Меркурий" с помощью DocsInBox.ВЕГАИС
+	.service-info__wrap.service-info__wrap--unborder
+		.vet
+			.vet-title Ветеринарные справки обязательны для товаров животного происхождения
+			.vet-list
+				.vet-list__el
+					.vet-list__icon
+						img(src="img/pig.svg", alt="")
+					.vet-list__text Свинина
+				.vet-list__el
+					.vet-list__icon
+						img(src="img/caw.svg", alt="")
+					.vet-list__text Говядина
+				.vet-list__el
+					.vet-list__icon
+						img(src="img/agg.svg", alt="")
+					.vet-list__text Яйца
+				.vet-list__el
+					.vet-list__icon
+						img(src="img/fish.svg", alt="")
+					.vet-list__text Морепродукты
+				.vet-list__el
+					.vet-list__icon
+						img(src="img/milk.svg", alt="")
+					.vet-list__text Молочные изделия
+				.vet-list__el
+					.vet-list__icon
+						img(src="img/honey.svg", alt="")
+					.vet-list__text Мёд
+				.vet-list__el
+					.vet-list__icon
+						img(src="img/chiken.svg", alt="")
+					.vet-list__text Птица
+
+.vagais__wrap
+	.main-cont
+		.vagais
+			.vagais__list
+				.vagais__list-title Возможности <br> DocsInBox.ВЕГАИС:
+				.vagais__list-wrap
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/form.svg", alt="")
+						.service-info__card-text
+							.service-info__card-head Работа в режиме “единого окна”
+							.service-info__card-info Вам больше не нужно переключаться из учетной системы в веб-сервис и обратно
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/clip.svg", alt="")
+						.service-info__card-text
+							.service-info__card-head Автоматическая привязка документов из  DocsInBox
+							.service-info__card-info Как следствие - отсутствие ошибок и расхождений в документах
+					.service-info__card-el.service-info__card-el--line
+						.service-info__card-icon
+							img(src="img/doc-system.svg", alt="")
+						.service-info__card-text
+							.service-info__card-head Хранение документов в системе
+							.service-info__card-info Больше вы не потеряете ни один важный файл
+
+			.vagais__card
+				.vagais__card-title Преимущества DocsInBox.ВЕГАИС для ресторанов:
+				.vagais__card-list
+					.service-info__list-el Гашение ветеринарных справок происходит автоматически
+					.service-info__list-el Проверка наличия ветеринарной справки при приемке товара происходит в  DocsInBox, как и приемка справок
+					.service-info__list-el Формирование журнала входящего сырья по НАССР происходит автоматически
+
+
+
+.footer-cost
+	.footer-cost__val Стоимость: 9990 руб
+	.footer-cost__get Оставить заявку
+.footer-cat
+	.main-cont
+		.footer-cat-list.footer-cat-list--mid
+			-
+				var items = [
+				{name:'Выгрузка из iiko в 1С бухгалтерия', val:'1С бухгалтерия'},
+				{name:'Электронный документопровод для ресторанов и поставщиков', val:'DocsInBox '},
+				{name:'IT-решение по ФГИС “Меркурий” для HoReCa', val:'DocsInBox.ВЕГАИС  '}
+				];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

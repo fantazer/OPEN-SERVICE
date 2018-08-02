@@ -1894,7 +1894,7 @@ body
 
 .intro-section__title
 	+below(768px)
-		font-size: 24px
+		font-size: 22px
 	@extend .type--xxl
 	center(980px,0)
 	text-align: center
@@ -3353,6 +3353,7 @@ select.select-beauty
 .service-info__list-el
 	+below(640px)
 		width: 100%
+		padding: 0 20px 20px 20px
 	width: calc(100% / 3)
 	padding: 0 20px 35px 20px
 	line-height: 1.6
@@ -3402,11 +3403,12 @@ select.select-beauty
 .service-info__card-title
 	+below(1024px)
 		font-size: 32px
+		margin-bottom: 30px
 	+below(640px)
 		font-size: 24px
 		text-align: center
 	@extend .type--xl
-	margin-bottom: 30px
+	margin-bottom: 45px
 .service-info__card-el-title
 	+below(640px)
 		text-align: center
@@ -3674,6 +3676,7 @@ select.select-beauty
 .service-info__title-sub
 	@extend .type--md
 	margin-bottom: 20px
+	line-height: 1.6
 
 .service-plan
 	+below(768px)
@@ -3961,6 +3964,7 @@ select.select-beauty
 	padding: 25px 25px 60px 25px
 	border 1px solid $border-color
 	margin-top: -1px
+	border-radius 0px 0px 5px 5px
 .price-plan__el-list
 	+below(640px)
 		padding-bottom: 20px
@@ -4106,3 +4110,183 @@ select.select-beauty
 	text-align: center
 	@extend .type--xxl
 	margin-bottom: 30px
+
+.docbox-banner
+	+below(640px)
+		fw()
+		margin:30px auto
+		flex(mid)
+		fl()
+	f()
+	justify-content: space-between
+	max-width 775px
+	margin:65px auto
+
+.docbox-banner-img
+	+below(640px)
+		margin-right: 0
+		margin-bottom: 20px
+	margin-right: 20px
+	width: 250px
+.docbox-banner-text
+	+below(640px)
+		width: 100%
+	line-height: 1.6
+	width calc(100% - 270px)
+
+.docbox-work
+	background: #f1f6fb
+	padding: 45px 0
+//.main-cont
+//.service-info__title
+.docbox-work-wrap
+	+below(1024px)
+		max-width 768px
+		margin:50px auto 0 auto
+		fw()
+	f()
+	justify-content: space-between
+	margin-top: 50px
+.docbox-work__el
+	+below(1024px)
+		width: 49%
+		margin-bottom: 20px
+	+below(640px)
+		width: 100%
+	width: 24%
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	background: white
+	padding: 35px 25px 45px 25px
+.docbox-work__el-head
+	flex(between)
+	margin-bottom: 50px
+.docbox-work__el-icon
+	img
+		size 60px
+//.icon
+.docbox-work__el-arrow
+	.icon
+		size 50px
+		fill $gray
+.docbox-work__el-text
+	line-height: 1.6
+
+.docbox-table-title
+	@extend .type--lg
+	line-height: 1.6
+	margin-bottom: 50px
+
+.title-wrap-mid
+	margin-left: auto
+	margin-right: auto
+	max-width 975px
+	.service-info__title
+		text-align: center
+	.service-info__title-sub
+		text-align: center
+
+.price-plan__el-info
+	color $blue
+	@extend .type--md
+	text-align: center
+	margin-bottom: 25px
+
+.price-plan--simple
+	.price-plan__el-sub-title
+		width: 100%
+
+
+//.vet
+.vet-title
+	@extend .type--md
+	text-align: center
+	margin-bottom: 30px
+.vet-list
+	f()
+	fw()
+	justify-content: center
+	margin-left: -10px
+	margin-right: -10px
+.vet-list__el
+	+below(640px)
+		width 110px
+		height: auto
+	border-radius 5px
+	border 1px solid $white
+	flex(mid)
+	fl()
+	size 150px
+	margin: 0 10px
+	padding: 20px
+	margin-bottom: 20px
+.vet-list__icon
+	margin-bottom: 20px
+	img
+		size 60px
+.vet-list__text
+	text-align: center
+
+//
+.vagais
+	f()
+	fw()
+	justify-content: space-between
+.vagais__list
+	+below(768px)
+		width: 100%
+		margin-bottom: 20px
+	width: 50%
+.vagais__list-wrap
+	+below(640px)
+		margin-left: 0
+		margin-right: 0
+	f()
+	fw()
+	margin-left: -20px
+	margin-right: -20px
+	.service-info__card-el
+		+below(640px)
+			width: 100%
+		width: 100%
+		border-bottom 1px solid $border-color
+		&:last-child
+			border-bottom 0
+.vagais__card
+	+below(768px)
+		width: 100%
+	+below(640px)
+		padding: 20px
+	width: 44%
+	padding: 35px
+	background: white
+	box-shadow 0 15px 20px rgba(0, 0, 0, 0.1)
+	br(5px)
+.vagais__card-title
+	+below(1200px)
+		font-size: 32px
+	+below(640px)
+		font-size: 20px
+		margin-bottom: 15px
+	@extend .type--xl
+	margin-bottom: 30px
+.vagais__card-list-el
+	+below(640px)
+		margin-bottom: 10px
+	margin-bottom: 30px
+	line-height: 1.6
+
+.vagais__card-list
+	.service-info__list-el
+		width: 100%
+.vagais__list-title
+	@extend .type--xl
+	margin-bottom: 30px
+
+.vagais__wrap
+	+below(768px)
+		margin-top: 30px
+		padding: 30px 0
+	margin-top: 90px
+	padding: 60px 0
+	background: #f1f6fb
