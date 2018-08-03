@@ -8839,6 +8839,7 @@ select.select-beauty {
 }
 .table-bg td {
   background: #5077e7 !important;
+  text-align: center;
 }
 .price-table {
   margin-bottom: 60px;
@@ -9291,4 +9292,10 @@ select.select-beauty {
     margin-top: 30px;
     padding: 30px 0;
   }
+}
+.th--top {
+  vertical-align: top !important;
+}
+.th--think {
+  font-weight: 400 !important;
 }
