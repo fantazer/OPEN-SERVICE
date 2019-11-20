@@ -986,6 +986,10 @@ body
 	@extend .type--xlg
 	margin-bottom: 70px
 	line-height: 1.6
+.section-title-sub--md
+	font-family "Museo Sans Cyrl"
+	font-size: 15px !important
+	font-weight: 400
 //.main-cont
 .config
 	+below(1024px)
@@ -1949,7 +1953,7 @@ body
 		margin-bottom: 30px
 		padding: 0px 10px
 	@extend .type--xl
-	margin-bottom: 50px
+	margin-bottom: 35px
 
 .title--center
 	text-align: center
@@ -3098,6 +3102,13 @@ select.select-beauty
 		width: 100%
 		order 2
 	width: 40%
+.service-info__content--md
+	+below(1024px)
+		width: 40%
+	+below(768px)
+		width: 100%
+	width: 50%
+
 .service-info__title
 	+below(1024px)
 		font-size: 32px
@@ -3681,6 +3692,9 @@ select.select-beauty
 	margin-bottom: 20px
 	line-height: 1.6
 
+.service-info__title-sub--sm
+	font-weight: 400
+	font-size: 15px
 .service-plan
 	+below(768px)
 		padding: 30px 0
@@ -4302,3 +4316,112 @@ select.select-beauty
 
 .th--think
 	font-weight: 400!important
+
+//app
+.deliver
+	+below(640px)
+		fw()
+	f()
+	justify-content space-between
+	align-items:flex-start
+
+.deliver__el
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
+		flex(mid)
+		fl()
+	width: 30%
+.deliver__el-img
+	margin-bottom: 30px
+.deliver__el-img--rbk
+	+below(768px)
+		margin-top: 0
+	margin-top: -30px
+.deliver__el-row
+	+below(640px)
+		margin-bottom: 10px
+	margin-bottom: 30px
+.deliver__el-title
+	+below(640px)
+		text-align center
+		margin-bottom: 10px
+	color $blue
+	font-weight 700
+	@extend .type--xl
+	span
+		font-size: 24px
+.deliver__el-text
+	+below(640px)
+		text-align center
+		max-width 280px
+	line-height: 1.6
+.title--bold
+	font-weight: 700
+.title--mark
+	color $blue
+
+.points__el
+	margin-bottom: 20px
+	f()
+	fw()
+	.icon
+		size 14px
+		fill #61b231
+		margin-right: 10px
+	.icon--false
+		fill #ff0000
+	span
+		display inline-block
+		width calc(100% - 30px)
+		line-height: 1.6
+		margin-top: -5px
+
+.title--agr
+	+below(768px)
+		margin-top: 0
+	margin-top: 8%
+
+.service-info__roll--col
+	+below(480px)
+		column-count 1
+	column-count 2
+
+.map
+	margin: 30px 0
+
+.app
+	flex(mid)
+	fl()
+	font-family "Museo Sans Cyrl"
+.app__title
+	+below(640px)
+		margin-bottom: 10px
+	@extend .type--xxl
+	margin-bottom: 30px
+	text-align center
+.app__cost
+	+below(480px)
+		font-size: 72px
+	color $blue
+	font-size: 96px
+	font-weight: 900
+.app__text
+	@extend .type--lg
+	line-height: 1.2
+	margin-bottom: 20px
+	font-weight: 700
+	max-width 490px
+	text-align center
+.app__info
+	color #aaaaaa
+	@extend .type--lg
+	margin-bottom: 40px
+	font-weight: 400
+	max-width 585px
+	text-align center
+.app__get
+	margin-bottom: 60px
+	@extend .btn--mark
+	@extend .btn--md
+//app === end

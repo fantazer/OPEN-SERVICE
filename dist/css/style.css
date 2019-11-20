@@ -532,7 +532,9 @@ h3,
 .banner-extend__info,
 .analytics__card-title,
 .analytics__list-title,
-.docbox-table-title {
+.docbox-table-title,
+.app__text,
+.app__info {
   font-size: 30px;
   font-family: "Museo Sans Cyrl";
   font-weight: bold;
@@ -558,7 +560,9 @@ h3,
   .banner-extend__info,
   .analytics__card-title,
   .analytics__list-title,
-  .docbox-table-title {
+  .docbox-table-title,
+  .app__text,
+  .app__info {
     font-size: 20px;
   }
 }
@@ -574,7 +578,8 @@ h2,
 .cour-param__name,
 .service-info__card-title,
 .vagais__card-title,
-.vagais__list-title {
+.vagais__list-title,
+.deliver__el-title {
   font-size: 40px;
   font-family: "Museo Sans Cyrl";
 }
@@ -591,7 +596,8 @@ h2,
   .cour-param__name,
   .service-info__card-title,
   .vagais__card-title,
-  .vagais__list-title {
+  .vagais__list-title,
+  .deliver__el-title {
     font-size: 24px;
   }
 }
@@ -600,7 +606,8 @@ h1,
 .main-section-title,
 .intro-section__title,
 .price-plan__el-price-val,
-.footer-cost__title {
+.footer-cost__title,
+.app__title {
   font-size: 55px;
   font-family: "Museo Sans Cyrl";
 }
@@ -610,7 +617,8 @@ h1,
   .main-section-title,
   .intro-section__title,
   .price-plan__el-price-val,
-  .footer-cost__title {
+  .footer-cost__title,
+  .app__title {
     font-size: 32px;
   }
 }
@@ -683,7 +691,8 @@ p {
 .service-plan__el-get,
 .banner-extend__get,
 .price-plan__el-get,
-.table-get {
+.table-get,
+.app__get {
   -webkit-border-radius: 25px;
           border-radius: 25px;
   -webkit-transition: all 0.4s;
@@ -728,7 +737,8 @@ p {
 .service-plan__el-get:hover,
 .banner-extend__get:hover,
 .price-plan__el-get:hover,
-.table-get:hover {
+.table-get:hover,
+.app__get:hover {
   cursor: pointer;
 }
 .btn--sm {
@@ -766,7 +776,8 @@ p {
 .service-plan__el-get,
 .banner-extend__get,
 .price-plan__el-get,
-.table-get {
+.table-get,
+.app__get {
   font-size: 15px;
   padding: 15px 35px;
 }
@@ -811,7 +822,8 @@ p {
 .service-plan__el-get,
 .banner-extend__get,
 .price-plan__el-get,
-.table-get {
+.table-get,
+.app__get {
   color: #fff;
   background: #2f81e6;
 }
@@ -826,7 +838,8 @@ p {
 .service-plan__el-get .nav-icon,
 .banner-extend__get .nav-icon,
 .price-plan__el-get .nav-icon,
-.table-get .nav-icon {
+.table-get .nav-icon,
+.app__get .nav-icon {
   fill: #fff;
 }
 .btn--mark:hover,
@@ -840,7 +853,8 @@ p {
 .service-plan__el-get:hover,
 .banner-extend__get:hover,
 .price-plan__el-get:hover,
-.table-get:hover {
+.table-get:hover,
+.app__get:hover {
   background-color: #13509c;
   color: #fff;
 }
@@ -855,7 +869,8 @@ p {
 .service-plan__el-get:active,
 .banner-extend__get:active,
 .price-plan__el-get:active,
-.table-get:active {
+.table-get:active,
+.app__get:active {
   background-color: #13509c;
   color: #fff;
 }
@@ -870,7 +885,8 @@ p {
 .service-plan__el-get input[type="submit"],
 .banner-extend__get input[type="submit"],
 .price-plan__el-get input[type="submit"],
-.table-get input[type="submit"] {
+.table-get input[type="submit"],
+.app__get input[type="submit"] {
   border: 0;
 }
 .btn--mark .nav-icon,
@@ -884,7 +900,8 @@ p {
 .service-plan__el-get .nav-icon,
 .banner-extend__get .nav-icon,
 .price-plan__el-get .nav-icon,
-.table-get .nav-icon {
+.table-get .nav-icon,
+.app__get .nav-icon {
   fill: #fff;
 }
 .btn--disable {
@@ -3181,6 +3198,11 @@ body {
   margin-bottom: 70px;
   line-height: 1.6;
 }
+.section-title-sub--md {
+  font-family: "Museo Sans Cyrl";
+  font-size: 15px !important;
+  font-weight: 400;
+}
 .config {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4710,7 +4732,7 @@ opacity 0 100% {
   margin-bottom: 20px;
 }
 .title-lg {
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 @media only screen and (max-width: 768px) {
   .title-lg {
@@ -7053,6 +7075,19 @@ select.select-beauty {
             order: 2;
   }
 }
+.service-info__content--md {
+  width: 50%;
+}
+@media only screen and (max-width: 1024px) {
+  .service-info__content--md {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .service-info__content--md {
+    width: 100%;
+  }
+}
 .service-info__title {
   margin-bottom: 30px;
 }
@@ -8190,6 +8225,10 @@ select.select-beauty {
   margin-bottom: 20px;
   line-height: 1.6;
 }
+.service-info__title-sub--sm {
+  font-weight: 400;
+  font-size: 15px;
+}
 .service-plan {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9298,4 +9337,199 @@ select.select-beauty {
 }
 .th--think {
   font-weight: 400 !important;
+}
+.deliver {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media only screen and (max-width: 640px) {
+  .deliver {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+}
+.deliver__el {
+  width: 30%;
+}
+@media only screen and (max-width: 640px) {
+  .deliver__el {
+    width: 100%;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+.deliver__el-img {
+  margin-bottom: 30px;
+}
+.deliver__el-img--rbk {
+  margin-top: -30px;
+}
+@media only screen and (max-width: 768px) {
+  .deliver__el-img--rbk {
+    margin-top: 0;
+  }
+}
+.deliver__el-row {
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 640px) {
+  .deliver__el-row {
+    margin-bottom: 10px;
+  }
+}
+.deliver__el-title {
+  color: #2f81e6;
+  font-weight: 700;
+}
+@media only screen and (max-width: 640px) {
+  .deliver__el-title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+.deliver__el-title span {
+  font-size: 24px;
+}
+.deliver__el-text {
+  line-height: 1.6;
+}
+@media only screen and (max-width: 640px) {
+  .deliver__el-text {
+    text-align: center;
+    max-width: 280px;
+  }
+}
+.title--bold {
+  font-weight: 700;
+}
+.title--mark {
+  color: #2f81e6;
+}
+.points__el {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.points__el .icon {
+  width: 14px;
+  height: 14px;
+  fill: #61b231;
+  margin-right: 10px;
+}
+.points__el .icon--false {
+  fill: #f00;
+}
+.points__el span {
+  display: inline-block;
+  width: -webkit-calc(100% - 30px);
+  width: calc(100% - 30px);
+  line-height: 1.6;
+  margin-top: -5px;
+}
+.title--agr {
+  margin-top: 8%;
+}
+@media only screen and (max-width: 768px) {
+  .title--agr {
+    margin-top: 0;
+  }
+}
+.service-info__roll--col {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+}
+@media only screen and (max-width: 480px) {
+  .service-info__roll--col {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
+}
+.map {
+  margin: 30px 0;
+}
+.app {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  font-family: "Museo Sans Cyrl";
+}
+.app__title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+@media only screen and (max-width: 640px) {
+  .app__title {
+    margin-bottom: 10px;
+  }
+}
+.app__cost {
+  color: #2f81e6;
+  font-size: 96px;
+  font-weight: 900;
+}
+@media only screen and (max-width: 480px) {
+  .app__cost {
+    font-size: 72px;
+  }
+}
+.app__text {
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+  max-width: 490px;
+  text-align: center;
+}
+.app__info {
+  color: #aaa;
+  margin-bottom: 40px;
+  font-weight: 400;
+  max-width: 585px;
+  text-align: center;
+}
+.app__get {
+  margin-bottom: 60px;
 }

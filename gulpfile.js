@@ -240,6 +240,7 @@ gulp.task('watch', () => {
 
 
 gulp.task('pug', function() {
+		//gulp.src(['app/html/mobile-app.pug','app/module/**/*.pug',])
 		gulp.src(['app/html/*.pug','app/module/**/*.pug',])
 				//.pipe(changed('app/', {extension: '.html'}))
 				//.pipe(cache('pug'))
@@ -464,8 +465,8 @@ gulp.task('build:ftp',function(){
 				'copy:css',
 				'min:css',
 				'min:js',
-				//'screenshot',
-				//'img',
+				'screenshot',
+				'img',
 				//'svg',
 				'make',
 				//'zip',

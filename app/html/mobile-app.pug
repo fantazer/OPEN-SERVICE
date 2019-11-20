@@ -1,0 +1,239 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Мобильное приложение с доставкой и предзаказом для вашего ресторана
+.main-cont
+	.service-info.service-info--border.service-info--start
+		.service-info__content.service-info__content--md
+			.service-info__title Принимайте заказы через своё приложение и сократите затраты на доставку в 2 раза
+			.service-info__roll
+				.service-info__roll-el Приложение с профессиональным дизайном
+				.service-info__roll-el Оплата только за совершенные заказы
+				.service-info__roll-el Полная интеграция с iiko и курьерской службой
+				.service-info__roll-el В 2-3 раза дешевле чем Яндекс.Еда и DeliveryClub
+				.service-info__roll-el Возможность подключить бонусную программу, отзывы, маркетинговые кампании и другие функции
+		.service-info__img
+			img(src="img/app-phone-1.png", alt="")
+
+	.service-info__card.service-info__card--border
+		.service-info__card-title.service-info__card-title--mid Мобильный предзаказ и доставка – главный тренд на ресторанном рынке сегодня
+		.deliver
+			.deliver__el
+				.deliver__el-img.deliver__el-img--rbk
+					img(src="img/rbk.png", alt="")
+				.deliver__el-info
+					.deliver__el-row
+						.deliver__el-title 170 <span> млрд рублей</span>
+						.deliver__el-text объем рынка России в 2019
+					.deliver__el-row
+						.deliver__el-title >10%
+						.deliver__el-text доля доставки в обороте общественного питания России
+			.deliver__el
+				.deliver__el-img
+					img(src="img/deliver-club.png", alt="")
+				.deliver__el-info
+					.deliver__el-row
+						.deliver__el-title 11 000
+						.deliver__el-text ресторанов на платформе
+					.deliver__el-row
+						.deliver__el-title 3 000 000
+						.deliver__el-text заказов в месяц
+					.deliver__el-row
+						.deliver__el-title >8 раз
+						.deliver__el-text рост количества заказов доставки Delivery Club в 2018-2019 гг
+
+			.deliver__el
+				.deliver__el-img
+					img(src="img/yandex-food.png", alt="")
+				.deliver__el-info
+					.deliver__el-row
+						.deliver__el-title 12 000
+						.deliver__el-text ресторанов на платформе
+					.deliver__el-row
+						.deliver__el-title 1 000 000
+						.deliver__el-text заказов в месяц
+
+	.service-info__card.service-info__card--border
+		.service-info__card-title.service-info__card-title--mid Почему рестораны участвуют в агрегаторах, но все равно запускают свои приложения для доставки
+		.service-info__card-wrap.service-info__card-wrap--between
+			.service-info__card-part.service-info__card-part--half
+				.title-lg.title--bold.title--mark.title--agr Агрегатор
+				.points
+					.points__el
+						+icon("close","icon icon--false")
+						span Вы инвестируете в продвижение чужих брендов, клиентская база — не ваша
+					.points__el
+						+icon("close","icon icon--false")
+						span Коммуникацией с вашими гостями управляет другая компания
+					.points__el
+						+icon("close","icon icon--false")
+						span Вы платите 35% с заказов
+					.points__el
+						+icon("checked","icon")
+						span Вам не нужно вкладывать ресурс в продвижение приложения
+					.points__el
+						+icon("close","icon icon--false")
+						span У вас нет возможности дополнить функционал агрегатора
+			.service-info__card-part.service-info__card-part--half
+				.title-lg.title--bold.title--mark Свое приложение для доставки
+				.points
+					.points__el
+						+icon("checked","icon")
+						span Вы инвестируете в продвижение своего бренда, клиентская база принадлежит только вам
+					.points__el
+						+icon("checked","icon")
+						span Вы получаете прямой канал коммуникации с вашими же гостями
+					.points__el
+						+icon("checked","icon")
+						span Вы платите 15-20% с заказов (включая курьера)
+					.points__el
+						+icon("checked","icon")
+						span Вы самостоятельно продвигаете приложение через персонал, in-store материалы, соцсети и др.
+					.points__el
+						+icon("checked","icon")
+						span Вы можете легко «включить» программу лояльности и другие функции, которые позволят решить главные бизнес-задачи: увеличить средний чек, частоту посещений и выручку ресторана
+
+	.service-info__card
+		.service-info__card-title.service-info__card-title--mid Почему рестораторы выбирают приложение с доставкой и предзаказом от LoyaltyPlant?
+	.service-info.service-info--border.service-info--start
+		.service-info__img
+			img(src="img/app-phone-1.png", alt="")
+		.service-info__content.service-info__content--md
+			.service-info__title 1. Интерфейс приложения с фокусом на бизнес-эффективность
+			.service-info__text
+				p Дизайнеры продукта LoyaltyPlant внедряют решения, основанные на постоянных A/B тестах (15 млн. пользователей наших приложений по всему миру) и используют мировые best practices для достижения максимального уровня вовлеченности каждого пользователя
+			.service-info__roll
+				.service-info__roll-el Идеальный клиентский опыт (UX приложения)
+				.service-info__roll-el Система кастомизации интерфейса для полного отражения look & feel вашего бренда
+				.service-info__roll-el Удобный CMS функционал для редактирования контента “на лету”
+
+	.service-info.service-info--border.service-info--start
+		.service-info__content.service-info__content--md
+			.service-info__title 2. Заказ «в один клик», формирующий привычку у гостей
+			.service-info__text
+				p Мобильный заказ “в один клик” настолько удобен, что формирует у гостя привычку делать заказ именно у вас. Так вы увеличиваете частоту посещений и LTV гостя
+			.service-info__roll
+				.service-info__roll-el Удобный и простой процесс заказа и повтора заказа
+				.service-info__roll-el Большие и яркие изображения позиций меню, которые помогают продавать
+				.service-info__roll-el Upsell внутри конструктора позиции
+		.service-info__img
+			img(src="img/app-phone-2.png", alt="")
+
+
+	.service-info.service-info--border.service-info--start
+		.service-info__img
+			img(src="img/app-phone-3.png", alt="")
+		.service-info__content.service-info__content--md
+			.service-info__title 3. Идеальная интеграция решения с iiko POS
+			.service-info__text
+				p Решение LoyaltyPlant полностью интегрировано с iiko POS, чтобы предложить вашему бизнесу лучший продукт
+			.service-info__roll
+				.service-info__roll-el Высокая скорость автоматической обработки заказов: все заказы из приложения сразу попадают на кухню
+				.service-info__roll-el Никакой ручной работы для составления актов-сверки: все заказы автоматически фиксируются в POS
+				.service-info__roll-el Автоматическое обновление меню и стоп-листов в приложении: все позиции меню и стоп-листы синхронизированы с iiko
+	.service-info.service-info--border.service-info--start
+		.service-info__content.service-info__content--md
+			.service-info__title 4. LoyaltyPlant предоставит курьеров, и это будет дешевле, чем у популярных агрегаторов
+			.service-info__roll
+				.service-info__roll-el Курьеры Достависта привезут заказ вашему гостю вовремя и на нужный адрес
+				.service-info__roll-el Наем, менеджмент курьеров и логистика доставки заказов – не ваша забота
+				.service-info__roll-el Итоговая стоимость решения для вас в 2.5 раза ниже, чем у популярных агрегаторов
+		.service-info__img
+			img(src="img/app-img-1.png", alt="")
+
+
+	.service-info.service-info--border.service-info--start
+		.service-info__img
+			img(src="img/app-img-2.png", alt="")
+		.service-info__content.service-info__content--md
+			.service-info__title 5. Внимание ко всем деталям проекта и экспертное сопровождение до, во время и после внедрения
+			.service-info__text
+				p Внедрение мобильного предзаказа и доставки – это не просто разработка интерфейса мобильного приложения, это большой проект, требующий экспертизы подрядчика
+			.service-info__roll.service-info__roll--col
+				.service-info__roll-el Внедрение интеграции с POS
+				.service-info__roll-el Техническая поддержка
+				.service-info__roll-el Интеграция с Payment Provider
+				.service-info__roll-el Юридическая поддержка
+				.service-info__roll-el Изменение процессов operations
+				.service-info__roll-el Продвижение приложения
+				.service-info__roll-el Тренинг персонала
+				.service-info__roll-el Защита от мошенников
+				.service-info__roll-el Внедрение интеграции с POS
+				.service-info__roll-el Техническая поддержка
+				.service-info__roll-el Интеграция с Payment Provider
+				.service-info__roll-el Юридическая поддержка
+
+	.service-info.service-info--border.service-info--start
+		.service-info__content.service-info__content--md
+			.service-info__title 6. Возможность сделать апгрейд до полноценной маркетинговой платформы
+			.service-info__text
+				p При желании функционал решения LoyaltyPlant можно легко расширить в будущем. LoyaltyPlant предлагает маркетинговую платформу с модулями, которые помогут создать true loyalty гостей и увеличат выручку вашего ресторана
+			.service-info__roll.service-info__roll--col
+				.service-info__roll-el Бонусная программа лояльности в приложении
+				.service-info__roll-el Маркетинговые кампании
+				.service-info__roll-el Реферальная программа
+				.service-info__roll-el Система контроля качества обслуживания
+				.service-info__roll-el Продвинутая аналитика поведения гостей
+				.service-info__roll-el Онлайн бронирование
+				.service-info__roll-el Опросы гостей
+				.service-info__roll-el И другие механики вовлечения гостей
+				.service-info__roll-el Продвинутая аналитика поведения гостей
+				.service-info__roll-el Онлайн бронирование
+				.service-info__roll-el Опросы гостей
+				.service-info__roll-el И другие механики вовлечения гостей
+		.service-info__img
+			img(src="img/app-phone-4.png", alt="")
+
+	.app
+		.app__title Стоимость приложения:
+		.app__cost 7-20%
+		.app__text от суммы транзакций через приложение, включая эквайринг
+		.app__info У популярных агрегаторов 35% от суммы транзакций через приложение
+		.app__get Рассчитать свою экономию
+
+
+	.service-info__card.service-info__card--border
+		.title-wrap-mid
+			.service-info__title О LoyaltyPlant
+			.service-info__title-sub.service-info__title-sub--sm LoyaltyPlant создает лидирующее мобильное маркетинговое решение с программой лояльности и доставкой. Наши клиенты достигают выдающихся бизнес-результатов, проверенных международными независимыми экспертами.
+		.map
+			img(src="img/map.jpg", alt="").map-img
+.footer-cost
+	.footer-cost__val Чтобы подключить приложение с предзаказом и доставкой и платить только за результат
+	.footer-cost__get Свяжитесь с нами
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug
