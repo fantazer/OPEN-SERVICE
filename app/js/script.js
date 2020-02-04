@@ -253,6 +253,41 @@ $(document).ready(function(){
 			prevArrow: $('.slider-control__el--left'),
 			nextArrow: $('.slider-control__el--right')
 	});
+
+
+	// === custom arrow el ===
+	$('.slider-control--right').click(function(){
+		$(this).closest(".slider-wrap").find(".slider-item").slick('slickNext');
+	});
+
+	$('.slider-control--left').click(function(){
+		$(this).closest(".slider-wrap").find(".slider-item").slick('slickPrev');
+	});
+	// custom arrow el === end
+
+	// === breakpoint ===
+	$('.slider-client').slick({
+		slidesToShow: 5,
+		speed: 500,
+		focusOnSelect: true,
+		customPaging : function(slider, i) {
+		return '<span class="dot"></span>';
+	},
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					arrows: false,
+					slidesToShow: 3,
+					dots:true,
+					slidesToScroll: 3,
+				}
+			}
+		]
+	});
+
+	// === breakpoint end ===
+
 	//slider===end
 
 

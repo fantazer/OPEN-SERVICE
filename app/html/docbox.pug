@@ -1,0 +1,242 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title DocsInBox – документопровод между рестораном и поставщикомs
+.main-cont
+	.service-info__wrap.service-info__wrap--unborder
+		.service-info__list--full
+			.img-row
+				img(src="img/docsinbox.png", alt="")
+			.container.container--half
+				.col
+					.service-info__list-el Автоматизация документооборота, накладная за 13 секунд вместо 300
+					.service-info__list-el Автоматизация и контроль цены в заказе продуктов для ресторана
+					.service-info__list-el Автоматизированная система для работы с ФГИС «Меркурий» для ресторанов
+				.col
+					.service-info__list-el Учет ЕГАИС и Меркурий под контролем, проверки и штрафы не страшны
+					.service-info__list-el Всё что нужно для продажи табачных изделий в ресторане
+					.service-info__list-el Автоматизация работы ЕГАИС, простой учет алкоголя, обмен накладными в 2 клика
+
+	.container.container--half
+		.col
+			.box
+				.box-icon
+					img(src="img/vine.png", alt="")
+				.box-title ЕГАИС
+				.box-info
+					.service-info__list-el Автоматическая конвертация номенклатуры с первой поставки
+					.service-info__list-el Подтверждение накладной через веб-интерфейс и
+					.service-info__list-el мобильного приложения
+					.service-info__list-el Быстрые обновления, поспевающие за обновлением ЕГАИС
+					.service-info__list-el Автоматическая переотправка актов и контроль статусов накладной
+					.service-info__list-el Сводный отчет о просроченных накладных по сети на почту
+					.service-info__list-el Списание в ЕГАИС - 3 способами (телефон, компьютер, ТСД)
+				a(href="#").box-get Оставить заявку
+		.col
+			.box
+				.box-icon
+					img(src="img/bul.png", alt="")
+				.box-title Меркурий
+				.box-info
+					.service-info__list-el В DocsInBox.Меркурий реализована функция формирования исходящих ВСД при отправке машины
+					.service-info__list-el В DocsInBox.Меркурий реализовано отложенное автоматическое гашение ветеринарных справок после приезда машины с продукцией
+					.service-info__list-el Проверка наличия ветеринарной справки при приемке накладной в В DocsInBox
+				a(href="#").box-get Оставить заявку
+
+	.container.container--three
+		.col
+			.box
+				.box-icon
+					img(src="img/food-doc.png", alt="")
+				.box-title Продукты
+				.box-info
+					.service-info__list-el Автоматический ввод накладных в вашу систему учёта
+					.service-info__list-el Финансовая отчётность до 5 числа каждого месяца
+					.service-info__list-el Контроль закупочных цен
+					.service-info__list-el Средний срок проверки поставщиков — 1 день
+					.service-info__list-el Моментальный вычерк
+					.service-info__list-el Загрузка чеков из “магазина напротив” — автоматически
+					.service-info__list-el Подключение по EDI
+					.service-info__list-el Удваивается производительность калькулятора
+				a(href="#").box-get Оставить заявку
+		.col
+			.box
+				.box-icon
+					img(src="img/deliver-cart.png", alt="")
+				.box-title Поставщики
+				.box-info
+					.service-info__list-el Электронные заказы поставщикам
+					.service-info__list-el Мобильное приложение для заказов
+					.service-info__list-el Контроль цены в заказе
+					.service-info__list-el Заказ в вашей номенклатуре или поставщика
+					.service-info__list-el Автоматический заказ по последней поставке
+					.service-info__list-el Переписка с поставщиком по строкам заказа
+				a(href="#").box-get Оставить заявку
+		.col
+			.box
+				.box-icon
+					img(src="img/deliver-cart.png", alt="")
+				.box-title Поставщики
+				.box-info
+					.service-info__list-el Регистрация в ИС МОТП
+					.service-info__list-el Контроль обновления ПО
+					.service-info__list-el Обеспечивает ЭДО между поставщиком табачной продукции и клиентом
+					.service-info__list-el Обеспечивает автоматическую выгрузку накладной
+				a(href="#").box-get Оставить заявку
+
+	.service-plan.service-plan--full
+		.title-lg.title--center Попробуйте полный пакет услуг
+		.service-plan__el
+			.service-plan__el-title.service-plan__el-title--mid
+				.service-plan__el-title-icon
+					img(src="img/calendar-1.svg", alt="")
+				.service-plan__el-title-text в месяц
+			.service-plan__el-content
+				.season-wrap
+					.season
+						.season-title Пакет Государство
+						.season-row
+							.season-name Егаис
+							.season-val 3 000
+							.season-sign +
+						.season-row
+							.season-name Меркурий
+							.season-val 3 000
+							.season-sign =
+						.season-price 4 000 руб
+						.season-false 6 000 руб
+					.season
+						.season-title Пакет Комплекс
+						.season-row
+							.season-name Продукты
+							.season-val 6 000
+							.season-sign +
+						.season-row
+							.season-name Егаис
+							.season-val 3 000
+							.season-sign +
+						.season-row
+							.season-name Меркурий
+							.season-val 3 000
+							.season-sign =
+						.season-price 7 500 руб
+						.season-false 12 000 руб
+				a(href="#").service-plan__el-get Купить
+		.service-plan__el
+			.service-plan__el-title.service-plan__el-title--mid
+				.service-plan__el-title-icon
+					img(src="img/calendar-3.svg", alt="")
+				.service-plan__el-title-text в квартал
+			.service-plan__el-content
+				.season-wrap
+					.season
+						.season-title Пакет Государство
+						.season-row
+							.season-name Егаис
+							.season-val 9 000
+							.season-sign +
+						.season-row
+							.season-name Меркурий
+							.season-val 9 000
+							.season-sign =
+						.season-price 12 000 руб
+						.season-false 18 000 руб
+					.season
+						.season-title Пакет Комплекс
+						.season-row
+							.season-name Продукты
+							.season-val 18 000
+							.season-sign +
+						.season-row
+							.season-name Егаис
+							.season-val 9 000
+							.season-sign +
+						.season-row
+							.season-name Меркурий
+							.season-val 9 000
+							.season-sign =
+						.season-price 22 500 руб
+						.season-false 36 000 руб
+				a(href="#").service-plan__el-get Купить
+		.service-plan__el
+			.service-plan__el-title.service-plan__el-title--mid
+				.service-plan__el-title-icon
+					img(src="img/calendar-12.svg", alt="")
+				.service-plan__el-title-text в год
+			.service-plan__el-content
+				.season-wrap
+					.season
+						.season-title Пакет Государство
+						.season-row
+							.season-name Егаис
+							.season-val 30 000
+							.season-sign +
+						.season-row
+							.season-name Меркурий
+							.season-val 30 000
+							.season-sign =
+						.season-price 40 000 руб
+						.season-false 60 000 руб
+					.season
+						.season-title Пакет Комплекс
+						.season-row
+							.season-name Продукты
+							.season-val 60 000
+							.season-sign +
+						.season-row
+							.season-name Егаис
+							.season-val 30 000
+							.season-sign +
+						.season-row
+							.season-name Меркурий
+							.season-val 30 000
+							.season-sign +
+						.season-row
+							.season-name Табак
+							.season-val 10 000
+							.season-sign =
+						.season-price 61 100 руб
+						.season-false 130 000 руб
+				a(href="#").service-plan__el-get Купить
+
+	.title-lg.title--center Эти рестораны уже работают с нами
+
+	.slider-wrap.slider-wrap--simple
+		.slider-control.slider-control--left
+			+icon("arrow-left","icon")
+		.slider-control.slider-control--right
+			+icon("arrow-right","icon")
+		.slider-client.slider-item
+			- for (var i=0;i<2;i++)
+				.slider-client__el-wrap
+					.slider-client__el(style="background-image:url('img/slider-client-1.png')")
+				.slider-client__el-wrap
+					.slider-client__el(style="background-image:url('img/slider-client-2.png')")
+				.slider-client__el-wrap
+					.slider-client__el(style="background-image:url('img/slider-client-3.png')")
+				.slider-client__el-wrap
+					.slider-client__el(style="background-image:url('img/slider-client-4.png')")
+				.slider-client__el-wrap
+					.slider-client__el(style="background-image:url('img/slider-client-5.png')")
+
+.footer-cat
+	.main-cont
+		.footer-cat-list.footer-cat-list--mid
+			-
+				var items = [
+					{name: 'Выгрузка из iiko в 1С бухгалтерия', val: '1С бухгалтерия'},
+					{name: 'Электронный документопровод для ресторанов и поставщиков', val: 'DocsInBox '},
+					{name: 'IT-решение по ФГИС “Меркурий” для HoReCa', val: 'DocsInBox.ВЕГАИС  '}
+				];
+			each item in items
+				a(href="#").footer-cat-list__el
+					.footer-cat-list__el-text #{item.name}
+					.footer-cat-list__el-link #{item.val}
++footer()
+
+include ./block_html/_script.pug

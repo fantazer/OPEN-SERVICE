@@ -240,8 +240,8 @@ gulp.task('watch', () => {
 
 
 gulp.task('pug', function() {
-		//gulp.src(['app/html/mobile-app.pug','app/module/**/*.pug',])
-		gulp.src(['app/html/*.pug','app/module/**/*.pug',])
+		gulp.src(['app/html/docbox.pug','app/module/**/*.pug',])
+		//gulp.src(['app/html/*.pug','app/module/**/*.pug',])
 				//.pipe(changed('app/', {extension: '.html'}))
 				//.pipe(cache('pug'))
 				//.pipe(pugInheritance({basedir: 'app/html/',skip:'node_modules/'}))

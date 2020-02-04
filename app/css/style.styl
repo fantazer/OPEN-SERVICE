@@ -1954,7 +1954,7 @@ body
 		padding: 0px 10px
 	@extend .type--xl
 	margin-bottom: 35px
-
+	width: 100%
 .title--center
 	text-align: center
 
@@ -3362,6 +3362,10 @@ select.select-beauty
 		+below(640px)
 			width: 100%
 		width: calc(100% / 2)
+.service-info__list--full
+	.service-info__list-el
+		width: 100%
+		padding-bottom: 15px
 .service-info__list-el
 	+below(640px)
 		width: 100%
@@ -3698,14 +3702,30 @@ select.select-beauty
 .service-plan
 	+below(768px)
 		padding: 30px 0
-		fw()
 		max-width 480px
 		margin-left: auto
 		margin-right: auto
 	f()
+	fw()
 	justify-content: space-between
 	align-items: flex-start
 	padding: 80px 0
+.service-plan--full
+	+below(640px)
+		margin-bottom: 50px
+	align-items: stretch
+	margin-bottom: 100px
+	.service-plan__el
+		f()
+		fl()
+	.service-plan__el-content
+		f()
+		fl()
+		height: 100%
+	.service-plan__el-get
+		margin-top: auto
+	.service-plan__el-get
+		width: 200px
 .service-plan__el
 	+below(768px)
 		width: 100%
@@ -3720,6 +3740,11 @@ select.select-beauty
 	color white
 	border-radius: 5px 5px 0 0;
 	background-image: linear-gradient(180deg, #5077e7 0%, #a776dd 100%);
+
+.service-plan__el-title--mid
+	flex(mid)
+.service-plan__el-title-icon
+	margin-right: 20px
 .service-plan__el-content
 	+below(768px)
 		padding: 25px
@@ -4425,3 +4450,156 @@ select.select-beauty
 	@extend .btn--mark
 	@extend .btn--md
 //app === end
+
+.container
+	+below(768px)
+		grid-gap 20px
+		margin: 30px 0
+	display: grid
+	grid-gap 50px
+	margin: 50px 0
+.container--half
+	+below(480px)
+		grid-template-columns: 1fr
+	grid-template-columns: 1fr 1fr
+.container--three
+	+below(1024px)
+		grid-template-columns: 1fr 1fr
+	+below(480px)
+		grid-template-columns: 1fr
+	grid-template-columns: 1fr 1fr 1fr
+
+.img-row
+	flex(mid)
+	margin-bottom: 60px
+
+.season-wrap
+	+below(640px)
+		width: 100%
+	width: 80%
+	f()
+	fl()
+
+.season
+	margin-bottom: 50px
+	&:last-child
+		margin-bottom: 30px
+.season-title
+	font-weight: 700
+	margin-bottom: 25px
+.season-row
+	flex(between)
+	margin-bottom: 20px
+.season-name
+	width: 30%
+	text-align: left
+.season-val
+	width: 30%
+	text-align right
+.season-sign
+	width: 30%
+	color $blue
+	text-align: right
+	font-weight: 900
+.season-price
+	@extend .type--lg
+	margin-bottom: 10px
+	color $blue
+	text-align: right
+	margin-top: 25px
+.season-false
+	@extend .type--md
+	text-decoration line-through
+	text-align: right
+//.service-plan__el-get
+
+.box
+	padding: 40px
+	border 1px solid #e1e1e1
+	flex(mid)
+	fl()
+	height: 100%
+.box-icon
+	margin-bottom: 20px
+.box-title
+	@extend .type--xl
+	margin-bottom: 30px
+
+.box-info
+	margin-bottom: 30px
+	.service-info__list-el
+		width: 100%
+		padding-bottom: 15px
+
+.box-get
+	@extend .btn--md
+	@extend .btn--mark
+	margin-top: auto
+
+.slider-client__el
+	bg-full()
+	padding: 15% 10%
+	background-size contain
+//Навигация снаружи
+.slider-wrap
+	position relative
+	margin-top: 50px
+	margin-bottom: 100px
+.slider-wrap--simple
+	.slider-control
+		round()
+		flex(mid)
+		tr(all)
+		size 40px
+		background: white
+		position: absolute
+		top 50%
+		margin-top: -20px
+		box-shadow 0px 2px 10px #c5c2c2
+		z-index 10
+		cp()
+		&:hover
+			background: $blue
+			.icon
+				fill white
+		.icon
+			size 14px
+	.slider-control--left
+		+below(1440px)
+			left 0px
+		+below(1024px)
+			display none
+		left -60px
+	.slider-control--right
+		+below(1440px)
+			right 0px
+		+below(1024px)
+			display none
+		right -60px
+//Навигация снаружи end
+
+//=== Внешний вид пагинации ===
+.slick-dots
+	width: 100%
+	display: flex !important
+	align-items: center
+	justify-content: center
+	bottom -35px
+	li
+		+below(720px)
+			size 10px
+			flex(mid)
+	.dot
+		+below(720px)
+			flex(mid)
+			size 6px
+		background: $blue
+		width: 20px
+		height: 4px
+		display: block
+		br(3px)
+		opacity: .5
+	.slick-active
+		.dot
+			opacity: 1
+//=== Внешний вид пагинации end===
