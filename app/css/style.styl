@@ -4451,6 +4451,7 @@ select.select-beauty
 	@extend .btn--md
 //app === end
 
+
 .container
 	+below(768px)
 		grid-gap 20px
@@ -4603,3 +4604,67 @@ select.select-beauty
 		.dot
 			opacity: 1
 //=== Внешний вид пагинации end===
+
+// kiosk style
+.service-info--extend
+	fw()
+	.service-info__content
+		+below(768px)
+			width: 100%
+		width: 60%
+	.service-info__img
+		width: 35%
+	.service-info__title
+		width: 100%
+.service-info__title--mid
+	text-align center
+.box-title-sm
+	@extend .type--lg
+	margin-bottom: 30px
+	text-align: left
+	padding-left: 50px
+.box--line
+	display block
+
+.number-list-el
+	f()
+	align-items center
+	margin-bottom: 30px
+	&:last-child
+		margin-bottom: 0
+.number-list-el__numb
+	margin-right: 15px
+	size 36px
+	round()
+	background: $blue
+	color white
+	flex(mid)
+.number-list-el__text
+	width calc(100% - 50px)
+	line-height: 1.6
+
+.box-cost
+	padding: 40px
+	border 1px solid $border-color
+	margin-bottom: 20px
+
+.box-cost--last
+	+below(768px)
+		margin-bottom: 30px
+	margin-bottom: 60px
+
+.box-cost__name
+	@extend .type--lg
+	margin-bottom: 10px
+
+.box-cost__text
+	margin-bottom: 25px
+
+.box-cost__val
+	@extend .type--lg
+	color $blue
+
+.btn--mobile
+	+below(480px)
+		width: 100%
+// kiosk style === end

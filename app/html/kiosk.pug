@@ -1,0 +1,129 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Киоск самообслуживания <br> Beopen Kiosk
+
+.main-cont
+	.service-info.service-info--border.service-info--extend
+		.service-info__img
+			img(src="img/kiosk-1.png", alt="")
+		.service-info__content
+			.service-info__title Особенности и решаемые задачи киоска самообслуживания Beopen Kiosk
+			.service-info__roll
+				.service-info__roll-el Рост пропускной способности заведения
+				.service-info__roll-el Решение проблемы очередей
+				.service-info__roll-el Сокращение расходов на персонал
+				.service-info__roll-el Полная интеграция с системой автоматизации
+				.service-info__roll-el Визуальное представление блюд меню
+				.service-info__roll-el Увеличение среднего чека за счёт кросс-продаж
+				.service-info__roll-el Поддержка нескольких языков интерфейса
+				.service-info__roll-el Центральзованное управление всеми киосками
+				.service-info__roll-el Дополнительная рекламная площадка
+				.service-info__roll-el Наглядное интерактивное меню
+	.service-info.service-info--border.service-info--extend
+		.service-info__content
+			.service-info__title Функциональные возможности киоска самообслуживания Beopen Kiosk
+			.service-info__roll
+				.service-info__roll-el Отображение меню с группировками
+				.service-info__roll-el Информирование о скидках и акциях
+				.service-info__roll-el Возможность настройки модификаторов
+				.service-info__roll-el Функционал заказа в заведение или на вынос
+				.service-info__roll-el Дополнительные позиции к заказу
+				.service-info__roll-el Интеграция с системой лояльности
+				.service-info__roll-el Отправка заказа как во внутреннюю учетную систему, так и на кухню
+		.service-info__img
+			img(src="img/kiosk-2.png", alt="")
+
+	.service-info__wrap.service-info__wrap--light
+		.service-info__title.service-info__title--mid Схема работы киоска самообслуживания Beopen Kiosk
+		.container.container--half
+			.col
+				.box.box--line
+					.box-title-sm с монитором
+					.box-info
+						.number-list-el
+							.number-list-el__numb 1
+							.number-list-el__text Клиент получает талон с номером в киоске
+						.number-list-el
+							.number-list-el__numb 2
+							.number-list-el__text Заказ отправляется на кухню, где на мониторе отображается список блюд для приготовления
+						.number-list-el
+							.number-list-el__numb 3
+							.number-list-el__text Когда заказ готов, сборщик отмечает его готовность на сенсорном терминале
+						.number-list-el
+							.number-list-el__numb 4
+							.number-list-el__text Когда заказ готов, можно вызвать клиента голосом
+			.col
+				.box.box--line
+					.box-title-sm с принтером
+					.box-info
+						.number-list-el
+							.number-list-el__numb 1
+							.number-list-el__text Клиент получает талон с номером в киоске
+						.number-list-el
+							.number-list-el__numb 2
+							.number-list-el__text Заказ отправляется на кухню, где печатается список блюд для приготовления
+						.number-list-el
+							.number-list-el__numb 3
+							.number-list-el__text Когда заказ готов, можно вызвать клиента голосом
+
+	.service-info.service-info--border.service-info--extend
+		.service-info__title.service-info__title--mid Схема работы киоска самообслуживания Beopen Kiosk
+		.service-info__img
+			img(src="img/kiosk-3.png", alt="")
+		.service-info__content
+			.box-cost
+				.box-cost__name 15,6” Настольный - Micro
+				.box-cost__val 100 000 руб
+			.box-cost
+				.box-cost__name 21,5” Настольный - Mini
+				.box-cost__val 170 000 руб
+			.box-cost.box-cost--last
+				.box-cost__name 32,0” Настольный - Max
+				.box-cost__val 250 000 руб
+			.btn--md.btn--mark.btn--mobile Оставить заявку
+
+	.service-info.service-info--border.service-info--extend
+		.service-info__content
+			.box-cost
+				.box-cost__name Внедрение
+				.box-cost__val 30 000 руб
+			.box-cost
+				.box-cost__name Аренда программного обеспечения
+				.box-cost__val 15 000 руб/мес
+			.box-cost.box-cost--last
+				.box-cost__name Выкуп программного обеспечения
+				.box-cost__val 165 000 руб
+			.btn--md.btn--mark.btn--mobile Оставить заявку
+		.service-info__img
+			img(src="img/kiosk-4.png", alt="")
+
+	.service-info.service-info--border.service-info--extend
+		.service-info__title.service-info__title--mid Аренда киоска самообслуживания Beopen Kiosk
+		.service-info__img
+			img(src="img/kiosk-5.png", alt="")
+		.service-info__content
+			.box-cost
+				.box-cost__name Beopen Kiosk 21,5” Настольный - Mini
+				.box-cost__text с программным обеспечением
+				.box-cost__val 15 000 руб/мес
+			.box-cost
+				.box-cost__name Лицензия Beopen Kiosk Connector
+				.box-cost__text для обмена данными с iiko
+				.box-cost__val 2 490 руб/мес
+			.box-cost
+				.box-cost__name Внедрение киоска Beopen Kiosk
+				.box-cost__text производится “под ключ”
+				.box-cost__val 0 руб
+			p * Фискальный регистратор и PIN-Pad в комплект не входят
+			.btn--md.btn--mark.btn--mobile Оставить заявку
+
++footer()
+
+include ./block_html/_script.pug

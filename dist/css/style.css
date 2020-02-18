@@ -537,7 +537,10 @@ h3,
 .docbox-table-title,
 .app__text,
 .app__info,
-.season-price {
+.season-price,
+.box-title-sm,
+.box-cost__name,
+.box-cost__val {
   font-size: 30px;
   font-family: "Museo Sans Cyrl";
   font-weight: bold;
@@ -566,7 +569,10 @@ h3,
   .docbox-table-title,
   .app__text,
   .app__info,
-  .season-price {
+  .season-price,
+  .box-title-sm,
+  .box-cost__name,
+  .box-cost__val {
     font-size: 20px;
   }
 }
@@ -9895,4 +9901,101 @@ select.select-beauty {
 }
 .slick-dots .slick-active .dot {
   opacity: 1;
+}
+.service-info--extend {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.service-info--extend .service-info__content {
+  width: 60%;
+}
+@media only screen and (max-width: 768px) {
+  .service-info--extend .service-info__content {
+    width: 100%;
+  }
+}
+.service-info--extend .service-info__img {
+  width: 35%;
+}
+.service-info--extend .service-info__title {
+  width: 100%;
+}
+.service-info__title--mid {
+  text-align: center;
+}
+.box-title-sm {
+  margin-bottom: 30px;
+  text-align: left;
+  padding-left: 50px;
+}
+.box--line {
+  display: block;
+}
+.number-list-el {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+.number-list-el:last-child {
+  margin-bottom: 0;
+}
+.number-list-el__numb {
+  margin-right: 15px;
+  width: 36px;
+  height: 36px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #2f81e6;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.number-list-el__text {
+  width: -webkit-calc(100% - 50px);
+  width: calc(100% - 50px);
+  line-height: 1.6;
+}
+.box-cost {
+  padding: 40px;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 20px;
+}
+.box-cost--last {
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .box-cost--last {
+    margin-bottom: 30px;
+  }
+}
+.box-cost__name {
+  margin-bottom: 10px;
+}
+.box-cost__text {
+  margin-bottom: 25px;
+}
+.box-cost__val {
+  color: #2f81e6;
+}
+@media only screen and (max-width: 480px) {
+  .btn--mobile {
+    width: 100%;
+  }
 }
