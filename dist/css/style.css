@@ -540,7 +540,8 @@ h3,
 .season-price,
 .box-title-sm,
 .box-cost__name,
-.box-cost__val {
+.box-cost__val,
+.site-cost {
   font-size: 30px;
   font-family: "Museo Sans Cyrl";
   font-weight: bold;
@@ -572,7 +573,8 @@ h3,
   .season-price,
   .box-title-sm,
   .box-cost__name,
-  .box-cost__val {
+  .box-cost__val,
+  .site-cost {
     font-size: 20px;
   }
 }
@@ -590,7 +592,8 @@ h2,
 .vagais__card-title,
 .vagais__list-title,
 .deliver__el-title,
-.box-title {
+.box-title,
+.title {
   font-size: 40px;
   font-family: "Museo Sans Cyrl";
 }
@@ -609,7 +612,8 @@ h2,
   .vagais__card-title,
   .vagais__list-title,
   .deliver__el-title,
-  .box-title {
+  .box-title,
+  .title {
     font-size: 24px;
   }
 }
@@ -9645,6 +9649,19 @@ select.select-beauty {
     grid-template-columns: 1fr;
   }
 }
+.container--four {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media only screen and (max-width: 768px) {
+  .container--four {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container--four {
+    grid-template-columns: 1fr;
+  }
+}
 .img-row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9852,7 +9869,7 @@ select.select-beauty {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  bottom: -35px;
+  bottom: -25px;
 }
 @media only screen and (max-width: 720px) {
   .slick-dots li {
@@ -9998,4 +10015,141 @@ select.select-beauty {
   .btn--mobile {
     width: 100%;
   }
+}
+.type--mid {
+  text-align: center;
+}
+.type--half {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title {
+  margin-bottom: 45px;
+}
+@media only screen and (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+.site-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media only screen and (max-width: 640px) {
+  .site-info {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+}
+.site-info-slider-wrap {
+  width: 60%;
+}
+@media only screen and (max-width: 640px) {
+  .site-info-slider-wrap {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.site-info-content {
+  width: 30%;
+}
+@media only screen and (max-width: 640px) {
+  .site-info-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-flow: column;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    width: 100%;
+    margin-top: -50px;
+    padding-bottom: 50px;
+  }
+}
+.site-cost {
+  margin: 40px 0;
+  color: #2f81e6;
+  font-family: "Museo Sans Cyrl";
+}
+@media only screen and (max-width: 640px) {
+  .site-cost {
+    margin: 0 0 20px 0;
+  }
+}
+.site-info-slider__link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px auto;
+  color: #111;
+}
+@media only screen and (max-width: 720px) {
+  .site-info-slider__link {
+    margin-bottom: 0;
+  }
+}
+.site-info-slider__link .icon {
+  width: 14px;
+  height: 14px;
+  fill: #2f81e6;
+  margin-left: 10px;
+}
+.icon-col {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+.icon-col img {
+  margin-bottom: 20px;
+}
+.icon-col span {
+  text-align: center;
+  display: inline-block;
+  line-height: 1.6;
+  width: 80%;
 }

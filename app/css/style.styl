@@ -4470,6 +4470,13 @@ select.select-beauty
 		grid-template-columns: 1fr
 	grid-template-columns: 1fr 1fr 1fr
 
+.container--four
+	+below(768px)
+		grid-template-columns: 1fr 1fr
+	+below(480px)
+		grid-template-columns: 1fr
+	grid-template-columns: 1fr 1fr 1fr 1fr
+
 .img-row
 	flex(mid)
 	margin-bottom: 60px
@@ -4585,7 +4592,7 @@ select.select-beauty
 	display: flex !important
 	align-items: center
 	justify-content: center
-	bottom -35px
+	bottom -25px
 	li
 		+below(720px)
 			size 10px
@@ -4668,3 +4675,75 @@ select.select-beauty
 	+below(480px)
 		width: 100%
 // kiosk style === end
+
+// site
+.type--mid
+	text-align center
+
+.type--half
+	max-width 800px
+	margin-left auto
+	margin-right auto
+
+.title
+	+below(1024px)
+		font-size: 32px
+		margin-bottom: 30px
+	+below(640px)
+		font-size: 24px
+		text-align: center
+	@extend .type--xl
+	margin-bottom: 45px
+
+
+.site-info
+	+below(640px)
+		fw()
+	flex(between)
+
+.site-info-slider-wrap
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
+	width: 60%
+
+.site-info-content
+	+below(640px)
+		flex(mid)
+		fl()
+		width: 100%
+		margin-top: -50px
+		padding-bottom: 50px
+	width: 30%
+
+.site-cost
+	+below(640px)
+		margin: 0 0 20px 0
+	margin: 40px 0
+	color $blue
+	font-family "Museo Sans Cyrl"
+	@extend .type--lg
+
+.site-info-slider__link
+	+below(720px)
+		margin-bottom: 0
+	flex(mid)
+	margin: 20px auto
+	color black
+	.icon
+		size 14px
+		fill $blue
+		margin-left: 10px
+
+.icon-col
+	f()
+	align-items center
+	fl()
+	img
+		margin-bottom: 20px
+	span
+		text-align center
+		display inline-block
+		line-height: 1.6
+		width: 80%
+// site === end

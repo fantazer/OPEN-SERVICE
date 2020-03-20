@@ -265,7 +265,7 @@ $(document).ready(function(){
 	});
 	// custom arrow el === end
 
-	// === breakpoint ===
+	// slider client
 	$('.slider-client').slick({
 		slidesToShow: 5,
 		speed: 500,
@@ -286,11 +286,31 @@ $(document).ready(function(){
 		]
 	});
 
-	// === breakpoint end ===
 
-	//slider===end
+	//slider client===end
 
-
+	// slider single
+	$('.slider-single').slick({
+			slidesToShow: 1,
+			//autoplay: true,
+			autoplay: false,
+			speed: 500,
+			dots:false,
+			arrow:false,
+			//fade: true,
+			customPaging : function(slider, i) {
+				return '<span class="dot"></span>';
+			},
+			responsive: [
+			{
+				breakpoint: 1100,
+				settings: {
+					dots:true,
+				}
+			}
+		]
+	});
+	// slider single === end
 
 	//Tab
 	var initTab = function(el){
