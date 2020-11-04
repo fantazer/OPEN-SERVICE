@@ -1,0 +1,184 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Стать партнером
+.section
+	.main-cont--md
+		.section-title Почему клиенты выбирают Open Service и в чем наше принципиальное отличие?
+		p.type--mid Мы хотим, чтобы рестораны наших клиентов развивались и совершенствовались, нам интересны сложные и необычные проекты. Мы знаем боли рестораторов, поэтому готовы стать первой помощью для них - здесь и сейчас. Измеряем свою успешность не в разнице услуг с дилерами, а считаем успех суммой роста оборота наших клиентов, который мы обеспечили.
+
+.section.section--gray
+	.main-cont
+		.section-title.section-title--extend Рекомендуйте Open Service и зарабатывайте с нами
+		.row.row--md-center
+			.col.col--md-6.col--xs-12
+				p.type--md-light Привлекайте новых клиентов и получайте за это деньги или бонусы для вашей компании за рекомендацию
+			.col.col--md-6.col--xs-12
+				.row
+					.col.col--sm-4.col--xs-12
+						.lay.lay--mid
+							.lay-icon
+								img(src="img/rest.svg", alt="")
+							.lay-title.type--md Рестораны
+					.col.col--sm-4.col--xs-12
+						.lay.lay--mid
+							.lay-icon
+								img(src="img/cafe.svg", alt="")
+							.lay-title.type--md Кафе
+					.col.col--sm-4.col--xs-12
+						.lay.lay--mid
+							.lay-icon
+								img(src="img/bar.svg", alt="")
+							.lay-title.type--md Бары
+
+.section
+	.main-cont
+		.section-title.section-title--extend Привлекайте клиентов как вам удобно
+		.row
+			.col.col--md-4.col--xs-12
+				.lay
+					.lay-icon
+						img(src="img/link.svg", alt="")
+					.lay-title.type--xlg Реферальная ссылка
+					.lay-text Вы отправляете ссылку своим клиентам, они оставляют заявку на продукт. Мы заплатим за клиентов, которые пришли по вашей ссылке
+			.col.col--md-4.col--xs-12
+				.lay
+					.lay-icon
+						img(src="img/user-round.svg", alt="")
+					.lay-title.type--xlg Заявки в личном кабинете
+					.lay-text Мы даем вам доступ к личному кабинету партнера. В нём вы заводите заявку от нового клиента и получаете вознаграждение
+			.col.col--md-4.col--xs-12
+				.lay
+					.lay-icon.lay-icon--lg
+						img(src="img/promocode.svg", alt="")
+					.lay-title.type--xlg Промо-код для партнеров
+					.lay-text Клиент вводим промо-код при заполнении заявки. Вы получаете вознаграждение, а клиент скидку на продукты
+
+.section.section--clear-top
+	.main-cont
+		.row.row--md-center
+			.col.col--md-6.col--xs-12
+				.lay.lay--line
+					.lay-icon.lay-icon--lg
+						img(src="img/hands.svg", alt="")
+					.lay-content
+						.lay-title.type--xlg Зарабатывайте от 70 000 р. в месяц
+						.lay-text Сумма вознаграждения зависит от продуктов, которые приобрел клиент
+				.lay.lay--line
+					.lay-icon.lay-icon--lg
+						img(src="img/manager.svg", alt="")
+					.lay-content
+						.lay-title.type--xlg Партнёрский менеджер
+						.lay-text Подскажет как привлечь клиента, и подключит к обучающему порталу
+			.col.col--md-6.col--xs-12
+				img(src="img/man-payment.png", alt="")
+
+.section.section--gray
+	.main-cont--mdx
+		.section-title.section-title--extend Реферальная программа для агентов
+		p.type--mid.mb-60 Мы рады предложить тебе взаимодействия с нашей компанией в новой системе лояльности клиентов, это реферальная программа, все что вам нужно сделать это порекомендовать Open Service тем, кому нужен качественный сервис и поддержка, кто также ищет новыерешения и регулярно интересуется миром IT.
+	.main-cont
+		.title-md.mb-60 Работая с нами, вы получите:
+
+		.row
+			.col.col--md-3.col--xs-12
+				.lay
+					.lay-icon
+						img(src="img/laptop.svg", alt="")
+					.lay-text.lay-text--sm Знания методологии продаж и познакомишься углубленно с каждым продуктом
+			.col.col--md-3.col--xs-12
+				.lay
+					.lay-icon
+						img(src="img/stat.svg", alt="")
+					.lay-text.lay-text--sm Возможность зарабатывать от 70.000 рублей уже с первого месяца
+			.col.col--md-3.col--xs-12
+				.lay
+					.lay-icon
+						img(src="img/money.svg", alt="")
+					.lay-text.lay-text--sm Денежные Push-бонусы за рекомендацию партнерам
+			.col.col--md-3.col--xs-12
+				.lay
+					.lay-icon
+						img(src="img/int.svg", alt="")
+					.lay-text.lay-text--sm Возможность работать удаленно из любой точки мира
+
+.section.section--gray.section--clear-top
+	.main-cont
+		.row
+			.col.col--md-6.col--xs-12.ticket-wrap
+				.service-info__card-el-title-lg Открытие ресторана, кафе, бара:
+				.service-info__roll
+					.service-info__roll-el Программное обеспечение iiko
+					.service-info__roll-el Электронный документооборот Docsinbox
+					.service-info__roll-el Услуги консалтинга и аутсорс
+					.service-info__roll-el Обучение сотрудников
+				.ticket-img
+					img(src="img/persent-layer.png", alt="")
+			.col.col--md-6.col--xs-12.ticket-wrap
+				.service-info__card-el-title-lg Дополнительные продукты Open Service:
+				.service-info__roll
+					.service-info__roll-el Маркетинг: CRM, сайты, приложения
+					.service-info__roll-el Дополнительные модули iiko
+					.service-info__roll-el Обучение персонала
+					.service-info__roll-el И многое другое…
+				.ticket-img
+					img(src="img/bonus-layer.png", alt="")
+
+.section
+	.main-cont--mdx
+		.section-title Реферальная программа для ресторанов
+		p.type--mid.mb-60 Мы рады предложить тебе реферальную программу в рамках новой системы лояльности: рекомендуй нас знакомым рестораторам иполучай процент от сделок, за приведенных клиентов. Рекомендуй нас и тем, кто нуждается в качественном сервисе и поддержке, кто ищет новые решения и регулярно интересуется миром IT.
+	.main-cont
+		.row
+			.col.col--md-5.col--xs-12
+				p.type--md-light Дополнительная прибыль — это всегда здорово. Но мы уверены, что кроме денег есть нечто более важное: дружба, помощь, надежность и честность. Поэтому наши эксперты готовы провести аудит твоего бизнеса для поиска точек роста и дать тебе бесплатный доступ к Service Inspector на 1 месяц
+			.col.col--md-6.col--xs-12.col--md-offset-1
+				.row.row--md-center
+					.col.col--sm-6.col--xs-12
+						.lay
+							.lay-icon
+								img(src="img/sak.svg", alt="")
+							.lay-text Своевременное агентское вознаграждение, рассчитываемое от суммы сделки
+					.col.col--sm-6.col--xs-12
+						.lay
+							.lay-icon
+								img(src="img/setings.svg", alt="")
+							.lay-text Рассмотреть льготный период технического обслуживания в твоем заведении
+	.footer-cost
+		.footer-cost__get Стать партнёром
+.footer-cat.footer-cat--light
+	.main-cont
+		.footer-cat-list
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Догоняйте рекламой ваших реальных посетителей
+				.footer-cat-list__el-link WiFi-Радар + роутер
+			a(href="#").footer-cat-list__el.footer-cat-list__el--active
+				.footer-cat-list__el-text Cобирайте контакты гостей прямо в заведении
+				.footer-cat-list__el-link Hot WiFi + роутер
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Автоматизация маркетинга и коммуникации с гостями
+				.footer-cat-list__el-link Plazius
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Система лояльности
+				.footer-cat-list__el-link iikoCard
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронные карты
+				.footer-cat-list__el-link CardPrice
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Электронное табло
+				.footer-cat-list__el-link iikoArrivals
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Дисплей покупателя
+				.footer-cat-list__el-link iikoCustomerDisplay
+			a(href="#").footer-cat-list__el
+				.footer-cat-list__el-text Повышайте средний чек и посещаемость
+				.footer-cat-list__el-link Фабрика лояльности
++footer()
+
+include ./block_html/_script.pug

@@ -7,7 +7,7 @@
 @import "variable/_default.styl"
 @import "variable/_elements.styl"
 @import "variable/_constant.styl"
-//@import "variable/_grid.styl"
+@import "variable/_grid.styl"
 @import "../module/**/*"
 
 rupture.scale = 0 480px 768px 992px 1200px
@@ -400,6 +400,10 @@ body
 .section--gray
 	background: #f1f6fb
 
+
+.section--clear-top
+	padding-top: 0
+
 .section-solution
 	+below(640px)
 		margin-bottom: 0px
@@ -416,6 +420,11 @@ body
 	text-align: center
 	margin-bottom: 35px
 //.main-cont
+
+.section-title--extend
+	+below(640px)
+		margin-bottom: 35px
+	margin-bottom: 50px
 
 .section-facts
 	.slick-dots li button:before
@@ -2751,6 +2760,12 @@ select.select-beauty
 .main-cont--sm
 	center(740px,10px)
 
+.main-cont--md
+	center(1024px,10px)
+
+.main-cont--mdx
+	center(860px,10px)
+
 .baner-support
 	+below(768px)
 		margin: 30px 0
@@ -4740,3 +4755,56 @@ select.select-beauty
 		line-height: 1.6
 		width: 80%
 // site === end
+
+// lay
+.lay
+	+below(640px)
+		margin-bottom: 20px
+.lay--mid
+	f()
+	fl()
+	align-items center
+.lay-icon
+	margin-bottom: 20px
+	img
+		width 80px
+.lay-icon--lg
+	img
+		width 160px
+.lay-text
+	line-height: 1.4
+	margin-top: 10px
+
+.lay-text--sm
+	+below(640px)
+		width: 100%
+	width: 80%
+
+.lay--line
+	f()
+	.lay-icon
+		+below(640px)
+			width: 60px
+		width: 80px
+		margin-right: 20px
+	.lay-content
+		+below(640px)
+			width calc(100% - 80px)
+		width calc(100% - 100px)
+	margin-bottom: 30px
+// lay === end
+
+.ticket-wrap
+	position relative
+.ticket-img
+	+below(768px)
+		display none
+	position absolute
+	right: 40px
+	bottom 40px
+// extends
+.mb-40
+	margin-bottom: 40px
+.mb-60
+	margin-bottom: 60px
+// extends === end
