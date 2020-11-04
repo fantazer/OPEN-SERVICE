@@ -6,7 +6,7 @@ mixin header()
 					a(href="/").header-logo
 						img(src="img/Logo.svg", alt="")
 					.header-info
-						.header-info__el
+						//.header-info__el
 							.header-info__text Техподдержка
 							a(href="#").header-info__numb 8-800-505-72-50
 						.header-info__el
@@ -27,7 +27,7 @@ mixin header()
 									each item in items
 										.header-info__sub-el( class=item == 'Москва' ? 'header-info__sub-el--active' : null) #{item}
 							a(href="#").header-info__numb 8-800-555-14-98
-					.header-get
+					//.header-get
 						.header-get__el
 							.btn--icon
 								+icon("Phone","nav-icon")

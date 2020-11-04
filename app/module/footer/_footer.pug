@@ -9,14 +9,12 @@ mixin footer()
 						.footer__head
 							-
 								var items = [
-								'Москва',
-								'Санкт-Петербург',
-								'Татарстан',
-								'Сочи',
-								'Новосибирск'
+								'Россия',
+								'Казахстан',
+								'ОАЭ',
 								];
 							each item in items
-								.footer__head-el.tab-head(class=item == 'Москва' ? 'tab-head--active' : null) #{item}
+								.footer__head-el.tab-head(class=item == 'Россия' ? 'tab-head--active' : null) #{item}
 					.footer-info
 						- for (var i=0;i<5;i++)
 							.footer__cont.tab-cont(class=i == 0 ? 'tab-cont--active' : null)
@@ -26,16 +24,16 @@ mixin footer()
 											span 281-62-08
 										a(href="mailto:msk@open-s.info").footer__cont-adr__mail msk@open-s.info
 
-									.footer__tab-adr
+									//.footer__tab-adr
 										span г. Москва, 23й км. Калужского шоссе, домовл. 14
 
 
-				.footer-help
+				//.footer-help
 					.footer-help__title Техподдержка 24/7
 					a(href="tel:8-800-505-72-50").footer-help__phone 8-800-505-72-50
 					a(href="mailto:info@open-s.info").footer-help__mail info@open-s.info
 				.footer-soc
-					.footer-soc__title Мы в соц.сетях
+					//.footer-soc__title Мы в соц.сетях
 					.soc__row
 						-
 							var items = [

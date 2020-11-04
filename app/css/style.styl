@@ -86,49 +86,46 @@ body
 
 
 .header-info
-	+below(768px)
-		width: 60%
+
 	+below(640px)
 		display: none
-	flex(between)
-	width: 36%
-.header-info__el
-	+below(768px)
-		&:first-child
-			display: none
-		width: 100%
-		f()
-	width: 45%
 
+	margin-left auto
+.header-info__el
+	f()
+	align-items center
 .header-info__text
 	+below(768px)
 		margin-bottom: 0
 	color rgba(255, 255, 255, 0.4)
-	margin-bottom: 10px
 	cp()
 
 .header-info__numb
 	+below(1200px)
 		font-size: 14px
+	+below(768px)
+		margin 0 30px
 	@extend .type--xlg
 	color white
-
+	margin 0 0 0 30px
 .header-info__toggle
-	+below(1024px)
-		width: 150px
+
 	+below(768px)
 		flex(mid)
 	position: relative
-	width: 180px
 
 .header-info__text--town
 	color $blue
 	display: inline-block
 	.icon
-		size 8px
+		size 10px
 		fill $blue
+	span
+		font-size: 16px
 
 .header-info__sub
+	+below(1200px)
+		left calc(50% - 130px)
 	top 25px
 	position: absolute
 	background: white
@@ -136,7 +133,6 @@ body
 	width: 255px
 	z-index 5
 	display: none
-
 
 .header-info__sub-title
 	+below(1024px)
@@ -458,7 +454,7 @@ body
 		margin-bottom: 0px
 	color black
 	border-bottom:1px solid $red!important
-	padding-bottom: 19px
+	margin-bottom: -1px
 .solution__cont
 	+below(1024px)
 		width: 95%
@@ -761,9 +757,12 @@ body
 .footer-tab
 	+below(1024px)
 		width: 100%
+		margin 0 0 20px 0
 	+below(640px)
 		display: none
-	width: 55%
+	flex(between)
+	width: 100%
+	margin-right: 5%
 .footer-wrap
 	+below(1024px)
 		fw()
@@ -771,9 +770,8 @@ body
 		padding-bottom: 30px
 	+below(640px)
 		padding: 50px 0
-	f()
-	justify-content: space-between
-	padding: 80px 0
+	flex(between)
+	padding: 30px 0
 	background: white
 .footer__head
 	@extend .solution__head
@@ -788,19 +786,15 @@ body
 	text-align: center
 	width: auto
 	min-width auto
+	margin-bottom: -1px
+	tr(all)
 	&:hover
-		padding-bottom: 10px
+		padding-bottom: 11px
 //.tab-head
 //.tab-head--active
 	//@extend .solution-head--active
-.footer-info
-	+below(1024px)
-		margin-bottom: 20px
-.footer__cont
-	+below(1024px)
-		padding: 30px 0px
-	padding: 30px 10px
 
+//.footer__cont
 //.tab-cont
 .footer-tab__cont
 	width: 100%
@@ -808,10 +802,9 @@ body
 	justify-content: space-between
 
 .footer-tab__info
-	padding-right: 50px
-	border-right:1px solid $border-color
-	width: 40%
-
+	//border-right:1px solid $border-color
+	f()
+	align-items center
 .footer__cont-adr__numb
 	+below(640px)
 		font-size: 14px
@@ -819,7 +812,7 @@ body
 	font-size: 18px
 	color #6d6d6d
 	font-weight bold
-	margin-bottom: 15px
+	margin-right: 15px
 	span
 		color black!important
 .footer__cont-adr__mail
@@ -910,9 +903,9 @@ body
 	+below(640px)
 		padding-bottom: 0
 	padding: 50px 0 25px 0
-	background: $blue
-	background-image linear-gradient(to left, rgba(221, 85, 146, 0.56) 0%, rgba(157, 120, 195, 0.56) 50%, rgba(80, 182, 232, 0.56) 100%)
-
+	//background: $blue
+	//background-image linear-gradient(to left, rgba(221, 85, 146, 0.56) 0%, rgba(157, 120, 195, 0.56) 50%, rgba(80, 182, 232, 0.56) 100%)
+	background: #3B3B3B
 .footer-sub__info
 	+below(1024px)
 		width: 40%
