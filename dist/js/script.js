@@ -478,7 +478,9 @@ $(document).ready(function(){
 		});
 	//slide-menu-end
 
-
+	// phone mask
+	$('.phone-mask').mask('0 (000) 000-0000');
+	// phone mask === end
 
 })
 

@@ -715,19 +715,32 @@
 			<div class="modal-cont">
 				<div class="modal-filter"></div>
 				<div class="modal-wrap">
-					<div class="modal" data-modal="TEMPLATE">
+					<div class="modal" data-modal="phoneEnter">
 						<div class="modal-content">
 							<div class="modal-close">
 								<svg class="icon">
 									<use xlink:href="#close"></use>
 								</svg>
 							</div>
-							<div class="modal-title">Восстановление пароля</div>
+							<div class="modal-title">Оставить заявку</div>
 							<form action="#">
-								<div class="input-btn-row">
-									<input class="input" type="text" placeholder="Логин" />
-									<input class="input-btn" type="submit" value="Выслать" />
+								<input class="input input--full" type="text" placeholder="Ваше имя" />
+								<input class="input input--full phone-mask" type="text" placeholder="8 (000) 000-00-00" />
+								<div class="input-row">
+									<div class="check-el">
+										<label class="style-label style-label--checkbox">
+											<input class="sytle-input" type="checkbox" checked="checked" check="checked" />
+											<div class="sytle-input-element">
+												<svg class="icon-check">
+													<use xlink:href="#checked"></use>
+												</svg>
+											</div>
+											<div class="sytle-input-text">Согласен с
+												<a href="/politika/">политикой конфиденциальности</div>
+										</label>
+									</div>
 								</div>
+								<input class="btn--md btn--mark btn--full" type="submit" value="Отправить" />
 							</form>
 						</div>
 					</div>

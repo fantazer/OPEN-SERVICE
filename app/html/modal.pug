@@ -1,0 +1,24 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+style(type='text/css').
+	.modal-list{
+		min-height:400px;
+		padding:50px 0;
+	}
+.header-white
+	+header()
+
+.intro-section
+	.main-cont
+		+bread()
+		.intro-section__title Решения для официанта, хостес
+
+.main-cont
+	.modal-list
+		.btn--md.btn--mark.modal-get(data-modal="phoneEnter") форма авторизации
+
+.footer-item
+	+footer()
+
+include ./block_html/_script.pug

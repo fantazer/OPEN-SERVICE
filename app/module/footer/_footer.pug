@@ -74,15 +74,22 @@ mixin footer()
 		.modal-cont
 			.modal-filter
 			.modal-wrap
-				.modal(data-modal="TEMPLATE")
+				.modal(data-modal="phoneEnter")
 					.modal-content
 						.modal-close
 							+icon("close","icon")
-						.modal-title Восстановление пароля
+						.modal-title Оставить заявку
 						form(action="#")
-							.input-btn-row
-								input(type="text" placeholder="Логин").input
-								input(type="submit" value="Выслать").input-btn
+							input(type="text" placeholder="Ваше имя").input.input--full
+							input(type="text"  placeholder="8 (000) 000-00-00" ).input.input--full.phone-mask
+							.input-row
+								.check-el
+									label.style-label.style-label--checkbox
+										input(type="checkbox" checked check="checked").sytle-input
+										.sytle-input-element
+											+icon("checked","icon-check")
+										.sytle-input-text Согласен с <a href="/politika/">политикой конфиденциальности
+							input(type="submit" value="Отправить").btn--md.btn--mark.btn--full
 
 	.tooltip-filter
 	//navigation

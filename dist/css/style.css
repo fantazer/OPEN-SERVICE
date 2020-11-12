@@ -411,6 +411,7 @@ body {
 .type--md,
 h5,
 .config__tip-title,
+.modal-title,
 .product-el__title,
 .scheme__el-title,
 .scheme-result__el-title,
@@ -438,6 +439,7 @@ h5,
   .type--md,
   h5,
   .config__tip-title,
+  .modal-title,
   .product-el__title,
   .scheme__el-title,
   .scheme-result__el-title,
@@ -703,6 +705,7 @@ p {
 .solution__get-el-mark,
 .get-review,
 .help-info__get,
+.modal-send,
 .nav-get__el,
 .header-white .header-get__el,
 .blog-item__get,
@@ -750,6 +753,7 @@ p {
 .solution__get-el-mark:hover,
 .get-review:hover,
 .help-info__get:hover,
+.modal-send:hover,
 .nav-get__el:hover,
 .header-white .header-get__el:hover,
 .blog-item__get:hover,
@@ -795,6 +799,7 @@ p {
 .solution__get-el-mark,
 .get-review,
 .help-info__get,
+.modal-send,
 .nav-get__el,
 .blog-item__get,
 .how__el-get,
@@ -832,6 +837,9 @@ p {
   font-size: 20px;
   padding: 10px 30px;
 }
+.btn--full {
+  width: 100%;
+}
 @media only screen and (max-width: 768px) {
   .btn--mobile {
     width: 100%;
@@ -842,6 +850,7 @@ p {
 .main-section-get__el-mark,
 .solution__get-el-mark,
 .help-info__get,
+.modal-send,
 .baner-konsalt__btn,
 .support-form__footer button,
 .footer-cost__get,
@@ -859,6 +868,7 @@ p {
 .main-section-get__el-mark .nav-icon,
 .solution__get-el-mark .nav-icon,
 .help-info__get .nav-icon,
+.modal-send .nav-icon,
 .baner-konsalt__btn .nav-icon,
 .support-form__footer button .nav-icon,
 .footer-cost__get .nav-icon,
@@ -875,6 +885,7 @@ p {
 .main-section-get__el-mark:hover,
 .solution__get-el-mark:hover,
 .help-info__get:hover,
+.modal-send:hover,
 .baner-konsalt__btn:hover,
 .support-form__footer button:hover,
 .footer-cost__get:hover,
@@ -892,6 +903,7 @@ p {
 .main-section-get__el-mark:active,
 .solution__get-el-mark:active,
 .help-info__get:active,
+.modal-send:active,
 .baner-konsalt__btn:active,
 .support-form__footer button:active,
 .footer-cost__get:active,
@@ -909,6 +921,7 @@ p {
 .main-section-get__el-mark input[type="submit"],
 .solution__get-el-mark input[type="submit"],
 .help-info__get input[type="submit"],
+.modal-send input[type="submit"],
 .baner-konsalt__btn input[type="submit"],
 .support-form__footer button input[type="submit"],
 .footer-cost__get input[type="submit"],
@@ -925,6 +938,7 @@ p {
 .main-section-get__el-mark .nav-icon,
 .solution__get-el-mark .nav-icon,
 .help-info__get .nav-icon,
+.modal-send .nav-icon,
 .baner-konsalt__btn .nav-icon,
 .support-form__footer button .nav-icon,
 .footer-cost__get .nav-icon,
@@ -1135,6 +1149,12 @@ button {
   border: 1px solid #2f81e6;
   -webkit-box-shadow: 0 11px 8px rgba(47,129,230,0.15);
           box-shadow: 0 11px 8px rgba(47,129,230,0.15);
+}
+.input-row {
+  margin-bottom: 20px;
+}
+.input--full {
+  width: 100%;
 }
 .style-label {
   display: -webkit-box;
@@ -4695,130 +4715,118 @@ opacity 0 100% {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(24,25,29,0.631);
   width: 100%;
   height: 100vh;
   min-height: 100vh;
 }
-@media only screen and (max-width: 640px) {
-  .modal-filter {
-    background: #fff;
-  }
-}
 .modal {
-  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.24);
-          box-shadow: 0 2px 4px rgba(0,0,0,0.24);
-  -webkit-transform: translate(-50%, -350%);
-      -ms-transform: translate(-50%, -350%);
-          transform: translate(-50%, -350%);
+  -webkit-transform: scale(0.9) translateZ(0) translate3d(0, 0, 0);
+          transform: scale(0.9) translateZ(0) translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  opacity: 0.1;
-  -webkit-transition: -webkit-transform 0.8s, opacity 1s;
-          transition: transform 0.8s, opacity 1s;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.8s;
+          transition: transform 0.6s, opacity 0.8s;
+  max-width: 460px;
+  left: -9999px;
+  top: -9999px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 640px) {
   .modal {
     width: 100%;
     -webkit-box-shadow: 0 0 0;
             box-shadow: 0 0 0;
   }
 }
-@media only screen and (max-width: 640px) {
-  .modal {
-    top: 0;
-    left: 0;
-  }
+.modal .order__row {
+  margin-bottom: 20px;
+  border-bottom: 0;
 }
 .modal-content {
-  position: relative;
-  padding: 40px;
+  margin: 20px auto;
   background: #fff;
-}
-@media only screen and (max-width: 768px) {
-  .modal-content {
-    padding: 20px;
-  }
+  position: relative;
+  padding: 40px 45px;
+  -webkit-border-radius: 40px;
+          border-radius: 40px;
 }
 @media only screen and (max-width: 640px) {
   .modal-content {
-    max-height: -webkit-calc(100vh - 80px);
-    max-height: calc(100vh - 80px);
+    height: 100%;
+    padding: 20px;
     overflow-y: scroll;
-    padding: 20px 5px;
-    width: 100% !important;
+    width: 95% !important;
   }
-}
-@media only screen and (max-width: 768px) {
-  .modal-content {
-    width: 80%;
-  }
-}
-.modal-content--register {
-  width: 500px;
-}
-.modal-content--register input {
-  width: 100%;
-  margin-bottom: 20px;
 }
 .modal__show {
+  max-height: 100%;
   opacity: 1;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-@media only screen and (max-width: 768px) {
-  .modal__show {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-@media only screen and (max-width: 640px) {
-  .modal__show {
-    -webkit-transform: translate(0%, 0%);
-        -ms-transform: translate(0%, 0%);
-            transform: translate(0%, 0%);
-  }
+  -webkit-transform: scale(1) translateZ(0) translate3d(0, 0, 0);
+          transform: scale(1) translateZ(0) translate3d(0, 0, 0);
+  position: relative;
+  z-index: 1000;
+  left: initial;
+  top: initial;
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.8s;
+          transition: transform 0.6s, opacity 0.8s;
+  will-change: transform, opacity;
 }
 .modal-close {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+  background: #f8f8f8;
 }
 @media only screen and (max-width: 768px) {
   .modal-close {
-    top: 20px;
-    right: 20px;
+    top: 12px;
+    right: 12px;
   }
 }
 .modal-close:hover {
   cursor: pointer;
 }
-.modal-close .icon {
-  width: 24px;
-  height: 24px;
-  fill: rgba(0,0,0,0.42);
+.modal-close:hover .icon {
+  opacity: 1;
 }
-@media only screen and (max-width: 768px) {
-  .modal-close .icon {
-    width: 18px;
-    height: 18px;
-  }
+.modal-close .icon {
+  -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+  width: 12px;
+  height: 12px;
+  fill: #111;
+  opacity: 0.3;
+}
+.modal-hide-animation {
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.8s;
+          transition: transform 0.6s, opacity 0.8s;
 }
 .modal-open {
   overflow: hidden;
-  overflow-x: hidden;
   overflow-y: scroll;
   position: fixed;
   top: 0;
@@ -4828,8 +4836,46 @@ opacity 0 100% {
   width: 100%;
 }
 .modal-wrap {
-  position: relative;
+  position: fixed;
+  width: 100%;
   height: 100%;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.modal-title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+@media only screen and (max-width: 768px) {
+  .modal-title {
+    font-size: 20px;
+  }
+}
+.modal-text {
+  text-align: center;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+@media only screen and (max-width: 768px) {
+  .modal-text {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+.modal-send {
+  width: 100%;
 }
 .modal-title {
   margin-bottom: 40px;
