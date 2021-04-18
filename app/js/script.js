@@ -296,7 +296,7 @@ $(document).ready(function(){
 			autoplay: false,
 			speed: 500,
 			dots:false,
-			arrow:false,
+			arrows:false,
 			//fade: true,
 			customPaging : function(slider, i) {
 				return '<span class="dot"></span>';
@@ -482,6 +482,59 @@ $(document).ready(function(){
 	$('.phone-mask').mask('0 (000) 000-0000');
 	// phone mask === end
 
+	$('.fancybox').fancybox();
+
+	// ============ TRIGGER EVENT ============
+		body = $('body')
+	// toggle single
+	body.on('click','.js-toggle',function(){
+		$(this).toggleClass("active")
+	})
+	// toggle single === end
+
+	// switch
+	body.on('click', '.js-switch', function (e) {
+		if (e.target.className != 'style-input') {
+			var typeItem = $(this).data("item");
+			if ($(this).closest('.js-switch-wrap').length < 0) {
+				var groupItem = $(this).data("group");
+				var selector = $('.js-switch[data-group=' + groupItem + ']');
+				var size = selector.size()
+				selector.each(function () {
+					$(this).removeClass("active");
+				});
+				$('.js-switch-cont').each(function () {
+					if ($(this).data("group") === groupItem) {
+						if ($(this).data("item") === typeItem) {
+							if (size === 0) {
+								$(this).toggleClass("hidden")
+							} else {
+								$(this).removeClass("hidden")
+							}
+						} else {
+							$(this).addClass("hidden");
+						}
+					}
+				});
+			}else{
+				var parent = $(this).closest('.js-switch-wrap');
+				parent.find('.js-switch').removeClass('active')
+				parent.find('.js-switch-cont').each(function () {
+						if($(this).data("item") === typeItem) {
+							$(this).removeClass("hidden")
+						} else {
+							$(this).addClass("hidden");
+						}
+				});
+			}
+			$(this).addClass("active");
+		}
+	});
+	// switch === end
+
+	$('.js-tariff-toggle').click(function(){
+		$(this).find('.tariff-toggle__el').toggleClass('active')
+	});
 })
 
 //cash SVG

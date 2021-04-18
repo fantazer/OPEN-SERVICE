@@ -28,6 +28,7 @@
     "dragscroll": "^0.0.8",
     "jquery-nice-select": "^1.1.0",
     "masonry": "^4.2.0",
-    "jquery-mask-plugin": "^1.14.16"
+    "jquery-mask-plugin": "^1.14.16",
+    "fancybox": "^3.5.7"
   }
 }

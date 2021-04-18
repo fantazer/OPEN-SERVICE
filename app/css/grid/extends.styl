@@ -1,0 +1,82 @@
+@import '../variable/config/_config.styl'
+
+calcExtend(nameExtend,size1,size2,size3)
+	{nameExtend} (size1 px)
+	if size2
+		+below(1024px)
+			{nameExtend} (size2 px)
+	if size3
+		+below(640px)
+			{nameExtend} (size3 px)
+
+calcExtendBothVert(nameExtend,size1,size2,size3)
+	{nameExtend}-top size1 px
+	{nameExtend}-bottom size1 px
+	if size2
+		+below(1024px)
+			{nameExtend}-top size1 px
+			{nameExtend}-bottom size1 px
+	if size3
+		+below(640px)
+			{nameExtend}-top size1 px
+			{nameExtend}-bottom size1 px
+
+calcExtendBothHor(nameExtend,size1,size2,size3)
+	{nameExtend}-left size1 px
+	{nameExtend}-right size1 px
+	if size2
+		+below(1024px)
+			{nameExtend}-left size1 px
+			{nameExtend}-right size1 px
+	if size3
+		+below(640px)
+			{nameExtend}-left size1 px
+			{nameExtend}-right size1 px
+
+$listSize = ("margin" m),\
+						("margin-top" mt),\
+						("margin-right" mr),\
+						("margin-bottom" mb),\
+						("margin-left" ml),\
+						("padding" p),\
+						("padding-top" pt),\
+						("padding-right" pr),\
+						("padding-bottom" pb),\
+						("padding-left" pl)
+
+$listSizeVert = ("margin" msv),\
+								("padding" psv)
+
+$listSizeHor = ("margin" msh),\
+								("padding" psh)
+
+for listSizeItem in $listSize
+	for listItem in $listExtend
+		.{listSizeItem[1]}-{listItem[0]}
+			calcExtend(listSizeItem[0],listItem[0],listItem[1],listItem[2])
+
+// extend sides
+for listSizeItem in $listSizeVert
+	for listItem in $listExtend
+		.{listSizeItem[1]}-{listItem[0]}
+			calcExtendBothVert(listSizeItem[0],listItem[0],listItem[1],listItem[2])
+
+for listSizeItem in $listSizeHor
+	for listItem in $listExtend
+		.{listSizeItem[1]}-{listItem[0]}
+			calcExtendBothHor(listSizeItem[0],listItem[0],listItem[1],listItem[2])
+//  === end
+
+//simple
+.ml-a
+	margin-left auto
+
+.mr-a
+	margin-right auto
+
+.mt-a
+	margin-top: auto
+
+.mb-a
+	margin-bottom: auto
+

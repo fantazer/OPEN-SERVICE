@@ -1,0 +1,313 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.header-white
+	+header()
+
+.bg-full.pt-32.automate-banner(style="background-image:url('img/bg-line.jpg')")
+	.main-cont
+		+bread()
+		.g-row.gap-20
+			.g-1-6.lg__g-1-7.sm__g-1-12.mb-24
+				.type--xxl.type--bold.type--white.mb-24 Автоматизация ресторанов, кафе, баров на iiko
+				.type--md.type--white.w70.mb-32 Контролируйте все цифры своего бизнеса в едином окне в режиме реального времени
+				.g.gap-20.g-2.sm__g-1
+					.f.f-aic.f-gap-8
+						+icon("checked","icon icon--md icon--white")
+						.type--main.type--white.type--ws Стоимость от 1490 р/месяц
+					.f.f-aic.f-gap-8
+						+icon("checked","icon icon--md icon--white")
+						.type--main.type--white.type--ws Внедрение от 1 дня
+			.g-7-12.lg__g-8-12.sm__g-1-12
+				img(src="img/work-example-1.png", alt="")
+		.shadow-lg.p-32.bg--white.order-form-extend-top.br-4
+			.g.g-3.sm__g-1.gap-32
+				.input-wrap
+					+icon("user","icon icon--md icon--mark")
+					input(type="text" placeholder="Ваше имя" class="input input--icon input--clear w100")
+				.input-wrap
+					+icon("phone-call","icon icon--md icon--mark")
+					input(type="text" placeholder="8 (000) 000-00-00" class="input input--icon input--clear w100")
+				.btn--md.btn--mark
+					.type--md Оставить заявку
+.main-content
+	.main-cont
+		.type--center.type--xl.mb-60 Что вы получаете в результате сотрудничества с нами?
+
+		.g.g-6.f-aifs.gap-32.mb-64.md__g-3.sm__g-2
+			.f.f-aic.f-col
+				.icon--lg.mb-32
+					img(src="img/list.svg", alt="")
+				.type--center Сокращение фудкоста
+			.f.f-aic.f-jcfs.f-col
+				.icon--lg.mb-32
+					img(src="img/mind.svg", alt="")
+				.type--typePrimary.type--center Сокращение затрат на персонал
+			.f.f-aic.f-jcfs.f-col
+				.icon--lg.mb-32
+					img(src="img/mobile-phone.svg", alt="")
+				.type--typePrimary.type--center Снижение злоупотреблений
+			.f.f-aic.f-jcfs.f-col
+				.icon--lg.mb-32
+					img(src="img/stopwatch.svg", alt="")
+				.type--typePrimary.type--center Вовремя принятые решения
+			.f.f-aic.f-jcfs.f-col
+				.icon--lg.mb-32
+					img(src="img/progress.svg", alt="")
+				.type--typePrimary.type--center Свободу от рутины
+			.f.f-aic.f-jcfs.f-col
+				.icon--lg.mb-32
+					img(src="img/resolution.svg", alt="")
+				.type--typePrimary.type--center Решение вопросов с надзорными органами
+
+.bg--snow.pt-48
+	.main-cont
+		.type--center.type--xl.mb-60 Что отличает iiko от других систем?
+		.slider-wrap.slider-wrap--simple.mb-100
+			.slider-control.slider-control--left
+				+icon("arrow-left","icon")
+			.slider-control.slider-control--right
+				+icon("arrow-right","icon")
+			.slider-item.slider-single
+				- for (var i=0;i<4;i++)
+					.el
+						.f.slider-different__el
+							.w50.sm__w100.bg-full.slider-different__el-img(style="background-image:url('img/different-slider-1.jpg')")
+							.w50.sm__w100.bg--white.p-48.slider-different__el-content
+								.type--xlg-light.mb-24 Планирование закупок, расписания и работы кухни
+								.f.f-gap-16.mb-16
+									+icon("checked","icon icon--mark icon--sm")
+									span.type--typePrimary Все операции на кассе или телефоне, что есть под рукой
+								.f.f-gap-16.mb-16
+									+icon("checked","icon icon--mark icon--sm")
+									span.type--typePrimary Легкое переключение между режимами кассы
+								.f.f-gap-16
+									+icon("checked","icon icon--mark icon--sm")
+									span.type--typePrimary Просто и не требует присмотра (постоянного контроля)
+
+		.type--center.type--xlg-light.mb-40 Вам надо только запустить процесс, все работает автоматически!
+.bg-full.p-80.mb-80(style="background-image:url('img/bg-image-1.jpg')")
+	.main-cont
+		.g-row
+			.g-1-6.sm__g-1-12.bg--white.p-48.br-4
+				.f.f-mid.f-col.text
+					.type--center.type--xlg-light.mb-16 Попробуйте iiko в действии!
+					.type--typePrimary.type--main.type--center.mb-24 Подберем оборудование и оптимальный <br> тариф iiko под ваши задачи и бюджет
+					.btn--md.btn--mark Оставить заявку
+
+.main-cont
+	.g-row.gap-20.mb-60
+		.g-1-5.sm__g-1-12
+			.type--xl.mb-32 Кто мы? И почему клиенты выбирают нас?
+			.f.f-gap-16.mb-16
+				+icon("checked","icon icon--mark icon--sm")
+				span.type--md-light.type--typePrimary Работаем по всей РФ и Казахстану
+			.f.f-gap-16.mb-16
+				+icon("checked","icon icon--mark icon--sm")
+				span.type--md-light.type--typePrimary Совместный проект с вендором в ОАЭ
+			.f.f-gap-16.mb-16
+				+icon("checked","icon icon--mark icon--sm")
+				span.type--md-light.type--typePrimary Техподдержка 24/7, стандарт ISO9000
+			.f.f-gap-16
+				+icon("checked","icon icon--mark icon--sm")
+				span.type--md-light.type--typePrimary Разрабатываем собственные решения
+
+		.g-7-12.mb-80.md__g-6-12.sm__g-1-12
+			.g.g-3.sm__g-1.gap-20.ladder-row
+				.ladder-el.bg--white.br-4.shadow-lg.psh-24.psv-32.f.f-mid.f-col.text
+					.ladder-el__icon.bg--snow.br-round.icon--xxl.f.f-mid.p-12.mb-24
+						img(src="img/partner.svg", alt="").icon--lg
+					.ladder-el__content.f.f-mid.f-col
+						.ladder-el__title.type--center.type--xlg-light.type--mark.mb-16 11 ЛЕТ
+						.ladder-el__text.type--center на рынке
+				.ladder-el.bg--white.br-4.shadow-lg.psh-24.psv-32.f.f-mid.f-col.text
+					.ladder-el__icon.bg--snow.br-round.icon--xxl.f.f-mid.p-12.mb-24
+						img(src="img/group-partner.svg", alt="").icon--lg
+					.ladder-el__content.f.f-mid.f-col
+						.ladder-el__title.type--center.type--xlg-light.type--mark.mb-16 4500+
+						.ladder-el__text.type--center клиентов на обслуживании
+				.ladder-el.bg--white.br-4.shadow-lg.psh-24.psv-32.f.f-mid.f-col.text
+					.ladder-el__icon.bg--snow.br-round.icon--xxl.f.f-mid.p-12.mb-24
+						img(src="img/greet.svg", alt="").icon--lg
+					.ladder-el__content.f.f-mid.f-col
+						.ladder-el__title.type--center.type--xlg-light.type--mark.mb-16 ТОП 1
+						.ladder-el__text.type--center Золотой партнер Master Distributor
+
+	.type--center.type--xl.mb-60 Нам доверяют
+
+	.slider-wrap.slider-wrap--simple.mb-64
+		.slider-control.slider-control--left
+			+icon("arrow-left","icon")
+		.slider-control.slider-control--right
+			+icon("arrow-right","icon")
+		.slider-client.slider-item
+			- for (var i=1;i<12;i++)
+				.slider-client__el-wrap
+					.slider-client__el(style="background-image:url('img/trust/trust-"+i+".jpg')")
+
+.bg--snow.pt-48.pb-48.mb-60
+	.main-cont
+		.type--center.type--xl.mb-60 Интервью с нашими клиентами
+		.interview.shadow-lg.br-8
+			a(href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/video-cover-1.jpg')").interview-video.fancybox
+				+icon("play-round","icon")
+			.interview-content
+				.interview-el
+					.interview-el__img(style="background-image:url('img/video-user-1.jpg')")
+					.interview-el__info
+						.interview-el__title Как открыть фудтрак? Ресторан на колесах "Скрепка"
+						.interview-el__name Сергей Матвиенко
+				.interview-el
+					.interview-el__img(style="background-image:url('img/video-user-2.jpg')")
+					.interview-el__info
+						.interview-el__title Как открыть сеть халяль фастфуд в Казани? Опыт "Кыстыбый".
+						.interview-el__name Азат Назмутдинов
+				.interview-el
+					.interview-el__img(style="background-image:url('img/video-user-3.jpg')")
+					.interview-el__info
+						.interview-el__title Как открыть 100 баров? Масштабирование бизнеса
+						.interview-el__name Павел Чесноков
+				.btn--md.btn--mark.btn--full Смотреть больше
+
+.main-cont
+	.type--center.type--xl.mb-12 Тарифы iikoCloud
+	.type--md-light.type--typePrimary.type--center.mb-32 Поможем выбрать облачное решение с искусственным интеллектом
+	.f.f-mid.mb-40
+		.dig.g-afc.f-aic.gap-12.tariff-toggle.js-tariff-toggle
+			.tariff-toggle__el.active.type--md Стоимость за месяц
+			.switch.js-toggle
+			.tariff-toggle__el.type--md За год со скидкой
+.main-cont.mb-80
+	.g.g-4.gap-20.md__g-2.sm__g-1
+		.tariff-el.bg--snow.br-8
+			.tariff-el__state
+				.type--xlg.type--center.mb-8 NANO
+				.type--xs.type--center.type--typePrimary.mb-24 Для кофе-пойнтов и фудтраков
+				.type--xl.type--bold.type--center.type--mark.mb-12 1 490
+					span.type--bold.type--main р
+				.type--md.type--center.type--mark.mb-24 в месяц
+			.tariff-el__descr.f.f-col
+				.mb-a
+					.dig.g-afc.gap-8.mb-16
+						+icon("checked","icon icon--mark icon--sm")
+						span.type--xs.type--typePrimary Прием оплаты и печать чеков
+					.dig.g-afc.gap-8.mb-16
+						+icon("checked","icon icon--mark icon--sm")
+						span.type--xs.type--typePrimary Простой учет в облаке
+					.dig.g-afc.gap-8.mb-16
+						+icon("checked","icon icon--mark icon--sm")
+						span.type--xs.type--typePrimary Базовая система лояльности
+					.dig.g-afc.gap-8.mb-16
+						+icon("checked","icon icon--mark icon--sm")
+						span.type--xs.type--typePrimary Работа только со смарткассой
+				.btn--md.btn--mark.btn--full.mt-24 Купить
+
+		.tariff-el.bg--snow.br-8
+			.tariff-el__state
+				.type--xlg.type--center.mb-8 START
+				.type--xs.type--center.type--typePrimary.mb-24 Для небольших кафе
+				.type--xl.type--bold.type--center.type--mark.mb-12 3 390
+					span.type--bold.type--main р
+				.type--md.type--center.type--mark.mb-24 в месяц*
+				.type--sm.type--center.type--typePrimary Как в iikoCloud NANO
+				.f.f-mid.msv-16
+					+icon("plus","icon icon--sm icon--mark")
+			.tariff-el__descr
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Обслуживание у столиков и резервы
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Прием заказов на доставку на кассе
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Готовый сайт доставки из коробки
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Работа на POS-терминалах и планшетах
+				.btn--md.btn--mark.btn--full.mt-24 Купить
+
+		.tariff-el.active.shadow-lg.bg--white.br-8
+			.tariff-el__state
+				.type--xlg.type--center.mb-8 PRO
+				.type--xs.type--center.type--typePrimary.mb-24 Для ресторанов и сетей
+				.type--xl.type--bold.type--center.type--mark.mb-12 5 390
+					span.type--bold.type--main р
+				.type--md.type--center.type--mark.mb-24 в месяц*
+				.type--sm.type--center.type--typePrimary Как в iikoCloud START
+				.f.f-mid.msv-16
+					+icon("plus","icon icon--sm icon--mark")
+			.tariff-el__descr
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Управление финансами, складом, персоналом
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Контроль стандартов производства блюд
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Система лояльности с геймификацией
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Подключение сторонних приложений (API)
+				.btn--md.btn--mark.btn--full.mt-24 Купить
+
+		.tariff-el.bg--snow.br-8
+			.tariff-el__state
+				.type--xlg.type--center.mb-8 ENTERPRISE
+				.type--xs.type--center.type--typePrimary.mb-24 Для крупных ресторанных сетей
+				.type--xl.type--bold.type--center.type--mark.mb-12 7 390
+					span.type--bold.type--main р
+				.type--md.type--center.type--mark.mb-24 в месяц*
+				.type--sm.type--center.type--typePrimary Как в iikoCloud PRO
+				.f.f-mid.msv-16
+					+icon("plus","icon icon--sm icon--mark")
+			.tariff-el__descr
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Контроль свежести блюд
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Колл-центр и контроль этапов доставки
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Wallet и RFM-анализ в лояльности
+				.dig.g-afc.gap-8.mb-16
+					+icon("checked","icon icon--mark icon--sm")
+					span.type--xs.type--typePrimary Управление франшизой
+				.btn--md.btn--mark.btn--full.mt-24 Купить
+
+.bg--snow.pt-48.pb-48
+	.main-cont
+		.g.g-2.md__g-1.gap-20
+			.f.f-mid
+				.el
+					.type--xlg-light.mb-24 Интересно? <br> Переходите на лучшее с выгодой!
+					.text
+						ul
+							li Не устраивает ПО, на котором сейчас работаете? Получите скидку 50% на любой тариф при переходе на iiko Cloud.
+
+							li Только открываетесь? Получите 1 месяц использования iiko в подарок.
+
+							li Испытываете проблемы с iiko? Получите льготные условия при переходе на обслуживание в нашу компанию.
+			.el
+				.bg--white.br-8.shadow-lg.p-32
+					.type--xlg-light.type--center.mb-24 Свяжитесь с нами, и вы удивитесь, что когда-то могли работать иначе
+					.input-wrap.mb-24
+						+icon("user","icon icon--md icon--mark")
+						input(type="text" placeholder="Ваше имя" class="input input--icon input--clear w100")
+					.input-wrap.mb-24
+						+icon("phone-call","icon icon--md icon--mark")
+						input(type="text" placeholder="8 (000) 000-00-00" class="input input--icon input--clear w100")
+					.g.g-2.sm__g-1.gap-20.f-aic
+						.check-el
+							label.style-label.style-label--checkbox
+								input(type="checkbox" checked check="checked").sytle-input
+								.sytle-input-element
+									+icon("checked","icon-check")
+								.sytle-input-text Согласен с <a href="/politika/">политикой конфиденциальности</a>
+						input(type="submit" value="Оставить заявку").btn--md.btn--mark.btn--full
+.footer-item.footer-item--close
+	+footer()
+
+include ./block_html/_script.pug

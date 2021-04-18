@@ -2,6 +2,15 @@
 @import "variable/_function.styl"
 @import "variable/_fonts.styl"
 @import "variable/_ie.styl"
+
+@import "grid/grid.css"
+@import "grid/extends.css"
+@import "variable/config/_config.styl"
+@import "variable/config/_grid.styl"
+@import "variable/config/_typography.styl"
+@import "variable/config/_color.styl"
+@import "variable/config/_input.styl"
+
 @import "icon/sprite.css"
 @import "variable/_helper.styl"
 @import "variable/_default.styl"
@@ -9,6 +18,7 @@
 @import "variable/_constant.styl"
 @import "variable/_grid.styl"
 @import "../module/**/*"
+
 
 rupture.scale = 0 480px 768px 992px 1200px
 rupture.scale-names = 'xs' 'sm' 'md' 'lg'
@@ -763,10 +773,13 @@ body
 	.main-cont
 		+below(1024px)
 			center(640px,10px)
+
 .footer-tab
 	+below(1024px)
 		width: 100%
 		margin 0 0 20px 0
+		flex(mid)
+		fl()
 	+below(640px)
 		display: none
 	flex(between)
@@ -777,6 +790,8 @@ body
 		fw()
 		padding-top: 30px
 		padding-bottom: 30px
+		flex(mid)
+		fl()
 	+below(640px)
 		padding: 50px 0
 	flex(between)
@@ -786,8 +801,12 @@ body
 	@extend .solution__head
 	width: 100%
 .footer__head-wrap
+	+below(1024px)
+		margin-bottom: 24px
+		width: 100%
 	border-bottom:1px solid $border-color
 	flex(mid)
+
 //.footer__head
 .footer__head-el
 	@extend .solution__head-el
@@ -866,8 +885,6 @@ body
 	color $blue
 
 .footer-soc
-	+below(1024px)
-		margin-right: auto
 	+below(640px)
 		width: 100%
 		flex(mid)
@@ -2304,7 +2321,7 @@ select.select-beauty
 	text-align: center
 	color white
 
-.main-content
+.text
 	ul
 		list-style: none
 		margin-bottom: 40px
@@ -2318,11 +2335,11 @@ select.select-beauty
 			&:before
 				content ''
 				position: absolute
-				left - 20px
-				height: 1px
-				width: 12px
-				background: $main-text-color
-				top 10px
+				size 8px
+				round()
+				background: $mark
+				left -20px
+				top 8px
 
 .content
 	+below(768px)
@@ -3921,6 +3938,7 @@ select.select-beauty
 	color $blue
 	text-align: center
 	margin-bottom: 50px
+
 .banner-extend__get
 	@extend .btn--md
 	@extend .btn--mark
@@ -3929,11 +3947,6 @@ select.select-beauty
 	+below(768px)
 		margin-bottom: 20px
 	margin-bottom: 140px
-	padding-bottom: 0
-	.intro-section__title
-		+below(768px)
-			margin-bottom: 20px
-		margin-bottom: -5%
 
 .service-info__card-wrap--border
 	.service-info__card-el
@@ -4582,13 +4595,12 @@ select.select-beauty
 
 .slider-client__el
 	bg-full()
-	padding: 15% 10%
+	padding: 20% 10%
 	background-size contain
 //Навигация снаружи
 .slider-wrap
 	position relative
-	margin-top: 50px
-	margin-bottom: 100px
+
 .slider-wrap--simple
 	.slider-control
 		round()
@@ -4831,9 +4843,133 @@ select.select-beauty
 	right: 40px
 	bottom 40px
 // extends
-.mb-40
-	margin-bottom: 40px
-.mb-60
-	margin-bottom: 60px
+
 // extends === end
+
+.order-form-extend-top
+	+below(640px)
+		margin-top: 20px
+	margin-bottom: -64px
+.slider-different__el
+	+below(640px)
+		fl()
+	align-items center
+.slider-different__el-img
+	+below(640px)
+		padding: 35%
+	br(12px)
+	padding: 13% 10%
+	margin: 20px
+.slider-different__el-content
+	br(12px)
+	overflow: hidden
+
+.ladder-el
+	+above(641px)
+		&:nth-child(1)
+			transform: translateY(80px)
+		&:nth-child(2)
+			transform: translateY(40px)
+	+below(640px)
+		flex-flow row
+		justify-content: flex-start
+		padding: 20px
+.ladder-el__icon
+	+below(640px)
+		margin: 0 20px 0 0
+
+.ladder-el__content
+	+below(640px)
+		display block
+
+.ladder-el__title
+	+below(640px)
+		text-align: left
+		margin-bottom: 8px
+
+.ladder-el__text
+	+below(640px)
+		text-align: left
+	color $typePrimary
+.interview
+	+below(768px)
+		fl()
+		max-width 640px
+	f()
+	background: white
+	overflow: hidden
+	margin-left auto
+	margin-right auto
+.interview-video
+	+below(768px)
+		width: 100%
+		padding: 25% 10%
+	bg-full()
+	width: 65%
+	position relative
+	cp()
+	padding: 15% 10%
+	&:hover
+		.icon
+			opacity: 1
+	.icon
+		position absolute
+		size 80px
+
+		round()
+		tr(all)
+		fill red
+		opacity: .8
+		top 50%
+		left 50%
+		transform translate(-50%,-50%)
+.interview-content
+	+below(768px)
+		width: 100%
+	+below(640px)
+		padding: 20px
+	background: white
+	width: 35%
+	padding: 30px 40px
+.interview-el
+	f()
+	margin-bottom: 24px
+	&:last-child
+		margin-bottom: 0
+.interview-el__img
+	size 80px
+	bg-full()
+	margin-right: 18px
+	round()
+	min-width 80px
+//.interview-el__info
+.interview-el__title
+	@extend .type--md-light
+	color $mark
+	margin-bottom: 4px
+
+.tariff-toggle
+	+below(640px)
+		fl()
+		fw()
+		display: flex
+
+.tariff-toggle__el
+	opacity: .4
+	&.active
+		opacity: 1
+
+.tariff-el
+	padding: 35px 30px
+	f()
+	fl()
+	border-bottom 3px solid #C3CEDA
+	&.active
+		border-bottom 3px solid #2F7FE6
+.tariff-el__state
+	flex-grow 1
+
+.automate-banner
+	margin-bottom: 100px
+
 

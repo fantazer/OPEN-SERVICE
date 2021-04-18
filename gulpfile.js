@@ -11,7 +11,7 @@ var ftp = require( 'vinyl-ftp' );
 var reload = browserSync.reload;
 var rupture = require('rupture');
 var data = require('gulp-data');
-//var jade = require('gulp-jade');
+
 var notify = require('gulp-notify');
 var pngquant = require('imagemin-pngquant');
 var imageminMozjpeg = require('imagemin-mozjpeg');
@@ -28,9 +28,7 @@ var prettify = require('gulp-prettify');
 var combineMq = require('gulp-combine-mq');
 var webshot=require('gulp-webshot');
 var createFile = require('create-file');
-//var jadeGlobbing  = require('gulp-jade-globbing');
-//var wiredep = require('wiredep').stream;
-var clean = require('gulp-clean');
+
 var svgSprite = require('gulp-svg-sprite');
 var svgSpriteTempl = require('gulp-svg-sprites');
 var rename = require('gulp-rename');
@@ -41,30 +39,10 @@ var zip = require('gulp-zip');
 var pugInheritance = require('gulp-pug-inheritance');
 var changed = require('gulp-changed');
 var pug = require('gulp-pug');
-var favicons = require("gulp-favicons");
 var emitty = require('emitty').setup('app/html', 'pug');
+var gcmq = require('gulp-group-css-media-queries');
 
 // ########## make img ###############
-
-//favicon
-gulp.task("favicon", function () {
-    return gulp.src("app/img/logo.png")
-    .pipe(favicons({
-    android: true,
-    apple: true,
-    coast: true,
-    favicons: true,
-    firefox: true,
-    opengraph: false,
-    windows: true,
-    background: 'transparent',
-    tileBlackWhite: false,
-    manifest: null,
-    trueColor: false,
-    logging: true
-    }))
-    .pipe(gulp.dest("app/img/fav/"));
-});
 
 //compress image
 gulp.task('imageCompress',function(){
@@ -92,45 +70,51 @@ gulp.task('imageCompress',function(){
 
 
 //sprite SVG
+//sprite SVG
 gulp.task('svg', function () {
-		 gulp.src(['!app/img/svg/**--color.*','app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg'])
-		 .pipe(cheerio({
-						run: function ($) {
-								$('[fill]').removeAttr('fill'); //remove if need color icon
-								$('[style]').removeAttr('style');
-								$('style').remove();
-						},
-						parserOptions: {xmlMode: true }
-			}))
+	gulp.src(['!app/img/svg/**--color.*', 'app/img/svg/**.*', '!app/img/svg/defs.svg', '!app/img/svg/sprite.svg'])
+		.pipe(cheerio({
+			run: function ($) {
+				$('[fill]').removeAttr('fill'); //remove if need color icon
+				$('[style]').removeAttr('style');
+				$('[opacity]').removeAttr('opacity');
+				$('style').remove();
+			},
+			parserOptions: {xmlMode: true}
+		}))
 		.pipe(gulp.dest('app/img/svg/'));
 
-		var svgSrc = gulp.src(['app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg']);
-		svgSrc
-				.pipe(svgmin({
-						js2svg: {
-								pretty: true
-						}
-				}))
-				.pipe(svgSprite( {
-						mode:{
-								symbol: true,
-						}
-				}))
-				.pipe(rename("pack.html"))
-				.pipe(gulp.dest('app/img/'))
-				.pipe(gulp.dest('dist/img/'))
+	var svgSrc = gulp.src(['app/img/svg/**.*', '!app/img/svg/defs.svg', '!app/img/svg/sprite.svg']);
+	svgSrc
+		.pipe(svgmin({
+			js2svg: {
+				pretty: true
+			}
+		}))
+		.pipe(svgSprite({
+			mode: {
+				symbol: true,
+			}
+		}))
+		.pipe(rename("pack.html"))
+		.pipe(gulp.dest('app/img/'))
+		.pipe(gulp.dest('dist/img/'))
 
-		svgSrc
-				.pipe(svgSpriteTempl())
-				.pipe(gulp.dest('app/img/'))
-				.pipe(gulp.dest('dist/img/'))
+	svgSrc
+		.pipe(svgSpriteTempl())
+		.pipe(gulp.dest('app/img/'))
+		.pipe(gulp.dest('dist/img/'))
 
-		var  svgArray =[];
-		fs.writeFile("app/html/block_html/_svg.pug",'');
-		fs.readdirSync('app/img/svg').forEach(file => {
-			svgArray.push("\'"+file+"\'");
-		})
-		fs.writeFile("app/html/block_html/_svg.pug",'- svgArray = ['+ svgArray+'];');
+	var svgArray = [];
+	fs.writeFile("app/html/block_html/_svg.pug", '', function (err, result) {
+		if (err) console.log('error', err);
+	});
+	fs.readdirSync('app/img/svg').forEach(file => {
+		svgArray.push("\'" + file + "\'");
+	})
+	fs.writeFile("app/html/block_html/_svg.pug", '- svgArray = [' + svgArray + '];', '', function (err, result) {
+		if (err) console.log('error', err);
+	});
 });
 
 
@@ -178,37 +162,39 @@ gulp.task('screenshot', function() {
 
 //Prefix my css
 gulp.task('prefix', function () {
-		return gulp.src('app/css/style.css')
-				.pipe(cache('prefix'))
-				.pipe(autoprefixer({
-						browsers: ['last 15 versions']
-				}))
-				.pipe(gulp.dest('app/css/'));
+	return gulp.src('app/css/style.css')
+		.pipe(cache('prefix'))
+		.pipe(autoprefixer({
+			browsers: ['last 15 versions']
+		}))
+		.pipe(gcmq())
+		.pipe(gulp.dest('app/css/'));
 });
 
 //Stylus
 gulp.task('stylus', function () {
-		return gulp.src(['app/css/**/*.styl','app/module/**/*.styl'])
-				.pipe(cache('stylus'))
-				.pipe(progeny({
-						regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
-				}))
-				.pipe(filter(['**/*.styl', '!**/_*.styl']))
-				.pipe(stylus({
-						use:[rupture()],
-						'include css': true
-				})).on('error', errorhandler)
-				.pipe(gulp.dest('app/css/'))
+		return gulp.src(['app/css/**/**/*.styl','app/module/**/*.styl'])
+			.pipe(cache('stylus'))
+			.pipe(progeny({
+					regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
+			}))
+			.pipe(filter(['**/*.styl', '!**/_*.styl']))
+			.pipe(stylus({
+					use:[rupture()],
+					'include css': true
+			})).on('error', errorhandler)
+			.pipe(gcmq())
+			.pipe(gulp.dest('app/css/'))
 });
-
 //css beautify
-gulp.task('css-beautify',function(){
-		return gulp.src('app/css/style.css')
-				.pipe(combineMq({
-						beautify: true
-				}))
-				.pipe(gulp.dest('dist/css/'));
+gulp.task('css-beautify', function () {
+	return gulp.src('app/css/style.css')
+		.pipe(combineMq({
+			beautify: true
+		}))
+		.pipe(gulp.dest('dist/css/'));
 })
+
 
 //min css
 gulp.task('min:css',function(){
@@ -240,11 +226,8 @@ gulp.task('watch', () => {
 
 
 gulp.task('pug', function() {
-		//gulp.src(['app/html/modal.pug','app/module/**/*.pug',])
-		gulp.src(['app/html/*.pug','app/module/**/*.pug',])
-				//.pipe(changed('app/', {extension: '.html'}))
-				//.pipe(cache('pug'))
-				//.pipe(pugInheritance({basedir: 'app/html/',skip:'node_modules/'}))
+		gulp.src(['app/html/page-intro.pug','app/module/**/*.pug',])
+		//gulp.src(['app/html/*.pug','app/module/**/*.pug',])
 				.pipe(gulpif(global.watch, emitty.stream(global.emittyChangedFile)))
 				.pipe(progeny({
 						regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/

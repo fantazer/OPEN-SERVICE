@@ -1,0 +1,124 @@
+@import '../variable/config/_config.styl'
+
+//START GRID
+$gridList = (1..12)
+
+for $gridListItem in $gridList
+	.g-{$gridListItem}
+		grid-template-columns: repeat($gridListItem, 1fr)
+
+for $windowSizeItem in $windowSize
+	for $gridListItem in $gridList
+		.{$windowSizeItem[0]}__g-{$gridListItem}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+					grid-template-columns: repeat($gridListItem, 1fr)
+
+.g-row
+	display: grid
+	grid-template-columns: repeat(12, 1fr)
+
+for num in (1..12)
+	for numEl in (1..12)
+		.g-{num}-{numEl}
+			grid-column num / numEl+1
+
+for $windowSizeItem in $windowSize
+	for num in (1..12)
+		for numEl in (1..12)
+			.{$windowSizeItem[0]}__g-{num}-{numEl}
+				@media only screen and (max-width: $windowSizeItem[1]px)
+					grid-column num / numEl+1
+// END GRID
+
+// calc gap
+gap($gapVal)
+	margin-top: "calc(-1 * (%s))" % $gapVal
+	margin-left: "calc(-1 * (%s))" % $gapVal
+	&>*
+		margin-top $gapVal
+		margin-left $gapVal
+
+calcFlexGap(size1,size2,size3)
+	gap(size1 px)
+	if size2
+		+below(1024px)
+			gap(size2 px)
+	if size3
+		+below(640px)
+			gap(size3 px)
+
+calcGap(size1,size2,size3)
+	grid-gap size1 px
+	if size2
+		+below(1024px)
+			grid-gap size2 px
+	if size3
+		+below(640px)
+			grid-gap size3 px
+
+for $gridGapItem in $gridGap
+	.f-gap-{$gridGapItem}
+		calcFlexGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])
+
+for $gridGapItem in $gridGap
+	.gap-{$gridGapItem}
+		calcGap($gridGapItem[0],$gridGapItem[1],$gridGapItem[2])
+// calc gap === end
+
+// calc width
+for itemWidth in (1..20)
+	.w{itemWidth*5}
+		width (itemWidth*5) %
+
+for $windowSizeItem in $windowSize
+	for itemWidth in (1..20)
+		.{$windowSizeItem[0]}__w{itemWidth*5}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+					width (itemWidth*5) %
+
+for itemListWmax in $listWmax
+	.wmax-{itemListWmax}
+		max-width itemListWmax px
+		width: 100%
+// calc width === end
+
+// Flex-wrap
+for $windowSizeItem in $windowSize
+	.{$windowSizeItem[0]}__fw
+		@media only screen and (max-width: $windowSizeItem[1]px)
+			flex-wrap wrap
+// Flex-wrap  === end
+
+// Flex order
+for $item in (1..3)
+	.order-{$item}
+		order $item
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__order-{$item}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				order $item
+// Flex order === end
+
+// Flex flow
+$flexFlow = ("f-col" column),\
+						("f-row" row)
+
+for $flexFlowItem in $flexFlow
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__{$flexFlowItem[0]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				flex-flow $flexFlowItem[1]
+// Flex flow === end
+
+
+
+// Visible mobile
+for $windowSizeItem in $windowSize
+	.{$windowSizeItem[0]}__hide
+		@media only screen and (max-width: $windowSizeItem[1]px)
+			display none!important
+	.{$windowSizeItem[0]}__snow
+		@media only screen and (min-width: $windowSizeItem[1]px)
+			display block
+// Visible mobile === end
+

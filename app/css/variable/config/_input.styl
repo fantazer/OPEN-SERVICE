@@ -1,0 +1,61 @@
+// === Inputs ===
+
+// calc border size
+for $listBrItem in $listBr
+	.br-{$listBrItem}
+		border-radius $listBrItem px
+
+.br-round
+	border-radius 50%
+
+.bor
+	border-width 1px
+	border-style solid
+
+.bor-t
+	border-top-width 1px
+	border-style solid
+
+.bor-b
+	border-bottom-width 1px
+	border-style solid
+
+.bor-r
+	border-right-width 1px
+	border-style solid
+
+.bor-l
+	border-left-width 1px
+	border-style solid
+// calc border size === end
+
+
+
+// switch
+.switch
+	position relative
+	background: gray
+	height: 34px
+	min-width: 62px
+	width: 62px
+	br(18px)
+	cp()
+	&:before
+		content ''
+		tr(all)
+		size 24px
+		round()
+		background: white
+		position absolute
+		left 6px
+		top 4.5px
+	&.active
+		background: $mark
+		&:before
+			content ''
+			size 24px
+			round()
+			background: white
+			position absolute
+			left calc(100% - 30px)
+// switch === end

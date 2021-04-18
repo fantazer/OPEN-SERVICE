@@ -1,0 +1,61 @@
+
+
+// main colors
+for $colorsName,$colorsVal in $colors
+	.bg--{$colorsName}
+		background: $colorsVal
+	.type--{$colorsName}
+		color: $colorsVal
+	.icon--{$colorsName}
+		fill $colorsVal
+	.bor--{$colorsName}
+		border-color $colorsVal
+// main colors === end
+
+// color hover
+for $colorsName,$colorsVal in $colors
+	.bg-h--{$colorsName}
+		&:hover
+			background: darken($colorsVal,5)
+	.type-h--{$colorsName}
+		&:hover
+			color: darken($colorsVal,5)
+	.icon-h--{$colorsName}
+		&:hover
+			fill darken($colorsVal,5)
+	.bor-h--{$colorsName}
+		&:hover
+			border-color darken($colorsVal,5)
+// color hover === end
+
+// box shadow
+.shadow-sm
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05)
+.shadow-h-sm
+	&:hover
+		box-shadow: 0 3px 8px 0 rgba(0,0,0,0.05)
+
+.shadow
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06)
+.shadow-h
+	&:hover
+		box-shadow: 0 3px 9px 0 rgba(0,0,0,0.1),0 3px 8px 0 rgba(0,0,0,0.06)
+
+.shadow-md
+	box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06)
+.shadow-h-md
+	&:hover
+		box-shadow: 0 10px 14px -3px rgba(0,0,0,0.1),0 8px 12px -3px rgba(0,0,0,0.06)
+
+.shadow-lg
+	box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)
+.shadow-h-lg
+	&:hover
+		box-shadow: 0 32px 36px -5px rgba(0,0,0,0.1),0 24px 24px -5px rgba(0,0,0,0.04)
+
+.shadow-xl
+	box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25)
+.shadow-h-xl
+	&:hover
+		box-shadow: 0 36px 38px -5px rgba(0,0,0,0.25)
+// box shadow === end

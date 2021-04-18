@@ -1,0 +1,38 @@
+//  ============================ Typography ============================
+// icon size
+for $listIconItem in $listIcon
+	.icon--{$listIconItem[0]},.icon--{$listIconItem[1]}
+		width $listIconItem[1] px
+		height $listIconItem[1] px
+// icon size === end
+
+// line height
+.type--lh-1
+	line-height:1
+.type--lh-1_2
+	line-height:1.2
+.type--lh-1_4
+	line-height:1.4
+.type--lh-1_6
+	line-height:1.6
+// line height === end
+
+// type align
+$typeAlign = ("type--left" left),\
+							("type--mid" center),\
+							("type--right" right)
+
+for $itemType in $typeAlign
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__{$itemType[0]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				text-align $itemType[1]
+// type align === end
+
+.type--ws
+	white-space nowrap
+
+.type--line
+	text-decoration: line-through
+
+

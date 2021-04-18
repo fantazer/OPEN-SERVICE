@@ -1,0 +1,93 @@
+.btn
+	br(8px)
+	tr(all)
+	cp()
+	display inline-flex
+	background none
+	border 0
+	text-align: center
+	justify-content center
+	&.disable
+		pointer-events none
+		opacity: .4
+
+// btn size
+.btn--sm
+	@extend .type--sm
+	padding 8px 14px
+
+.btn--md
+	@extend .type--main
+	padding 16px 28px
+
+.btn--lg
+	@extend .type--lg
+	padding 20px 36px
+
+.btn--mobile
+	+below(480px)
+		width 100%
+
+.btn--full
+	width: 100%
+	display block
+// btn size === end
+
+// btn type
+.btn--mark
+	color white
+	background $mark
+	&:hover
+		background-color lighten($mark,10)
+		color white!important
+	&:active
+		background-color lighten($mark,10)
+	input[type="submit"]
+		border 0
+	.icon
+		tr()
+		fill white
+
+.btn--light
+	border 1px solid $mark
+	background-color #ffffff
+	color $mark
+	&:hover
+		background: $mark
+		color white
+		.icon
+			fill white
+	.icon
+		tr()
+		fill $mark
+
+.btn--simple
+	border 1px solid $border-color
+	color $mark
+	&:hover
+		border 1px solid $mark
+	.icon
+		tr()
+		fill $mark
+
+.btn--white
+	background-color #ffffff
+	color $mark
+	border 1px solid white
+	&:hover
+		background: transparent
+		color white
+		.icon
+			fill white
+	.icon
+		fill $mark
+
+.btn--empty-white
+	color white
+	border 1px solid transparent
+	&:hover
+		border 1px solid white
+		color white
+	.icon
+		fill white
+// btn type === end

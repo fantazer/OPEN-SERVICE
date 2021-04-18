@@ -24,6 +24,7 @@ $purple-gradient = linear-gradient(-45deg, #607aeb 0%, #f13e75 100%)
 $white = #f1f6fb
 $gray = #ccd5eb
 $red = #ef393f
+$typeGray = #767676
 
 $main-text-color = #262a34
 $link-color = black
@@ -61,7 +62,6 @@ typeSize(fontSm,font)
 	typeSize(15,13)
 	font-family 'Open Sans'
 
-
 .type--md
 	typeSize(18,14)
 	font-family "Museo Sans Cyrl"
@@ -71,14 +71,21 @@ typeSize(fontSm,font)
 	typeSize(18,14)
 
 .type--xlg
-	typeSize(22,18)
+	typeSize(26,18)
 	font-family "Museo Sans Cyrl"
 	font-weight bold
+
+.type--xlg-light
+	typeSize(26,18)
+
 
 .type--lg
 	typeSize(30,20)
 	font-family "Museo Sans Cyrl"
 	font-weight bold
+
+.type--lg-light
+	typeSize(30,20)
 
 .type--xl
 	typeSize(40,24)
@@ -90,6 +97,10 @@ typeSize(fontSm,font)
 
 .type--bold
 	font-weight bold
+
+
+.type--white
+	color white
 
 h1
 	@extend .type--xxl
@@ -149,7 +160,9 @@ btnStyleLight(br-btn,color-btn)
 .btn
 	br(25px)
 	tr(all)
-	display inline-block
+	display inline-flex
+	justify-content center
+	align-items center
 	background none
 	border 0px
 	text-align: center
@@ -315,13 +328,12 @@ button
 // ============================ Inputs ============================
 
 .input,.textarea,.select
-	br(5px)
 	padding 20px 25px
 	border 1px solid $border-color
 	background: none
 	resize: none
 	outline: 0 !important
-	border-radius 4px
+	border-radius 24px
 	font-family $v-font
 	display block!important
 	margin-bottom 20px
@@ -330,12 +342,28 @@ button
 	&:focus
 		border 1px solid $blue
 		box-shadow 0 11px 8px rgba(47, 129, 230, 0.15)
+		background: white
+.input--clear
+	margin-bottom: 0
 
 .input-row
 	margin-bottom: 20px
 
 .input--full
 	width: 100%
+
+
+.input-wrap
+	position: relative
+	.icon
+		position absolute
+		top 50%
+		left 15px
+		transform translateY(-50%)
+
+.input--icon
+	padding-left: 50px
+
 
 .style-label
 	display flex
