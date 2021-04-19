@@ -148,21 +148,25 @@ include block_html/_include.pug
 .bg--snow.pt-48.pb-48.mb-60
 	.main-cont
 		.type--center.type--xl.mb-60 Интервью с нашими клиентами
-		.interview.shadow-lg.br-8
-			a(href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/video-cover-1.jpg')").interview-video.fancybox
+		.interview.shadow-lg.br-8.js-switch-wrap
+			a(href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/video-cover-1.jpg')" data-group="video" data-item="1").interview-video.fancybox.js-switch-cont
+				+icon("play-round","icon")
+			a(href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/restaurant-1.jpg')" data-group="video" data-item="2").interview-video.fancybox.js-switch-cont.hidden
+				+icon("play-round","icon")
+			a(href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/restaurant-2.jpg')" data-group="video" data-item="3").interview-video.fancybox.js-switch-cont.hidden
 				+icon("play-round","icon")
 			.interview-content
-				.interview-el
+				.interview-el.active.js-switch(data-group="video" data-item="1")
 					.interview-el__img(style="background-image:url('img/video-user-1.jpg')")
 					.interview-el__info
 						.interview-el__title Как открыть фудтрак? Ресторан на колесах "Скрепка"
 						.interview-el__name Сергей Матвиенко
-				.interview-el
+				.interview-el.js-switch(data-group="video" data-item="2")
 					.interview-el__img(style="background-image:url('img/video-user-2.jpg')")
 					.interview-el__info
 						.interview-el__title Как открыть сеть халяль фастфуд в Казани? Опыт "Кыстыбый".
 						.interview-el__name Азат Назмутдинов
-				.interview-el
+				.interview-el.js-switch(data-group="video" data-item="3")
 					.interview-el__img(style="background-image:url('img/video-user-3.jpg')")
 					.interview-el__info
 						.interview-el__title Как открыть 100 баров? Масштабирование бизнеса

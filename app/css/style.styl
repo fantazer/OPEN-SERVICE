@@ -4903,7 +4903,7 @@ select.select-beauty
 .interview-video
 	+below(768px)
 		width: 100%
-		padding: 25% 10%
+		padding: 28% 10%
 	bg-full()
 	width: 65%
 	position relative
@@ -4926,23 +4926,28 @@ select.select-beauty
 .interview-content
 	+below(768px)
 		width: 100%
-	+below(640px)
-		padding: 20px
 	background: white
 	width: 35%
-	padding: 30px 40px
+	padding: 20px
 .interview-el
 	f()
+	align-items center
+	cp()
 	margin-bottom: 24px
+	padding: 10px
+	br(8px)
+	border 1px solid transparent
 	&:last-child
 		margin-bottom: 0
+	&.active
+		border 1px solid $border-color
 .interview-el__img
 	size 80px
 	bg-full()
 	margin-right: 18px
 	round()
-	min-width 80px
-//.interview-el__info
+.interview-el__info
+	width calc(100% - 100px)
 .interview-el__title
 	@extend .type--md-light
 	color $mark

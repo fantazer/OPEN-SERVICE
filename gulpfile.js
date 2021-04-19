@@ -226,8 +226,8 @@ gulp.task('watch', () => {
 
 
 gulp.task('pug', function() {
-		gulp.src(['app/html/page-intro.pug','app/module/**/*.pug',])
-		//gulp.src(['app/html/*.pug','app/module/**/*.pug',])
+		//gulp.src(['app/html/page-intro.pug','app/module/**/*.pug',])
+		gulp.src(['app/html/*.pug','app/module/**/*.pug',])
 				.pipe(gulpif(global.watch, emitty.stream(global.emittyChangedFile)))
 				.pipe(progeny({
 						regexp: /^\s*@import\s*(?:\(\w+\)\s*)?['"]([^'"]+)['"]/
@@ -448,7 +448,7 @@ gulp.task('build:ftp',function(){
 				'copy:css',
 				'min:css',
 				'min:js',
-				//'screenshot',
+				'screenshot',
 				//'img',
 				//'svg',
 				'make',

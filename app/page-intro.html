@@ -762,28 +762,38 @@
 		<div class="bg--snow pt-48 pb-48 mb-60">
 			<div class="main-cont">
 				<div class="type--center type--xl mb-60">Интервью с нашими клиентами</div>
-				<div class="interview shadow-lg br-8">
-					<a class="interview-video fancybox" href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/video-cover-1.jpg');">
+				<div class="interview shadow-lg br-8 js-switch-wrap">
+					<a class="interview-video fancybox js-switch-cont" href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/video-cover-1.jpg');" data-group="video" data-item="1">
+						<svg class="icon">
+							<use xlink:href="#play-round"></use>
+						</svg>
+					</a>
+					<a class="interview-video fancybox js-switch-cont hidden" href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/restaurant-1.jpg');" data-group="video" data-item="2">
+						<svg class="icon">
+							<use xlink:href="#play-round"></use>
+						</svg>
+					</a>
+					<a class="interview-video fancybox js-switch-cont hidden" href="https://youtu.be/KOfyeYiO8Rk" style="background-image:url('img/restaurant-2.jpg');" data-group="video" data-item="3">
 						<svg class="icon">
 							<use xlink:href="#play-round"></use>
 						</svg>
 					</a>
 					<div class="interview-content">
-						<div class="interview-el">
+						<div class="interview-el active js-switch" data-group="video" data-item="1">
 							<div class="interview-el__img" style="background-image:url('img/video-user-1.jpg');"></div>
 							<div class="interview-el__info">
 								<div class="interview-el__title">Как открыть фудтрак? Ресторан на колесах "Скрепка"</div>
 								<div class="interview-el__name">Сергей Матвиенко</div>
 							</div>
 						</div>
-						<div class="interview-el">
+						<div class="interview-el js-switch" data-group="video" data-item="2">
 							<div class="interview-el__img" style="background-image:url('img/video-user-2.jpg');"></div>
 							<div class="interview-el__info">
 								<div class="interview-el__title">Как открыть сеть халяль фастфуд в Казани? Опыт "Кыстыбый".</div>
 								<div class="interview-el__name">Азат Назмутдинов</div>
 							</div>
 						</div>
-						<div class="interview-el">
+						<div class="interview-el js-switch" data-group="video" data-item="3">
 							<div class="interview-el__img" style="background-image:url('img/video-user-3.jpg');"></div>
 							<div class="interview-el__info">
 								<div class="interview-el__title">Как открыть 100 баров? Масштабирование бизнеса</div>
