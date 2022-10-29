@@ -6,7 +6,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.10.1",
+    "browser-sync": "^2.27.10",
     "create-file": "^1.0.1",
     "emitty": "^1.4.0",
     "favicons": "^4.8.6",
