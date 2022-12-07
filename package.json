@@ -6,11 +6,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.10.1",
+    "browser-sync": "^2.27.10",
     "create-file": "^1.0.1",
     "emitty": "^1.4.0",
     "favicons": "^4.8.6",
-    "gemini": "0.8.2",
+    "gemini": "7.5.2",
     "gulp": "*",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-cached": "^1.1.0",
